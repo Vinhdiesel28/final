@@ -13,7 +13,8 @@ Hệ Single Agent và Multi-Agent hỗ trợ đánh giá nguy cơ, thống kê v
 - Model chọn bằng validation F1; test F1 đọc từ artifact.
 - 8 tài liệu WHO/CDC/NIDDK/model card và 16 cạnh Knowledge Graph.
 - So sánh đúng hai hệ: Single Agent và Multi-Agent.
-- 28 tình huống benchmark ban đầu.
+- 58 tình huống benchmark tái lập (116 lượt chạy) trên cùng model, dataset, knowledge base và policy.
+- Benchmark Lab trên web: task success, citation, safety, latency và specialist audit coverage.
 - Dashboard responsive, hiển thị citation và trace từng Agent.
 
 ## Chạy lại

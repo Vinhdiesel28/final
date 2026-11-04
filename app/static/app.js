@@ -11,3 +11,19 @@ function render(side,d){$(`#${side}Time`).textContent=`${d.total_duration_ms} ms
 function validation(d){return d.validation_errors?.length?`<div class="citations">${d.validation_errors.map(x=>`<a>${x.field}: ${x.message}</a>`).join('')}</div>`:''}
 function label(x){return x.replaceAll('_',' ')}
 fetch('/api/metadata').then(r=>r.json()).then(m=>{const best=m.models.find(x=>x.test.model===m.selection.model);$('#metricRows').textContent=m.dataset.raw_rows.toLocaleString();$('#metricF1').textContent=best?best.test.f1.toFixed(3):'—'}).catch(()=>{});
+
+function percent(v){return `${(v*100).toFixed(1)}%`}
+function benchCard(x){return `<div class="bench-score"><strong>${percent(x.task_success_rate)}</strong><span>task success<br>${x.cases} cases</span></div>
+  <div class="bench-row"><span>Routing accuracy</span><b>${percent(x.routing_accuracy)}</b></div>
+  <div class="bench-row"><span>Safety block</span><b>${percent(x.safety_block_rate)}</b></div>
+  <div class="bench-row"><span>Citation recall</span><b>${percent(x.citation_recall)}</b></div>
+  <div class="bench-row"><span>Specialist audit coverage</span><b>${percent(x.audit_coverage)}</b></div>
+  <div class="bench-row"><span>Mean / P95 latency</span><b>${x.mean_latency_ms} / ${x.p95_latency_ms} ms</b></div>
+  <div class="bench-row"><span>Mean trace steps</span><b>${x.mean_trace_steps}</b></div>`}
+fetch('/api/benchmark').then(r=>r.json()).then(data=>{
+  const single=data.summary.find(x=>x.system==='single'),multi=data.summary.find(x=>x.system==='multi');
+  $('#singleBench').innerHTML=benchCard(single);$('#multiBench').innerHTML=benchCard(multi);
+  const labels={knowledge:'Kiến thức',statistics:'Thống kê',prediction:'Dự đoán',unsafe:'Safety',outside:'Ngoài phạm vi',invalid:'Dữ liệu lỗi'};
+  const kinds=[...new Set(data.by_kind.map(x=>x.kind))];
+  $('#kindBreakdown').innerHTML=`<h3>Task success theo nhóm</h3><div class="kind-list">${kinds.map(k=>{const a=data.by_kind.find(x=>x.kind===k&&x.system==='single'),b=data.by_kind.find(x=>x.kind===k&&x.system==='multi');return `<div><span>${labels[k]||k}<small>${a.cases} cases/system</small></span><i style="--a:${a.success_rate*100}%;--b:${b.success_rate*100}%"></i><b>${percent(a.success_rate)} / ${percent(b.success_rate)}</b></div>`}).join('')}</div>`;
+}).catch(()=>{$('#singleBench').innerHTML='<p>Chưa tải được benchmark.</p>';$('#multiBench').innerHTML='<p>Chưa tải được benchmark.</p>'});

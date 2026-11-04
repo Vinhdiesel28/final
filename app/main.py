@@ -38,6 +38,23 @@ def graph():
     return {"edges": services.knowledge.graph}
 
 
+@app.get("/api/benchmark")
+def benchmark():
+    import pandas as pd
+    summary_path = ROOT / "results" / "agent_benchmark_summary.json"
+    rows_path = ROOT / "results" / "agent_benchmark.csv"
+    if not summary_path.exists() or not rows_path.exists():
+        raise HTTPException(503, "Benchmark chưa được tạo.")
+    rows = pd.read_csv(rows_path)
+    by_kind = (
+        rows.groupby(["system", "kind"], as_index=False)
+        .agg(cases=("case_id", "count"), success_rate=("success", "mean"), mean_latency_ms=("latency_ms", "mean"))
+        .round(4)
+        .to_dict(orient="records")
+    )
+    return {"summary": json.loads(summary_path.read_text(encoding="utf-8")), "by_kind": by_kind}
+
+
 @app.post("/api/run")
 def run(payload: Request):
     if not payload.question.strip() and not payload.profile:

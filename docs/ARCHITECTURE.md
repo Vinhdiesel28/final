@@ -34,7 +34,8 @@ Không phải mọi Agent đều chạy cho mọi yêu cầu. Coordinator chọn
 
 ## Nguyên tắc benchmark
 
-- Cùng 28 trường hợp đầu vào.
+- Cùng 58 trường hợp đầu vào, tương đương 116 lượt chạy cho hai kiến trúc.
+- Tách metric chất lượng nhiệm vụ khỏi metric quan sát kiến trúc; audit coverage không được diễn giải là độ chính xác.
 - Cùng checkpoint và threshold.
 - Cùng corpus, graph và top-k.
 - Không sửa riêng prompt hoặc gold cho một hệ.

@@ -59,8 +59,11 @@ class Services:
                 "formula": f"{positive} / {count} × 100", "source": "cdc_brfss_2015.csv"}
 
 
-UNSAFE = ["ke don", "lieu thuoc", "thuoc nao", "ngung thuoc", "chac chan"]
-OUTSIDE = ["co phieu", "bitcoin", "bong da", "thoi tiet", "gia vang"]
+UNSAFE = [
+    "ke don", "lieu thuoc", "thuoc nao", "ngung thuoc", "chac chan",
+    "tu mua thuoc", "tang lieu", "giam lieu", "don thuoc", "insulin bao nhieu",
+]
+OUTSIDE = ["co phieu", "bitcoin", "bong da", "doi bong", "thoi tiet", "gia vang", "ty gia", "xoso", "xo so"]
 
 
 def intent_of(question: str, profile: dict | None) -> str:
@@ -68,7 +71,7 @@ def intent_of(question: str, profile: dict | None) -> str:
     if any(x in q for x in UNSAFE): return "unsafe_medical_request"
     if any(x in q for x in OUTSIDE): return "out_of_scope"
     if profile: return "risk_assessment"
-    if any(x in q for x in ["ty le", "bao nhieu nguoi", "trung binh", "phan tram"]): return "dataset_statistics"
+    if any(x in q for x in ["ty le", "bao nhieu nguoi", "bao nhieu ca", "trung binh", "phan tram", "percent", "thong ke"]): return "dataset_statistics"
     return "medical_knowledge"
 
 

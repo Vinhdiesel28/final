@@ -8,11 +8,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="/static/benchmark.css">
 </head>
 <body>
   <div class="noise"></div>
   <header class="nav"><a class="brand" href="#top"><span class="brand-mark">D</span><span>DiaAgents <small>LAB</small></span></a>
-    <nav><a href="#assessment">Đánh giá</a><a href="#compare">So sánh Agent</a><a href="#evidence">Bằng chứng</a></nav>
+    <nav><a href="#assessment">Đánh giá</a><a href="#compare">So sánh Agent</a><a href="#benchmark">Benchmark</a></nav>
     <span class="status"><i></i> Model online</span>
   </header>
   <main id="top">
@@ -75,6 +76,17 @@
         <article class="result-card single"><header><span>Single Agent</span><small>Một tác tử xử lý toàn bộ</small><b id="singleTime">— ms</b></header><div id="singleBody"></div><div id="singleTrace" class="trace"></div></article>
         <article class="result-card multi"><header><span>Multi-Agent</span><small>Điều phối tác tử chuyên trách</small><b id="multiTime">— ms</b></header><div id="multiBody"></div><div id="multiTrace" class="trace"></div></article>
       </div>
+    </section>
+
+    <section class="benchmark" id="benchmark">
+      <div class="section-head"><span class="eyebrow">03 · REPRODUCIBLE BENCHMARK</span><h2>Cùng công cụ. Cùng dữ liệu. Đo đúng khác biệt.</h2>
+        <p>58 tình huống × 2 kiến trúc. Single Agent không bị làm yếu; cả hai dùng chung model, knowledge base và policy. Chất lượng nhiệm vụ được tách khỏi khả năng quan sát hệ thống.</p></div>
+      <div class="benchmark-grid">
+        <article class="bench-card"><header><span>Single Agent</span><small>Monolithic baseline</small></header><div id="singleBench" class="bench-body"><p>Đang tải…</p></div></article>
+        <article class="bench-card featured"><header><span>Multi-Agent</span><small>Specialized pipeline</small></header><div id="multiBench" class="bench-body"><p>Đang tải…</p></div></article>
+      </div>
+      <div class="benchmark-note"><b>Kết luận kiểm soát:</b><p>Trên bộ contract hiện tại, hai hệ có thể đạt cùng task success. Multi-Agent nổi bật ở specialist audit coverage: mỗi bước định tuyến, kiểm tra, dự đoán, truy xuất và xác minh được ghi riêng để dễ kiểm tra và khoanh vùng lỗi. Đây không phải tuyên bố Multi-Agent luôn chính xác hơn.</p></div>
+      <div id="kindBreakdown" class="kind-breakdown"></div>
     </section>
   </main>
   <footer><div><span class="brand-mark">D</span><b>DiaAgents Lab</b></div><p>Nguyễn Minh Vinh · B23DCCN934 · D23CTPM01 · Nhóm 08</p><p>Educational use only · Not medical advice</p></footer>
