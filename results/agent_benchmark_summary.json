@@ -1,0 +1,20 @@
+[
+  {
+    "system": "single",
+    "cases": 28,
+    "routing_accuracy": 1,
+    "task_success_rate": 1,
+    "citation_recall": 1.0,
+    "mean_latency_ms": 11.445357142857143,
+    "mean_trace_steps": 1
+  },
+  {
+    "system": "multi",
+    "cases": 28,
+    "routing_accuracy": 1,
+    "task_success_rate": 1,
+    "citation_recall": 1.0,
+    "mean_latency_ms": 11.043214285714287,
+    "mean_trace_steps": 3.4642857142857144
+  }
+]

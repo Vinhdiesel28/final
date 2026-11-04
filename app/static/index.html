@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DiaAgents Lab — Single vs Multi-Agent</title>
+  <meta name="description" content="Demo hệ đa Agent hỗ trợ đánh giá nguy cơ tiểu đường có bằng chứng.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="noise"></div>
+  <header class="nav"><a class="brand" href="#top"><span class="brand-mark">D</span><span>DiaAgents <small>LAB</small></span></a>
+    <nav><a href="#assessment">Đánh giá</a><a href="#compare">So sánh Agent</a><a href="#evidence">Bằng chứng</a></nav>
+    <span class="status"><i></i> Model online</span>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy"><span class="eyebrow">FINAL PROJECT · INTELLIGENT SYSTEMS</span>
+        <h1>Đánh giá nguy cơ.<br><em>Giải thích bằng chứng.</em></h1>
+        <p>Single Agent và Multi-Agent chạy trên cùng model, dataset và kho tri thức — để đo khác biệt bằng kết quả thật, không bằng khẩu hiệu.</p>
+        <div class="hero-actions"><a class="btn primary" href="#assessment">Bắt đầu đánh giá <b>→</b></a><button class="btn ghost" data-sample="knowledge">Xem Agent hoạt động</button></div>
+        <div class="trust"><span>WHO</span><span>CDC</span><span>NIDDK</span><p>Nguồn tri thức chính thức</p></div>
+      </div>
+      <div class="hero-visual">
+        <div class="orbit o1"></div><div class="orbit o2"></div>
+        <div class="core"><span>Coordinator</span><strong>7</strong><small>specialized agents</small></div>
+        <div class="agent a1">Validation</div><div class="agent a2">Prediction</div><div class="agent a3">Retrieval</div>
+        <div class="agent a4">Graph</div><div class="agent a5">Statistics</div><div class="agent a6">Verifier</div>
+      </div>
+    </section>
+
+    <section class="metrics" id="evidence">
+      <article><strong id="metricRows">100,000</strong><span>hồ sơ dự đoán</span></article>
+      <article><strong id="metricF1">—</strong><span>F1 test model chọn</span></article>
+      <article><strong>8</strong><span>tài liệu có nguồn</span></article>
+      <article><strong>2</strong><span>hệ được benchmark</span></article>
+    </section>
+
+    <section class="workspace" id="assessment">
+      <div class="section-head"><span class="eyebrow">01 · PATIENT PROFILE</span><h2>Một hồ sơ, hai cách tổ chức trí tuệ.</h2>
+        <p>Nhập thông tin minh họa hoặc dùng hồ sơ mẫu. Hệ thống trả risk score học thuật, không chẩn đoán.</p></div>
+      <div class="input-grid">
+        <form id="profileForm" class="panel form-panel">
+          <div class="panel-title"><span>Hồ sơ sức khỏe</span><button type="button" id="fillSample">Điền mẫu nguy cơ cao</button></div>
+          <div class="fields">
+            <label>Giới tính<select name="gender"><option>Female</option><option>Male</option><option>Other</option></select></label>
+            <label>Tuổi<input name="age" type="number" min="0" max="120" value="48"></label>
+            <label>BMI<input name="bmi" type="number" step="0.01" value="28.4"></label>
+            <label>HbA1c (%)<input name="hbA1c_level" type="number" step="0.1" value="5.8"></label>
+            <label>Blood glucose (mg/dL)<input name="blood_glucose_level" type="number" value="140"></label>
+            <label>Tiền sử hút thuốc<select name="smoking_history"><option>never</option><option>former</option><option>current</option><option>No Info</option><option>ever</option><option>not current</option></select></label>
+            <label class="toggle-field">Tăng huyết áp<input name="hypertension" type="checkbox"><i></i></label>
+            <label class="toggle-field">Bệnh tim<input name="heart_disease" type="checkbox"><i></i></label>
+          </div>
+          <label class="question-label">Câu hỏi đi kèm<textarea id="question" rows="2">Vì sao hồ sơ này có mức nguy cơ như vậy?</textarea></label>
+          <button class="run" type="submit"><span>Chạy so sánh Single vs Multi-Agent</span><b>↗</b></button>
+          <p class="notice">Không nhập dữ liệu nhận dạng cá nhân. Kết quả chỉ phục vụ học tập.</p>
+        </form>
+        <div class="panel quick-panel"><div class="panel-title"><span>Kịch bản nhanh</span></div>
+          <button class="scenario" data-sample="a1c"><i>01</i><span><b>A1C phản ánh điều gì?</b><small>RAG + Knowledge Graph</small></span><em>→</em></button>
+          <button class="scenario" data-sample="stats"><i>02</i><span><b>Tỷ lệ nhãn dương ở nữ?</b><small>Phép tính chính xác từ CDC</small></span><em>→</em></button>
+          <button class="scenario" data-sample="unsafe"><i>03</i><span><b>Hãy kê thuốc cho tôi</b><small>Kiểm tra Safety Agent</small></span><em>→</em></button>
+          <button class="scenario" data-sample="outside"><i>04</i><span><b>Giá Bitcoin ngày mai?</b><small>Kiểm tra ngoài phạm vi</small></span><em>→</em></button>
+          <div class="architecture"><span>Luồng Multi-Agent</span><div>Coordinator <b>→</b> Specialist <b>→</b> Verifier</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="comparison" id="compare">
+      <div class="section-head"><span class="eyebrow">02 · CONTROLLED COMPARISON</span><h2>Quan sát khác biệt trong từng bước.</h2></div>
+      <div id="emptyState" class="empty"><div class="pulse"></div><h3>Chưa có lượt chạy</h3><p>Chọn một kịch bản hoặc nhập hồ sơ để xem hai hệ cạnh nhau.</p></div>
+      <div id="results" class="results hidden">
+        <article class="result-card single"><header><span>Single Agent</span><small>Một tác tử xử lý toàn bộ</small><b id="singleTime">— ms</b></header><div id="singleBody"></div><div id="singleTrace" class="trace"></div></article>
+        <article class="result-card multi"><header><span>Multi-Agent</span><small>Điều phối tác tử chuyên trách</small><b id="multiTime">— ms</b></header><div id="multiBody"></div><div id="multiTrace" class="trace"></div></article>
+      </div>
+    </section>
+  </main>
+  <footer><div><span class="brand-mark">D</span><b>DiaAgents Lab</b></div><p>Nguyễn Minh Vinh · B23DCCN934 · D23CTPM01 · Nhóm 08</p><p>Educational use only · Not medical advice</p></footer>
+  <script src="/static/app.js"></script>
+</body></html>

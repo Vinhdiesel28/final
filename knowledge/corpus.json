@@ -1,0 +1,66 @@
+[
+  {
+    "id": "who_overview",
+    "title": "WHO - Diabetes overview",
+    "url": "https://www.who.int/news-room/fact-sheets/detail/diabetes",
+    "organization": "WHO",
+    "as_of": "2024-11-14",
+    "text": "Đái tháo đường là bệnh mạn tính xảy ra khi tuyến tụy không sản xuất đủ insulin hoặc cơ thể không sử dụng insulin hiệu quả. Tăng glucose kéo dài có thể gây tổn thương tim, mạch máu, mắt, thận và thần kinh. Type 1 đặc trưng bởi thiếu sản xuất insulin; type 2 liên quan cơ thể sử dụng insulin không hiệu quả."
+  },
+  {
+    "id": "cdc_symptoms",
+    "title": "CDC - Signs and symptoms of diabetes",
+    "url": "https://www.cdc.gov/diabetes/signs-symptoms/",
+    "organization": "CDC",
+    "as_of": "2024-05-15",
+    "text": "Dấu hiệu có thể gồm tiểu nhiều, khát nhiều, đói nhiều, sụt cân không chủ ý, mệt mỏi và nhìn mờ. Type 2 có thể phát triển trong nhiều năm và một số người không nhận thấy triệu chứng. Vết thương chậm lành và tê bì tay chân cũng có thể gặp."
+  },
+  {
+    "id": "niddk_tests",
+    "title": "NIDDK - Diabetes tests and diagnosis",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/tests-diagnosis",
+    "organization": "NIDDK",
+    "as_of": "2026-10-22",
+    "text": "Nhân viên y tế có thể dùng A1C, glucose huyết tương lúc đói, nghiệm pháp dung nạp glucose đường uống và glucose huyết tương ngẫu nhiên để đánh giá đái tháo đường. A1C phản ánh mức glucose trung bình khoảng ba tháng. Thông thường cần phép đo xác nhận; công cụ trực tuyến không tự chẩn đoán bệnh."
+  },
+  {
+    "id": "who_prevention",
+    "title": "WHO - Prevention of type 2 diabetes",
+    "url": "https://www.who.int/news-room/fact-sheets/detail/diabetes",
+    "organization": "WHO",
+    "as_of": "2024-11-14",
+    "text": "Chế độ ăn lành mạnh, hoạt động thể lực thường xuyên, duy trì cân nặng phù hợp và tránh thuốc lá có thể giúp phòng ngừa hoặc làm chậm type 2. Người đã được chẩn đoán cần theo kế hoạch theo dõi và điều trị của nhân viên y tế."
+  },
+  {
+    "id": "cdc_risk_factors",
+    "title": "CDC - Diabetes risk factors",
+    "url": "https://www.cdc.gov/diabetes/risk-factors/",
+    "organization": "CDC",
+    "as_of": "2024-05-15",
+    "text": "Các yếu tố liên quan nguy cơ type 2 gồm thừa cân, tuổi cao hơn, ít vận động và tiền sử gia đình. Có yếu tố nguy cơ không đồng nghĩa chắc chắn mắc bệnh. Đánh giá cá nhân cần được thực hiện bởi nhân viên y tế và xét nghiệm phù hợp."
+  },
+  {
+    "id": "niddk_a1c",
+    "title": "NIDDK - The A1C test",
+    "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+    "organization": "NIDDK",
+    "as_of": "2026-10-22",
+    "text": "A1C là xét nghiệm máu cung cấp thông tin về mức glucose trung bình trong khoảng ba tháng. Kết quả có thể bị ảnh hưởng bởi một số tình trạng và phải được diễn giải trong bối cảnh lâm sàng. Một score mô hình không thay thế A1C hoặc chẩn đoán."
+  },
+  {
+    "id": "project_dataset",
+    "title": "Model card - Diabetes prediction dataset",
+    "url": "https://www.kaggle.com/datasets/iammustafatz/diabetes-prediction-dataset",
+    "organization": "Project Final",
+    "as_of": "2026-11-05",
+    "text": "Bản dùng trong project có 100000 bản ghi với tuổi, giới tính, tăng huyết áp, bệnh tim, tiền sử hút thuốc, BMI, HbA1c và blood glucose. Nhãn diabetes dùng để huấn luyện mô hình học thuật. Dữ liệu quan sát và score không phải chẩn đoán y khoa."
+  },
+  {
+    "id": "project_model",
+    "title": "Model card - Risk prediction pipeline",
+    "url": "https://github.com/Vinhdiesel28/final",
+    "organization": "Project Final",
+    "as_of": "2026-11-05",
+    "text": "Pipeline so sánh Logistic Regression, Random Forest và MLP trên cùng split. Model được chọn bằng F1 validation và test chỉ dùng báo cáo cuối. Xác suất là risk score chưa đủ để kết luận một người mắc bệnh; giao diện luôn yêu cầu xem xét chuyên môn."
+  }
+]

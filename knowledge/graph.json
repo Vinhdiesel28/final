@@ -1,0 +1,18 @@
+[
+  {"subject":"đái tháo đường","relation":"có loại","object":"type 1","evidence":"who_overview"},
+  {"subject":"đái tháo đường","relation":"có loại","object":"type 2","evidence":"who_overview"},
+  {"subject":"đái tháo đường","relation":"có dấu hiệu","object":"khát nhiều","evidence":"cdc_symptoms"},
+  {"subject":"đái tháo đường","relation":"có dấu hiệu","object":"tiểu nhiều","evidence":"cdc_symptoms"},
+  {"subject":"đái tháo đường","relation":"có dấu hiệu","object":"mệt mỏi","evidence":"cdc_symptoms"},
+  {"subject":"đái tháo đường","relation":"được đánh giá bằng","object":"A1C","evidence":"niddk_tests"},
+  {"subject":"đái tháo đường","relation":"được đánh giá bằng","object":"glucose huyết tương","evidence":"niddk_tests"},
+  {"subject":"A1C","relation":"phản ánh","object":"glucose trung bình khoảng ba tháng","evidence":"niddk_a1c"},
+  {"subject":"type 2","relation":"có yếu tố nguy cơ","object":"thừa cân","evidence":"cdc_risk_factors"},
+  {"subject":"type 2","relation":"có yếu tố nguy cơ","object":"ít vận động","evidence":"cdc_risk_factors"},
+  {"subject":"type 2","relation":"có yếu tố nguy cơ","object":"tuổi cao hơn","evidence":"cdc_risk_factors"},
+  {"subject":"type 2","relation":"có thể phòng ngừa bằng","object":"hoạt động thể lực","evidence":"who_prevention"},
+  {"subject":"type 2","relation":"có thể phòng ngừa bằng","object":"chế độ ăn lành mạnh","evidence":"who_prevention"},
+  {"subject":"risk score","relation":"không phải","object":"chẩn đoán","evidence":"project_model"},
+  {"subject":"risk score","relation":"được tạo bởi","object":"mô hình ML","evidence":"project_model"},
+  {"subject":"mô hình ML","relation":"được huấn luyện trên","object":"diabetes prediction dataset","evidence":"project_dataset"}
+]
