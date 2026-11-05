@@ -39,6 +39,12 @@ Mở `http://127.0.0.1:8010`.
 - `knowledge/`: corpus và graph có evidence.
 - `artifacts/`: checkpoint và model card.
 - `results/`: metric và benchmark.
+- `report/`: Tiểu luận Final 7 chương và báo cáo Project 01 ở định dạng DOCX/PDF.
+
+## Hồ sơ nộp bài
+
+- `report/tieuluan_final_CT_08_934_NguyenMinhVinh.pdf`: quyển tổng hợp ML, CNN, RNN, Knowledge Graph, học sâu trên đồ thị và hệ đa tác tử.
+- `report/project01_CT_08_934_NguyenMinhVinh.pdf`: báo cáo riêng của hệ DiaAgents, gồm kiến trúc, dữ liệu, code, notebook, benchmark và demo.
 - `notebooks/`: notebook đã chạy.
 - `report/`: báo cáo Final và Project 01 (sẽ hoàn thiện ở pha báo cáo).
 
