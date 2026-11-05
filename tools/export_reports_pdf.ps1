@@ -1,9 +1,13 @@
+param([switch]$ProjectOnly)
 $ErrorActionPreference = 'Stop'
 $reportDir = (Resolve-Path (Join-Path $PSScriptRoot '..\report')).Path
 $inputs = @(
     (Join-Path $reportDir 'tieuluan_final_CT_08_934_NguyenMinhVinh.docx'),
     (Join-Path $reportDir 'project01_CT_08_934_NguyenMinhVinh.docx')
 )
+if ($ProjectOnly) {
+    $inputs = @((Join-Path $reportDir 'project01_CT_08_934_NguyenMinhVinh.docx'))
+}
 $word = $null
 try {
     $word = New-Object -ComObject Word.Application

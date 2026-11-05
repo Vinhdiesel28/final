@@ -1,7 +1,7 @@
 """Build the Final thesis and Project 01 reports from verified repository data."""
 from __future__ import annotations
 
-import json, re
+import argparse, json, re, sys
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 from docx import Document
@@ -24,6 +24,7 @@ CLASS = "D23CTPM01"
 GROUP = "08"
 TEACHER = "PGS.TS Trần Đình Quế"
 GITHUB = "https://github.com/Vinhdiesel28/final"
+MONOCHROME = False
 
 
 def font(name="Times New Roman", size=12, bold=False, color="000000"):
@@ -69,7 +70,10 @@ def cover(doc, kind, title, subtitle):
     p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
     font(size=14, bold=True)(p.add_run("PHÁT TRIỂN CÁC HỆ THỐNG THÔNG MINH"))
     doc.add_paragraph()
-    p = doc.add_paragraph(style="Title"); p.alignment = WD_ALIGN_PARAGRAPH.CENTER; p.add_run(title.upper())
+    # A normal paragraph avoids Word's built-in colored Title border and keeps
+    # the academic cover completely black and white in monochrome mode.
+    p = doc.add_paragraph(style=None if MONOCHROME else "Title"); p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    font(size=20, bold=True)(p.add_run(title.upper()))
     p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER; font(size=12, bold=True)(p.add_run(subtitle))
     doc.add_paragraph(); doc.add_paragraph()
     table = doc.add_table(rows=5, cols=2); table.autofit = False
@@ -111,15 +115,16 @@ def table(doc, headers, rows, widths=None):
     t = doc.add_table(rows=1, cols=len(headers)); t.style = "Table Grid"; t.autofit = False
     t.rows[0]._tr.get_or_add_trPr().append(OxmlElement("w:tblHeader"))
     for j,h in enumerate(headers):
-        c=t.rows[0].cells[j]; c.text=str(h); shade(c,"1F4E78"); c.vertical_alignment=WD_CELL_VERTICAL_ALIGNMENT.CENTER; set_cell_margins(c)
-        for r in c.paragraphs[0].runs: font(size=10,bold=True,color="FFFFFF")(r)
+        c=t.rows[0].cells[j]; c.text=str(h); c.vertical_alignment=WD_CELL_VERTICAL_ALIGNMENT.CENTER; set_cell_margins(c)
+        if not MONOCHROME: shade(c,"1F4E78")
+        for r in c.paragraphs[0].runs: font(size=10,bold=True,color="000000" if MONOCHROME else "FFFFFF")(r)
         c.paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.CENTER
         if widths: c.width=Cm(widths[j])
     for i,rowdata in enumerate(rows):
         cells=t.add_row().cells
         for j,val in enumerate(rowdata):
             c=cells[j]; c.text=str(val); c.vertical_alignment=WD_CELL_VERTICAL_ALIGNMENT.CENTER; set_cell_margins(c)
-            if i%2: shade(c,"EDF3F8")
+            if i%2 and not MONOCHROME: shade(c,"EDF3F8")
             for r in c.paragraphs[0].runs: font(size=9.5)(r)
             if widths: c.width=Cm(widths[j])
     doc.add_paragraph().paragraph_format.space_after=Pt(2)
@@ -129,7 +134,8 @@ def table(doc, headers, rows, widths=None):
 def code(doc, text):
     p=doc.add_paragraph(); p.paragraph_format.left_indent=Cm(.5); p.paragraph_format.right_indent=Cm(.5); p.paragraph_format.space_before=Pt(4); p.paragraph_format.space_after=Pt(6)
     run=p.add_run(text[:2200]); font(name="Consolas",size=8.5)(run)
-    pPr=p._p.get_or_add_pPr(); shd=OxmlElement("w:shd"); shd.set(qn("w:fill"),"F2F2F2"); pPr.append(shd)
+    if not MONOCHROME:
+        pPr=p._p.get_or_add_pPr(); shd=OxmlElement("w:shd"); shd.set(qn("w:fill"),"F2F2F2"); pPr.append(shd)
 
 
 def clean_md(s):
@@ -175,12 +181,19 @@ def architecture_image(path):
     try: f=ImageFont.truetype("arial.ttf",30); fb=ImageFont.truetype("arialbd.ttf",34)
     except: f=fb=ImageFont.load_default()
     boxes=[(60,290,330,500,"Hồ sơ\nngười dùng"),(420,100,750,260,"Prediction Agent\nMLP checkpoint"),(420,300,750,460,"Retrieval Agent\nBM25 + KG"),(420,500,750,660,"Statistics Agent\nCDC exact"),(860,250,1190,520,"Coordinator\nValidation\nSafety\nVerifier"),(1290,290,1540,500,"Câu trả lời\n+ trace + nguồn")]
+    edge = "#000000" if MONOCHROME else "#0f5b45"
     for x1,y1,x2,y2,label in boxes:
-        d.rounded_rectangle((x1,y1,x2,y2),radius=24,fill="#edf4e9" if "Coordinator" not in label else "#10251f",outline="#0f5b45",width=4)
-        color="white" if "Coordinator" in label else "#10251f"; lines=label.split("\n")
+        if MONOCHROME:
+            fill = "#e6e6e6" if "Coordinator" in label else "#ffffff"
+            color = "#000000"
+        else:
+            fill = "#edf4e9" if "Coordinator" not in label else "#10251f"
+            color = "white" if "Coordinator" in label else "#10251f"
+        d.rounded_rectangle((x1,y1,x2,y2),radius=24,fill=fill,outline=edge,width=4)
+        lines=label.split("\n")
         for k,line in enumerate(lines): d.text(((x1+x2)//2,y1+45+k*55),line,font=fb if k==0 else f,fill=color,anchor="mm")
     for a,b in [((330,395),(420,180)),((330,395),(420,380)),((330,395),(420,580)),((750,180),(860,330)),((750,380),(860,380)),((750,580),(860,440)),((1190,385),(1290,395))]:
-        d.line((*a,*b),fill="#0f5b45",width=7); x,y=b; d.polygon([(x,y),(x-20,y-12),(x-20,y+12)],fill="#0f5b45")
+        d.line((*a,*b),fill=edge,width=7); x,y=b; d.polygon([(x,y),(x-20,y-12),(x-20,y+12)],fill=edge)
     im.save(path)
 
 
@@ -189,12 +202,13 @@ def benchmark_image(path, summary):
     try: f=ImageFont.truetype("arial.ttf",27); fb=ImageFont.truetype("arialbd.ttf",31)
     except: f=fb=ImageFont.load_default()
     metrics=[("Task success","task_success_rate"),("Safety block","safety_block_rate"),("Citation recall","citation_recall"),("Audit coverage","audit_coverage")]
-    colors={"single":"#68d9ca","multi":"#0f5b45"}
+    colors={"single":"#bdbdbd","multi":"#333333"} if MONOCHROME else {"single":"#68d9ca","multi":"#0f5b45"}
+    text_color = "#000000" if MONOCHROME else "#10251f"
     for i,(label,key) in enumerate(metrics):
-        y=100+i*145; d.text((40,y+20),label,font=fb,fill="#10251f")
+        y=100+i*145; d.text((40,y+20),label,font=fb,fill=text_color)
         for j,x in enumerate(summary):
             val=x[key]; yy=y+10+j*48; d.rounded_rectangle((350,yy,350+int(950*val),yy+34),radius=12,fill=colors[x['system']])
-            d.text((1325,yy+17),f"{val*100:.1f}%",font=f,fill="#10251f",anchor="mm")
+            d.text((1325,yy+17),f"{val*100:.1f}%",font=f,fill=text_color,anchor="mm")
     d.text((350,700),"Single Agent",font=f,fill=colors['single']); d.text((650,700),"Multi-Agent",font=f,fill=colors['multi'])
     im.save(path)
 
@@ -207,6 +221,8 @@ def add_static_toc(doc, items):
 
 
 def build_final():
+    global MONOCHROME
+    MONOCHROME = False
     doc=Document(); configure(doc)
     cover(doc,"Tiểu luận Final","AI cho bệnh đái tháo đường","Từ học máy CNN RNN đến Knowledge Graph học sâu trên đồ thị và hệ đa tác tử")
     add_static_toc(doc,["TÓM TẮT","MỞ ĐẦU","CHƯƠNG 1  Lịch sử phát triển AI","CHƯƠNG 2  Các kỹ thuật học máy cơ bản","CHƯƠNG 3  Mạng nơ ron tích chập CNN","CHƯƠNG 4  Mạng nơ ron hồi quy RNN","CHƯƠNG 5  Knowledge Base Knowledge Graph và RAG","CHƯƠNG 6  Học sâu trên đồ thị","CHƯƠNG 7  Hệ đa tác tử","KẾT LUẬN"])
@@ -257,7 +273,9 @@ def project_paragraphs(doc, heading, paragraphs):
     for x in paragraphs: add_text(doc,x)
 
 
-def build_project():
+def build_project_compact():
+    global MONOCHROME
+    MONOCHROME = True
     doc=Document(); configure(doc)
     cover(doc,"Project 01","Hệ đa Agent hỗ trợ đánh giá nguy cơ bệnh tiểu đường","Single Agent và Multi Agent trên cùng model dữ liệu và kho tri thức")
     add_static_toc(doc,["CHƯƠNG 1  Giới thiệu","CHƯƠNG 2  Cơ sở hệ đa tác tử","CHƯƠNG 3  Kiến trúc DiaAgents","CHƯƠNG 4  Các thành phần và dữ liệu","CHƯƠNG 5  Code Demo và đánh giá","KẾT LUẬN"])
@@ -275,7 +293,7 @@ def build_project():
     table(doc,["Status","Ý nghĩa","Hành vi giao diện"],[["supported","Có bằng chứng hoặc phép tính","Hiển thị kết quả"],["supported_with_limitations","Có risk score kèm giới hạn","Hiển thị cảnh báo không chẩn đoán"],["invalid_input","Hồ sơ sai miền hoặc schema","Liệt kê lỗi theo trường"],["blocked_unsafe_request","Yêu cầu điều trị nguy hiểm","Từ chối và hướng tới nhân viên y tế"],["out_of_scope","Không thuộc phạm vi tiểu đường","Thông báo phạm vi"],["insufficient_evidence","Không có nguồn phù hợp","Không tạo câu trả lời khẳng định"]],[5,5.5,5])
     project_paragraphs(doc,"2.4  Nguyên tắc so sánh công bằng",["Một so sánh kiến trúc chỉ có ý nghĩa khi kiểm soát model, dữ liệu, công cụ, policy và case đầu vào. Project khởi tạo một Services duy nhất rồi truyền cho SingleAgent và MultiAgent. Vì vậy khác biệt không đến từ checkpoint tốt hơn hoặc corpus lớn hơn.","Task success và routing accuracy đo chất lượng đầu ra. Audit coverage đo mức độ xuất hiện của các specialist stage kỳ vọng. Single Agent có một trace tổng hợp nên specialist audit coverage bằng không theo định nghĩa; con số này không có nghĩa Single Agent trả lời sai. Ngược lại, nhiều trace hơn cũng không tự động chứng minh Multi-Agent thông minh hơn."])
     doc.add_heading("CHƯƠNG 3  KIẾN TRÚC DIAAGENTS",1)
-    arch=ASSETS/"architecture.png"; architecture_image(arch); p=doc.add_paragraph(); p.alignment=WD_ALIGN_PARAGRAPH.CENTER; p.add_run().add_picture(str(arch),width=Cm(15.5)); p=doc.add_paragraph("Hình 3.1  Kiến trúc hệ thống"); p.alignment=WD_ALIGN_PARAGRAPH.CENTER
+    arch=ASSETS/"architecture_project_bw.png"; architecture_image(arch); p=doc.add_paragraph(); p.alignment=WD_ALIGN_PARAGRAPH.CENTER; p.add_run().add_picture(str(arch),width=Cm(15.5)); p=doc.add_paragraph("Hình 3.1  Kiến trúc hệ thống"); p.alignment=WD_ALIGN_PARAGRAPH.CENTER
     table(doc,["Agent","Công cụ","Đầu ra"],[["CoordinatorAgent","intent_router","Nhánh xử lý"],["ValidationAgent","schema_validator","Lỗi trường hoặc hợp lệ"],["PredictionAgent","model_checkpoint","Risk score và threshold"],["StatisticsAgent","pandas_exact","Count rate formula"],["RetrievalAgent","bm25_retrieval","Đoạn văn và citations"],["GraphAgent","knowledge_graph","Đường đi tối đa hai hop"],["ExplanationAgent","grounded_composer","Câu trả lời kết hợp"],["VerifierSafetyAgent","claim_evidence_guard","Trạng thái cuối"]],[4,5,6])
     project_paragraphs(doc,"3.1  Luồng xử lý",["Coordinator xác định một trong năm intent: medical knowledge, dataset statistics, risk assessment, unsafe medical request và out of scope. Nhánh nguy hiểm hoặc ngoài phạm vi kết thúc sớm. Nhánh prediction phải qua validation trước checkpoint. Nhánh knowledge chỉ được đánh dấu supported khi có citation.","State.trace ghi tên agent, trạng thái, thời gian, tóm tắt và công cụ. total_duration_ms được tính từ các bước trace. request_id giúp phân biệt từng lượt mà không lưu dữ liệu nhận dạng cá nhân."])
     project_paragraphs(doc,"3.2  API và giao diện",["FastAPI cung cấp health, metadata, graph, run, compare và benchmark. Giao diện hiển thị cùng lúc câu trả lời Single và Multi, risk score hoặc thống kê, citations và trace. Benchmark Lab đọc artifact đã tạo bởi script thay vì hard-code số liệu."])
@@ -299,7 +317,7 @@ def build_project():
     code(doc,"result = runner.run(question, profile)\n# output: intent, status, answer, prediction/statistics, citations, traces\n\n@app.post('/api/compare')\ndef compare(payload):\n    return {'single': single.run(...), 'multi': multi.run(...)}")
     project_paragraphs(doc,"5.2  Notebook",["Notebook 07_single_vs_multi_agent.ipynb gồm bảy cell code đã chạy. Các cell lần lượt nạp dịch vụ, đọc model card, hỏi kiến thức A1C, dự đoán hồ sơ, kiểm tra guardrail, hiển thị benchmark tổng hợp và phân tích theo nhóm tình huống. Notebook không sao chép logic web mà import cùng các lớp trong src."])
     project_paragraphs(doc,"5.3  Benchmark kiểm soát",["Bộ benchmark có 58 tình huống cho mỗi hệ, tổng cộng 116 lượt chạy. Sáu nhóm gồm knowledge, statistics, prediction, unsafe, outside và invalid. Các biến thể có tiếng Việt không dấu, câu hỏi diễn đạt khác nhau và hồ sơ ở biên."])
-    summary=json.loads((ROOT/"results/agent_benchmark_summary.json").read_text(encoding="utf-8")); chart=ASSETS/"benchmark.png"; benchmark_image(chart,summary)
+    summary=json.loads((ROOT/"results/agent_benchmark_summary.json").read_text(encoding="utf-8")); chart=ASSETS/"benchmark_project_bw.png"; benchmark_image(chart,summary)
     p=doc.add_paragraph(); p.alignment=WD_ALIGN_PARAGRAPH.CENTER; p.add_run().add_picture(str(chart),width=Cm(15.5)); p=doc.add_paragraph("Hình 5.1  Kết quả benchmark"); p.alignment=WD_ALIGN_PARAGRAPH.CENTER
     table(doc,["Metric","Single","Multi"],[["Routing accuracy",f"{summary[0]['routing_accuracy']*100:.1f}%",f"{summary[1]['routing_accuracy']*100:.1f}%"],["Task success",f"{summary[0]['task_success_rate']*100:.1f}%",f"{summary[1]['task_success_rate']*100:.1f}%"],["Citation precision",f"{summary[0]['citation_precision']*100:.1f}%",f"{summary[1]['citation_precision']*100:.1f}%"],["Safety block",f"{summary[0]['safety_block_rate']*100:.1f}%",f"{summary[1]['safety_block_rate']*100:.1f}%"],["False refusal",f"{summary[0]['false_refusal_rate']*100:.1f}%",f"{summary[1]['false_refusal_rate']*100:.1f}%"],["Audit coverage",f"{summary[0]['audit_coverage']*100:.1f}%",f"{summary[1]['audit_coverage']*100:.1f}%"],["Mean latency ms",summary[0]['mean_latency_ms'],summary[1]['mean_latency_ms']],["P95 latency ms",summary[0]['p95_latency_ms'],summary[1]['p95_latency_ms']]],[6,4,4])
     add_text(doc,"Hai hệ đạt cùng task success và safety block trên bộ contract. Citation precision thấp hơn recall vì retrieval trả tối đa ba tài liệu trong khi gold set thường chỉ ghi một nguồn tối thiểu; đây là điểm cần cải thiện bằng reranker và gold annotation nhiều người. Multi-Agent đạt audit coverage 100 phần trăm còn Single không có các specialist stage tách riêng. Không diễn giải metric này thành độ chính xác cao hơn.")
@@ -318,5 +336,17 @@ def build_project():
     add_footer(doc); path=OUT/f"project01_CT_08_{STUDENT_ID.split('B23DCCN')[-1]}_NguyenMinhVinh.docx"; doc.save(path); return path
 
 
+def build_project():
+    """Build the expanded Project 01 report using the detailed Kien-style outline."""
+    from project_report_expanded import build_project_expanded
+    return build_project_expanded(sys.modules[__name__])
+
+
 if __name__=="__main__":
-    print(build_final()); print(build_project())
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--project-only", action="store_true", help="Build only the monochrome Project 01 report")
+    args = parser.parse_args()
+    if args.project_only:
+        print(build_project())
+    else:
+        print(build_final()); print(build_project())
