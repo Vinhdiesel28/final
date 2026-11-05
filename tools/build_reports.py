@@ -222,7 +222,7 @@ def add_static_toc(doc, items):
     doc.add_page_break()
 
 
-def build_final():
+def build_final_legacy():
     global MONOCHROME
     MONOCHROME = False
     doc=Document(); configure(doc)
@@ -268,6 +268,11 @@ def build_final():
     doc.add_heading("KẾT LUẬN",1)
     add_text(doc,"Tiểu luận đã nối các lớp kỹ thuật từ ML, CNN, RNN, Knowledge Graph và RAG đến học sâu trên đồ thị và hệ đa tác tử. Các chương thực nghiệm sử dụng notebook, checkpoint và dữ liệu có thể kiểm tra lại. Project cuối cùng cho thấy kiến trúc đa tác tử mang lại khả năng quan sát và phân tách trách nhiệm, trong khi chất lượng dự đoán vẫn phụ thuộc trực tiếp vào dữ liệu, model và tiêu chuẩn đánh giá.")
     add_footer(doc); path=OUT/f"tieuluan_final_CT_08_{STUDENT_ID.split('B23DCCN')[-1]}_NguyenMinhVinh.docx"; doc.save(path); return path
+
+
+def build_final():
+    from build_final_continued import build
+    return build()
 
 
 def project_paragraphs(doc, heading, paragraphs):

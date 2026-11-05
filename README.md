@@ -59,6 +59,8 @@ Q-learning học trên mô phỏng quy trình tổng hợp, không học chính 
 
 ## Hồ sơ nộp bài
 
+Quyển Final đã được viết tiếp từ tiểu luận 3 theo bố cục bảy chương của bài Kiên. Chương 1–5 giữ dataset và kết quả cũ; Chương 6 bổ sung MLP/GCN/GraphSAGE trên 1.600 mẫu CDC của sinh viên; Chương 7 dùng Agent hiện tại, PyTorch và Neo4j. Xem `docs/FINAL_CONTINUATION.md`. Notebook graph mới: `notebooks/10_deep_graph_cdc.ipynb`.
+
 - `report/tieuluan_final_CT_08_934_NguyenMinhVinh.pdf`: quyển tổng hợp ML, CNN, RNN, Knowledge Graph, học sâu trên đồ thị và hệ đa tác tử.
 - `report/project01_CT_08_934_NguyenMinhVinh.pdf`: báo cáo riêng của hệ DiaAgents, gồm kiến trúc, dữ liệu, code, notebook, benchmark và demo.
 - `notebooks/`: notebook đã chạy.
