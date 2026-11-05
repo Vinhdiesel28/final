@@ -1,0 +1,128 @@
+<meta charset="utf-8"><style>body{margin:0;padding:20px;background:white;color:#111;font:17px Arial}section{border:1px solid #888;padding:18px}pre{font:17px/1.45 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;text-align:left}table{border-collapse:collapse;font:15px/1.4 Arial;margin:16px 0;width:100%}td,th{border:1px solid #aaa;padding:6px;text-align:left;overflow-wrap:anywhere}h3{font-size:18px}.output{border-top:1px solid #aaa;padding-top:10px}</style><section><h3>In [1] — Cell 1</h3><pre>"""Train a real PyTorch MLP with recorded epoch losses and held-out evaluation."""
+import copy
+import json
+import sys
+import time
+from pathlib import Path
+import joblib
+import numpy as np
+import pandas as pd
+import torch
+from torch import nn
+from sklearn.base import clone
+from sklearn.model_selection import train_test_split
+
+ROOT = Path.cwd().parent if Path.cwd().name == 'notebooks' else Path.cwd()
+sys.path.insert(0, str(ROOT/'tools'))
+sys.path.insert(0, str(ROOT/'src'))
+from torch_model import RiskMLP, TorchPipeline
+from train_models import FEATURES, metric_row, choose_threshold
+
+
+def main():
+    torch.manual_seed(42); np.random.seed(42); torch.set_num_threads(2)
+    df = pd.read_csv(ROOT/'data/diabetes_prediction_dataset.csv').drop_duplicates()
+    x, y = df[FEATURES], df.diabetes.astype(int)
+    xt, xv, yt, yv = train_test_split(x, y, test_size=.30, stratify=y, random_state=42)
+    xv, xe, yv, ye = train_test_split(xv, yv, test_size=.5, stratify=yv, random_state=42)
+    old = joblib.load(ROOT/'artifacts/diabetes_model.joblib')
+    pre = clone(old['pipeline'].named_steps['preprocess'])
+    a = torch.tensor(pre.fit_transform(xt), dtype=torch.float32)
+    b = torch.tensor(pre.transform(xv), dtype=torch.float32)
+    target = torch.tensor(yt.to_numpy(), dtype=torch.float32)
+    valid = torch.tensor(yv.to_numpy(), dtype=torch.float32)
+    model = RiskMLP(a.shape[1]); optimizer = torch.optim.Adam(model.parameters(), lr=.001)
+    criterion = nn.BCEWithLogitsLoss()
+    best, patience, history = float('inf'), 0, []
+    started = time.perf_counter()
+    for epoch in range(1, 61):
+        model.train(); order = torch.randperm(len(a)); total = 0.
+        for ids in order.split(512):
+            optimizer.zero_grad(); loss = criterion(model(a[ids]), target[ids])
+            loss.backward(); optimizer.step(); total += loss.item()*len(ids)
+        model.eval()
+        with torch.inference_mode(): value = criterion(model(b), valid).item()
+        history.append({'epoch':epoch, 'train_loss':total/len(a), 'validation_loss':value})
+        if value &lt; best-1e-5:
+            best = value; state = copy.deepcopy(model.state_dict()); patience = 0
+        else: patience += 1
+        if epoch % 5 == 0: print(history[-1], flush=True)
+        if patience &gt;= 8: break
+    checkpoint = ROOT/'artifacts/pytorch_mlp.pt'
+    torch.save({'state_dict':state, 'input_dim':a.shape[1]}, checkpoint)
+    joblib.dump(pre, ROOT/'artifacts/pytorch_preprocess.joblib')
+    pipe = TorchPipeline(checkpoint, pre); threshold = choose_threshold(pipe, xv, yv)
+    duration = time.perf_counter()-started
+    report = {'architecture':[int(a.shape[1]),64,32,1], 'framework':'PyTorch',
+              'seed':42, 'threshold':threshold, 'epochs':len(history),
+              'splits':{'train':len(xt),'validation':len(xv),'test':len(xe)},
+              'validation':metric_row('PyTorch MLP',pipe,xv,yv,threshold,duration),
+              'test':metric_row('PyTorch MLP',pipe,xe,ye,threshold,duration)}
+    (ROOT/'artifacts/pytorch_metadata.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
+    pd.DataFrame(history).to_csv(ROOT/'results/pytorch_training_history.csv',index=False)
+    print(json.dumps(report, indent=2), flush=True)
+
+
+main()
+</pre><div class="output"><h3>Output</h3><pre>{'epoch': 5, 'train_loss': 0.1103064529813857, 'validation_loss': 0.10737299174070358}
+</pre><pre>{'epoch': 10, 'train_loss': 0.09875827253499292, 'validation_loss': 0.09522087126970291}
+</pre><pre>{'epoch': 15, 'train_loss': 0.08968029985246122, 'validation_loss': 0.08688537776470184}
+</pre><pre>{'epoch': 20, 'train_loss': 0.08638361140719429, 'validation_loss': 0.08472991734743118}
+</pre><pre>{'epoch': 25, 'train_loss': 0.08405714332141916, 'validation_loss': 0.08292879164218903}
+</pre><pre>{'epoch': 30, 'train_loss': 0.08245553315592793, 'validation_loss': 0.08220580965280533}
+</pre><pre>{'epoch': 35, 'train_loss': 0.08221205861964623, 'validation_loss': 0.08161041885614395}
+</pre><pre>{'epoch': 40, 'train_loss': 0.08120471897261844, 'validation_loss': 0.08182726055383682}
+</pre><pre>{'epoch': 45, 'train_loss': 0.08047949335229007, 'validation_loss': 0.08208499848842621}
+</pre><pre>{'epoch': 50, 'train_loss': 0.08026366776454481, 'validation_loss': 0.0815211832523346}
+</pre><pre>{'epoch': 55, 'train_loss': 0.0801739046240742, 'validation_loss': 0.08131329715251923}
+</pre><pre>{'epoch': 60, 'train_loss': 0.07980413572403137, 'validation_loss': 0.08120355010032654}
+</pre><pre>{
+  "architecture": [
+    15,
+    64,
+    32,
+    1
+  ],
+  "framework": "PyTorch",
+  "seed": 42,
+  "threshold": 0.39,
+  "epochs": 60,
+  "splits": {
+    "train": 69990,
+    "validation": 14998,
+    "test": 14998
+  },
+  "validation": {
+    "model": "PyTorch MLP",
+    "threshold": 0.39,
+    "accuracy": 0.9723963195092679,
+    "precision": 0.9735973597359736,
+    "recall": 0.6941176470588235,
+    "f1": 0.8104395604395604,
+    "roc_auc": 0.9768581728399295,
+    "pr_auc": 0.8812323056196648,
+    "brier": 0.02272495157594296,
+    "tn": 13699,
+    "fp": 24,
+    "fn": 390,
+    "tp": 885,
+    "train_seconds": 35.49
+  },
+  "test": {
+    "model": "PyTorch MLP",
+    "threshold": 0.39,
+    "accuracy": 0.9702627016935591,
+    "precision": 0.9747995418098511,
+    "recall": 0.6674509803921569,
+    "f1": 0.792364990689013,
+    "roc_auc": 0.9745733011560669,
+    "pr_auc": 0.8686875149076798,
+    "brier": 0.024250594356935926,
+    "tn": 13701,
+    "fp": 22,
+    "fn": 424,
+    "tp": 851,
+    "train_seconds": 35.49
+  }
+}
+</pre></div></section>

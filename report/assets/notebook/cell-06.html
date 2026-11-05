@@ -1,0 +1,79 @@
+<meta charset="utf-8"><style>body{margin:0;padding:20px;background:white;color:#111;font:17px Arial}section{border:1px solid #888;padding:18px}pre{font:17px/1.45 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;text-align:left}table{border-collapse:collapse;font:15px/1.4 Arial;margin:16px 0;width:100%}td,th{border:1px solid #aaa;padding:6px;text-align:left;overflow-wrap:anywhere}h3{font-size:18px}.output{border-top:1px solid #aaa;padding-top:10px}</style><section><h3>In [6] — Cell 6</h3><pre>store=services.knowledge.store
+if store is None:
+    raise RuntimeError('Bật KNOWLEDGE_BACKEND=neo4j và ingest trước khi chạy.')
+display(pd.DataFrame(store.query(
+    'MATCH (n) RETURN labels(n)[0] AS label,count(n) AS count')))
+display(pd.DataFrame(store.query(
+    'MATCH ()-[r]-&gt;() RETURN type(r) AS relation,count(r) AS count')))
+print('Documents loaded:',len(services.knowledge.documents))</pre><div class="output"><h3>Output</h3><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>DiaDocument</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>DiaEntity</td>
+      <td>18</td>
+    </tr>
+  </tbody>
+</table>
+</div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>relation</th>
+      <th>count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>DIA_RELATION</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>SUPPORTED_BY</td>
+      <td>24</td>
+    </tr>
+  </tbody>
+</table>
+</div><pre>Documents loaded: 8
+</pre></div></section>

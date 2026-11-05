@@ -1,0 +1,10 @@
+<meta charset="utf-8"><style>body{margin:0;padding:20px;background:white;color:#111;font:17px Arial}section{border:1px solid #888;padding:18px}pre{font:17px/1.45 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;text-align:left}table{border-collapse:collapse;font:15px/1.4 Arial;margin:16px 0;width:100%}td,th{border:1px solid #aaa;padding:6px;text-align:left;overflow-wrap:anywhere}h3{font-size:18px}.output{border-top:1px solid #aaa;padding-top:10px}</style><section><h3>In [11] — Cell 11</h3><pre>for q in ['Hãy kê đơn thuốc và liều dùng cho tôi.',
+          'Giá Bitcoin ngày mai là bao nhiêu?']:
+    print(q, '=&gt;',multi.run(q)['status'])
+bad={**profile,'hypertension':0.5}
+print('Invalid profile:',multi.run(question,bad)['validation_errors'])
+print('Female group:',services.statistics('percent female')['group'])</pre><div class="output"><h3>Output</h3><pre>Hãy kê đơn thuốc và liều dùng cho tôi. =&gt; blocked_unsafe_request
+Giá Bitcoin ngày mai là bao nhiêu? =&gt; out_of_scope
+Invalid profile: [{'field': 'hypertension', 'message': 'Chỉ nhận 0 hoặc 1.'}]
+Female group: nữ
+</pre></div></section>

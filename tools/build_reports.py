@@ -124,6 +124,7 @@ def table(doc, headers, rows, widths=None):
         cells=t.add_row().cells
         for j,val in enumerate(rowdata):
             c=cells[j]; c.text=str(val); c.vertical_alignment=WD_CELL_VERTICAL_ALIGNMENT.CENTER; set_cell_margins(c)
+            c.paragraphs[0].alignment=WD_ALIGN_PARAGRAPH.LEFT
             if i%2 and not MONOCHROME: shade(c,"EDF3F8")
             for r in c.paragraphs[0].runs: font(size=9.5)(r)
             if widths: c.width=Cm(widths[j])
@@ -133,6 +134,7 @@ def table(doc, headers, rows, widths=None):
 
 def code(doc, text):
     p=doc.add_paragraph(); p.paragraph_format.left_indent=Cm(.5); p.paragraph_format.right_indent=Cm(.5); p.paragraph_format.space_before=Pt(4); p.paragraph_format.space_after=Pt(6)
+    p.alignment = WD_ALIGN_PARAGRAPH.LEFT
     run=p.add_run(text[:2200]); font(name="Consolas",size=8.5)(run)
     if not MONOCHROME:
         pPr=p._p.get_or_add_pPr(); shd=OxmlElement("w:shd"); shd.set(qn("w:fill"),"F2F2F2"); pPr.append(shd)

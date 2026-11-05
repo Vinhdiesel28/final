@@ -1,0 +1,57 @@
+<meta charset="utf-8"><style>body{margin:0;padding:20px;background:white;color:#111;font:17px Arial}section{border:1px solid #888;padding:18px}pre{font:17px/1.45 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;text-align:left}table{border-collapse:collapse;font:15px/1.4 Arial;margin:16px 0;width:100%}td,th{border:1px solid #aaa;padding:6px;text-align:left;overflow-wrap:anywhere}h3{font-size:18px}.output{border-top:1px solid #aaa;padding-top:10px}</style><section><h3>In [12] — Cell 12</h3><pre>summary=json.loads((ROOT/'results/agent_benchmark_summary.json').read_text())
+display(pd.DataFrame(summary)[['system','cases','task_success_rate',
+ 'citation_recall','citation_precision','audit_coverage',
+ 'mean_latency_ms','p95_latency_ms']])</pre><div class="output"><h3>Output</h3><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>system</th>
+      <th>cases</th>
+      <th>task_success_rate</th>
+      <th>citation_recall</th>
+      <th>citation_precision</th>
+      <th>audit_coverage</th>
+      <th>mean_latency_ms</th>
+      <th>p95_latency_ms</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>single</td>
+      <td>58</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>0.2861</td>
+      <td>0.0</td>
+      <td>175.22</td>
+      <td>496.15</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>multi</td>
+      <td>58</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>0.2861</td>
+      <td>1.0</td>
+      <td>33.57</td>
+      <td>116.38</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></section>

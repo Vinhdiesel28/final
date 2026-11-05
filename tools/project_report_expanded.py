@@ -55,7 +55,7 @@ def _flow_image(path: Path):
         (390, 90, 700, 240, "Coordinator\nđịnh tuyến intent"),
         (390, 285, 700, 435, "Validation\nkiểm tra schema"),
         (390, 480, 700, 630, "Specialist\nmodel / RAG / thống kê"),
-        (790, 285, 1110, 500, "Explanation\ntổng hợp bằng chứng"),
+        (790, 285, 1110, 500, "Critic + Workflow\nExplanation"),
         (1200, 285, 1510, 500, "Verifier Safety\ntrạng thái cuối"),
         (1200, 650, 1510, 800, "Trace + citation\nhiển thị web"),
     ]
@@ -87,8 +87,8 @@ def _deployment_image(path: Path):
     boxes = [
         (70, 260, 360, 500, "Web UI\nHTML / CSS / JS"),
         (480, 200, 820, 560, "FastAPI\n/api/run\n/api/compare\n/api/benchmark"),
-        (940, 60, 1280, 250, "Model artifacts\njoblib + metadata"),
-        (940, 285, 1280, 475, "Knowledge\ncorpus + graph"),
+        (940, 60, 1280, 250, "ML + PyTorch\njoblib + pt + JSON"),
+        (940, 285, 1280, 475, "Neo4j\nKB + KG"),
         (940, 510, 1280, 700, "Datasets\nCSV dự đoán + CDC"),
         (1370, 260, 1560, 500, "Render\nWeb Service"),
     ]
@@ -130,6 +130,8 @@ def _model_chart(path: Path, models):
 def build_project_expanded(br):
     br.MONOCHROME = True
     doc = Document()
+    torch_meta = json.loads((br.ROOT/'artifacts/pytorch_metadata.json').read_text())
+    benchmark = json.loads((br.ROOT/'results/agent_benchmark_summary.json').read_text())
     br.configure(doc)
     br.cover(
         doc,
@@ -146,6 +148,9 @@ def build_project_expanded(br):
         "CHƯƠNG 4  CÁC THÀNH PHẦN CỦA HỆ THỐNG", "4.1  Machine Learning thành Prediction Agent", "4.1.1  Dữ liệu và bài toán", "4.1.2  Tiền xử lý và chia dữ liệu", "4.1.3  Mô hình và huấn luyện", "4.1.4  Từ mô hình thành agent", "4.2  Knowledge Base và RAG", "4.2.1  Nguồn tri thức", "4.2.2  BM25 và Knowledge Graph", "4.2.3  Kiểm soát bằng chứng", "4.3  Statistics Agent", "4.4  Validation và Safety", "4.5  Single Agent và Multi Agent",
         "CHƯƠNG 5  CODE, DEMO VÀ ĐÁNH GIÁ", "5.1  Cấu trúc mã nguồn", "5.2  Các lớp và hàm chính", "5.3  Cách chạy", "5.4  Demo câu hỏi kiến thức", "5.5  Demo đánh giá hồ sơ", "5.6  Demo safety và ngoài phạm vi", "5.7  Thiết kế benchmark", "5.8  Kết quả và phân tích", "5.9  Triển khai Render", "5.10  Hạn chế và hướng phát triển", "KẾT LUẬN",
     ]
+    toc.insert(toc.index('CHƯƠNG 5  CODE, DEMO VÀ ĐÁNH GIÁ'), '4.6  PyTorch Neo4j và điều phối có phản biện')
+    toc.insert(toc.index('KẾT LUẬN'), '5.11  Notebook thực thi và giải thích từng cell')
+    toc.insert(toc.index('KẾT LUẬN'), '5.12  Code huấn luyện và kết quả PyTorch')
     br.add_static_toc(doc, toc)
 
     _heading(doc, "DANH MỤC TỪ VIẾT TẮT", 1)
@@ -187,7 +192,7 @@ def build_project_expanded(br):
 
     _heading(doc, "TÓM TẮT", 1)
     br.add_text(doc, "Project xây dựng DiaAgents, một hệ hỗ trợ học tập về nguy cơ bệnh tiểu đường, trong đó cùng một yêu cầu được xử lý bởi baseline Single Agent hoặc hệ Multi-Agent. Hai kiến trúc dùng chung checkpoint, dataset, kho tri thức, thuật toán thống kê và policy; nhờ vậy phép so sánh tập trung vào cách tổ chức và khả năng quan sát thay vì lợi thế dữ liệu hoặc mô hình.")
-    br.add_text(doc, "Khối dự đoán huấn luyện Logistic Regression, Random Forest và MLP trên Diabetes Prediction Dataset 100.000 dòng. MLP được chọn bằng F1 validation với threshold 0,385; test F1 đạt 0,7925 và ROC AUC đạt 0,9749. Khối thống kê đọc trực tiếp CDC BRFSS 2015 gồm 253.680 dòng. Khối tri thức dùng corpus tám tài liệu có nguồn và Knowledge Graph 16 cạnh, truy xuất bằng BM25, sau đó Verifier yêu cầu citation trước khi đánh dấu câu trả lời được hỗ trợ.")
+    br.add_text(doc, f"Khối dự đoán gồm Logistic Regression, Random Forest, MLP sklearn và MLP PyTorch trên Diabetes Prediction Dataset 100.000 dòng. PyTorch của demo đạt test F1 {torch_meta['test']['f1']:.4f}, dùng threshold {torch_meta['threshold']:.3f}; model sklearn được giữ để đối chiếu. CDC BRFSS 2015 có 253.680 dòng dùng thống kê mô tả. Neo4j lưu tám tài liệu và 16 quan hệ tri thức. MessageBus, Critic và Q-learning phối hợp các bước xử lý có kiểm soát.")
     br.add_text(doc, "Benchmark kiểm soát gồm 58 tình huống cho mỗi kiến trúc. Hai hệ cùng đạt 100% routing accuracy, task success, citation recall và safety block trên bộ contract hiện tại. Multi-Agent tạo trace chuyên trách cho toàn bộ case nên audit coverage đạt 100%, trong khi Single Agent chỉ có một trace tổng hợp. Kết quả này minh họa lợi ích kiểm toán của việc tách tác tử; không được diễn giải thành bằng chứng rằng Multi-Agent luôn chính xác hơn hoặc hệ thống có giá trị chẩn đoán.")
 
     _heading(doc, "CHƯƠNG 1  GIỚI THIỆU", 1)
@@ -232,10 +237,10 @@ def build_project_expanded(br):
     ], [4.5, 5.5, 5.5])
     _paragraphs(br, doc, "2.3  Giao tiếp và trạng thái dùng chung", [
         "Các agent trao đổi qua đối tượng State thay vì chuỗi văn bản tự do. State gồm mode, question, profile, request_id, intent, prediction, statistics, knowledge, validation_errors, traces, status, answer và safety_flags. Schema cố định giúp notebook, API và giao diện đọc cùng cấu trúc.",
-        "Mỗi Trace ghi agent, status, duration_ms, summary và tool. Trace chỉ chứa mô tả kỹ thuật tối thiểu, không chứa dữ liệu định danh. request_id phân biệt lượt chạy; total_duration_ms được tính từ các bước. Cơ chế này tạo audit trail mà không yêu cầu một hệ message broker phức tạp cho demo học thuật.",
+        "Trace ghi agent, status, duration_ms, summary và tool. total_duration_ms đo wall time từ đầu đến serialize. MessageBus lưu REQUEST, INFORM, CHALLENGE, RESPONSE hoặc FAILURE. Message có thể chứa profile nên demo không nhập dữ liệu định danh. Bus chạy trong tiến trình, chưa có broker phân tán hoặc persistence.",
         "Giao tiếp được tổ chức theo pipeline có điều kiện. Coordinator chọn intent; Validation có thể chặn; specialist ghi kết quả vào State; Explanation chỉ đọc kết quả đã tạo; Verifier kiểm tra citation và cờ an toàn trước khi trả trạng thái cuối. Nhờ vậy mỗi agent có đầu vào và đầu ra rõ ràng.",
     ])
-    br.code(doc, "state.intent = intent_of(question, profile)\nvalidation_agent.run(state)\nif state.validation_errors:\n    state.status = 'invalid_input'\nelse:\n    specialist.run(state)\n    verifier.run(state)")
+    br.code(doc, "bus.register('ValidationAgent', lambda p: {\n    'errors': services.model.validate(p['profile'])\n})\nresult = bus.request('CoordinatorAgent', 'ValidationAgent',\n                     {'profile': profile})\nprint(result['errors'])")
     _paragraphs(br, doc, "2.4  Guardrail và khả năng kiểm toán", [
         "Guardrail không phải một dòng cảnh báo trang trí. Yêu cầu kê đơn, chọn thuốc, tăng giảm liều hoặc kết luận chắc chắn được nhận diện trước khi gọi model. Câu hỏi tài chính, thời tiết và chủ đề ngoài bệnh tiểu đường trả out_of_scope. Hồ sơ sai miền trả invalid_input với lỗi theo trường.",
         "Câu trả lời kiến thức chỉ được đánh dấu supported khi có citation. Nếu retrieval không tìm được nguồn phù hợp, Verifier đặt insufficient_evidence. Risk score trả supported_with_limitations và luôn kèm ngưỡng cùng thông báo không phải chẩn đoán.",
@@ -268,7 +273,7 @@ def build_project_expanded(br):
         ["Prediction", "joblib checkpoint", "profile hợp lệ", "score, threshold"],
         ["Statistics", "pandas_exact", "question nhóm", "count, positive, rate"],
         ["Retrieval", "BM25", "question", "documents, citations"],
-        ["Graph", "BFS 2 hop", "entities", "paths"],
+        ["Graph", "Cypher 2 hop", "entities", "paths"],
         ["Explanation", "grounded composer", "evidence", "answer"],
         ["Verifier Safety", "contract guard", "state", "final status"],
     ], [3.2, 3.5, 4.5, 4.5])
@@ -280,17 +285,17 @@ def build_project_expanded(br):
     p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER; p.add_run().add_picture(str(flow), width=Cm(15.5))
     _caption(doc, "Hình 3.2  Luồng xử lý một yêu cầu")
     _paragraphs(br, doc, "3.4  Công nghệ và tổ chức mã nguồn", [
-        "Backend dùng FastAPI và Pydantic để kiểm tra request. Model được lưu joblib; metadata JSON giữ split, metric, threshold và baseline. Dataset giữ CSV để notebook và web dùng cùng nguồn. Knowledge Base nhỏ được lưu JSON để triển khai nhẹ trên Render. Giao diện dùng HTML, CSS và JavaScript thuần.",
-        "Cấu trúc này ưu tiên khả năng chạy lại và triển khai đơn giản. Project không cần database ngoài hoặc API key. Khi mở rộng sang kho tri thức lớn, lớp KnowledgeService có thể được thay bằng vector database và graph database mà không đổi contract của agent.",
+        "Backend dùng FastAPI và Pydantic. Checkpoint scikit-learn lưu joblib; mạng PyTorch lưu state_dict trong tệp pt. Metadata giữ split, metric và threshold. Dataset giữ CSV; Neo4j lưu văn bản, thực thể, quan hệ và bằng chứng. JSON là nguồn nhập dữ liệu và chế độ chạy gọn được chọn tường minh.",
+        "KNOWLEDGE_BACKEND=neo4j yêu cầu kết nối database thật; lỗi kết nối không tự chuyển sang JSON. Bản cục bộ dùng Neo4j Community trong Docker. Khi đưa lên Render, cần cấu hình URI, tài khoản và mật khẩu của Neo4j bên ngoài. Mật khẩu không nằm trong notebook hoặc GitHub.",
     ])
     deploy = br.ASSETS / "deployment_project_bw.png"; _deployment_image(deploy)
     p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER; p.add_run().add_picture(str(deploy), width=Cm(15.5))
     _caption(doc, "Hình 3.3  Thành phần triển khai và nơi lưu dữ liệu")
     br.table(doc, ["Thành phần", "Công nghệ", "Vai trò"], [
         ["API", "FastAPI + Pydantic", "Schema và endpoint"],
-        ["Model", "scikit-learn + joblib", "Pipeline dự đoán"],
+        ["Model", "scikit-learn + PyTorch", "ML và mạng 15–64–32–1"],
         ["Xử lý dữ liệu", "pandas + NumPy", "Huấn luyện và thống kê"],
-        ["Kho tri thức", "JSON + BM25 + BFS", "RAG và KG cục bộ"],
+        ["Kho tri thức", "Neo4j + BM25 + Cypher", "KB và KG có nguồn"],
         ["Notebook", "Jupyter", "Giải thích và tái lập"],
         ["Web", "HTML/CSS/JavaScript", "Demo so sánh"],
         ["Triển khai", "Render Blueprint", "Web Service"],
@@ -336,13 +341,13 @@ def build_project_expanded(br):
     p = doc.add_paragraph(); p.alignment = WD_ALIGN_PARAGRAPH.CENTER; p.add_run().add_picture(str(model_chart), width=Cm(15.5))
     _caption(doc, "Hình 4.1  So sánh metric của ba mô hình trên tập test")
     _paragraphs(br, doc, "4.1.4  Từ mô hình thành agent", [
-        "DiabetesModelService nạp diabetes_model.joblib và model_metadata.json khi khởi động. validate_profile kiểm tra trường và miền; predict trả risk_score, threshold, predicted_label, model và notice. Prediction Agent không biết chi tiết pipeline nội bộ và không thay đổi threshold theo câu hỏi.",
+        "DiabetesModelService nạp checkpoint sklearn làm ý kiến đối chiếu và checkpoint PyTorch làm đầu ra chính của demo mở rộng. validate kiểm tra trường và miền; predict trả probability, threshold, predicted_class, model và second_opinion. Không thay đổi threshold theo câu hỏi.",
         "Risk score được trình bày như đầu ra của model trên dataset cụ thể, không phải xác suất lâm sàng đã hiệu chuẩn cho một cá nhân. Explanation Agent ghép score với citation về xét nghiệm và yếu tố nguy cơ, còn Verifier buộc thông báo không chẩn đoán.",
     ])
-    br.code(doc, "service = DiabetesModelService('artifacts/diabetes_model.joblib')\nerrors = service.validate_profile(profile)\nif not errors:\n    result = service.predict(profile)\n    # risk_score, threshold, predicted_label, notice")
+    br.code(doc, "service = DiabetesModelService()\nerrors = service.validate(profile)\nif not errors:\n    result = service.predict(profile)\n    print(result['probability'], result['second_opinion'])")
 
     _paragraphs(br, doc, "4.2  Knowledge Base và RAG", [
-        "KnowledgeService hỗ trợ câu hỏi kiến thức và giải thích. Project dùng retrieval tất định thay vì LLM: câu hỏi được chuẩn hóa, tách token, chấm BM25 trên title và text, chọn tối đa ba tài liệu, sau đó trích câu có độ giao token cao. Citation chứa id, title, organization, URL và ngày as_of.",
+        "KnowledgeService chuẩn hóa câu hỏi, chấm BM25 trên title và text, lấy ba tài liệu rồi bổ sung evidence từ đồ thị, tối đa năm tài liệu. Câu trả lời trích câu phù hợp với token truy vấn. Citation đầu ra chứa id, title, URL và score; metadata nguồn đầy đủ được lưu trong KB. Đây là truy xuất và trích xuất tất định, chưa có LLM sinh văn bản.",
         "Knowledge Graph bổ sung quan hệ có cấu trúc. Graph không thay thế văn bản mà cho biết entity liên quan qua cạnh nào và evidence nào chứng minh. Câu trả lời cuối vẫn phải có citation từ corpus.",
     ])
     corpus = json.loads((br.ROOT / "knowledge/corpus.json").read_text(encoding="utf-8"))
@@ -360,16 +365,16 @@ def build_project_expanded(br):
     ], [4.5, 4, 7])
     _paragraphs(br, doc, "4.2.2  BM25 và Knowledge Graph", [
         "BM25 tăng trọng số token hiếm và điều chỉnh theo độ dài tài liệu. Với corpus nhỏ, chỉ mục được tính khi KnowledgeService khởi tạo. Kết quả sắp theo điểm giảm dần rồi theo id để ổn định khi bằng điểm. Chuẩn hóa tiếng Việt giúp truy vấn có và không dấu chia sẻ token cơ bản.",
-        "Graph được lưu dưới dạng bộ ba subject-relation-object kèm evidence id. Dịch vụ tạo adjacency hai chiều, tìm seed xuất hiện trong câu hỏi và duyệt BFS tối đa hai hop. Số cạnh trả về được giới hạn để tránh trace quá dài.",
+        "Neo4j lưu DiaEntity và DIA_RELATION kèm evidence id. Cypher tìm seed xuất hiện trong câu hỏi rồi duyệt tối đa hai hop, giới hạn 16 cạnh. Quan hệ SUPPORTED_BY nối thực thể với DiaDocument. Chế độ JSON dùng BFS cho cùng contract; backend luôn được công khai trong kết quả.",
     ])
-    br.code(doc, "score += idf[term] * tf * 2.5 / (tf + 1.5 * length_norm)\n\nqueue = deque((seed, 0) for seed in seeds)\nwhile queue:\n    node, depth = queue.popleft()\n    if depth < 2:\n        expand(node)")
+    br.code(doc, "MATCH (s:DiaEntity) WHERE s.name IN $seeds\nMATCH p=(s)-[:DIA_RELATION*1..2]-(o:DiaEntity)\nUNWIND relationships(p) AS r\nRETURN DISTINCT startNode(r).name AS subject,\n       r.relation AS relation,\n       endNode(r).name AS object, r.evidence AS evidence\nLIMIT 16")
     _paragraphs(br, doc, "4.2.3  Kiểm soát bằng chứng", [
         "Retrieval Agent trả tài liệu và citations riêng biệt. Explanation chỉ tổng hợp câu có trong evidence; Verifier kiểm tra số citation. Nếu không có citation, status thành insufficient_evidence. Với câu hỏi có nguồn, status supported và giao diện hiển thị link.",
-        "Benchmark đo citation recall theo gold source tối thiểu và citation precision theo số nguồn trả về. Citation recall đạt 100%, precision 38,89% vì hệ thống trả tối đa ba tài liệu trong khi gold thường ghi một nguồn tối thiểu. Đây là hạn chế của annotation và reranking, không phải lý do bỏ citation thừa khỏi báo cáo.",
+        "Benchmark đo citation recall theo gold source tối thiểu và precision theo số nguồn trả về. Các số đo phiên bản hiện tại nằm ở mục 5.8. Graph có thể bổ sung nguồn ngoài gold tối thiểu, vì vậy precision cần được đọc cùng chất lượng annotation; không chỉnh sửa nguồn trả về chỉ để làm đẹp metric.",
     ])
 
     _paragraphs(br, doc, "4.3  Statistics Agent", [
-        "Statistics Agent dùng CDC BRFSS 2015 gồm 253.680 dòng và 22 cột. Không có model sinh số: agent lọc DataFrame theo nhóm, đếm tổng, đếm Diabetes_012 lớn hơn 0 và tính rate. Câu trả lời kèm tử số, mẫu số và công thức.",
+        "Statistics Agent dùng CDC BRFSS 2015 gồm 253.680 dòng và 22 cột. Agent lọc DataFrame, đếm Diabetes_012 lớn hơn 0 và tính rate. Nhãn này gộp tiền tiểu đường (1) và tiểu đường (2), không phải tỷ lệ riêng người mắc tiểu đường. Đây là thống kê mẫu không trọng số, không suy rộng thành tỷ lệ dân số.",
         "Các nhóm hỗ trợ gồm toàn bộ mẫu, nữ, nam, tăng huyết áp và nhóm tuổi mã 10 đến 13. Mã tuổi là biến đã tiền xử lý của BRFSS; không được diễn giải tuyệt đối thành mọi người trên 60 tuổi. Giới hạn này được ghi trong báo cáo để tránh biến nhãn nhóm kỹ thuật thành kết luận dân số.",
         "Tách Statistics Agent khỏi Prediction Agent ngăn nhầm lẫn giữa thống kê mô tả và dự đoán cá nhân. Một rate của nhóm không phải xác suất của một người; risk score của model cũng không phải prevalence.",
     ])
@@ -389,6 +394,14 @@ def build_project_expanded(br):
         "SingleAgent.run tạo State, route, gọi các dịch vụ cần thiết và ghi một trace tên SingleAgent. MultiAgent.run thực hiện cùng logic nghiệp vụ nhưng ghi CoordinatorAgent, ValidationAgent, PredictionAgent, StatisticsAgent, RetrievalAgent, GraphAgent, ExplanationAgent và VerifierSafetyAgent theo nhánh thực tế.",
         "Cả hai được khởi tạo từ cùng Services. Vì vậy task success bằng nhau trên contract hiện tại là kết quả hợp lý. Giá trị đo được của Multi-Agent nằm ở trace, khả năng định vị specialist và mở rộng từng contract, không phải một lời khẳng định tổng quát về trí thông minh.",
         "Thiết kế benchmark tách metric đầu ra và metric kiến trúc. Routing accuracy, task success, safety và citation phản ánh hành vi người dùng thấy. Audit coverage và trace steps phản ánh khả năng quan sát. Khi trình bày kết quả phải giữ hai nhóm metric này riêng.",
+    ])
+
+    _paragraphs(br, doc, '4.6  PyTorch Neo4j và điều phối có phản biện', [
+        'Mạng PyTorch nhận 15 giá trị sau tiền xử lý, đi qua các lớp 64 và 32 neuron với ReLU, Dropout 0,15 rồi một logit. Adam dùng learning rate 0,001, batch 512 và BCEWithLogitsLoss. Checkpoint được giữ theo validation loss; threshold được chọn riêng trên validation F1. Lịch sử từng epoch được lưu CSV.',
+        f"Lần chạy ghi nhận {torch_meta['epochs']} epoch, threshold {torch_meta['threshold']:.3f}, test F1 {torch_meta['test']['f1']:.4f} và ROC AUC {torch_meta['test']['roc_auc']:.4f}. PyTorch là nhánh deep learning được triển khai để khảo sát và trình diễn, không phải tuyên bố tốt hơn sklearn. Hai model cùng dữ liệu nên sự đồng thuận không phải xác nhận độc lập.",
+        'MessageBus đăng ký các handler Validation, Prediction, Retrieval, Critic và WorkflowRL. REQUEST tạo lời gọi, INFORM trả kết quả; lỗi tạo FAILURE rồi được ném lên lớp gọi. Các agent chạy đồng bộ trong một tiến trình Python. Các stage Coordinator, Graph, Explanation và Verifier cũng có trace, nhưng không phải tất cả là tiến trình hay LLM riêng biệt.',
+        'Critic kiểm tra bất đồng nhãn, khoảng cách score với threshold dưới 0,05 và thiếu citation. Nếu cần, Critic gửi CHALLENGE; Prediction trả RESPONSE về checkpoint và cách chọn ngưỡng. Phản biện theo luật giúp làm rõ giới hạn, không tự sửa score để đạt đồng thuận. Single Agent cũng dùng cùng reviewer để phép so sánh giữ công bằng.',
+        'Q-learning dùng tám trạng thái biểu diễn thiếu dữ liệu, có bằng chứng và cần xem xét. Bốn hành động là hỏi thêm, xem nguồn, giải thích score và yêu cầu người kiểm tra. Môi trường tổng hợp huấn luyện 3.000 episode; alpha 0,2, gamma 0,9, epsilon 0,15. Reward biểu diễn độ hoàn thành quy trình, không biểu diễn lợi ích sức khỏe. Action mask chặn các lựa chọn không phù hợp. Không có hành động kê đơn hoặc thay đổi điều trị.',
     ])
 
     _heading(doc, "CHƯƠNG 5  CODE, DEMO VÀ ĐÁNH GIÁ", 1)
@@ -454,8 +467,8 @@ def build_project_expanded(br):
     ], [4, 4, 7.5])
     _paragraphs(br, doc, "5.8  Kết quả và phân tích", [
         "Hai hệ đạt routing accuracy và task success 100% trên contract. Citation recall và safety block đều 100%; false refusal và unsupported claim bằng 0. Kết quả cho thấy các route đã định nghĩa hoạt động trên 58 case, không chứng minh hệ thống đúng cho mọi câu hỏi ngoài bộ benchmark.",
-        "Single Agent có mean trace steps bằng 1 và audit coverage bằng 0 theo định nghĩa specialist stage. Multi-Agent có mean trace steps 3,41 và audit coverage 100%. Mean latency Multi-Agent 13,42 ms, thấp hơn Single 14,24 ms trong lần chạy hiện tại, nhưng chênh lệch nhỏ và không nên xem là ưu thế hiệu năng bền vững.",
-        "Citation precision 38,89% ở cả hai hệ do top-3 retrieval và gold source tối thiểu. Cải tiến hợp lý là reranker, threshold retrieval và gold annotation nhiều nguồn; không nên thay đổi metric hoặc chỉ giữ citation trùng gold vì sẽ che giấu nguồn dư thừa.",
+        f"Mean latency Single là {benchmark[0]['mean_latency_ms']} ms và Multi là {benchmark[1]['mean_latency_ms']} ms. Số trace trung bình tương ứng {benchmark[0]['mean_trace_steps']} và {benchmark[1]['mean_trace_steps']}. Đây là một lượt chạy theo thứ tự Single rồi Multi, có thể chịu ảnh hưởng cache; chưa đủ để kết luận ưu thế tốc độ.",
+        f"Citation precision Single/Multi là {benchmark[0]['citation_precision']:.4f}/{benchmark[1]['citation_precision']:.4f}. Gold chỉ ghi nguồn tối thiểu nên cần mở rộng annotation để đánh giá chất lượng nguồn đầy đủ. Unsupported claim trong script chỉ là proxy thiếu nguồn hoặc thiếu thông báo giới hạn, không phải kiểm chứng mọi phát biểu.",
     ])
     summary = json.loads((br.ROOT / "results/agent_benchmark_summary.json").read_text(encoding="utf-8"))
     chart = br.ASSETS / "benchmark_project_bw.png"; br.benchmark_image(chart, summary)
@@ -465,23 +478,55 @@ def build_project_expanded(br):
         ["Routing accuracy", "100%", "100%", "Định tuyến đúng contract"],
         ["Task success", "100%", "100%", "Hoàn thành điều kiện case"],
         ["Citation recall", "100%", "100%", "Có gold source tối thiểu"],
-        ["Citation precision", "38,89%", "38,89%", "Nguồn đúng trong số nguồn trả"],
+        ["Citation precision", f"{benchmark[0]['citation_precision']*100:.2f}%", f"{benchmark[1]['citation_precision']*100:.2f}%", "Nguồn thuộc gold tối thiểu"],
         ["Safety block", "100%", "100%", "Chặn unsafe case"],
         ["False refusal", "0%", "0%", "Không từ chối nhầm case hợp lệ"],
         ["Audit coverage", "0%", "100%", "Có specialist trace kỳ vọng"],
-        ["Mean trace steps", "1,00", "3,41", "Độ chi tiết trace"],
-        ["Mean latency", "14,24 ms", "13,42 ms", "Thời gian lần benchmark"],
+        ["Mean trace steps", benchmark[0]['mean_trace_steps'], benchmark[1]['mean_trace_steps'], "Độ chi tiết trace"],
+        ["Mean latency", benchmark[0]['mean_latency_ms'], benchmark[1]['mean_latency_ms'], "Thời gian ms của lần benchmark"],
     ], [4.2, 2.5, 2.5, 6.5])
     _paragraphs(br, doc, "5.9  Triển khai Render", [
-        "render.yaml định nghĩa Web Service Python. Build command cài requirements; start command dùng Gunicorn với Uvicorn worker. Repository đã chứa checkpoint, corpus, graph và CSV cần thiết nên demo không cần API key hoặc database ngoài.",
+        "render.yaml định nghĩa Web Service Python. Bản Neo4j cần database bên ngoài với NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD; ingest corpus vào database đó trước khi chạy app. Không dùng localhost của máy cá nhân làm URI trên Render. Checkpoint và CSV nằm trong repository, mật khẩu nằm trong Environment.",
         "Sau khi deploy, kiểm tra /health trước. Tiếp theo thử knowledge, prediction, safety và benchmark. Nếu dịch vụ ngủ theo gói Render, request đầu có thể chậm; đây là cold start của nền tảng, không phải latency benchmark trong artifact.",
     ])
     _paragraphs(br, doc, "5.10  Hạn chế và hướng phát triển", [
         "Benchmark là contract suite tự xây dựng, chưa có bác sĩ gán nhãn chất lượng và chưa có external validation. Corpus chỉ có tám tài liệu, Knowledge Graph 16 cạnh, rule safety dựa trên từ khóa. Dataset dự đoán có nguồn công khai nhưng không đại diện mọi bệnh viện hoặc dân số.",
-        "Hướng tiếp theo là mở rộng corpus có version, xây reranker, thêm kiểm thử prompt injection nếu tích hợp LLM, đánh giá calibration, drift và fairness với nhóm đủ mẫu. Về kiến trúc, có thể thêm message bus thật, persistence, retry và fault injection để đo khả năng cô lập lỗi.",
+        "Hướng tiếp theo là mở rộng corpus, xây reranker, đánh giá calibration, drift và fairness với nhóm đủ mẫu. MessageBus hiện dispatch thật trong tiến trình; cần thêm persistence, retry và fault injection trước khi sử dụng như một hệ phân tán.",
         "Một nghiên cứu triển khai thực tế còn cần bảo mật, đồng thuận, kiểm định lâm sàng, giám sát con người và quy trình cập nhật tri thức. Project hiện chỉ hỗ trợ học tập và trình diễn kỹ thuật.",
     ])
 
+    _heading(doc, '5.11  Notebook thực thi và giải thích từng cell', 2)
+    br.add_text(doc, 'Các hình dưới được chụp từ bản HTML của notebook đã thực thi. Nội dung gồm code và output thực; đây không phải ảnh mượn từ bài mẫu. Mỗi cell import cùng source mà web sử dụng. Notebook đầy đủ nằm tại notebooks/08_project_ml_neo4j_multiagent.ipynb.')
+    notebook=json.loads((br.ROOT/'notebooks/08_project_ml_neo4j_multiagent.ipynb').read_text(encoding='utf-8'))
+    number=0
+    explanation=''
+    for cell in notebook['cells']:
+        source=''.join(cell['source'])
+        if cell['cell_type']=='markdown':
+            explanation=source
+            continue
+        number+=1
+        h=_heading(doc, f'5.11.{number}  '+explanation.splitlines()[0].lstrip('# ').split('. ',1)[-1],3)
+        h.paragraph_format.page_break_before=True
+        br.add_text(doc, '\n'.join(explanation.splitlines()[1:])).paragraph_format.keep_with_next=True
+        pics=sorted((br.ASSETS/'notebook').glob(f'cell-{number:02d}-*.png'))
+        for part,pic in enumerate(pics,1):
+            from PIL import Image
+            with Image.open(pic) as im:
+                width=min(15.5,19*im.width/im.height)
+            p=doc.add_paragraph();p.alignment=WD_ALIGN_PARAGRAPH.CENTER
+            p.add_run().add_picture(str(pic),width=Cm(width))
+            p.paragraph_format.keep_with_next=True
+            _caption(doc,f'Hình 5.{number+1}.{part}  Code và output cell {number}')
+
+    _heading(doc, '5.12  Code huấn luyện và kết quả PyTorch',2)
+    br.add_text(doc, 'Notebook 09_pytorch_training_full.ipynb chứa toàn bộ script huấn luyện trong cell và output đã thực thi. Các ảnh nối tiếp dưới đây cho thấy cách chia dữ liệu, fit preprocessing, vòng lặp train và kết quả đánh giá. Đây là huấn luyện ngoại tuyến; web chỉ nạp checkpoint khi chạy demo.')
+    for part,pic in enumerate(sorted((br.ASSETS/'training').glob('cell-01-*.png')),1):
+        p=doc.add_paragraph();p.alignment=WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.keep_with_next=True
+        p.add_run().add_picture(str(pic),width=Cm(15.5))
+        _caption(doc,f'Hình 5.14.{part}  Huấn luyện PyTorch và output')
+    br.add_text(doc, 'Trong mỗi batch, zero_grad xóa gradient cũ; forward tạo logit; BCEWithLogitsLoss tính sai số; backward lan truyền ngược; Adam step cập nhật trọng số. eval và inference_mode được dùng khi đo validation. deepcopy giữ trạng thái tốt nhất theo validation loss; choose_threshold dùng validation F1. Checkpoint, preprocessing, metric JSON và lịch sử CSV được lưu riêng để kiểm chứng.')
     _heading(doc, "KẾT LUẬN", 1)
     br.add_text(doc, "Project đã hiện thực một baseline Single Agent và một hệ Multi-Agent dùng chung model, dữ liệu, kho tri thức và policy. Hệ thống nối pipeline dự đoán, thống kê CDC, BM25, Knowledge Graph, validation, safety, API, notebook và web trong một luồng có thể chạy lại.")
     br.add_text(doc, "Kết quả benchmark cho thấy hai kiến trúc cùng hoàn thành contract hiện tại; Multi-Agent tạo trace chuyên trách đầy đủ hơn. Kết luận phù hợp là Multi-Agent cải thiện khả năng quan sát và phân tách trách nhiệm trong project, không phải mặc định chính xác hơn. Mọi risk score chỉ phục vụ học tập, không phải chẩn đoán hay khuyến nghị điều trị.")

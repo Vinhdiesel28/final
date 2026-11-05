@@ -1,0 +1,124 @@
+<meta charset="utf-8"><style>body{margin:0;padding:20px;background:white;color:#111;font:17px Arial}section{border:1px solid #888;padding:18px}pre{font:17px/1.45 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;text-align:left}table{border-collapse:collapse;font:15px/1.4 Arial;margin:16px 0;width:100%}td,th{border:1px solid #aaa;padding:6px;text-align:left;overflow-wrap:anywhere}h3{font-size:18px}.output{border-top:1px solid #aaa;padding-top:10px}</style><section><h3>In [7] — Cell 7</h3><pre>knowledge=services.knowledge.answer('BMI và HbA1c liên hệ với type 2 thế nào?')
+display(pd.DataFrame(knowledge['paths']).head(6))
+display(pd.DataFrame(knowledge['citations'])[['id','title']])
+print(knowledge['answer'])</pre><div class="output"><h3>Output</h3><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>subject</th>
+      <th>relation</th>
+      <th>object</th>
+      <th>evidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>đái tháo đường</td>
+      <td>có loại</td>
+      <td>type 2</td>
+      <td>who_overview</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>đái tháo đường</td>
+      <td>có loại</td>
+      <td>type 1</td>
+      <td>who_overview</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>đái tháo đường</td>
+      <td>có dấu hiệu</td>
+      <td>khát nhiều</td>
+      <td>cdc_symptoms</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>đái tháo đường</td>
+      <td>có dấu hiệu</td>
+      <td>tiểu nhiều</td>
+      <td>cdc_symptoms</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>đái tháo đường</td>
+      <td>có dấu hiệu</td>
+      <td>mệt mỏi</td>
+      <td>cdc_symptoms</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>đái tháo đường</td>
+      <td>được đánh giá bằng</td>
+      <td>A1C</td>
+      <td>niddk_tests</td>
+    </tr>
+  </tbody>
+</table>
+</div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>id</th>
+      <th>title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>project_dataset</td>
+      <td>Model card - Diabetes prediction dataset</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>who_overview</td>
+      <td>WHO - Diabetes overview</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>cdc_risk_factors</td>
+      <td>CDC - Diabetes risk factors</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>cdc_symptoms</td>
+      <td>CDC - Signs and symptoms of diabetes</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>niddk_tests</td>
+      <td>NIDDK - Diabetes tests and diagnosis</td>
+    </tr>
+  </tbody>
+</table>
+</div><pre>Bản dùng trong project có 100000 bản ghi với tuổi, giới tính, tăng huyết áp, bệnh tim, tiền sử hút thuốc, BMI, HbA1c và blood glucose. Type 1 đặc trưng bởi thiếu sản xuất insulin; type 2 liên quan cơ thể sử dụng insulin không hiệu quả.
+</pre></div></section>

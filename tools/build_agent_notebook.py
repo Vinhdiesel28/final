@@ -30,19 +30,8 @@ def main():
       nbf.v4.new_markdown_cell("## Cell 7 – Phân tích theo nhóm tình huống\nBảng này giúp tránh việc một điểm trung bình che khuất nhóm lỗi cụ thể."),
       nbf.v4.new_code_cell("rows=pd.read_csv(ROOT/'results/agent_benchmark.csv')\npd.pivot_table(rows,index='kind',columns='system',values='success',aggfunc='mean').round(4)"),
       nbf.v4.new_markdown_cell("## Kết luận\nTrên bộ contract hiện tại, hai hệ đạt cùng task success vì dùng chung công cụ và quy tắc. Multi-Agent không được tuyên bố là luôn chính xác hơn; lợi ích quan sát được là audit trail chuyên trách đầy đủ hơn, thuận lợi cho kiểm tra và khoanh vùng lỗi. Single Agent có luồng đơn giản hơn.")]
-    ns={"__name__":"__main__"}
-    count=0
-    for cell in nb.cells:
-        if cell.cell_type!='code': continue
-        count+=1; cell.execution_count=count; buf=io.StringIO()
-        try:
-            with contextlib.redirect_stdout(buf),contextlib.redirect_stderr(buf):
-                value=eval(compile(cell.source,f'cell-{count}','eval'),ns) if '\n' not in cell.source else exec(compile(cell.source,f'cell-{count}','exec'),ns)
-            out=[]
-            if buf.getvalue(): out.append(nbf.v4.new_output('stream',name='stdout',text=buf.getvalue()))
-            cell.outputs=out
-        except Exception as exc:
-            cell.outputs=[nbf.v4.new_output('error',ename=type(exc).__name__,evalue=str(exc),traceback=[repr(exc)])]; raise
+    from nbclient import NotebookClient
+    NotebookClient(nb,timeout=180,resources={'metadata':{'path':str(ROOT)}}).execute()
     path=ROOT/'notebooks/07_single_vs_multi_agent.ipynb'; nbf.write(nb,path); print(path)
 
 

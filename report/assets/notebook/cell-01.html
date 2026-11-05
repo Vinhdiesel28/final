@@ -1,0 +1,13 @@
+<meta charset="utf-8"><style>body{margin:0;padding:20px;background:white;color:#111;font:17px Arial}section{border:1px solid #888;padding:18px}pre{font:17px/1.45 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;text-align:left}table{border-collapse:collapse;font:15px/1.4 Arial;margin:16px 0;width:100%}td,th{border:1px solid #aaa;padding:6px;text-align:left;overflow-wrap:anywhere}h3{font-size:18px}.output{border-top:1px solid #aaa;padding-top:10px}</style><section><h3>In [1] — Cell 1</h3><pre>from pathlib import Path
+import sys, json, inspect
+import pandas as pd
+from IPython.display import display
+ROOT=Path.cwd().parent if Path.cwd().name=='notebooks' else Path.cwd()
+sys.path.insert(0,str(ROOT/'src'))
+from agent_system import Services, SingleAgent, MultiAgent
+services=Services()
+single, multi=SingleAgent(services), MultiAgent(services)
+print('Model:',services.model.model_name)
+print('KB backend:',services.knowledge.backend)</pre><div class="output"><h3>Output</h3><pre>Model: PyTorch MLP
+KB backend: neo4j
+</pre></div></section>

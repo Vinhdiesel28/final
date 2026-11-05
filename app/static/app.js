@@ -10,7 +10,21 @@ function loading(){return'<div class="answer"><span class="badge">processing</sp
 function render(side,d){$(`#${side}Time`).textContent=`${d.total_duration_ms} ms`;const cites=d.knowledge?.citations||[];const risk=d.prediction?`<div class="risk"><strong>${(d.prediction.probability*100).toFixed(1)}%</strong><span>risk score<br>threshold ${(d.prediction.threshold*100).toFixed(1)}%</span></div>`:'';const stats=d.statistics?`<div class="risk"><strong>${d.statistics.rate}%</strong><span>${d.statistics.positive.toLocaleString()} / ${d.statistics.count.toLocaleString()}<br>${d.statistics.group}</span></div>`:'';const citations=cites.length?`<div class="citations">${cites.map(c=>`<a href="${c.url}" target="_blank">${c.title} ↗</a>`).join('')}</div>`:'';$(`#${side}Body`).innerHTML=`<div class="answer"><span class="badge">${label(d.status)}</span>${risk}${stats}<h3>${d.intent.replaceAll('_',' ')}</h3><p>${d.answer}</p>${validation(d)}${citations}</div>`;$(`#${side}Trace`).innerHTML=d.traces.map((t,i)=>`<div class="trace-item"><i></i><span><b>${i+1}. ${t.agent}</b><small>${t.summary} · ${t.tool}</small></span><em>${t.duration_ms} ms</em></div>`).join('')}
 function validation(d){return d.validation_errors?.length?`<div class="citations">${d.validation_errors.map(x=>`<a>${x.field}: ${x.message}</a>`).join('')}</div>`:''}
 function label(x){return x.replaceAll('_',' ')}
-fetch('/api/metadata').then(r=>r.json()).then(m=>{const best=m.models.find(x=>x.test.model===m.selection.model);$('#metricRows').textContent=m.dataset.raw_rows.toLocaleString();$('#metricF1').textContent=best?best.test.f1.toFixed(3):'—'}).catch(()=>{});
+const baseRender=render;
+const escapeText=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+render=function(side,d){
+  baseRender(side,d);
+  const peer=d.prediction?.second_opinion;
+  const details=document.createElement('div');details.className='answer';
+  details.innerHTML=`<h3>Thành phần đang chạy</h3><p>KB: <b>${escapeText(d.knowledge_backend)}</b> · Model: ${escapeText(d.prediction?.model||'Không gọi model')}</p>`+
+    (peer?`<p>Đối chiếu ${escapeText(peer.model)}: ${(peer.probability*100).toFixed(1)}% · ngưỡng ${(peer.threshold*100).toFixed(1)}%</p>`:'')+
+    (d.review?`<p><b>Critic:</b> ${escapeText(d.review.conclusion)}</p><p>${d.review.challenges.map(escapeText).join('<br>')}</p>`:'')+
+    (d.workflow?`<p><b>Q-learning workflow:</b> ${escapeText(d.workflow.action)}<br><small>Chỉ chọn bước xử lý; không lựa chọn điều trị.</small></p>`:'')+
+    (d.messages?.length?`<details><summary>MessageBus — ${d.messages.length} thông điệp</summary>${d.messages.map(m=>`<p><b>${m.sequence}. ${escapeText(m.performative)}</b> ${escapeText(m.sender)} → ${escapeText(m.receiver)}</p>`).join('')}</details>`:'')+
+    (d.knowledge?.paths?.length?`<details><summary>Quan hệ từ Knowledge Graph</summary>${d.knowledge.paths.map(e=>`<p>${escapeText(e.subject)} → ${escapeText(e.relation)} → ${escapeText(e.object)}<br><small>Nguồn: ${escapeText(e.evidence)}</small></p>`).join('')}</details>`:'');
+  $(`#${side}Body`).appendChild(details);
+};
+fetch('/api/metadata').then(r=>r.json()).then(m=>{$('#metricRows').textContent=m.dataset.raw_rows.toLocaleString();$('#metricF1').textContent=m.pytorch.test.f1.toFixed(3);$('#metricF1').nextElementSibling.textContent='F1 test PyTorch đang chạy';$('.status').textContent=`${m.active_model} · KB ${m.knowledge_backend}`}).catch(()=>{});
 
 function percent(v){return `${(v*100).toFixed(1)}%`}
 function benchCard(x){return `<div class="bench-score"><strong>${percent(x.task_success_rate)}</strong><span>task success<br>${x.cases} cases</span></div>

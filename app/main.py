@@ -25,12 +25,16 @@ class Request(BaseModel):
 
 @app.get("/health")
 def health():
-    return {"status":"ok","models":3,"documents":len(services.knowledge.documents),"graph_edges":len(services.knowledge.graph)}
+    return {"status":"ok","active_model":services.model.model_name,"knowledge_backend":services.knowledge.backend,"documents":len(services.knowledge.documents),"graph_edges":len(services.knowledge.graph)}
 
 
 @app.get("/api/metadata")
 def metadata():
-    return json.loads((ROOT / "artifacts/model_metadata.json").read_text(encoding="utf-8"))
+    data=json.loads((ROOT / "artifacts/model_metadata.json").read_text(encoding="utf-8"))
+    data['active_model']=services.model.model_name
+    data['pytorch']=json.loads((ROOT/'artifacts/pytorch_metadata.json').read_text(encoding='utf-8'))
+    data['knowledge_backend']=services.knowledge.backend
+    return data
 
 
 @app.get("/api/graph")

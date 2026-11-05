@@ -1,0 +1,170 @@
+<meta charset="utf-8"><style>body{margin:0;padding:20px;background:white;color:#111;font:17px Arial}section{border:1px solid #888;padding:18px}pre{font:17px/1.45 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;text-align:left}table{border-collapse:collapse;font:15px/1.4 Arial;margin:16px 0;width:100%}td,th{border:1px solid #aaa;padding:6px;text-align:left;overflow-wrap:anywhere}h3{font-size:18px}.output{border-top:1px solid #aaa;padding-top:10px}</style><section><h3>In [9] — Cell 9</h3><pre>display(pd.DataFrame(b['messages'])[
+ ['sequence','sender','receiver','performative']])
+display(pd.DataFrame(b['traces'])[['agent','tool']])</pre><div class="output"><h3>Output</h3><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sequence</th>
+      <th>sender</th>
+      <th>receiver</th>
+      <th>performative</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>CoordinatorAgent</td>
+      <td>ValidationAgent</td>
+      <td>REQUEST</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>ValidationAgent</td>
+      <td>CoordinatorAgent</td>
+      <td>INFORM</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>CoordinatorAgent</td>
+      <td>PredictionAgent</td>
+      <td>REQUEST</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>PredictionAgent</td>
+      <td>CoordinatorAgent</td>
+      <td>INFORM</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>CoordinatorAgent</td>
+      <td>RetrievalAgent</td>
+      <td>REQUEST</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>RetrievalAgent</td>
+      <td>CoordinatorAgent</td>
+      <td>INFORM</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>CoordinatorAgent</td>
+      <td>CriticAgent</td>
+      <td>REQUEST</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>8</td>
+      <td>CriticAgent</td>
+      <td>CoordinatorAgent</td>
+      <td>INFORM</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>9</td>
+      <td>CoordinatorAgent</td>
+      <td>WorkflowRLAgent</td>
+      <td>REQUEST</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>10</td>
+      <td>WorkflowRLAgent</td>
+      <td>CoordinatorAgent</td>
+      <td>INFORM</td>
+    </tr>
+  </tbody>
+</table>
+</div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>agent</th>
+      <th>tool</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>CoordinatorAgent</td>
+      <td>intent_router</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ValidationAgent</td>
+      <td>schema_validator</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PredictionAgent</td>
+      <td>model_checkpoint</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>RetrievalAgent</td>
+      <td>bm25_retrieval</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>GraphAgent</td>
+      <td>knowledge_graph</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>CriticAgent</td>
+      <td>model_disagreement_review</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>WorkflowRLAgent</td>
+      <td>q_learning_with_action_mask</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>ExplanationAgent</td>
+      <td>grounded_composer</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>VerifierSafetyAgent</td>
+      <td>claim_evidence_guard</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></section>

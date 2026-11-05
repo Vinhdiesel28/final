@@ -11,3 +11,11 @@ services:
         value: 3.11.11
       - key: OPENBLAS_NUM_THREADS
         value: "1"
+      - key: KNOWLEDGE_BACKEND
+        value: neo4j
+      - key: NEO4J_URI
+        sync: false
+      - key: NEO4J_USER
+        value: neo4j
+      - key: NEO4J_PASSWORD
+        sync: false

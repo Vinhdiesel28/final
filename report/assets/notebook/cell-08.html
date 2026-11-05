@@ -1,0 +1,14 @@
+<meta charset="utf-8"><style>body{margin:0;padding:20px;background:white;color:#111;font:17px Arial}section{border:1px solid #888;padding:18px}pre{font:17px/1.45 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;text-align:left}table{border-collapse:collapse;font:15px/1.4 Arial;margin:16px 0;width:100%}td,th{border:1px solid #aaa;padding:6px;text-align:left;overflow-wrap:anywhere}h3{font-size:18px}.output{border-top:1px solid #aaa;padding-top:10px}</style><section><h3>In [8] — Cell 8</h3><pre>profile={'gender':'Male','age':67,'bmi':34.6,
+ 'hbA1c_level':7.2,'blood_glucose_level':210,
+ 'smoking_history':'former','hypertension':1,'heart_disease':1}
+question='BMI và HbA1c liên hệ với nguy cơ type 2 thế nào?'
+a=single.run(question,profile)
+b=multi.run(question,profile)
+print('Same prediction:',a['prediction']==b['prediction'])
+print('PyTorch:',b['prediction']['probability'])
+print('Sklearn:',b['prediction']['second_opinion'])
+print('Review:',b['review'])</pre><div class="output"><h3>Output</h3><pre>Same prediction: True
+PyTorch: 1.0
+Sklearn: {'model': 'MLP', 'probability': 0.9990569211737723, 'threshold': 0.385, 'predicted_class': 1}
+Review: {'disagreement': False, 'probability_gap': 0.0009, 'challenges': [], 'requires_review': False, 'conclusion': 'Hai mô hình đồng thuận; vẫn chỉ là score học thuật.'}
+</pre></div></section>

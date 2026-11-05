@@ -1,0 +1,63 @@
+<meta charset="utf-8"><style>body{margin:0;padding:20px;background:white;color:#111;font:17px Arial}section{border:1px solid #888;padding:18px}pre{font:17px/1.45 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;text-align:left}table{border-collapse:collapse;font:15px/1.4 Arial;margin:16px 0;width:100%}td,th{border:1px solid #aaa;padding:6px;text-align:left;overflow-wrap:anywhere}h3{font-size:18px}.output{border-top:1px solid #aaa;padding-top:10px}</style><section><h3>In [5] — Cell 5</h3><pre>old=json.loads((ROOT/'artifacts/model_metadata.json').read_text())
+rows=[r['test'] for r in old['models']]+[meta['test']]
+display(pd.DataFrame(rows)[['model','f1','roc_auc','precision','recall']])</pre><div class="output"><h3>Output</h3><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>model</th>
+      <th>f1</th>
+      <th>roc_auc</th>
+      <th>precision</th>
+      <th>recall</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Logistic Regression</td>
+      <td>0.703155</td>
+      <td>0.958955</td>
+      <td>0.682153</td>
+      <td>0.725490</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Random Forest</td>
+      <td>0.790960</td>
+      <td>0.971248</td>
+      <td>0.989399</td>
+      <td>0.658824</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>MLP</td>
+      <td>0.792453</td>
+      <td>0.974949</td>
+      <td>0.958797</td>
+      <td>0.675294</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PyTorch MLP</td>
+      <td>0.792365</td>
+      <td>0.974573</td>
+      <td>0.974800</td>
+      <td>0.667451</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></section>

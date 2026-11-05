@@ -1,0 +1,88 @@
+<meta charset="utf-8"><style>body{margin:0;padding:20px;background:white;color:#111;font:17px Arial}section{border:1px solid #888;padding:18px}pre{font:17px/1.45 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;text-align:left}table{border-collapse:collapse;font:15px/1.4 Arial;margin:16px 0;width:100%}td,th{border:1px solid #aaa;padding:6px;text-align:left;overflow-wrap:anywhere}h3{font-size:18px}.output{border-top:1px solid #aaa;padding-top:10px}</style><section><h3>In [4] — Cell 4</h3><pre>history=pd.read_csv(ROOT/'results/pytorch_training_history.csv')
+meta=json.loads((ROOT/'artifacts/pytorch_metadata.json').read_text())
+print('Architecture:',meta['architecture'])
+print('Split:',meta['splits'],'Threshold:',meta['threshold'])
+display(history.iloc[[0,-1]])
+display(pd.DataFrame([meta['validation'],meta['test']],
+                     index=['validation','test'])[['f1','roc_auc','precision','recall']])</pre><div class="output"><h3>Output</h3><pre>Architecture: [15, 64, 32, 1]
+Split: {'train': 69990, 'validation': 14998, 'test': 14998} Threshold: 0.39
+</pre><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>epoch</th>
+      <th>train_loss</th>
+      <th>validation_loss</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0.285336</td>
+      <td>0.122422</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>60</td>
+      <td>0.079804</td>
+      <td>0.081204</td>
+    </tr>
+  </tbody>
+</table>
+</div><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>f1</th>
+      <th>roc_auc</th>
+      <th>precision</th>
+      <th>recall</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>validation</th>
+      <td>0.810440</td>
+      <td>0.976858</td>
+      <td>0.973597</td>
+      <td>0.694118</td>
+    </tr>
+    <tr>
+      <th>test</th>
+      <td>0.792365</td>
+      <td>0.974573</td>
+      <td>0.974800</td>
+      <td>0.667451</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></section>

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import os
+import settings
 import math
 import re
 import unicodedata
@@ -25,6 +27,12 @@ class KnowledgeService:
     def __init__(self):
         self.documents = json.loads((ROOT / "knowledge/corpus.json").read_text(encoding="utf-8"))
         self.graph = json.loads((ROOT / "knowledge/graph.json").read_text(encoding="utf-8"))
+        self.backend = os.environ.get('KNOWLEDGE_BACKEND', 'json')
+        self.store = None
+        if self.backend == 'neo4j':
+            from neo4j_store import Neo4jStore
+            self.store = Neo4jStore()
+            self.documents, self.graph = self.store.load()
         self.by_id = {d["id"]: d for d in self.documents}
         self.doc_tokens = [tokens(d["title"] + " " + d["text"]) for d in self.documents]
         df = Counter(); [df.update(set(row)) for row in self.doc_tokens]
@@ -49,6 +57,8 @@ class KnowledgeService:
 
     def graph_paths(self, question: str, hops: int = 2) -> list[dict]:
         nq = " " + normalize(question) + " "; seeds = [n for n in self.alias if f" {n} " in nq]
+        if self.store:
+            return self.store.paths([self.alias[s] for s in seeds])
         queue = deque((s, 0) for s in seeds); seen = set(seeds); paths = []
         while queue:
             node, depth = queue.popleft()
@@ -60,6 +70,13 @@ class KnowledgeService:
 
     def answer(self, question: str) -> dict:
         docs = self.retrieve(question); paths = self.graph_paths(question)
+        known = {d['id'] for d in docs}
+        for edge in paths:
+            key = edge['evidence']
+            if key in self.by_id and key not in known:
+                docs.append({**self.by_id[key], 'score':0.0})
+                known.add(key)
+        docs = docs[:5]
         if not docs:
             return {"answer": "Kho tri thức hiện tại không có đủ bằng chứng để trả lời.", "citations": [], "paths": paths,
                     "status": "insufficient_evidence"}

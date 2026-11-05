@@ -1,0 +1,22 @@
+<meta charset="utf-8"><style>body{margin:0;padding:20px;background:white;color:#111;font:17px Arial}section{border:1px solid #888;padding:18px}pre{font:17px/1.45 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;text-align:left}table{border-collapse:collapse;font:15px/1.4 Arial;margin:16px 0;width:100%}td,th{border:1px solid #aaa;padding:6px;text-align:left;overflow-wrap:anywhere}h3{font-size:18px}.output{border-top:1px solid #aaa;padding-top:10px}</style><section><h3>In [3] — Cell 3</h3><pre>from torch_model import RiskMLP
+print(inspect.getsource(RiskMLP))
+print(services.model.pipeline.model)</pre><div class="output"><h3>Output</h3><pre>class RiskMLP(nn.Module):
+    def __init__(self, inputs):
+        super().__init__()
+        self.net = nn.Sequential(nn.Linear(inputs, 64), nn.ReLU(), nn.Dropout(.15),
+                                 nn.Linear(64, 32), nn.ReLU(), nn.Linear(32, 1))
+
+    def forward(self, x):
+        return self.net(x).squeeze(-1)
+
+RiskMLP(
+  (net): Sequential(
+    (0): Linear(in_features=15, out_features=64, bias=True)
+    (1): ReLU()
+    (2): Dropout(p=0.15, inplace=False)
+    (3): Linear(in_features=64, out_features=32, bias=True)
+    (4): ReLU()
+    (5): Linear(in_features=32, out_features=1, bias=True)
+  )
+)
+</pre></div></section>

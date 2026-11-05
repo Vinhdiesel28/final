@@ -1,0 +1,94 @@
+<meta charset="utf-8"><style>body{margin:0;padding:20px;background:white;color:#111;font:17px Arial}section{border:1px solid #888;padding:18px}pre{font:17px/1.45 Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;text-align:left}table{border-collapse:collapse;font:15px/1.4 Arial;margin:16px 0;width:100%}td,th{border:1px solid #aaa;padding:6px;text-align:left;overflow-wrap:anywhere}h3{font-size:18px}.output{border-top:1px solid #aaa;padding-top:10px}</style><section><h3>In [10] — Cell 10</h3><pre>from workflow_policy import allowed_actions
+policy=json.loads((ROOT/'artifacts/workflow_q_policy.json').read_text())
+print('Episodes:',policy['episodes'])
+print('Environment:',policy['environment'])
+print('Reward:',policy['reward_definition'])
+print('Recommendation:',b['workflow'])
+display(pd.DataFrame(policy['q_table'],columns=policy['actions']))</pre><div class="output"><h3>Output</h3><pre>Episodes: 3000
+Environment: synthetic workflow; no clinical outcomes
+Reward: information +0.3, step -0.2, suitable terminal workflow +2
+Recommendation: {'state': 2, 'action': 'explain_score', 'allowed_actions': ['show_sources', 'explain_score', 'request_human_review'], 'q_value': 1.9999999999999996, 'scope': 'Educational workflow only; not treatment'}
+</pre><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ask_for_information</th>
+      <th>show_sources</th>
+      <th>explain_score</th>
+      <th>request_human_review</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.00</td>
+      <td>2.1</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.00</td>
+      <td>1.6</td>
+      <td>2.0</td>
+      <td>-0.2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2.19</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2.10</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2.10</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2.10</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></section>
