@@ -1,0 +1,162 @@
+{
+  "version": "validation-referral-v1",
+  "selected": {
+    "margin_width": 0.1,
+    "minimum_gap": 0.1,
+    "referrals": 104,
+    "errors_referred": 50,
+    "cost": 390.0
+  },
+  "validation_rows": 14998,
+  "validation_errors": 414,
+  "no_review_cost": 414,
+  "objective": "accepted error=1; referral=.25; maximum referral fraction=.05; engineering costs, not clinical",
+  "selection_split": "validation only, stratified 70/15/15 seed 42",
+  "candidates": [
+    {
+      "margin_width": 0.01,
+      "minimum_gap": 0.02,
+      "referrals": 69,
+      "errors_referred": 36,
+      "cost": 395.25
+    },
+    {
+      "margin_width": 0.01,
+      "minimum_gap": 0.05,
+      "referrals": 65,
+      "errors_referred": 35,
+      "cost": 395.25
+    },
+    {
+      "margin_width": 0.01,
+      "minimum_gap": 0.1,
+      "referrals": 42,
+      "errors_referred": 24,
+      "cost": 400.5
+    },
+    {
+      "margin_width": 0.01,
+      "minimum_gap": 0.2,
+      "referrals": 10,
+      "errors_referred": 4,
+      "cost": 412.5
+    },
+    {
+      "margin_width": 0.01,
+      "minimum_gap": 0.4,
+      "referrals": 2,
+      "errors_referred": 0,
+      "cost": 414.5
+    },
+    {
+      "margin_width": 0.025,
+      "minimum_gap": 0.02,
+      "referrals": 79,
+      "errors_referred": 38,
+      "cost": 395.75
+    },
+    {
+      "margin_width": 0.025,
+      "minimum_gap": 0.05,
+      "referrals": 74,
+      "errors_referred": 36,
+      "cost": 396.5
+    },
+    {
+      "margin_width": 0.025,
+      "minimum_gap": 0.1,
+      "referrals": 51,
+      "errors_referred": 28,
+      "cost": 398.75
+    },
+    {
+      "margin_width": 0.025,
+      "minimum_gap": 0.2,
+      "referrals": 13,
+      "errors_referred": 4,
+      "cost": 413.25
+    },
+    {
+      "margin_width": 0.025,
+      "minimum_gap": 0.4,
+      "referrals": 2,
+      "errors_referred": 0,
+      "cost": 414.5
+    },
+    {
+      "margin_width": 0.05,
+      "minimum_gap": 0.02,
+      "referrals": 96,
+      "errors_referred": 44,
+      "cost": 394.0
+    },
+    {
+      "margin_width": 0.05,
+      "minimum_gap": 0.05,
+      "referrals": 90,
+      "errors_referred": 42,
+      "cost": 394.5
+    },
+    {
+      "margin_width": 0.05,
+      "minimum_gap": 0.1,
+      "referrals": 64,
+      "errors_referred": 33,
+      "cost": 397.0
+    },
+    {
+      "margin_width": 0.05,
+      "minimum_gap": 0.2,
+      "referrals": 24,
+      "errors_referred": 13,
+      "cost": 407.0
+    },
+    {
+      "margin_width": 0.05,
+      "minimum_gap": 0.4,
+      "referrals": 2,
+      "errors_referred": 0,
+      "cost": 414.5
+    },
+    {
+      "margin_width": 0.1,
+      "minimum_gap": 0.02,
+      "referrals": 162,
+      "errors_referred": 61,
+      "cost": 393.5
+    },
+    {
+      "margin_width": 0.1,
+      "minimum_gap": 0.05,
+      "referrals": 138,
+      "errors_referred": 56,
+      "cost": 392.5
+    },
+    {
+      "margin_width": 0.1,
+      "minimum_gap": 0.1,
+      "referrals": 104,
+      "errors_referred": 50,
+      "cost": 390.0
+    },
+    {
+      "margin_width": 0.1,
+      "minimum_gap": 0.2,
+      "referrals": 36,
+      "errors_referred": 19,
+      "cost": 404.0
+    },
+    {
+      "margin_width": 0.1,
+      "minimum_gap": 0.4,
+      "referrals": 5,
+      "errors_referred": 1,
+      "cost": 414.25
+    }
+  ],
+  "dataset_sha256": "2797de9377339a814ae5a748154c5035d4db5560415f62ffe4133e794e719594",
+  "model_sha256": "79f58364a1646deb595e7e8f561cf50e7966932c042845eba1c5aa5ae92d4c6f",
+  "reference_sha256": "32f70d6900bf20e366862a92d1abfe90b97a3a8974055d22cef4f765919a6f81",
+  "primary_threshold": 0.39,
+  "reference_threshold": 0.385
+}

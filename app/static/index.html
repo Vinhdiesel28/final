@@ -26,7 +26,7 @@
       </div>
       <div class="hero-visual">
         <div class="orbit o1"></div><div class="orbit o2"></div>
-        <div class="core"><span>Coordinator</span><strong>7</strong><small>specialized agents</small></div>
+        <div class="core"><span>Coordinator</span><strong>Agent</strong><small>handlers theo trạng thái</small></div>
         <div class="agent a1">Validation</div><div class="agent a2">Prediction</div><div class="agent a3">Retrieval</div>
         <div class="agent a4">Graph</div><div class="agent a5">Statistics</div><div class="agent a6">Verifier</div>
       </div>
@@ -35,7 +35,7 @@
     <section class="metrics" id="evidence">
       <article><strong id="metricRows">100,000</strong><span>hồ sơ dự đoán</span></article>
       <article><strong id="metricF1">—</strong><span>F1 test model chọn</span></article>
-      <article><strong>8</strong><span>tài liệu có nguồn</span></article>
+      <article><strong id="metricDocuments">—</strong><span>đoạn tri thức có nguồn</span></article>
       <article><strong>2</strong><span>hệ được benchmark</span></article>
     </section>
 
@@ -79,8 +79,12 @@
     </section>
 
     <section class="benchmark" id="benchmark">
-      <div class="section-head"><span class="eyebrow">03 · REPRODUCIBLE BENCHMARK</span><h2>Cùng công cụ. Cùng dữ liệu. Đo đúng khác biệt.</h2>
-        <p>58 tình huống × 2 kiến trúc. Single Agent không bị làm yếu; cả hai dùng chung model, knowledge base và policy. Chất lượng nhiệm vụ được tách khỏi khả năng quan sát hệ thống.</p></div>
+      <div class="section-head"><span class="eyebrow">03 · DIABETES PREDICTION BENCHMARK</span><h2>Dự đoán có/không và điểm xác suất.</h2>
+        <p>Đối chiếu với nhãn thật trong tập test đã tách từ lúc huấn luyện. Đánh giá riêng dự đoán, độ tin cậy của điểm % và quyết định chuyển xem xét thêm.</p></div>
+      <div id="criticBenchmark" class="kind-breakdown"></div>
+      <div id="diabetesBenchmark" aria-live="polite"><p>Đang tải benchmark dự đoán…</p></div>
+      <div class="section-head"><span class="eyebrow">04 · FUNCTIONAL CHECKS — KẾT QUẢ CŨ</span><h2>Cùng công cụ. Cùng dữ liệu. Đo đúng khác biệt.</h2>
+        <p>Kết quả kiểm tra chức năng đã lưu từ trước: 58 tình huống × 2 kiến trúc. Task success chỉ kiểm tra hoàn thành tác vụ, không phải độ chính xác có/không tiểu đường. Dùng bảng 14.998 mẫu phía trên để đánh giá dự đoán hiện tại.</p></div>
       <div class="benchmark-grid">
         <article class="bench-card"><header><span>Single Agent</span><small>Monolithic baseline</small></header><div id="singleBench" class="bench-body"><p>Đang tải…</p></div></article>
         <article class="bench-card featured"><header><span>Multi-Agent</span><small>Specialized pipeline</small></header><div id="multiBench" class="bench-body"><p>Đang tải…</p></div></article>
@@ -91,4 +95,6 @@
   </main>
   <footer><div><span class="brand-mark">D</span><b>DiaAgents Lab</b></div><p>Nguyễn Minh Vinh · B23DCCN934 · D23CTPM01 · Nhóm 08</p><p>Educational use only · Not medical advice</p></footer>
   <script src="/static/app.js"></script>
+  <script src="/static/diabetes-benchmark.js"></script>
+  <script src="/static/critic-benchmark.js"></script>
 </body></html>

@@ -34,6 +34,7 @@ def metadata():
     data['active_model']=services.model.model_name
     data['pytorch']=json.loads((ROOT/'artifacts/pytorch_metadata.json').read_text(encoding='utf-8'))
     data['knowledge_backend']=services.knowledge.backend
+    data['knowledge_documents']=len(services.knowledge.documents)
     return data
 
 
@@ -56,7 +57,13 @@ def benchmark():
         .round(4)
         .to_dict(orient="records")
     )
-    return {"summary": json.loads(summary_path.read_text(encoding="utf-8")), "by_kind": by_kind}
+    paired_path = ROOT / 'results' / 'paired_agent_evaluation.json'
+    paired = json.loads(paired_path.read_text(encoding='utf-8')) if paired_path.exists() else None
+    repair_path = ROOT / 'results' / 'evidence_repair_benchmark.json'
+    repair_data = json.loads(repair_path.read_text(encoding='utf-8')) if repair_path.exists() else None
+    repair_summary = {key: repair_data[key] for key in ('protocol', 'summary')} if repair_data else None
+    return {"summary": json.loads(summary_path.read_text(encoding="utf-8")), "by_kind": by_kind,
+            "paired": paired, "evidence_repair": repair_summary}
 
 
 @app.post("/api/run")
@@ -66,6 +73,17 @@ def run(payload: Request):
     runner = multi if payload.mode == "multi" else single if payload.mode == "single" else None
     if runner is None: raise HTTPException(400, "mode chỉ nhận single hoặc multi")
     return runner.run(payload.question.strip(), payload.profile)
+
+
+@app.get('/api/benchmark/diabetes')
+def diabetes_benchmark():
+    path = ROOT / 'results/diabetes_agent_benchmark.json'
+    if not path.exists():
+        raise HTTPException(503, 'Benchmark dự đoán chưa hoàn tất.')
+    data=json.loads(path.read_text(encoding='utf-8'))
+    before=ROOT/'results/diabetes_agent_benchmark_before_policy.json'
+    data['before_policy']=json.loads(before.read_text(encoding='utf-8'))['systems']['multi'] if before.exists() else None
+    return data
 
 
 @app.post("/api/compare")
@@ -83,3 +101,19 @@ app.mount("/static", StaticFiles(directory=STATIC), name="static")
 @app.get("/")
 def index():
     return FileResponse(STATIC / "index.html")
+
+
+@app.get('/api/benchmark/critic')
+def critic_benchmark():
+    path = ROOT / 'results/critic_challenge_benchmark.json'
+    if not path.exists():
+        raise HTTPException(503, 'Benchmark phản biện chưa hoàn tất.')
+    return json.loads(path.read_text(encoding='utf-8'))
+
+
+@app.get('/api/benchmark/corpus')
+def current_corpus_benchmark():
+    path=ROOT/'results/current_corpus_benchmark.json'
+    if not path.exists(): raise HTTPException(503,'Benchmark corpus mới chưa hoàn tất.')
+    data=json.loads(path.read_text(encoding='utf-8'))
+    return {key:data[key] for key in ('protocol','summary')}

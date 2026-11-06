@@ -1,0 +1,32 @@
+{
+  "description": "Random held-out test sample; model disagreement or near threshold sends case to human review. No human outcome assumed.",
+  "n": 1000,
+  "single_accuracy": 0.967,
+  "single_recall": 0.6404494382022472,
+  "single_confusion_matrix": [
+    [
+      910,
+      1
+    ],
+    [
+      32,
+      57
+    ]
+  ],
+  "multi_coverage": 0.994,
+  "multi_review_count": 6,
+  "multi_selective_accuracy": 0.9698189134808853,
+  "multi_selective_confusion_matrix": [
+    [
+      907,
+      0
+    ],
+    [
+      30,
+      57
+    ]
+  ],
+  "errors_flagged": 3,
+  "total_errors": 33,
+  "positive_cases_referred": 2
+}

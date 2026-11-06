@@ -1,18 +1,950 @@
 [
-  {"subject":"đái tháo đường","relation":"có loại","object":"type 1","evidence":"who_overview"},
-  {"subject":"đái tháo đường","relation":"có loại","object":"type 2","evidence":"who_overview"},
-  {"subject":"đái tháo đường","relation":"có dấu hiệu","object":"khát nhiều","evidence":"cdc_symptoms"},
-  {"subject":"đái tháo đường","relation":"có dấu hiệu","object":"tiểu nhiều","evidence":"cdc_symptoms"},
-  {"subject":"đái tháo đường","relation":"có dấu hiệu","object":"mệt mỏi","evidence":"cdc_symptoms"},
-  {"subject":"đái tháo đường","relation":"được đánh giá bằng","object":"A1C","evidence":"niddk_tests"},
-  {"subject":"đái tháo đường","relation":"được đánh giá bằng","object":"glucose huyết tương","evidence":"niddk_tests"},
-  {"subject":"A1C","relation":"phản ánh","object":"glucose trung bình khoảng ba tháng","evidence":"niddk_a1c"},
-  {"subject":"type 2","relation":"có yếu tố nguy cơ","object":"thừa cân","evidence":"cdc_risk_factors"},
-  {"subject":"type 2","relation":"có yếu tố nguy cơ","object":"ít vận động","evidence":"cdc_risk_factors"},
-  {"subject":"type 2","relation":"có yếu tố nguy cơ","object":"tuổi cao hơn","evidence":"cdc_risk_factors"},
-  {"subject":"type 2","relation":"có thể phòng ngừa bằng","object":"hoạt động thể lực","evidence":"who_prevention"},
-  {"subject":"type 2","relation":"có thể phòng ngừa bằng","object":"chế độ ăn lành mạnh","evidence":"who_prevention"},
-  {"subject":"risk score","relation":"không phải","object":"chẩn đoán","evidence":"project_model"},
-  {"subject":"risk score","relation":"được tạo bởi","object":"mô hình ML","evidence":"project_model"},
-  {"subject":"mô hình ML","relation":"được huấn luyện trên","object":"diabetes prediction dataset","evidence":"project_dataset"}
+  {
+    "subject": "đái tháo đường",
+    "relation": "có loại",
+    "object": "đái tháo đường thai kỳ",
+    "evidence": "dia_classification_001"
+  },
+  {
+    "subject": "đái tháo đường",
+    "relation": "có loại",
+    "object": "đái tháo đường thứ phát",
+    "evidence": "dia_classification_001"
+  },
+  {
+    "subject": "đái tháo đường",
+    "relation": "đặc trưng bởi",
+    "object": "tăng glucose huyết",
+    "evidence": "dia_classification_001"
+  },
+  {
+    "subject": "type 1",
+    "relation": "có cơ chế bệnh",
+    "object": "phá hủy tế bào beta do tự miễn",
+    "evidence": "dia_type1_mechanism_001"
+  },
+  {
+    "subject": "phá hủy tế bào beta do tự miễn",
+    "relation": "dẫn đến",
+    "object": "thiếu insulin",
+    "evidence": "dia_type1_mechanism_001"
+  },
+  {
+    "subject": "type 1",
+    "relation": "có thể dẫn đến",
+    "object": "nhiễm toan ceton",
+    "evidence": "dia_type1_mechanism_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có cơ chế bệnh",
+    "object": "kháng insulin",
+    "evidence": "dia_type2_mechanism_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có cơ chế bệnh",
+    "object": "thiếu insulin tương đối",
+    "evidence": "dia_type2_mechanism_001"
+  },
+  {
+    "subject": "kháng insulin",
+    "relation": "thường đi kèm",
+    "object": "béo phì",
+    "evidence": "dia_type2_mechanism_001"
+  },
+  {
+    "subject": "tăng glucose huyết",
+    "relation": "có thể gây",
+    "object": "tiểu nhiều",
+    "evidence": "dia_hyperglycemia_symptoms_001"
+  },
+  {
+    "subject": "tiểu nhiều",
+    "relation": "có thể dẫn đến",
+    "object": "khát nhiều",
+    "evidence": "dia_hyperglycemia_symptoms_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có thể có biểu hiện",
+    "object": "ít triệu chứng ở giai đoạn đầu",
+    "evidence": "dia_type2_asymptomatic_001"
+  },
+  {
+    "subject": "đái tháo đường thai kỳ",
+    "relation": "liên quan nguy cơ mắc về sau",
+    "object": "type 2",
+    "evidence": "dia_gdm_risk_001"
+  },
+  {
+    "subject": "đái tháo đường thai kỳ",
+    "relation": "liên quan đến",
+    "object": "kháng insulin khi mang thai",
+    "evidence": "dia_gdm_risk_001"
+  },
+  {
+    "subject": "đái tháo đường",
+    "relation": "có biến chứng",
+    "object": "bệnh võng mạc đái tháo đường",
+    "evidence": "dia_complications_001"
+  },
+  {
+    "subject": "đái tháo đường",
+    "relation": "có biến chứng",
+    "object": "bệnh thận đái tháo đường",
+    "evidence": "dia_complications_001"
+  },
+  {
+    "subject": "đái tháo đường",
+    "relation": "có biến chứng",
+    "object": "bệnh thần kinh đái tháo đường",
+    "evidence": "dia_complications_001"
+  },
+  {
+    "subject": "đái tháo đường",
+    "relation": "làm tăng nguy cơ",
+    "object": "bệnh mạch máu do xơ vữa",
+    "evidence": "dia_complications_001"
+  },
+  {
+    "subject": "A1C",
+    "relation": "có thể bị ảnh hưởng bởi",
+    "object": "biến thể hemoglobin",
+    "evidence": "dia_a1c_limitations_001"
+  },
+  {
+    "subject": "A1C",
+    "relation": "có thể bị ảnh hưởng bởi",
+    "object": "thiếu máu thiếu sắt",
+    "evidence": "dia_a1c_limitations_001"
+  },
+  {
+    "subject": "A1C",
+    "relation": "có thể bị ảnh hưởng bởi",
+    "object": "suy thận",
+    "evidence": "dia_a1c_limitations_001"
+  },
+  {
+    "subject": "A1C",
+    "relation": "có thể phân loại khác với",
+    "object": "nghiệm pháp dung nạp glucose đường uống",
+    "evidence": "dia_test_discordance_001"
+  },
+  {
+    "subject": "tiền đái tháo đường",
+    "relation": "thường không có",
+    "object": "triệu chứng rõ",
+    "evidence": "ndep_prediabetes_screen_001"
+  },
+  {
+    "subject": "tiền đái tháo đường",
+    "relation": "liên quan nguy cơ phát triển",
+    "object": "type 2",
+    "evidence": "ndep_prediabetes_screen_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có yếu tố nguy cơ",
+    "object": "hội chứng buồng trứng đa nang",
+    "evidence": "ndep_risk_conditions_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có yếu tố nguy cơ",
+    "object": "HDL cholesterol ≤ 35 mg/dL",
+    "evidence": "ndep_risk_conditions_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có yếu tố nguy cơ",
+    "object": "triglyceride lúc đói ≥ 250 mg/dL",
+    "evidence": "ndep_risk_conditions_001"
+  },
+  {
+    "subject": "tiền đái tháo đường",
+    "relation": "được đánh giá bằng",
+    "object": "A1C",
+    "evidence": "ndep_a1c_ranges_001"
+  },
+  {
+    "subject": "A1C",
+    "relation": "có khoảng nhận diện tiền đái tháo đường",
+    "object": "5,7–6,4% (theo NDEP 2018)",
+    "evidence": "ndep_a1c_ranges_001"
+  },
+  {
+    "subject": "A1C",
+    "relation": "có ngưỡng xét nghiệm đái tháo đường",
+    "object": "≥ 6,5% (theo NDEP 2018; cần xác nhận khi không có triệu chứng rõ)",
+    "evidence": "ndep_a1c_ranges_001"
+  },
+  {
+    "subject": "tiền đái tháo đường",
+    "relation": "được đánh giá bằng",
+    "object": "glucose huyết tương lúc đói",
+    "evidence": "ndep_glucose_ranges_001"
+  },
+  {
+    "subject": "tiền đái tháo đường",
+    "relation": "được đánh giá bằng",
+    "object": "nghiệm pháp dung nạp glucose đường uống",
+    "evidence": "ndep_glucose_ranges_001"
+  },
+  {
+    "subject": "glucose huyết tương",
+    "relation": "có phép đo",
+    "object": "glucose huyết tương lúc đói",
+    "evidence": "ndep_glucose_ranges_001"
+  },
+  {
+    "subject": "glucose huyết tương",
+    "relation": "được sử dụng trong",
+    "object": "nghiệm pháp dung nạp glucose đường uống",
+    "evidence": "ndep_glucose_ranges_001"
+  },
+  {
+    "subject": "glucose huyết tương lúc đói",
+    "relation": "có khoảng nhận diện tiền đái tháo đường",
+    "object": "100–125 mg/dL (lúc đói; theo NDEP 2018)",
+    "evidence": "ndep_glucose_ranges_001"
+  },
+  {
+    "subject": "glucose huyết tương lúc đói",
+    "relation": "có ngưỡng xét nghiệm đái tháo đường",
+    "object": "≥ 126 mg/dL (lúc đói; theo NDEP 2018; cần xác nhận)",
+    "evidence": "ndep_glucose_ranges_001"
+  },
+  {
+    "subject": "nghiệm pháp dung nạp glucose đường uống",
+    "relation": "có khoảng nhận diện tiền đái tháo đường",
+    "object": "140–199 mg/dL (glucose huyết tương sau 2 giờ uống 75 g; NDEP 2018)",
+    "evidence": "ndep_glucose_ranges_001"
+  },
+  {
+    "subject": "nghiệm pháp dung nạp glucose đường uống",
+    "relation": "có ngưỡng xét nghiệm đái tháo đường",
+    "object": "≥ 200 mg/dL (glucose huyết tương sau 2 giờ uống 75 g; NDEP 2018; cần xác nhận)",
+    "evidence": "ndep_glucose_ranges_001"
+  },
+  {
+    "subject": "đái tháo đường",
+    "relation": "kết quả vượt ngưỡng thường cần",
+    "object": "xét nghiệm xác nhận",
+    "evidence": "ndep_confirmation_001"
+  },
+  {
+    "subject": "A1C",
+    "relation": "không cần",
+    "object": "nhịn ăn trước xét nghiệm",
+    "evidence": "ndep_a1c_method_001"
+  },
+  {
+    "subject": "A1C",
+    "relation": "khi chẩn đoán cần",
+    "object": "phương pháp được NGSP chứng nhận",
+    "evidence": "ndep_a1c_method_001"
+  },
+  {
+    "subject": "A1C",
+    "relation": "không khuyến nghị chẩn đoán bằng",
+    "object": "A1C tại điểm chăm sóc",
+    "evidence": "ndep_a1c_method_001"
+  },
+  {
+    "subject": "thay đổi lối sống",
+    "relation": "có thể giảm tỷ lệ mắc",
+    "object": "type 2",
+    "evidence": "ndep_dpp_results_001"
+  },
+  {
+    "subject": "thay đổi lối sống",
+    "relation": "trong DPP có mục tiêu vận động",
+    "object": "ít nhất 150 phút/tuần",
+    "evidence": "ndep_dpp_results_001"
+  },
+  {
+    "subject": "hoạt động thể lực",
+    "relation": "có thể cải thiện",
+    "object": "độ nhạy insulin",
+    "evidence": "ndep_activity_effect_001"
+  },
+  {
+    "subject": "hoạt động thể lực",
+    "relation": "có thể cải thiện",
+    "object": "kiểm soát glucose huyết",
+    "evidence": "ndep_activity_effect_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có yếu tố nguy cơ",
+    "object": "tiền sử gia đình mắc type 2",
+    "evidence": "cdc_75807_risk_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có yếu tố nguy cơ",
+    "object": "tăng huyết áp",
+    "evidence": "cdc_75807_risk_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có yếu tố nguy cơ",
+    "object": "tiền sử đái tháo đường thai kỳ",
+    "evidence": "cdc_75807_risk_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có yếu tố nguy cơ",
+    "object": "từng sinh con nặng từ 9 pound",
+    "evidence": "cdc_75807_risk_001"
+  },
+  {
+    "subject": "tiền đái tháo đường",
+    "relation": "liên quan nguy cơ cao hơn",
+    "object": "bệnh tim",
+    "evidence": "cdc_135620_outcome_001"
+  },
+  {
+    "subject": "tiền đái tháo đường",
+    "relation": "liên quan nguy cơ cao hơn",
+    "object": "đột quỵ",
+    "evidence": "cdc_135620_outcome_001"
+  },
+  {
+    "subject": "chương trình thay đổi lối sống",
+    "relation": "ghi nhận giảm tỷ lệ mới mắc type 2",
+    "object": "58% (nhóm nghiên cứu giảm 5–7% cân nặng và vận động ≥ 150 phút/tuần)",
+    "evidence": "cdc_135620_outcome_001"
+  },
+  {
+    "subject": "tiền đái tháo đường",
+    "relation": "có thể can thiệp bằng",
+    "object": "chương trình thay đổi lối sống",
+    "evidence": "cdc_135620_structure_001"
+  },
+  {
+    "subject": "chương trình thay đổi lối sống",
+    "relation": "thuộc",
+    "object": "National Diabetes Prevention Program",
+    "evidence": "cdc_135620_structure_001"
+  },
+  {
+    "subject": "chương trình thay đổi lối sống",
+    "relation": "có thành phần",
+    "object": "người hướng dẫn lối sống",
+    "evidence": "cdc_135620_structure_001"
+  },
+  {
+    "subject": "chương trình thay đổi lối sống",
+    "relation": "có thành phần",
+    "object": "hỗ trợ theo nhóm",
+    "evidence": "cdc_135620_structure_001"
+  },
+  {
+    "subject": "chương trình thay đổi lối sống",
+    "relation": "kéo dài",
+    "object": "một năm",
+    "evidence": "cdc_135620_structure_001"
+  },
+  {
+    "subject": "glucose huyết tương lúc đói",
+    "relation": "theo WHO 2025 có khoảng IFG",
+    "object": "110–125 mg/dL (6,1–6,9 mmol/L; lúc đói)",
+    "evidence": "idf2025_ifg_who_ada_001"
+  },
+  {
+    "subject": "glucose huyết tương lúc đói",
+    "relation": "theo ADA 2025 có khoảng IFG",
+    "object": "100–125 mg/dL (5,6–6,9 mmol/L; lúc đói)",
+    "evidence": "idf2025_ifg_who_ada_001"
+  },
+  {
+    "subject": "rối loạn glucose huyết lúc đói",
+    "relation": "có khác biệt tiêu chí giữa",
+    "object": "WHO và ADA",
+    "evidence": "idf2025_ifg_who_ada_001"
+  },
+  {
+    "subject": "tiền đái tháo đường",
+    "relation": "bao gồm tình trạng",
+    "object": "rối loạn glucose huyết lúc đói",
+    "evidence": "idf2025_ifg_igt_mechanism_001"
+  },
+  {
+    "subject": "tiền đái tháo đường",
+    "relation": "bao gồm tình trạng",
+    "object": "rối loạn dung nạp glucose",
+    "evidence": "idf2025_ifg_igt_mechanism_001"
+  },
+  {
+    "subject": "rối loạn dung nạp glucose",
+    "relation": "liên quan cơ chế",
+    "object": "kháng insulin ở cơ",
+    "evidence": "idf2025_ifg_igt_mechanism_001"
+  },
+  {
+    "subject": "rối loạn glucose huyết lúc đói",
+    "relation": "liên quan cơ chế",
+    "object": "giảm ức chế tạo glucose ở gan",
+    "evidence": "idf2025_ifg_igt_mechanism_001"
+  },
+  {
+    "subject": "tiền đái tháo đường",
+    "relation": "liên quan nguy cơ cao hơn",
+    "object": "bệnh thận mạn",
+    "evidence": "idf2025_prediabetes_outcomes_001"
+  },
+  {
+    "subject": "tiền đái tháo đường",
+    "relation": "liên quan nguy cơ cao hơn",
+    "object": "tử vong mọi nguyên nhân",
+    "evidence": "idf2025_prediabetes_outcomes_001"
+  },
+  {
+    "subject": "risk score lâm sàng",
+    "relation": "hỗ trợ",
+    "object": "sàng lọc nguy cơ type 2",
+    "evidence": "idf2025_risk_score_screen_001"
+  },
+  {
+    "subject": "risk score lâm sàng",
+    "relation": "có thể sử dụng thông tin",
+    "object": "tiền sử gia đình mắc type 2",
+    "evidence": "idf2025_risk_score_screen_001"
+  },
+  {
+    "subject": "risk score lâm sàng",
+    "relation": "nên được điều chỉnh theo",
+    "object": "dữ liệu địa phương",
+    "evidence": "idf2025_risk_score_screen_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có thể sàng lọc nguy cơ bằng",
+    "object": "risk score lâm sàng",
+    "evidence": "idf2025_risk_score_screen_001"
+  },
+  {
+    "subject": "sàng lọc nguy cơ type 2",
+    "relation": "cần kết hợp với",
+    "object": "xét nghiệm glucose hoặc A1C",
+    "evidence": "idf2025_risk_score_screen_001"
+  },
+  {
+    "subject": "sàng lọc nguy cơ type 2",
+    "relation": "có phương án",
+    "object": "sàng lọc hai giai đoạn",
+    "evidence": "idf2025_risk_score_tradeoff_001"
+  },
+  {
+    "subject": "sàng lọc hai giai đoạn",
+    "relation": "thực hiện trước",
+    "object": "xét nghiệm máu",
+    "evidence": "idf2025_risk_score_tradeoff_001"
+  },
+  {
+    "subject": "sàng lọc hai giai đoạn",
+    "relation": "có thể giảm chi phí so với",
+    "object": "sàng lọc trực tiếp bằng OGTT",
+    "evidence": "idf2025_risk_score_tradeoff_001"
+  },
+  {
+    "subject": "sàng lọc hai giai đoạn",
+    "relation": "có đánh đổi",
+    "object": "giảm khả năng phòng ngừa type 2 trong một số kịch bản",
+    "evidence": "idf2025_risk_score_tradeoff_001"
+  },
+  {
+    "subject": "risk score lâm sàng",
+    "relation": "không loại trừ hoàn toàn",
+    "object": "nguy cơ phát triển type 2",
+    "evidence": "idf2025_risk_score_tradeoff_001"
+  },
+  {
+    "subject": "nghiệm pháp dung nạp glucose đường uống",
+    "relation": "có phương án đang nghiên cứu",
+    "object": "glucose huyết tương sau 1 giờ",
+    "evidence": "idf2025_ogtt_1h_001"
+  },
+  {
+    "subject": "glucose huyết tương sau 1 giờ",
+    "relation": "có dấu mốc dự báo được đề xuất",
+    "object": "≥155 mg/dL (8,6 mmol/L; sau 1 giờ OGTT 75 g; không là ngưỡng chẩn đoán chuẩn)",
+    "evidence": "idf2025_ogtt_1h_001"
+  },
+  {
+    "subject": "glucose huyết tương sau 1 giờ",
+    "relation": "có ngưỡng chẩn đoán type 2 được đề xuất",
+    "object": "≥210 mg/dL (11,6 mmol/L; sau 1 giờ OGTT 75 g; đề xuất IDF)",
+    "evidence": "idf2025_ogtt_1h_001"
+  },
+  {
+    "subject": "glucose huyết tương sau 1 giờ",
+    "relation": "còn thiếu",
+    "object": "thử nghiệm can thiệp phòng ngừa riêng",
+    "evidence": "idf2025_ogtt_1h_001"
+  },
+  {
+    "subject": "rối loạn dung nạp glucose",
+    "relation": "có bằng chứng hưởng lợi từ",
+    "object": "can thiệp lối sống phòng ngừa type 2",
+    "evidence": "idf2025_prevention_phenotype_001"
+  },
+  {
+    "subject": "rối loạn glucose huyết lúc đói",
+    "relation": "có thể xuất hiện đơn độc dưới dạng",
+    "object": "rối loạn glucose huyết lúc đói đơn độc",
+    "evidence": "idf2025_prevention_phenotype_001"
+  },
+  {
+    "subject": "rối loạn glucose huyết lúc đói đơn độc",
+    "relation": "chưa có bằng chứng nhất quán về",
+    "object": "hiệu quả phòng type 2 bằng can thiệp lối sống",
+    "evidence": "idf2025_prevention_phenotype_001"
+  },
+  {
+    "subject": "A1C",
+    "relation": "có dữ liệu hạn chế về can thiệp lối sống ở",
+    "object": "hiệu quả can thiệp lối sống",
+    "evidence": "idf2025_prevention_phenotype_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có yếu tố ăn uống liên quan nguy cơ cao",
+    "object": "đồ uống có đường",
+    "evidence": "idf2025_diet_association_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có yếu tố ăn uống liên quan nguy cơ cao",
+    "object": "thịt chế biến sẵn",
+    "evidence": "idf2025_diet_association_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có yếu tố ăn uống liên quan nguy cơ thấp",
+    "object": "ngũ cốc nguyên hạt",
+    "evidence": "idf2025_diet_association_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có yếu tố ăn uống liên quan nguy cơ thấp",
+    "object": "thực phẩm giàu chất xơ",
+    "evidence": "idf2025_diet_association_001"
+  },
+  {
+    "subject": "tiền đái tháo đường",
+    "relation": "có chiến lược",
+    "object": "phòng ngừa type 2",
+    "evidence": "idf2025_population_prevention_001"
+  },
+  {
+    "subject": "phòng ngừa type 2",
+    "relation": "có chiến lược",
+    "object": "can thiệp ở nhóm nguy cơ cao",
+    "evidence": "idf2025_population_prevention_001"
+  },
+  {
+    "subject": "phòng ngừa type 2",
+    "relation": "có chiến lược",
+    "object": "can thiệp toàn cộng đồng",
+    "evidence": "idf2025_population_prevention_001"
+  },
+  {
+    "subject": "can thiệp toàn cộng đồng",
+    "relation": "bao gồm",
+    "object": "tăng cơ hội hoạt động thể lực",
+    "evidence": "idf2025_population_prevention_001"
+  },
+  {
+    "subject": "A1C",
+    "relation": "có thể không thống nhất với",
+    "object": "glucose huyết tương lúc đói",
+    "evidence": "idf2025_test_disagreement_001"
+  },
+  {
+    "subject": "A1C",
+    "relation": "có thể không thống nhất với",
+    "object": "glucose sau 2 giờ OGTT",
+    "evidence": "idf2025_test_disagreement_001"
+  },
+  {
+    "subject": "đái tháo đường",
+    "relation": "ở người không triệu chứng thường cần xác nhận bằng",
+    "object": "hai kết quả xét nghiệm bất thường",
+    "evidence": "idf2025_test_disagreement_001"
+  },
+  {
+    "subject": "A1C",
+    "relation": "có thể được bổ sung theo dõi bằng",
+    "object": "fructosamine",
+    "evidence": "idf2025_a1c_alternatives_001"
+  },
+  {
+    "subject": "A1C",
+    "relation": "có thể được bổ sung theo dõi bằng",
+    "object": "albumin glycat hóa",
+    "evidence": "idf2025_a1c_alternatives_001"
+  },
+  {
+    "subject": "fructosamine",
+    "relation": "phản ánh glucose gần đây khoảng",
+    "object": "2–4 tuần (theo dõi, không thay thế tiêu chuẩn chẩn đoán)",
+    "evidence": "idf2025_a1c_alternatives_001"
+  },
+  {
+    "subject": "albumin glycat hóa",
+    "relation": "phản ánh glucose gần đây khoảng",
+    "object": "2–4 tuần (theo dõi, không thay thế tiêu chuẩn chẩn đoán)",
+    "evidence": "idf2025_a1c_alternatives_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có mục tiêu theo dõi A1C thường dùng",
+    "object": "<7,0% (<53 mmol/mol; mục tiêu điều trị chung, không phải ngưỡng chẩn đoán)",
+    "evidence": "idf2025_a1c_target_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có mục tiêu theo dõi",
+    "object": "mục tiêu A1C",
+    "evidence": "idf2025_a1c_target_001"
+  },
+  {
+    "subject": "mục tiêu A1C",
+    "relation": "cần cá thể hóa theo",
+    "object": "nguy cơ hạ glucose huyết",
+    "evidence": "idf2025_a1c_target_001"
+  },
+  {
+    "subject": "mục tiêu A1C",
+    "relation": "cần cá thể hóa theo",
+    "object": "tuổi và bệnh đồng mắc",
+    "evidence": "idf2025_a1c_target_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có thể được theo dõi bằng",
+    "object": "SMBG",
+    "evidence": "idf2025_smbg_cgm_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có thể được theo dõi bằng",
+    "object": "CGM",
+    "evidence": "idf2025_smbg_cgm_001"
+  },
+  {
+    "subject": "CGM",
+    "relation": "đo",
+    "object": "glucose dịch kẽ",
+    "evidence": "idf2025_smbg_cgm_001"
+  },
+  {
+    "subject": "SMBG",
+    "relation": "đo",
+    "object": "glucose mao mạch tại thời điểm đo",
+    "evidence": "idf2025_smbg_cgm_001"
+  },
+  {
+    "subject": "CGM",
+    "relation": "có chỉ số",
+    "object": "TIR",
+    "evidence": "idf2025_cgm_metrics_001"
+  },
+  {
+    "subject": "CGM",
+    "relation": "có chỉ số",
+    "object": "TAR",
+    "evidence": "idf2025_cgm_metrics_001"
+  },
+  {
+    "subject": "CGM",
+    "relation": "có chỉ số",
+    "object": "TBR",
+    "evidence": "idf2025_cgm_metrics_001"
+  },
+  {
+    "subject": "TIR",
+    "relation": "dùng khoảng glucose",
+    "object": "70–180 mg/dL (3,9–10,0 mmol/L; người lớn không mang thai; theo dõi CGM)",
+    "evidence": "idf2025_cgm_metrics_001"
+  },
+  {
+    "subject": "TIR",
+    "relation": "thường được đánh giá với dữ liệu",
+    "object": "14 ngày và hoạt động ≥70% thời gian",
+    "evidence": "idf2025_cgm_metrics_001"
+  },
+  {
+    "subject": "TIR",
+    "relation": "khi thấp liên quan trong nghiên cứu quan sát với",
+    "object": "biến chứng vi mạch",
+    "evidence": "idf2025_cgm_limits_001"
+  },
+  {
+    "subject": "CGM",
+    "relation": "giúp đánh giá",
+    "object": "biến thiên glucose",
+    "evidence": "idf2025_cgm_limits_001"
+  },
+  {
+    "subject": "biến thiên glucose",
+    "relation": "khi lớn liên quan trong nghiên cứu quan sát với",
+    "object": "kết cục tim mạch bất lợi",
+    "evidence": "idf2025_cgm_limits_001"
+  },
+  {
+    "subject": "CGM",
+    "relation": "có hạn chế triển khai",
+    "object": "chi phí và khả năng tiếp cận",
+    "evidence": "idf2025_cgm_limits_001"
+  },
+  {
+    "subject": "CGM",
+    "relation": "có giới hạn bằng chứng biến chứng do",
+    "object": "nhiều nghiên cứu cắt ngang",
+    "evidence": "idf2025_cgm_limits_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có thể gặp ở BMI thấp trong",
+    "object": "người châu Á",
+    "evidence": "idf2025_asia_bmi_001"
+  },
+  {
+    "subject": "người châu Á",
+    "relation": "có thể phát triển type 2 ở",
+    "object": "BMI thấp hơn các quần thể khác",
+    "evidence": "idf2025_asia_bmi_001"
+  },
+  {
+    "subject": "BMI",
+    "relation": "cần xem xét",
+    "object": "ngưỡng theo quần thể dân tộc",
+    "evidence": "idf2025_asia_bmi_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "được xem xét nguy cơ cùng",
+    "object": "BMI",
+    "evidence": "idf2025_asia_bmi_001"
+  },
+  {
+    "subject": "BMI",
+    "relation": "có phân loại riêng cho",
+    "object": "BMI ở người châu Á",
+    "evidence": "idf2025_asia_bmi_001"
+  },
+  {
+    "subject": "BMI ở người châu Á",
+    "relation": "có khoảng thừa cân theo IDF 2025",
+    "object": "23,0–27,4 kg/m² (phân loại cân nặng; không chẩn đoán type 2)",
+    "evidence": "idf2025_asia_bmi_001"
+  },
+  {
+    "subject": "BMI ở người châu Á",
+    "relation": "có ngưỡng béo phì theo IDF 2025",
+    "object": "≥27,5 kg/m² (phân loại cân nặng; không chẩn đoán type 2)",
+    "evidence": "idf2025_asia_bmi_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có thể được hỗ trợ kiểm soát bằng",
+    "object": "giảm cân",
+    "evidence": "idf2025_weight_remission_001"
+  },
+  {
+    "subject": "giảm cân",
+    "relation": "có thể cải thiện",
+    "object": "kiểm soát glucose huyết ở type 2",
+    "evidence": "idf2025_weight_remission_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có thể đạt trạng thái",
+    "object": "thuyên giảm type 2",
+    "evidence": "idf2025_weight_remission_001"
+  },
+  {
+    "subject": "thuyên giảm type 2",
+    "relation": "có thách thức",
+    "object": "duy trì thuyên giảm lâu dài",
+    "evidence": "idf2025_weight_remission_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có biến chứng tim thận thường gặp",
+    "object": "suy tim",
+    "evidence": "idf2025_cardiorenal_multifactor_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có biến chứng tim thận thường gặp",
+    "object": "bệnh thận mạn",
+    "evidence": "idf2025_cardiorenal_multifactor_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có thể gặp",
+    "object": "biến chứng tim thận",
+    "evidence": "idf2025_cardiorenal_multifactor_001"
+  },
+  {
+    "subject": "biến chứng tim thận",
+    "relation": "có yếu tố góp phần",
+    "object": "tăng huyết áp",
+    "evidence": "idf2025_cardiorenal_multifactor_001"
+  },
+  {
+    "subject": "biến chứng tim thận",
+    "relation": "có yếu tố góp phần",
+    "object": "rối loạn lipid máu",
+    "evidence": "idf2025_cardiorenal_multifactor_001"
+  },
+  {
+    "subject": "bệnh thận mạn",
+    "relation": "liên quan tăng nguy cơ",
+    "object": "nhập viện vì suy tim",
+    "evidence": "idf2025_cardiorenal_multifactor_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "được sàng lọc nguy cơ bệnh thận bằng",
+    "object": "eGFR",
+    "evidence": "idf2025_ckd_screening_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "được sàng lọc nguy cơ bệnh thận bằng",
+    "object": "UACR",
+    "evidence": "idf2025_ckd_screening_001"
+  },
+  {
+    "subject": "eGFR",
+    "relation": "có dấu hiệu suy giảm chức năng thận",
+    "object": "<60 mL/phút/1,73 m² (không tự xác nhận CKD)",
+    "evidence": "idf2025_ckd_screening_001"
+  },
+  {
+    "subject": "UACR",
+    "relation": "có khoảng albumin niệu tăng mức trung bình",
+    "object": "30–300 mg/g creatinine (3–30 mg/mmol; IDF 2025)",
+    "evidence": "idf2025_ckd_screening_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "cần đánh giá thêm nguy cơ",
+    "object": "bệnh tim mạch",
+    "evidence": "idf2025_cvd_hf_screening_001"
+  },
+  {
+    "subject": "suy tim",
+    "relation": "có thể được đánh giá bằng",
+    "object": "điện tâm đồ",
+    "evidence": "idf2025_cvd_hf_screening_001"
+  },
+  {
+    "subject": "suy tim",
+    "relation": "có thể được đánh giá bằng",
+    "object": "siêu âm tim",
+    "evidence": "idf2025_cvd_hf_screening_001"
+  },
+  {
+    "subject": "suy tim",
+    "relation": "có thể có chỉ dấu",
+    "object": "BNP hoặc NT-proBNP",
+    "evidence": "idf2025_cvd_hf_screening_001"
+  },
+  {
+    "subject": "type 2",
+    "relation": "có bệnh đồng mắc liên quan",
+    "object": "MASLD",
+    "evidence": "idf2025_masld_definition_001"
+  },
+  {
+    "subject": "tiền đái tháo đường",
+    "relation": "có bệnh đồng mắc liên quan",
+    "object": "MASLD",
+    "evidence": "idf2025_masld_definition_001"
+  },
+  {
+    "subject": "MASLD",
+    "relation": "có thể tiến triển thành",
+    "object": "MASH",
+    "evidence": "idf2025_masld_definition_001"
+  },
+  {
+    "subject": "MASLD",
+    "relation": "có thể tiến triển đến",
+    "object": "xơ gan",
+    "evidence": "idf2025_masld_definition_001"
+  },
+  {
+    "subject": "MASLD",
+    "relation": "được đánh giá nguy cơ xơ hóa bằng",
+    "object": "FIB-4",
+    "evidence": "idf2025_fib4_001"
+  },
+  {
+    "subject": "FIB-4",
+    "relation": "được tính từ",
+    "object": "tuổi, AST, ALT và tiểu cầu",
+    "evidence": "idf2025_fib4_001"
+  },
+  {
+    "subject": "FIB-4",
+    "relation": "có khoảng khó phân loại",
+    "object": "1,30–2,67 (nguy cơ xơ hóa gan tiến triển; IDF 2025)",
+    "evidence": "idf2025_fib4_001"
+  },
+  {
+    "subject": "FIB-4",
+    "relation": "có hạn chế ở",
+    "object": "người dưới 35 tuổi",
+    "evidence": "idf2025_fib4_001"
+  },
+  {
+    "subject": "FIB-4",
+    "relation": "khi nguy cơ trung bình hoặc cao có thể tiếp nối bằng",
+    "object": "đánh giá hình ảnh gan",
+    "evidence": "idf2025_masld_imaging_001"
+  },
+  {
+    "subject": "MASLD",
+    "relation": "có thể đánh giá xơ hóa bằng",
+    "object": "VCTE",
+    "evidence": "idf2025_masld_imaging_001"
+  },
+  {
+    "subject": "MASLD",
+    "relation": "có thể đánh giá xơ hóa bằng",
+    "object": "MRE",
+    "evidence": "idf2025_masld_imaging_001"
+  },
+  {
+    "subject": "MASLD",
+    "relation": "thường không cần",
+    "object": "sinh thiết gan thường quy",
+    "evidence": "idf2025_masld_imaging_001"
+  },
+  {
+    "subject": "MASLD",
+    "relation": "có thể cải thiện khi",
+    "object": "giảm cân duy trì",
+    "evidence": "idf2025_masld_weight_001"
+  },
+  {
+    "subject": "giảm cân duy trì",
+    "relation": "có mức liên quan giảm mỡ gan",
+    "object": "≥5% cân nặng (người thừa cân/béo phì có MASLD; IDF 2025)",
+    "evidence": "idf2025_masld_weight_001"
+  },
+  {
+    "subject": "giảm cân duy trì",
+    "relation": "có mức liên quan cải thiện viêm gan",
+    "object": "7–10% cân nặng (người có MASLD; IDF 2025)",
+    "evidence": "idf2025_masld_weight_001"
+  }
 ]

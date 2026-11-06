@@ -54,3 +54,18 @@ class WorkflowPolicy:
         action=max(allowed,key=lambda a:q[a])
         return {'state':idx,'action':ACTIONS[action],'allowed_actions':[ACTIONS[a] for a in allowed],
                 'q_value':q[action], 'scope':'Educational workflow only; not treatment'}
+
+
+    def select(self, missing=False, evidence=False, review=False, retrieval_remaining=True):
+        # Hard safety mask is applied before reading Q-values. The caller actually
+        # dispatches the selected action; the policy cannot alter scores or inputs.
+        if missing: permitted=['ask_for_information']
+        elif review: permitted=['request_human_review']
+        elif not evidence: permitted=['show_sources'] if retrieval_remaining else ['request_human_review']
+        else: permitted=['show_sources','explain_score'] if retrieval_remaining else ['explain_score']
+        idx=int(missing)*4+int(evidence)*2+int(review)
+        values=self.artifact['q_table'][idx]
+        action=max(permitted,key=lambda a:values[ACTIONS.index(a)])
+        return {'state':idx,'action':action,'allowed_actions':permitted,
+                'q_value':values[ACTIONS.index(action)],'controller':'masked_q_policy',
+                'scope':'Synthetic-trained workflow policy with mandatory safety constraints'}

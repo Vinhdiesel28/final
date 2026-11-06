@@ -1,5 +1,7 @@
 """Neo4j is the document and entity source when KNOWLEDGE_BACKEND=neo4j."""
 import os
+import json
+import hashlib
 import settings
 from neo4j import GraphDatabase
 
@@ -16,24 +18,45 @@ class Neo4jStore:
             return [r.data() for r in session.run(cypher, **params)]
 
     def ingest(self, documents, edges):
+        ids={d['id'] for d in documents}
+        if len(ids)!=len(documents) or any(e['evidence'] not in ids for e in edges):
+            raise ValueError('Duplicate document IDs or graph edge without corpus evidence')
+        version=hashlib.sha256(json.dumps([documents,edges],sort_keys=True,ensure_ascii=False).encode()).hexdigest()
         self.query('CREATE CONSTRAINT document_id IF NOT EXISTS FOR (d:DiaDocument) REQUIRE d.id IS UNIQUE')
         self.query('CREATE CONSTRAINT entity_name IF NOT EXISTS FOR (e:DiaEntity) REQUIRE e.name IS UNIQUE')
-        self.query('UNWIND $rows AS row MERGE (d:DiaDocument {id:row.id}) SET d += row', rows=documents)
-        self.query('''UNWIND $rows AS row
-            MERGE (s:DiaEntity {name:row.subject}) MERGE (o:DiaEntity {name:row.object})
-            MERGE (s)-[r:DIA_RELATION {relation:row.relation, evidence:row.evidence}]->(o)
-            WITH s,o,row MATCH (d:DiaDocument {id:row.evidence})
-            MERGE (s)-[:SUPPORTED_BY]->(d) MERGE (o)-[:SUPPORTED_BY]->(d)''', rows=edges)
+        # Activate a complete snapshot atomically; do not delete old project data.
+        def write(tx):
+            tx.run('UNWIND $rows AS row MERGE (d:DiaDocument {id:row.id}) SET d += row',rows=documents).consume()
+            tx.run("""UNWIND $rows AS row
+                MERGE (s:DiaEntity {name:row.subject}) MERGE (o:DiaEntity {name:row.object})
+                MERGE (s)-[r:DIA_RELATION {relation:row.relation, evidence:row.evidence}]->(o)
+                SET r.snapshot=$version
+                WITH s,o,row MATCH (d:DiaDocument {id:row.evidence})
+                MERGE (s)-[:SUPPORTED_BY]->(d) MERGE (o)-[:SUPPORTED_BY]->(d)""",rows=edges,version=version).consume()
+            tx.run("MERGE (k:DiaKnowledgeSnapshot {id:'current'}) SET k.version=$version,k.document_ids=$ids",version=version,ids=sorted(ids)).consume()
+        with self.driver.session(database=self.database) as session: session.execute_write(write)
+
+    def active_snapshot(self):
+        rows=self.query("MATCH (k:DiaKnowledgeSnapshot {id:'current'}) RETURN k.version AS version,k.document_ids AS ids")
+        return rows[0] if rows else None
 
     def load(self):
-        documents = [r['doc'] for r in self.query('MATCH (d:DiaDocument) RETURN properties(d) AS doc ORDER BY d.id')]
-        edges = self.query('MATCH (s:DiaEntity)-[r:DIA_RELATION]->(o:DiaEntity) RETURN s.name AS subject, r.relation AS relation, o.name AS object, r.evidence AS evidence ORDER BY subject,relation,object')
+        snapshot=self.active_snapshot()
+        if snapshot:
+            documents=[r['doc'] for r in self.query('MATCH (d:DiaDocument) WHERE d.id IN $ids RETURN properties(d) AS doc ORDER BY d.id',ids=snapshot['ids'])]
+            edges=self.query('MATCH (s:DiaEntity)-[r:DIA_RELATION]->(o:DiaEntity) WHERE r.snapshot=$version RETURN s.name AS subject,r.relation AS relation,o.name AS object,r.evidence AS evidence ORDER BY subject,relation,object',version=snapshot['version'])
+        else:
+            documents=[r['doc'] for r in self.query('MATCH (d:DiaDocument) RETURN properties(d) AS doc ORDER BY d.id')]
+            edges=self.query('MATCH (s:DiaEntity)-[r:DIA_RELATION]->(o:DiaEntity) RETURN s.name AS subject,r.relation AS relation,o.name AS object,r.evidence AS evidence ORDER BY subject,relation,object')
         if not documents: raise RuntimeError('Neo4j corpus is empty; run tools/ingest_neo4j.py')
-        return documents, edges
+        return documents,edges
 
-    def paths(self, seeds):
-        return self.query('''MATCH (s:DiaEntity) WHERE s.name IN $seeds
+    def paths(self,seeds):
+        snapshot=self.active_snapshot()
+        return self.query("""MATCH (s:DiaEntity) WHERE s.name IN $seeds
             MATCH p=(s)-[:DIA_RELATION*1..2]-(o:DiaEntity)
+            WHERE $version IS NULL OR all(edge IN relationships(p) WHERE edge.snapshot=$version)
             UNWIND relationships(p) AS r
-            RETURN DISTINCT startNode(r).name AS subject, r.relation AS relation,
-            endNode(r).name AS object, r.evidence AS evidence LIMIT 16''', seeds=seeds)
+            RETURN DISTINCT startNode(r).name AS subject,r.relation AS relation,
+            endNode(r).name AS object,r.evidence AS evidence
+            ORDER BY subject,relation,object LIMIT 16""",seeds=seeds,version=snapshot['version'] if snapshot else None)

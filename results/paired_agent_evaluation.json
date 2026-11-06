@@ -1,0 +1,157 @@
+{
+  "protocol": "100 random held-out cases, alternating execution order; five repeated injected transient empty-retrieval faults per system; 20 repeated latency runs per system. Citation presence is not semantic evidence verification. JSON KB backend.",
+  "summary": {
+    "multi": {
+      "count": 100,
+      "accuracy_all_raw_predictions": 0.96,
+      "coverage": 0.99,
+      "selective_accuracy": 0.9595959595959596,
+      "confusion_all": [
+        [
+          89,
+          0
+        ],
+        [
+          4,
+          7
+        ]
+      ],
+      "confusion_accepted": [
+        [
+          88,
+          0
+        ],
+        [
+          4,
+          7
+        ]
+      ],
+      "errors_referred": 0,
+      "latency_median_ms": 51.900000000000006,
+      "latency_p95_ms": 80.3755
+    },
+    "single": {
+      "count": 100,
+      "accuracy_all_raw_predictions": 0.96,
+      "coverage": 1.0,
+      "selective_accuracy": 0.96,
+      "confusion_all": [
+        [
+          89,
+          0
+        ],
+        [
+          4,
+          7
+        ]
+      ],
+      "confusion_accepted": [
+        [
+          89,
+          0
+        ],
+        [
+          4,
+          7
+        ]
+      ],
+      "errors_referred": 0,
+      "latency_median_ms": 50.614999999999995,
+      "latency_p95_ms": 94.807
+    }
+  },
+  "faults": [
+    {
+      "system": "single",
+      "repetition": 0,
+      "retrieval_calls": 1,
+      "citations_after": 0,
+      "status": "supported_with_limitations",
+      "latency_ms": 87.12
+    },
+    {
+      "system": "single",
+      "repetition": 1,
+      "retrieval_calls": 1,
+      "citations_after": 0,
+      "status": "supported_with_limitations",
+      "latency_ms": 58.49
+    },
+    {
+      "system": "single",
+      "repetition": 2,
+      "retrieval_calls": 1,
+      "citations_after": 0,
+      "status": "supported_with_limitations",
+      "latency_ms": 76.2
+    },
+    {
+      "system": "single",
+      "repetition": 3,
+      "retrieval_calls": 1,
+      "citations_after": 0,
+      "status": "supported_with_limitations",
+      "latency_ms": 58.13
+    },
+    {
+      "system": "single",
+      "repetition": 4,
+      "retrieval_calls": 1,
+      "citations_after": 0,
+      "status": "supported_with_limitations",
+      "latency_ms": 50.87
+    },
+    {
+      "system": "multi",
+      "repetition": 0,
+      "retrieval_calls": 2,
+      "citations_after": 1,
+      "status": "supported_with_limitations",
+      "latency_ms": 52.91
+    },
+    {
+      "system": "multi",
+      "repetition": 1,
+      "retrieval_calls": 2,
+      "citations_after": 1,
+      "status": "supported_with_limitations",
+      "latency_ms": 53.72
+    },
+    {
+      "system": "multi",
+      "repetition": 2,
+      "retrieval_calls": 2,
+      "citations_after": 1,
+      "status": "supported_with_limitations",
+      "latency_ms": 52.95
+    },
+    {
+      "system": "multi",
+      "repetition": 3,
+      "retrieval_calls": 2,
+      "citations_after": 1,
+      "status": "supported_with_limitations",
+      "latency_ms": 54.47
+    },
+    {
+      "system": "multi",
+      "repetition": 4,
+      "retrieval_calls": 2,
+      "citations_after": 1,
+      "status": "supported_with_limitations",
+      "latency_ms": 51.94
+    }
+  ],
+  "repeated_latency": {
+    "single": {
+      "runs": 20,
+      "median_ms": 73.535,
+      "p95_ms": 140.31750000000002
+    },
+    "multi": {
+      "runs": 20,
+      "median_ms": 87.1,
+      "p95_ms": 182.225
+    }
+  }
+}

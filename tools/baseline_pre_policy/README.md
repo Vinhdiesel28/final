@@ -1,0 +1,1 @@
+Frozen baseline captured before validation-selected referral policy and executable masked RL routing. It already contains specialist handlers and bounded evidence repair. Both baseline and upgraded runs use the same current corpus, graph and model services. Do not edit these snapshot files to improve comparison results.

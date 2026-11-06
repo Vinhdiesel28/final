@@ -11,6 +11,9 @@ from knowledge_service import KnowledgeService, normalize
 from model_service import DiabetesModelService
 from message_bus import MessageBus
 from workflow_policy import WorkflowPolicy
+from evidence_review import repair
+from specialist_agents import Specialists, evidence_query, source_conflicts
+import copy
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -42,7 +45,14 @@ class State:
     messages: list = field(default_factory=list)
     review: dict | None = None
     workflow: dict | None = None
+    workflow_history: list = field(default_factory=list)
     backend: str = ''
+    revisions: list = field(default_factory=list)
+    evidence_review: dict | None = None
+    decision: dict | None = None
+    verification: dict | None = None
+    clarification: dict | None = None
+    explanation: dict | None = None
     started: float = field(default_factory=time.perf_counter)
 
     def trace(self, agent: str, started: float, summary: str, tool: str, status: str = "success"):
@@ -127,60 +137,125 @@ class SingleAgent:
 
 
 class MultiAgent:
+    """State-driven, bounded specialist collaboration with executable handlers."""
     def __init__(self, services: Services): self.s = services
 
     def run(self, question: str = "", profile: dict | None = None) -> dict:
-        state = State("multi", question, profile)
-        state.backend=self.s.knowledge.backend
-        bus=MessageBus(); state.messages=bus.messages
-        bus.register('ValidationAgent',lambda p:{'errors':self.s.model.validate(p['profile'])})
-        bus.register('PredictionAgent',lambda p:self.s.model.predict(p['profile']) if 'profile' in p else {'response':'Model dùng checkpoint cố định và threshold validation; không điều chỉnh score để tạo đồng thuận.'})
-        bus.register('RetrievalAgent',lambda p:self.s.knowledge.answer(p['question']))
-        bus.register('CriticAgent',lambda p:self.s.review(p['prediction'],p['knowledge']))
-        bus.register('WorkflowRLAgent',lambda p:self.s.policy.recommend(**p))
-        t = time.perf_counter(); state.intent = intent_of(question, profile)
-        state.trace("CoordinatorAgent", t, f"Định tuyến: {state.intent}", "intent_router")
-        if state.intent in {"unsafe_medical_request", "out_of_scope"}:
-            t=time.perf_counter(); state.status = "blocked_unsafe_request" if state.intent.startswith("unsafe") else "out_of_scope"
-            state.answer = "Hệ thống không kê đơn hoặc lựa chọn điều trị. Hãy trao đổi với nhân viên y tế." if state.intent.startswith("unsafe") else "Yêu cầu nằm ngoài phạm vi bệnh tiểu đường của hệ thống."
-            state.trace("SafetyAgent", t, state.status, "policy_guard"); return serialize(state)
-        if profile:
-            t=time.perf_counter(); state.validation_errors = bus.request('CoordinatorAgent','ValidationAgent',{'profile':profile})['errors']
-            state.trace("ValidationAgent", t, "Hợp lệ" if not state.validation_errors else f"{len(state.validation_errors)} lỗi", "schema_validator",
-                        "success" if not state.validation_errors else "blocked")
+        state=State('multi',question,profile); state.backend=self.s.knowledge.backend
+        bus=MessageBus(); state.messages=bus.messages; handlers=Specialists(self.s)
+        for name,handler in {
+            'ValidationAgent':lambda p:{'errors':self.s.model.validate(p['profile'])},
+            'PredictionAgent':lambda p:self.s.model.predict(p['profile']),
+            'RetrievalAgent':lambda p:self.s.knowledge.answer(p['question']),
+            'StatisticsAgent':lambda p:self.s.statistics(p['question']),
+            'ClarificationAgent':handlers.clarify,'CriticAgent':handlers.critic,
+            'ReviewAgent':handlers.review,'ExplanationAgent':handlers.explain,
+            'VerifierSafetyAgent':handlers.verify,
+            'WorkflowRLAgent':lambda p:self.s.policy.select(**p),
+        }.items(): bus.register(name,handler)
+
+        def call(name,payload,sender='CoordinatorAgent',performative='REQUEST'):
+            t=time.perf_counter(); result=bus.request(sender,name,payload,performative)
+            state.trace(name,t,result.get('status',result.get('conclusion','Handler executed')),name)
+            return result
+
+        def choose(**context):
+            state.workflow=call('WorkflowRLAgent',context)
+            state.workflow_history.append(state.workflow)
+            return state.workflow
+
+        state.intent=intent_of(question,profile)
+        personal=any(x in normalize(question) for x in ['nguy co cua toi','toi co bi tieu duong','danh gia ho so','du doan ho so'])
+        if state.intent not in {'unsafe_medical_request','out_of_scope'} and (profile is not None or personal):
+            state.intent='risk_assessment'
+        if state.intent in {'unsafe_medical_request','out_of_scope'}:
+            state.status='blocked_unsafe_request' if state.intent.startswith('unsafe') else 'out_of_scope'
+            state.answer='Hệ thống không kê đơn hoặc lựa chọn điều trị. Hãy trao đổi với nhân viên y tế.' if state.intent.startswith('unsafe') else 'Yêu cầu nằm ngoài phạm vi bệnh tiểu đường của hệ thống.'
+            state.decision={'status':state.status,'final_label':None,'review_required':False}
+        elif state.intent=='risk_assessment':
+            state.validation_errors=call('ValidationAgent',{'profile':profile or {}})['errors']
             if state.validation_errors:
-                state.status="invalid_input"; state.answer="Hồ sơ chưa hợp lệ."; return serialize(state)
-            t=time.perf_counter(); state.prediction=bus.request('CoordinatorAgent','PredictionAgent',{'profile':profile})
-            state.trace("PredictionAgent",t,f"risk={state.prediction['probability']:.4f}","model_checkpoint")
-            t=time.perf_counter(); state.knowledge=bus.request('CoordinatorAgent','RetrievalAgent',{'question':question or 'yếu tố nguy cơ type 2'})
-            state.trace("RetrievalAgent",t,f"{len(state.knowledge['citations'])} nguồn","bm25_retrieval")
-            if state.knowledge["paths"]:
-                t=time.perf_counter(); state.trace("GraphAgent",t,f"{len(state.knowledge['paths'])} cạnh","knowledge_graph")
-            t=time.perf_counter()
-            state.review=bus.request('CoordinatorAgent','CriticAgent',{'prediction':state.prediction,'knowledge':state.knowledge})
-            for challenge in state.review['challenges'][:2]:
-                bus.request('CriticAgent','PredictionAgent',{'challenge':challenge},'CHALLENGE')
-            state.trace('CriticAgent',t,state.review['conclusion'],'model_disagreement_review')
-            t=time.perf_counter()
-            state.workflow=bus.request('CoordinatorAgent','WorkflowRLAgent',{'evidence':bool(state.knowledge['citations']),'review':state.review['requires_review']})
-            state.trace('WorkflowRLAgent',t,state.workflow['action'],'q_learning_with_action_mask')
-            t=time.perf_counter(); state.answer=f"Risk score {state.prediction['probability']*100:.1f}%. Đây là ước lượng học thuật, không phải chẩn đoán. " + state.knowledge["answer"]
-            state.trace("ExplanationAgent",t,"Kết hợp prediction và evidence","grounded_composer")
-        elif state.intent == "dataset_statistics":
-            t=time.perf_counter(); state.statistics=self.s.statistics(question); x=state.statistics
-            state.answer=f"Trong {x['group']}: {x['positive']:,}/{x['count']:,}, tương đương {x['rate']:.2f}%."
-            state.trace("StatisticsAgent",t,x["formula"],"pandas_exact")
-        else:
-            t=time.perf_counter(); state.knowledge=bus.request('CoordinatorAgent','RetrievalAgent',{'question':question})
-            state.trace("RetrievalAgent",t,f"{len(state.knowledge['citations'])} nguồn","bm25_retrieval")
-            if state.knowledge["paths"]:
-                t=time.perf_counter(); state.trace("GraphAgent",t,f"{len(state.knowledge['paths'])} cạnh","knowledge_graph")
-            state.answer=state.knowledge["answer"]
-        t=time.perf_counter(); citations=(state.knowledge or {}).get("citations",[])
-        if state.intent == "medical_knowledge" and not citations:
-            state.status="insufficient_evidence"; state.answer="Kho tri thức không có đủ bằng chứng để trả lời."
-        else: state.status="supported_with_limitations" if profile else "supported"
-        state.trace("VerifierSafetyAgent",t,f"status={state.status}; citations={len(citations)}","claim_evidence_guard")
+                route=choose(missing=True)
+                if route['action']!='ask_for_information': raise RuntimeError('Safety mask violated')
+                state.clarification=call('ClarificationAgent',{'errors':state.validation_errors})
+                route['executed_handler']='ClarificationAgent'
+                state.decision=state.clarification['decision']; state.status='needs_clarification'
+            else:
+                state.prediction=call('PredictionAgent',{'profile':profile})
+        elif state.intent=='dataset_statistics':
+            state.statistics=call('StatisticsAgent',{'question':question})
+            state.status='supported'; state.decision={'status':state.status,'final_label':None,'review_required':False}
+
+        conflicts=[]
+        if state.prediction or state.intent=='medical_knowledge':
+            query=evidence_query(question or 'yếu tố nguy cơ type 2',state.prediction) if state.prediction else (question or 'yếu tố nguy cơ type 2')
+            route=choose(evidence=False)
+            if route['action']!='show_sources': raise RuntimeError('Retrieval mask violated')
+            state.knowledge=call('RetrievalAgent',{'question':query})
+            route['executed_handler']='RetrievalAgent'
+            # Preserve conflicts discovered before repair so filtering a citation
+            # cannot silently erase contradictory evidence.
+            conflicts=source_conflicts(state.knowledge,self.s.knowledge.by_id)
+            if not conflicts:
+                state.knowledge,state.evidence_review,revisions=repair(query,state.knowledge,self.s.knowledge.by_id,bus)
+                state.revisions.extend(revisions)
+                conflicts=source_conflicts(state.knowledge,self.s.knowledge.by_id)
+            # One optional policy-selected retrieval, then force progress. Evidence
+            # conflicts cannot be removed by a later response dropping a source.
+            route=choose(evidence=bool(state.knowledge.get('citations')),review=bool(conflicts),retrieval_remaining=bool(state.knowledge.get('citations')))
+            if route['action']=='show_sources':
+                from evidence_review import rewrite_query
+                candidate=call('RetrievalAgent',{'question':rewrite_query(query)})
+                route['executed_handler']='RetrievalAgent'
+                new_conflicts=source_conflicts(candidate,self.s.knowledge.by_id)
+                conflicts.extend(c for c in new_conflicts if c not in conflicts)
+                if not conflicts:
+                    candidate,checked,changes=repair(query,candidate,self.s.knowledge.by_id,bus)
+                    state.knowledge=candidate; state.evidence_review=checked; state.revisions.extend(changes)
+                    conflicts=source_conflicts(candidate,self.s.knowledge.by_id)
+                else: state.knowledge=candidate
+            state.decision={'status':'supported_with_limitations' if state.prediction else 'supported',
+                            'final_label':state.prediction['predicted_class'] if state.prediction else None,
+                            'probability':state.prediction['probability'] if state.prediction else None,
+                            'review_required':False,'reason_codes':[]}
+            for round_number in range(1,3):
+                payload={'prediction':state.prediction,'knowledge':state.knowledge,
+                         'decision':state.decision,'conflicts':conflicts}
+                state.review=call('CriticAgent',payload)
+                if state.review['passed']: break
+                before=copy.deepcopy(state.decision)
+                route=choose(evidence=bool(state.knowledge.get('citations')),review=state.review['requires_review'],retrieval_remaining=False)
+                if route['action'] not in {'request_human_review','explain_score'}: raise RuntimeError('Unexpected review action')
+                state.decision=call('ReviewAgent',{**payload,'critique':state.review},'CriticAgent','CHALLENGE')
+                route['executed_handler']='ReviewAgent'
+                state.revisions.append({'round':round_number,'action':'revise_conclusion',
+                    'before':before,'after':copy.deepcopy(state.decision),'state_changed':before!=state.decision,
+                    'initial_challenges':state.review['reason_codes']})
+            if not state.review['passed']:
+                state.review=call('CriticAgent',{'prediction':state.prediction,'knowledge':state.knowledge,'decision':state.decision,'conflicts':conflicts})
+                if not state.review['passed']:
+                    state.decision={**state.decision,'status':'verification_failed','final_label':None,
+                        'review_required':True,'reason_codes':state.review['reason_codes']+['critic_unresolved'],
+                        'source_conflicts':conflicts}
+            state.status=state.decision['status']
+        payload={'prediction':state.prediction,'knowledge':state.knowledge,'decision':state.decision,
+                 'conflicts':conflicts,'statistics':state.statistics,'clarification':state.clarification,
+                 'blocked':state.intent in {'unsafe_medical_request','out_of_scope'}}
+        if state.intent not in {'unsafe_medical_request','out_of_scope'}:
+            state.explanation=call('ExplanationAgent',payload)
+            state.answer=state.explanation['answer']
+            for selected in state.workflow_history:
+                if 'executed_handler' not in selected: selected['executed_handler']='ExplanationAgent' if selected['action']=='explain_score' else 'ReviewAgent'
+        state.verification=call('VerifierSafetyAgent',{**payload,'answer':state.answer,'explanation':state.explanation})
+        if not state.verification['passed']:
+            before=state.answer
+            state.explanation=call('ExplanationAgent',{**payload,'verification':state.verification},'VerifierSafetyAgent','CHALLENGE')
+            state.answer=state.explanation['answer']
+            state.revisions.append({'action':'rewrite_final_explanation','before':before,'after':state.answer,'state_changed':before!=state.answer})
+            state.verification=call('VerifierSafetyAgent',{**payload,'answer':state.answer,'explanation':state.explanation})
+            if not state.verification['passed']:
+                state.status='verification_failed'; state.answer='Không thể xác minh kết luận. Cần xem xét thêm.'
+                state.decision={**state.decision,'status':state.status,'final_label':None,'review_required':True}
         return serialize(state)
 
 
@@ -188,5 +263,7 @@ def serialize(state: State) -> dict:
     return {"request_id":state.request_id,"mode":state.mode,"intent":state.intent,"status":state.status,"answer":state.answer,
             "prediction":state.prediction,"statistics":state.statistics,"knowledge":state.knowledge,
             "validation_errors":state.validation_errors,"safety_flags":state.safety_flags,
-            "messages":state.messages,"review":state.review,"workflow":state.workflow,"knowledge_backend":state.backend,
+            "messages":state.messages,"review":state.review,"workflow":state.workflow,"revisions":state.revisions,"knowledge_backend":state.backend,
+            "evidence_review":state.evidence_review,"decision":state.decision,
+            "verification":state.verification,"clarification":state.clarification,"explanation":state.explanation,"workflow_history":state.workflow_history,
             "traces":[t.__dict__ for t in state.traces],"total_duration_ms":round((time.perf_counter()-state.started)*1000,2)}
