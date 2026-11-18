@@ -1,0 +1,1162 @@
+{
+  "protocol": {
+    "scope": "Offline replay, real checkpoint, historical public evidence, scripted LLM/Critic; not live Groq or semantic validation",
+    "runtime_hash": "7a759ce5ff3a9beade35ad2432bdcb0434afc2bc1058d3b6e680a35dcba5c45a"
+  },
+  "trials": [
+    {
+      "case_id": "A01",
+      "kind": "assessment",
+      "repeat": 0,
+      "elapsed_ms": 350.8641002699733,
+      "response": {
+        "status": "insufficient_evidence",
+        "traces": [
+          {
+            "agent": "CoordinatorAgent",
+            "status": "success",
+            "duration_ms": 3.33,
+            "summary": "Yêu cầu chạy mô hình từ form trống câu hỏi",
+            "tool": "CoordinatorAgent"
+          },
+          {
+            "agent": "ValidationAgent",
+            "status": "success",
+            "duration_ms": 0.07,
+            "summary": "executed",
+            "tool": "ValidationAgent"
+          },
+          {
+            "agent": "PredictionAgent",
+            "status": "success",
+            "duration_ms": 145.93,
+            "summary": "executed",
+            "tool": "PredictionAgent"
+          },
+          {
+            "agent": "RuleBasedAgent",
+            "status": "success",
+            "duration_ms": 0.07,
+            "summary": "Kiểm tra bất đồng model và quy tắc chuyển review",
+            "tool": "RuleBasedAgent"
+          },
+          {
+            "agent": "RetrievalAgent",
+            "status": "success",
+            "duration_ms": 22.48,
+            "summary": "Truy xuất 8 bằng chứng từ 1 truy vấn",
+            "tool": "RetrievalAgent"
+          },
+          {
+            "agent": "EvidenceReaderAgent",
+            "status": "success",
+            "duration_ms": 132.77,
+            "summary": "Xếp hạng theo độ phủ thuật ngữ và IDF, đọc 4 đoạn, giữ nguồn và trang",
+            "tool": "EvidenceReaderAgent"
+          },
+          {
+            "agent": "WorkflowRLAgent",
+            "status": "success",
+            "duration_ms": 0.06,
+            "summary": "executed",
+            "tool": "WorkflowRLAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.24,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 1.52,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.17,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.29,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.32,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.29,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "VerifierSafetyAgent",
+            "status": "success",
+            "duration_ms": 0.14,
+            "summary": "Verifier đạt",
+            "tool": "VerifierSafetyAgent"
+          },
+          {
+            "agent": "MonitoringAgent",
+            "status": "success",
+            "duration_ms": 0.02,
+            "summary": "Ghi metadata và thời gian xử lý, không lưu nội dung hồ sơ",
+            "tool": "MonitoringAgent"
+          }
+        ],
+        "decision": {
+          "status": "insufficient_evidence",
+          "final_label": null,
+          "review_required": false,
+          "reason_codes": []
+        }
+      },
+      "grade": {
+        "checks": {
+          "routing": true,
+          "completion": false,
+          "citations": false,
+          "answer_rubric": false,
+          "verification": false,
+          "validation": true,
+          "immutable_prediction": true,
+          "rules_respected": false,
+          "assessment_order": true,
+          "retrieval_provenance": true,
+          "reader_preserves_source": true,
+          "monitoring_contract": true,
+          "workflow_mask": true
+        },
+        "passed": false,
+        "claims_emitted": 0,
+        "valid_quotes": 0,
+        "selected_qrel_hit": null
+      }
+    },
+    {
+      "case_id": "A02",
+      "kind": "assessment",
+      "repeat": 0,
+      "elapsed_ms": 225.2830001525581,
+      "response": {
+        "status": "insufficient_evidence",
+        "traces": [
+          {
+            "agent": "CoordinatorAgent",
+            "status": "success",
+            "duration_ms": 0.11,
+            "summary": "Yêu cầu chạy mô hình từ form trống câu hỏi",
+            "tool": "CoordinatorAgent"
+          },
+          {
+            "agent": "ValidationAgent",
+            "status": "success",
+            "duration_ms": 0.04,
+            "summary": "executed",
+            "tool": "ValidationAgent"
+          },
+          {
+            "agent": "PredictionAgent",
+            "status": "success",
+            "duration_ms": 74.66,
+            "summary": "executed",
+            "tool": "PredictionAgent"
+          },
+          {
+            "agent": "RuleBasedAgent",
+            "status": "success",
+            "duration_ms": 0.05,
+            "summary": "Kiểm tra bất đồng model và quy tắc chuyển review",
+            "tool": "RuleBasedAgent"
+          },
+          {
+            "agent": "RetrievalAgent",
+            "status": "success",
+            "duration_ms": 0.42,
+            "summary": "Truy xuất 8 bằng chứng từ 1 truy vấn",
+            "tool": "RetrievalAgent"
+          },
+          {
+            "agent": "EvidenceReaderAgent",
+            "status": "success",
+            "duration_ms": 145.09,
+            "summary": "Xếp hạng theo độ phủ thuật ngữ và IDF, đọc 4 đoạn, giữ nguồn và trang",
+            "tool": "EvidenceReaderAgent"
+          },
+          {
+            "agent": "WorkflowRLAgent",
+            "status": "success",
+            "duration_ms": 0.05,
+            "summary": "executed",
+            "tool": "WorkflowRLAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.18,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.4,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.15,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.29,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.15,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.3,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "VerifierSafetyAgent",
+            "status": "success",
+            "duration_ms": 0.13,
+            "summary": "Verifier đạt",
+            "tool": "VerifierSafetyAgent"
+          },
+          {
+            "agent": "MonitoringAgent",
+            "status": "success",
+            "duration_ms": 0.02,
+            "summary": "Ghi metadata và thời gian xử lý, không lưu nội dung hồ sơ",
+            "tool": "MonitoringAgent"
+          }
+        ],
+        "decision": {
+          "status": "insufficient_evidence",
+          "final_label": null,
+          "review_required": false,
+          "reason_codes": []
+        }
+      },
+      "grade": {
+        "checks": {
+          "routing": true,
+          "completion": false,
+          "citations": false,
+          "answer_rubric": false,
+          "verification": false,
+          "validation": true,
+          "immutable_prediction": true,
+          "rules_respected": true,
+          "assessment_order": true,
+          "retrieval_provenance": true,
+          "reader_preserves_source": true,
+          "monitoring_contract": true,
+          "workflow_mask": true
+        },
+        "passed": false,
+        "claims_emitted": 0,
+        "valid_quotes": 0,
+        "selected_qrel_hit": null
+      }
+    },
+    {
+      "case_id": "A02",
+      "kind": "assessment",
+      "repeat": 1,
+      "elapsed_ms": 168.2727998122573,
+      "response": {
+        "status": "insufficient_evidence",
+        "traces": [
+          {
+            "agent": "CoordinatorAgent",
+            "status": "success",
+            "duration_ms": 0.11,
+            "summary": "Yêu cầu chạy mô hình từ form trống câu hỏi",
+            "tool": "CoordinatorAgent"
+          },
+          {
+            "agent": "ValidationAgent",
+            "status": "success",
+            "duration_ms": 0.03,
+            "summary": "executed",
+            "tool": "ValidationAgent"
+          },
+          {
+            "agent": "PredictionAgent",
+            "status": "success",
+            "duration_ms": 55.88,
+            "summary": "executed",
+            "tool": "PredictionAgent"
+          },
+          {
+            "agent": "RuleBasedAgent",
+            "status": "success",
+            "duration_ms": 0.05,
+            "summary": "Kiểm tra bất đồng model và quy tắc chuyển review",
+            "tool": "RuleBasedAgent"
+          },
+          {
+            "agent": "RetrievalAgent",
+            "status": "success",
+            "duration_ms": 0.39,
+            "summary": "Truy xuất 8 bằng chứng từ 1 truy vấn",
+            "tool": "RetrievalAgent"
+          },
+          {
+            "agent": "EvidenceReaderAgent",
+            "status": "success",
+            "duration_ms": 106.23,
+            "summary": "Xếp hạng theo độ phủ thuật ngữ và IDF, đọc 4 đoạn, giữ nguồn và trang",
+            "tool": "EvidenceReaderAgent"
+          },
+          {
+            "agent": "WorkflowRLAgent",
+            "status": "success",
+            "duration_ms": 0.04,
+            "summary": "executed",
+            "tool": "WorkflowRLAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.15,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.46,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.15,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.29,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.15,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.37,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "VerifierSafetyAgent",
+            "status": "success",
+            "duration_ms": 0.14,
+            "summary": "Verifier đạt",
+            "tool": "VerifierSafetyAgent"
+          },
+          {
+            "agent": "MonitoringAgent",
+            "status": "success",
+            "duration_ms": 0.02,
+            "summary": "Ghi metadata và thời gian xử lý, không lưu nội dung hồ sơ",
+            "tool": "MonitoringAgent"
+          }
+        ],
+        "decision": {
+          "status": "insufficient_evidence",
+          "final_label": null,
+          "review_required": false,
+          "reason_codes": []
+        }
+      },
+      "grade": {
+        "checks": {
+          "routing": true,
+          "completion": false,
+          "citations": false,
+          "answer_rubric": false,
+          "verification": false,
+          "validation": true,
+          "immutable_prediction": true,
+          "rules_respected": true,
+          "assessment_order": true,
+          "retrieval_provenance": true,
+          "reader_preserves_source": true,
+          "monitoring_contract": true,
+          "workflow_mask": true
+        },
+        "passed": false,
+        "claims_emitted": 0,
+        "valid_quotes": 0,
+        "selected_qrel_hit": null
+      }
+    },
+    {
+      "case_id": "A01",
+      "kind": "assessment",
+      "repeat": 1,
+      "elapsed_ms": 163.35950000211596,
+      "response": {
+        "status": "insufficient_evidence",
+        "traces": [
+          {
+            "agent": "CoordinatorAgent",
+            "status": "success",
+            "duration_ms": 0.09,
+            "summary": "Yêu cầu chạy mô hình từ form trống câu hỏi",
+            "tool": "CoordinatorAgent"
+          },
+          {
+            "agent": "ValidationAgent",
+            "status": "success",
+            "duration_ms": 0.03,
+            "summary": "executed",
+            "tool": "ValidationAgent"
+          },
+          {
+            "agent": "PredictionAgent",
+            "status": "success",
+            "duration_ms": 54.7,
+            "summary": "executed",
+            "tool": "PredictionAgent"
+          },
+          {
+            "agent": "RuleBasedAgent",
+            "status": "success",
+            "duration_ms": 0.09,
+            "summary": "Kiểm tra bất đồng model và quy tắc chuyển review",
+            "tool": "RuleBasedAgent"
+          },
+          {
+            "agent": "RetrievalAgent",
+            "status": "success",
+            "duration_ms": 0.7,
+            "summary": "Truy xuất 8 bằng chứng từ 1 truy vấn",
+            "tool": "RetrievalAgent"
+          },
+          {
+            "agent": "EvidenceReaderAgent",
+            "status": "success",
+            "duration_ms": 103.4,
+            "summary": "Xếp hạng theo độ phủ thuật ngữ và IDF, đọc 4 đoạn, giữ nguồn và trang",
+            "tool": "EvidenceReaderAgent"
+          },
+          {
+            "agent": "WorkflowRLAgent",
+            "status": "success",
+            "duration_ms": 0.03,
+            "summary": "executed",
+            "tool": "WorkflowRLAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.12,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.28,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.12,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.24,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.11,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.23,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "VerifierSafetyAgent",
+            "status": "success",
+            "duration_ms": 0.11,
+            "summary": "Verifier đạt",
+            "tool": "VerifierSafetyAgent"
+          },
+          {
+            "agent": "MonitoringAgent",
+            "status": "success",
+            "duration_ms": 0.01,
+            "summary": "Ghi metadata và thời gian xử lý, không lưu nội dung hồ sơ",
+            "tool": "MonitoringAgent"
+          }
+        ],
+        "decision": {
+          "status": "insufficient_evidence",
+          "final_label": null,
+          "review_required": false,
+          "reason_codes": []
+        }
+      },
+      "grade": {
+        "checks": {
+          "routing": true,
+          "completion": false,
+          "citations": false,
+          "answer_rubric": false,
+          "verification": false,
+          "validation": true,
+          "immutable_prediction": true,
+          "rules_respected": false,
+          "assessment_order": true,
+          "retrieval_provenance": true,
+          "reader_preserves_source": true,
+          "monitoring_contract": true,
+          "workflow_mask": true
+        },
+        "passed": false,
+        "claims_emitted": 0,
+        "valid_quotes": 0,
+        "selected_qrel_hit": null
+      }
+    },
+    {
+      "case_id": "A01",
+      "kind": "assessment",
+      "repeat": 2,
+      "elapsed_ms": 191.70189974829555,
+      "response": {
+        "status": "insufficient_evidence",
+        "traces": [
+          {
+            "agent": "CoordinatorAgent",
+            "status": "success",
+            "duration_ms": 0.12,
+            "summary": "Yêu cầu chạy mô hình từ form trống câu hỏi",
+            "tool": "CoordinatorAgent"
+          },
+          {
+            "agent": "ValidationAgent",
+            "status": "success",
+            "duration_ms": 0.05,
+            "summary": "executed",
+            "tool": "ValidationAgent"
+          },
+          {
+            "agent": "PredictionAgent",
+            "status": "success",
+            "duration_ms": 62.54,
+            "summary": "executed",
+            "tool": "PredictionAgent"
+          },
+          {
+            "agent": "RuleBasedAgent",
+            "status": "success",
+            "duration_ms": 0.05,
+            "summary": "Kiểm tra bất đồng model và quy tắc chuyển review",
+            "tool": "RuleBasedAgent"
+          },
+          {
+            "agent": "RetrievalAgent",
+            "status": "success",
+            "duration_ms": 0.42,
+            "summary": "Truy xuất 8 bằng chứng từ 1 truy vấn",
+            "tool": "RetrievalAgent"
+          },
+          {
+            "agent": "EvidenceReaderAgent",
+            "status": "success",
+            "duration_ms": 123.39,
+            "summary": "Xếp hạng theo độ phủ thuật ngữ và IDF, đọc 4 đoạn, giữ nguồn và trang",
+            "tool": "EvidenceReaderAgent"
+          },
+          {
+            "agent": "WorkflowRLAgent",
+            "status": "success",
+            "duration_ms": 0.04,
+            "summary": "executed",
+            "tool": "WorkflowRLAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.16,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.3,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.14,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.27,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.13,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.26,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "VerifierSafetyAgent",
+            "status": "success",
+            "duration_ms": 0.12,
+            "summary": "Verifier đạt",
+            "tool": "VerifierSafetyAgent"
+          },
+          {
+            "agent": "MonitoringAgent",
+            "status": "success",
+            "duration_ms": 0.02,
+            "summary": "Ghi metadata và thời gian xử lý, không lưu nội dung hồ sơ",
+            "tool": "MonitoringAgent"
+          }
+        ],
+        "decision": {
+          "status": "insufficient_evidence",
+          "final_label": null,
+          "review_required": false,
+          "reason_codes": []
+        }
+      },
+      "grade": {
+        "checks": {
+          "routing": true,
+          "completion": false,
+          "citations": false,
+          "answer_rubric": false,
+          "verification": false,
+          "validation": true,
+          "immutable_prediction": true,
+          "rules_respected": false,
+          "assessment_order": true,
+          "retrieval_provenance": true,
+          "reader_preserves_source": true,
+          "monitoring_contract": true,
+          "workflow_mask": true
+        },
+        "passed": false,
+        "claims_emitted": 0,
+        "valid_quotes": 0,
+        "selected_qrel_hit": null
+      }
+    },
+    {
+      "case_id": "A02",
+      "kind": "assessment",
+      "repeat": 2,
+      "elapsed_ms": 165.6149998307228,
+      "response": {
+        "status": "insufficient_evidence",
+        "traces": [
+          {
+            "agent": "CoordinatorAgent",
+            "status": "success",
+            "duration_ms": 0.08,
+            "summary": "Yêu cầu chạy mô hình từ form trống câu hỏi",
+            "tool": "CoordinatorAgent"
+          },
+          {
+            "agent": "ValidationAgent",
+            "status": "success",
+            "duration_ms": 0.03,
+            "summary": "executed",
+            "tool": "ValidationAgent"
+          },
+          {
+            "agent": "PredictionAgent",
+            "status": "success",
+            "duration_ms": 53.94,
+            "summary": "executed",
+            "tool": "PredictionAgent"
+          },
+          {
+            "agent": "RuleBasedAgent",
+            "status": "success",
+            "duration_ms": 0.05,
+            "summary": "Kiểm tra bất đồng model và quy tắc chuyển review",
+            "tool": "RuleBasedAgent"
+          },
+          {
+            "agent": "RetrievalAgent",
+            "status": "success",
+            "duration_ms": 0.38,
+            "summary": "Truy xuất 8 bằng chứng từ 1 truy vấn",
+            "tool": "RetrievalAgent"
+          },
+          {
+            "agent": "EvidenceReaderAgent",
+            "status": "success",
+            "duration_ms": 107.06,
+            "summary": "Xếp hạng theo độ phủ thuật ngữ và IDF, đọc 4 đoạn, giữ nguồn và trang",
+            "tool": "EvidenceReaderAgent"
+          },
+          {
+            "agent": "WorkflowRLAgent",
+            "status": "success",
+            "duration_ms": 0.05,
+            "summary": "executed",
+            "tool": "WorkflowRLAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.13,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.29,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.16,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.24,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "ExplanationAgent",
+            "status": "success",
+            "duration_ms": 0.13,
+            "summary": "Soạn 1 phát biểu có nguồn",
+            "tool": "ExplanationAgent"
+          },
+          {
+            "agent": "CriticAgent",
+            "status": "success",
+            "duration_ms": 0.26,
+            "summary": "Phát hiện lỗi citation/số liệu/điều kiện",
+            "tool": "CriticAgent"
+          },
+          {
+            "agent": "VerifierSafetyAgent",
+            "status": "success",
+            "duration_ms": 0.12,
+            "summary": "Verifier đạt",
+            "tool": "VerifierSafetyAgent"
+          },
+          {
+            "agent": "MonitoringAgent",
+            "status": "success",
+            "duration_ms": 0.02,
+            "summary": "Ghi metadata và thời gian xử lý, không lưu nội dung hồ sơ",
+            "tool": "MonitoringAgent"
+          }
+        ],
+        "decision": {
+          "status": "insufficient_evidence",
+          "final_label": null,
+          "review_required": false,
+          "reason_codes": []
+        }
+      },
+      "grade": {
+        "checks": {
+          "routing": true,
+          "completion": false,
+          "citations": false,
+          "answer_rubric": false,
+          "verification": false,
+          "validation": true,
+          "immutable_prediction": true,
+          "rules_respected": true,
+          "assessment_order": true,
+          "retrieval_provenance": true,
+          "reader_preserves_source": true,
+          "monitoring_contract": true,
+          "workflow_mask": true
+        },
+        "passed": false,
+        "claims_emitted": 0,
+        "valid_quotes": 0,
+        "selected_qrel_hit": null
+      }
+    }
+  ],
+  "summary": {
+    "groups": {
+      "assessment": {
+        "unique_cases": 2,
+        "runs": 6,
+        "pass": {
+          "passed": 0,
+          "total": 6,
+          "rate": 0.0,
+          "wilson95": [
+            0,
+            0.3903430336530645
+          ]
+        },
+        "latency_all": {
+          "n": 6,
+          "median_ms": 179.99,
+          "p95_ms": 350.86,
+          "min_ms": 163.36,
+          "max_ms": 350.86
+        },
+        "latency_completed": {
+          "n": 6,
+          "median_ms": 179.99,
+          "p95_ms": 350.86,
+          "min_ms": 163.36,
+          "max_ms": 350.86
+        },
+        "unavailable": 0
+      }
+    },
+    "agents": {
+      "CoordinatorAgent": {
+        "criterion": "routing",
+        "score": {
+          "passed": 6,
+          "total": 6,
+          "rate": 1.0,
+          "wilson95": [
+            0.6096569663469354,
+            0.9999999999999999
+          ]
+        },
+        "handler_latency": {
+          "n": 6,
+          "median_ms": 0.11,
+          "p95_ms": 3.33,
+          "min_ms": 0.08,
+          "max_ms": 3.33
+        }
+      },
+      "ValidationAgent": {
+        "criterion": "validation",
+        "score": {
+          "passed": 6,
+          "total": 6,
+          "rate": 1.0,
+          "wilson95": [
+            0.6096569663469354,
+            0.9999999999999999
+          ]
+        },
+        "handler_latency": {
+          "n": 6,
+          "median_ms": 0.04,
+          "p95_ms": 0.07,
+          "min_ms": 0.03,
+          "max_ms": 0.07
+        }
+      },
+      "PredictionAgent": {
+        "criterion": "immutable_prediction",
+        "score": {
+          "passed": 6,
+          "total": 6,
+          "rate": 1.0,
+          "wilson95": [
+            0.6096569663469354,
+            0.9999999999999999
+          ]
+        },
+        "handler_latency": {
+          "n": 6,
+          "median_ms": 59.21,
+          "p95_ms": 145.93,
+          "min_ms": 53.94,
+          "max_ms": 145.93
+        }
+      },
+      "RuleBasedAgent": {
+        "criterion": "rules_respected",
+        "score": {
+          "passed": 3,
+          "total": 6,
+          "rate": 0.5,
+          "wilson95": [
+            0.18761280689940868,
+            0.8123871931005913
+          ]
+        },
+        "handler_latency": {
+          "n": 6,
+          "median_ms": 0.05,
+          "p95_ms": 0.09,
+          "min_ms": 0.05,
+          "max_ms": 0.09
+        }
+      },
+      "ExplanationAgent": {
+        "criterion": "answer_rubric",
+        "score": {
+          "passed": 0,
+          "total": 6,
+          "rate": 0.0,
+          "wilson95": [
+            0,
+            0.3903430336530645
+          ]
+        },
+        "handler_latency": {
+          "n": 18,
+          "median_ms": 0.15,
+          "p95_ms": 0.32,
+          "min_ms": 0.11,
+          "max_ms": 0.32
+        }
+      },
+      "CriticAgent": {
+        "criterion": "fault_detected",
+        "score": {
+          "passed": 0,
+          "total": 0,
+          "rate": null,
+          "wilson95": null
+        },
+        "handler_latency": {
+          "n": 18,
+          "median_ms": 0.29,
+          "p95_ms": 1.52,
+          "min_ms": 0.23,
+          "max_ms": 1.52
+        }
+      },
+      "VerifierSafetyAgent": {
+        "criterion": "verification",
+        "score": {
+          "passed": 0,
+          "total": 6,
+          "rate": 0.0,
+          "wilson95": [
+            0,
+            0.3903430336530645
+          ]
+        },
+        "handler_latency": {
+          "n": 6,
+          "median_ms": 0.12,
+          "p95_ms": 0.14,
+          "min_ms": 0.11,
+          "max_ms": 0.14
+        }
+      },
+      "RetrievalAgent": {
+        "criterion": "retrieval_provenance",
+        "score": {
+          "passed": 6,
+          "total": 6,
+          "rate": 1.0,
+          "wilson95": [
+            0.6096569663469354,
+            0.9999999999999999
+          ]
+        },
+        "handler_latency": {
+          "n": 6,
+          "median_ms": 0.42,
+          "p95_ms": 22.48,
+          "min_ms": 0.38,
+          "max_ms": 22.48
+        }
+      },
+      "EvidenceReaderAgent": {
+        "criterion": "reader_preserves_source",
+        "score": {
+          "passed": 6,
+          "total": 6,
+          "rate": 1.0,
+          "wilson95": [
+            0.6096569663469354,
+            0.9999999999999999
+          ]
+        },
+        "handler_latency": {
+          "n": 6,
+          "median_ms": 115.22,
+          "p95_ms": 145.09,
+          "min_ms": 103.4,
+          "max_ms": 145.09
+        }
+      },
+      "MonitoringAgent": {
+        "criterion": "monitoring_contract",
+        "score": {
+          "passed": 6,
+          "total": 6,
+          "rate": 1.0,
+          "wilson95": [
+            0.6096569663469354,
+            0.9999999999999999
+          ]
+        },
+        "handler_latency": {
+          "n": 6,
+          "median_ms": 0.02,
+          "p95_ms": 0.02,
+          "min_ms": 0.01,
+          "max_ms": 0.02
+        }
+      },
+      "WorkflowRLAgent": {
+        "criterion": "workflow_mask",
+        "score": {
+          "passed": 6,
+          "total": 6,
+          "rate": 1.0,
+          "wilson95": [
+            0.6096569663469354,
+            0.9999999999999999
+          ]
+        },
+        "handler_latency": {
+          "n": 6,
+          "median_ms": 0.04,
+          "p95_ms": 0.06,
+          "min_ms": 0.03,
+          "max_ms": 0.06
+        }
+      },
+      "ClarificationAgent": {
+        "criterion": "clarification_contract",
+        "score": {
+          "passed": 0,
+          "total": 0,
+          "rate": null,
+          "wilson95": null
+        },
+        "handler_latency": {
+          "n": 0,
+          "median_ms": null,
+          "p95_ms": null,
+          "min_ms": null,
+          "max_ms": null
+        }
+      }
+    },
+    "total_runs": 6,
+    "unique_cases": 2,
+    "whole_flow": {
+      "passed": 0,
+      "total": 6,
+      "rate": 0.0,
+      "wilson95": [
+        0,
+        0.3903430336530645
+      ]
+    },
+    "explanation": {
+      "emitted_claims": 0,
+      "exact_quotes": 0,
+      "exact_quote_rate": null,
+      "release_coverage": {
+        "passed": 0,
+        "total": 6,
+        "rate": 0.0,
+        "wilson95": [
+          0,
+          0.3903430336530645
+        ]
+      }
+    },
+    "repair": {
+      "injected": 0,
+      "detection": {
+        "passed": 0,
+        "total": 0,
+        "rate": null,
+        "wilson95": null
+      },
+      "success": {
+        "passed": 0,
+        "total": 0,
+        "rate": null,
+        "wilson95": null
+      }
+    }
+  }
+}

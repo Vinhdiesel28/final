@@ -1,0 +1,19 @@
+{
+  "status": "verified",
+  "scope": "Cloud databases and hybrid retrieval; no LLM calls",
+  "app_status": "ok",
+  "backend": "Qdrant Cloud vector + Neo4j fulltext + graph",
+  "kb_version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+  "total_vectors": 515,
+  "sample": {
+    "chunk_id": "chunk_000074c4f0b8ce59c9694b2c",
+    "source_file": "DIA_Ch01.pdf",
+    "page": 33,
+    "retrieval_methods": [
+      "vector",
+      "fulltext",
+      "graph"
+    ]
+  },
+  "neo4j_graph_edges": 158
+}

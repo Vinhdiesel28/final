@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
+from typing import Literal
 
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
@@ -17,15 +19,31 @@ app = FastAPI(title="DiaAgents Lab", version="1.0.0")
 services = Services(); single = SingleAgent(services); multi = MultiAgent(services)
 
 
+class TestingContext(BaseModel):
+    purpose: Literal['first_screening','repeat_abnormal','followup'] | None = None
+    symptoms: str = Field(default='',max_length=500)
+    prior_results: str = Field(default='',max_length=500)
+
+
+class ConversationMessage(BaseModel):
+    role: Literal['user','assistant']
+    content: str = Field(max_length=3000)
+
+
 class Request(BaseModel):
     question: str = Field(default="", max_length=800)
     profile: dict | None = None
     mode: str = "multi"
+    task: Literal['auto','assessment','knowledge'] = 'auto'
+    testing_context: TestingContext | None = None
+    conversation: list[ConversationMessage] = Field(default_factory=list,max_length=8)
 
 
 @app.get("/health")
 def health():
-    return {"status":"ok","active_model":services.model.model_name,"knowledge_backend":services.knowledge.backend,"documents":len(services.knowledge.documents),"graph_edges":len(services.knowledge.graph)}
+    return {"status":"ok","active_model":services.model.model_name,"knowledge_backend":services.knowledge.backend,
+            "documents":len(services.knowledge.documents),"graph_edges":len(services.knowledge.graph),
+            "vector_retrieval":services.knowledge.vector_metadata}
 
 
 @app.get("/api/metadata")
@@ -35,6 +53,12 @@ def metadata():
     data['pytorch']=json.loads((ROOT/'artifacts/pytorch_metadata.json').read_text(encoding='utf-8'))
     data['knowledge_backend']=services.knowledge.backend
     data['knowledge_documents']=len(services.knowledge.documents)
+    data['vector_retrieval']=services.knowledge.vector_metadata
+    provider=os.environ.get('LLM_PROVIDER','disabled')
+    configured=(provider=='ollama' and bool(os.environ.get('LLM_MODEL'))) or (provider=='compatible' and all(os.environ.get(k,'').strip() for k in ('LLM_BASE_URL','LLM_MODEL','LLM_API_KEY')))
+    data['generation']={'provider':provider,'model':os.environ.get('LLM_MODEL',''),'configured':configured}
+    data['architecture_version']='conversation_v3'
+    data['benchmark_scope']='conversation_v3 benchmark; historical files excluded from UI'
     return data
 
 
@@ -72,7 +96,9 @@ def run(payload: Request):
         raise HTTPException(400, "Cần câu hỏi hoặc hồ sơ.")
     runner = multi if payload.mode == "multi" else single if payload.mode == "single" else None
     if runner is None: raise HTTPException(400, "mode chỉ nhận single hoặc multi")
-    return runner.run(payload.question.strip(), payload.profile)
+    profile=None if payload.task=='knowledge' else payload.profile
+    args=(payload.question.strip(),profile,payload.testing_context.model_dump() if payload.testing_context else None)
+    return runner.run(*args,conversation=[m.model_dump() for m in payload.conversation],task=payload.task) if payload.mode=='multi' else runner.run(*args)
 
 
 @app.get('/api/benchmark/diabetes')
@@ -91,7 +117,9 @@ def compare(payload: Request):
     if not payload.question.strip() and not payload.profile:
         raise HTTPException(400, "Cần câu hỏi hoặc hồ sơ.")
     question = payload.question.strip()
-    return {"single": single.run(question, payload.profile), "multi": multi.run(question, payload.profile)}
+    context=payload.testing_context.model_dump() if payload.testing_context else None
+    profile=None if payload.task=='knowledge' else payload.profile
+    return {"single": single.run(question,profile,context), "multi": multi.run(question,profile,context,conversation=[m.model_dump() for m in payload.conversation],task=payload.task)}
 
 
 STATIC = ROOT / "app" / "static"
@@ -117,3 +145,20 @@ def current_corpus_benchmark():
     if not path.exists(): raise HTTPException(503,'Benchmark corpus mới chưa hoàn tất.')
     data=json.loads(path.read_text(encoding='utf-8'))
     return {key:data[key] for key in ('protocol','summary')}
+
+
+@app.get('/api/benchmark/v3')
+def benchmark_v3():
+    from benchmark_v3 import runtime_fingerprint
+    path=ROOT/'results/benchmark_v3.json'
+    if not path.exists():raise HTTPException(503,'Benchmark v3 chưa được chạy.')
+    data=json.loads(path.read_text(encoding='utf-8'))
+    data['stale']=data['protocol']['runtime_hash']!=runtime_fingerprint() or data['protocol']['kb_version']!=services.knowledge.vector_metadata.get('kb_version')
+    return data
+
+
+@app.get('/api/benchmark/v3/report')
+def benchmark_v3_report():
+    path=ROOT/'results/benchmark_v3.json'
+    if not path.exists():raise HTTPException(503,'Benchmark v3 chưa được chạy.')
+    return FileResponse(path,media_type='application/json',filename='benchmark_v3.json')

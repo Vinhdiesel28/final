@@ -1,0 +1,442 @@
+{
+  "scope": "Four live demo checks, not a medical quality benchmark",
+  "results": [
+    {
+      "question": "A1C phản ánh điều gì?",
+      "status": "supported",
+      "generation": {
+        "claims": [
+          {
+            "text": "A1C phản ánh mức đường huyết trung bình trong 3 tháng qua.",
+            "evidence_id": "chunk_072cd0a0818211b386685207",
+            "quote": "The higher the glucose level in your bloodstream, the more glucose will attach to the hemoglobin. The A1C test measures the amount of hemoglobin with attached glucose and reflects your average blood glucose levels over the past 3 months."
+          }
+        ],
+        "status": "generated",
+        "provider": "compatible",
+        "model": "openai/gpt-oss-20b",
+        "validation": {
+          "passed": true,
+          "issues": [],
+          "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof",
+          "semantic_review": {
+            "supported": true,
+            "reason": "The claim is directly supported by the quoted evidence from chunk_072cd0a0818211b386685207, which states that the A1C test reflects average blood glucose levels over the past 3 months."
+          }
+        }
+      },
+      "answer": "A1C phản ánh mức đường huyết trung bình trong 3 tháng qua. [chunk_072cd0a0818211b386685207]",
+      "verification": {
+        "passed": true,
+        "issues": [],
+        "scope": "Deterministic consistency and disclosure checks"
+      },
+      "citations": [
+        {
+          "id": "chunk_059373c4daefd5ff1d39c737",
+          "document_id": "niddk_a1c_web_95827989eacf",
+          "title": "The A1C Test & Diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "What is the A1C test?",
+          "source_file": null,
+          "source_type": "web",
+          "source_version": "95827989eacf",
+          "retrieval_methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ],
+          "score": 0.014568739622249896
+        },
+        {
+          "id": "chunk_1029277b1ae9a9ee4cc723c6",
+          "document_id": "summary_ndep_a1c_method_001_d7c35d0cf7dc",
+          "title": "Guiding Principles - Điều kiện và giới hạn khi dùng A1C - Trang 10",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "Guiding Principles - Điều kiện và giới hạn khi dùng A1C - Trang 10",
+          "source_file": null,
+          "source_type": "curated_summary",
+          "source_version": "d7c35d0cf7dc",
+          "retrieval_methods": [
+            "vector",
+            "graph"
+          ],
+          "score": 0.009489725236665896
+        },
+        {
+          "id": "chunk_072cd0a0818211b386685207",
+          "document_id": "niddk_a1c_web_95827989eacf",
+          "title": "The A1C Test & Diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "What is the A1C test?",
+          "source_file": null,
+          "source_type": "web",
+          "source_version": "95827989eacf",
+          "retrieval_methods": [
+            "vector",
+            "graph"
+          ],
+          "score": 0.007294985745430154
+        },
+        {
+          "id": "chunk_06c3590b0e8719722e558cf8",
+          "document_id": "niddk_a1c_web_95827989eacf",
+          "title": "The A1C Test & Diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "What are clinical trials and are they right for you?",
+          "source_file": null,
+          "source_type": "web",
+          "source_version": "95827989eacf",
+          "retrieval_methods": [
+            "fulltext",
+            "graph"
+          ],
+          "score": 0.007272727272727273
+        },
+        {
+          "id": "chunk_94726e2082075f1b55c272d4",
+          "document_id": "summary_ndep_a1c_ranges_001_04da6cfea94e",
+          "title": "Guiding Principles - Ngưỡng A1C theo tiêu chí sàng lọc 2018 - Trang 11",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "Guiding Principles - Ngưỡng A1C theo tiêu chí sàng lọc 2018 - Trang 11",
+          "source_file": null,
+          "source_type": "curated_summary",
+          "source_version": "04da6cfea94e",
+          "retrieval_methods": [
+            "vector"
+          ],
+          "score": 0.007258064516129033
+        },
+        {
+          "id": "chunk_4ca39ab768448c829bfcc4f2",
+          "document_id": "summary_dia_a1c_limitations_001_ded57533b8af",
+          "title": "Diabetes in America, Chương 1 - Yếu tố gây sai lệch A1C - Trang 1-11–1-12",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "Diabetes in America, Chương 1 - Yếu tố gây sai lệch A1C - Trang 1-11–1-12",
+          "source_file": null,
+          "source_type": "curated_summary",
+          "source_version": "ded57533b8af",
+          "retrieval_methods": [
+            "vector"
+          ],
+          "score": 0.007142857142857143
+        }
+      ],
+      "source_checks": [
+        {
+          "evidence_id": "chunk_072cd0a0818211b386685207",
+          "valid_chunk": true,
+          "quote_in_chunk": true,
+          "source_type": "web",
+          "title": "The A1C Test & Diabetes",
+          "page": null,
+          "section": "What is the A1C test?",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "quote_in_html_snapshot": true
+        }
+      ],
+      "elapsed_seconds": 7.6
+    },
+    {
+      "question": "Theo IDF, hoạt động thể lực ảnh hưởng đến độ nhạy insulin như thế nào?",
+      "status": "supported",
+      "generation": {
+        "claims": [],
+        "status": "rejected",
+        "provider": "compatible",
+        "model": "openai/gpt-oss-20b",
+        "validation": {
+          "passed": false,
+          "issues": [
+            "invalid_claim_count"
+          ],
+          "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof"
+        }
+      },
+      "answer": "SMBG cho kết quả glucose mao mạch tại thời điểm đo, còn CGM theo dõi glucose dịch kẽ, thường cập nhật theo khoảng một đến năm phút, giúp quan sát xu hướng dao động. Các nghiên cứu cho thấy thay đổi chế độ ăn kết hợp hoạt động thể lực có hiệu quả ngăn ngừa hoặc trì hoãn type 2 ở người rối loạn dung nạp glucose (IGT), kể cả khi IGT đi kèm IFG.",
+      "verification": {
+        "passed": true,
+        "issues": [],
+        "scope": "Deterministic consistency and disclosure checks"
+      },
+      "citations": [
+        {
+          "id": "chunk_e0428e001de8b92a170bc96c",
+          "document_id": "summary_idf2025_prevention_phenotype_001_074006fbc37f",
+          "title": "IDF 2025 - Hiệu quả can thiệp lối sống khác nhau giữa IGT và IFG - Trang 20, 23, 26, 28",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "IDF 2025 - Hiệu quả can thiệp lối sống khác nhau giữa IGT và IFG - Trang 20, 23, 26, 28",
+          "source_file": null,
+          "source_type": "curated_summary",
+          "source_version": "074006fbc37f",
+          "retrieval_methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ],
+          "score": 0.015117767537122375
+        },
+        {
+          "id": "chunk_3041a65e0363cd4a276e77ab",
+          "document_id": "summary_idf2025_cardiorenal_multifactor_001_fb31ecda2d31",
+          "title": "IDF 2025 - Yếu tố cùng góp phần vào biến chứng tim thận - Trang 88–89",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "IDF 2025 - Yếu tố cùng góp phần vào biến chứng tim thận - Trang 88–89",
+          "source_file": null,
+          "source_type": "curated_summary",
+          "source_version": "fb31ecda2d31",
+          "retrieval_methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ],
+          "score": 0.014606831828313998
+        },
+        {
+          "id": "chunk_ec7059cdbad1b7cc8a9664d6",
+          "document_id": "summary_idf2025_smbg_cgm_001_fabddc14df83",
+          "title": "IDF 2025 - Hai loại công nghệ tự theo dõi glucose - Trang 43–44",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "IDF 2025 - Hai loại công nghệ tự theo dõi glucose - Trang 43–44",
+          "source_file": null,
+          "source_type": "curated_summary",
+          "source_version": "fabddc14df83",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.01381544156530936
+        },
+        {
+          "id": "chunk_14308f7431cfd8ea0509642b",
+          "document_id": "summary_idf2025_ifg_igt_mechanism_001_ff6f7da9c3df",
+          "title": "IDF 2025 - Khác biệt cơ chế IFG và IGT - Trang 23",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "IDF 2025 - Khác biệt cơ chế IFG và IGT - Trang 23",
+          "source_file": null,
+          "source_type": "curated_summary",
+          "source_version": "ff6f7da9c3df",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.01362704918032787
+        },
+        {
+          "id": "chunk_0c296e8b966eb5f818ec5a9b",
+          "document_id": "summary_idf2025_risk_score_screen_001_a347950cb0f0",
+          "title": "IDF 2025 - Vai trò của risk score trong sàng lọc - Trang 19, 25",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "IDF 2025 - Vai trò của risk score trong sàng lọc - Trang 19, 25",
+          "source_file": null,
+          "source_type": "curated_summary",
+          "source_version": "a347950cb0f0",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.011797101449275363
+        },
+        {
+          "id": "chunk_1ebf7f96a223bebce3fd3e64",
+          "document_id": "summary_idf2025_masld_definition_001_2bbf9bf1b039",
+          "title": "IDF 2025 - MASLD và mối liên quan với type 2 - Trang 102–103",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "IDF 2025 - MASLD và mối liên quan với type 2 - Trang 102–103",
+          "source_file": null,
+          "source_type": "curated_summary",
+          "source_version": "2bbf9bf1b039",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.011635338345864662
+        }
+      ],
+      "source_checks": [],
+      "elapsed_seconds": 3.84
+    },
+    {
+      "question": "What does the IDF guideline say about HbA1c targets and hypoglycaemia?",
+      "status": "supported",
+      "generation": {
+        "status": "unavailable",
+        "error": "HTTPError",
+        "http_status": 429,
+        "network_reason": "Too Many Requests",
+        "provider": "compatible",
+        "model": "openai/gpt-oss-20b"
+      },
+      "answer": "Algorithms based on similar targets have been used to safely and successfully adjust basal insulin in people with T2DM.57 Glycaemic profiles / other measures of glycaemia While measurement of HbA1c is the established gold standard biomarker for assessing glycaemic control, it does not provide information on short- term glycaemic variability or hypoglycaemia. 10 Interventional RCTs examining the effect of intensive glycaemic control have achieved HbA1c targets ranging from of 6.5%–7.1% (48–54 mmol/mol).4-8 These data are the basis for the general target of HbA1c <7.0% (<53 mmol/mol) in people with T2DM recommended by most guidelines for minimising risk of diabetes complications and hypoglycaemia.",
+      "verification": {
+        "passed": true,
+        "issues": [],
+        "scope": "Deterministic consistency and disclosure checks"
+      },
+      "citations": [
+        {
+          "id": "chunk_5a76d14217b9f0cfa18c4075",
+          "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+          "title": "IDF_Rec_2025",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": 36,
+          "page_start": 36,
+          "page_end": 36,
+          "section": "PDF page 36",
+          "source_file": "IDF_Rec_2025.pdf",
+          "source_type": "pdf",
+          "source_version": "767fc7e54bc2",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.013828662083553676
+        },
+        {
+          "id": "chunk_9e21c4ed7b7ba293db3d197f",
+          "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+          "title": "IDF_Rec_2025",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": 39,
+          "page_start": 39,
+          "page_end": 39,
+          "section": "PDF page 39",
+          "source_file": "IDF_Rec_2025.pdf",
+          "source_type": "pdf",
+          "source_version": "767fc7e54bc2",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.013508064516129032
+        },
+        {
+          "id": "chunk_1a0fe715a6a4f9d13f07515c",
+          "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+          "title": "IDF_Rec_2025",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": 37,
+          "page_start": 37,
+          "page_end": 37,
+          "section": "PDF page 37",
+          "source_file": "IDF_Rec_2025.pdf",
+          "source_type": "pdf",
+          "source_version": "767fc7e54bc2",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.013001399253731344
+        },
+        {
+          "id": "chunk_79919e5c8dca71078c31c138",
+          "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+          "title": "IDF_Rec_2025",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": 41,
+          "page_start": 41,
+          "page_end": 41,
+          "section": "PDF page 41",
+          "source_file": "IDF_Rec_2025.pdf",
+          "source_type": "pdf",
+          "source_version": "767fc7e54bc2",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.012687234518220434
+        },
+        {
+          "id": "chunk_1a9ed000322b50bae6b371d7",
+          "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+          "title": "IDF_Rec_2025",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": 57,
+          "page_start": 57,
+          "page_end": 57,
+          "section": "PDF page 57",
+          "source_file": "IDF_Rec_2025.pdf",
+          "source_type": "pdf",
+          "source_version": "767fc7e54bc2",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.012318840579710146
+        },
+        {
+          "id": "chunk_4bb044b1d9b11b3d0a655efc",
+          "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+          "title": "IDF_Rec_2025",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": 47,
+          "page_start": 47,
+          "page_end": 47,
+          "section": "PDF page 47",
+          "source_file": "IDF_Rec_2025.pdf",
+          "source_type": "pdf",
+          "source_version": "767fc7e54bc2",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.012234927234927235
+        }
+      ],
+      "source_checks": [],
+      "elapsed_seconds": 16.6
+    },
+    {
+      "question": "Thử nghiệm ZXQ9992026 chưa công bố có kết quả chính xác là gì?",
+      "status": "insufficient_evidence",
+      "generation": {
+        "status": "no_evidence"
+      },
+      "answer": "Kho tri thức không có đủ bằng chứng để trả lời câu hỏi này. Cần xem xét thêm; chưa kết luận có/không tiểu đường.",
+      "verification": {
+        "passed": true,
+        "issues": [],
+        "scope": "Deterministic consistency and disclosure checks"
+      },
+      "citations": [],
+      "source_checks": [],
+      "elapsed_seconds": 1.61
+    }
+  ]
+}

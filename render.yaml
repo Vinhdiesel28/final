@@ -19,3 +19,15 @@ services:
         value: neo4j
       - key: NEO4J_PASSWORD
         sync: false
+      - key: HYBRID_KB
+        value: enabled
+      - key: HYBRID_VECTOR_BACKEND
+        value: qdrant
+      - key: QDRANT_URL
+        sync: false
+      - key: QDRANT_API_KEY
+        sync: false
+      - key: QDRANT_COLLECTION_PREFIX
+        value: diaguard
+      - key: QDRANT_LEGACY_COLLECTION
+        sync: false

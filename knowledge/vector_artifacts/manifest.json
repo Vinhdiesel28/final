@@ -1,0 +1,40 @@
+{
+  "created_at": "2026-11-06T03:43:43.475466+00:00",
+  "collection": "diabetes_chunks",
+  "vector_database": "Qdrant local persistent",
+  "embedding_model": "TF-IDF word+character n-grams + TruncatedSVD (LSA) + L2 normalization",
+  "dimensions": 128,
+  "chunking": {
+    "unit": "page-aware sliding word window",
+    "words": 180,
+    "overlap_words": 40,
+    "minimum_words": 35
+  },
+  "curated_documents": 44,
+  "pdf_chunks": 818,
+  "total_vectors": 862,
+  "pdf_sources": [
+    {
+      "file": "DIA_Ch01.pdf",
+      "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+      "pages": 39,
+      "sha256": "78d5e1234421c36a4bce6b4704b98c34122263c97a8da7dbc99b52468f4ebb4f"
+    },
+    {
+      "file": "Guiding-Principles.pdf",
+      "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+      "pages": 83,
+      "sha256": "40a7da28c6889a262f4fb20e6ed648de3e7d55c0aab337491721bd232e7c2aa9"
+    },
+    {
+      "file": "IDF_Rec_2025.pdf",
+      "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+      "pages": 112,
+      "sha256": "767fc7e54bc2f8bb77d5ec931f149a805394750fb19ae1632c429684c2daec13"
+    }
+  ],
+  "missing_pdf_files": [
+    "cdc_135620_DS1.pdf",
+    "cdc_75807_DS1.pdf"
+  ]
+}

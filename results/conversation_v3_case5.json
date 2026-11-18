@@ -1,0 +1,1614 @@
+{
+  "scope": "Live integration, no ground-truth medical evaluation",
+  "question": "Tôi 30 tuổi, không có triệu chứng, chưa từng xét nghiệm hoặc được chẩn đoán, chỉ muốn tìm hiểu sàng lọc lần đầu.",
+  "elapsed_seconds": 16.93,
+  "source_checks": [
+    {
+      "chunk_id": "chunk_b9c6400844e4f9a353a17607",
+      "quote_in_chunk": true,
+      "quote_in_pdf_page": true
+    }
+  ],
+  "response": {
+    "request_id": "REQ-5DDAD803",
+    "mode": "multi",
+    "intent": "knowledge",
+    "status": "supported",
+    "answer": "Đối với người 30 tuổi không có triệu chứng, USPSTF khuyến nghị xét nghiệm đường huyết khi người đó thừa cân hoặc béo phì và có ít nhất một yếu tố nguy cơ khác (ví dụ: tiền sử gia đình, huyết áp cao, cholesterol cao). [chunk_b9c6400844e4f9a353a17607]",
+    "prediction": null,
+    "statistics": null,
+    "knowledge": {
+      "evidence": [
+        {
+          "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+          "text": "Hence, detection of diabetes and prediabetes through targeted screening identifies individuals who can benefit from evidence-based therapies that can lower risk of adverse outcomes. Whom to screen for diabetes and prediabetes, and how often The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1. Such risk factor-based screening could be done based on a general assessment of standard risk factors or using validated tools. The USPSTF did not identify significant harms of screening.1 As is true of many screening tests, potential benefits of screening may be limited in those with shorter life expectancy or multiple comorbidities, and the decision to screen for abnormal blood glucose should include shared decision-making and consideration of competing priorities. Screening may be repeated at intervals of 1 to 3 years, with the frequency determined by the degree of risk as assessed by risk factors and results of",
+          "source": {
+            "id": "chunk_b9c6400844e4f9a353a17607",
+            "document_id": "pdf_Guiding-Principles_40a7da28c688",
+            "title": "Guiding-Principles",
+            "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+            "page": 8,
+            "page_start": 8,
+            "page_end": 8,
+            "section": "PDF page 8",
+            "source_file": "Guiding-Principles.pdf",
+            "source_type": "pdf",
+            "source_version": "40a7da28c688",
+            "retrieval_methods": [
+              "vector",
+              "fulltext"
+            ],
+            "score": 0.013828662083553676
+          },
+          "reader_relevance": 6.8766
+        }
+      ],
+      "citations": [
+        {
+          "id": "chunk_b9c6400844e4f9a353a17607",
+          "document_id": "pdf_Guiding-Principles_40a7da28c688",
+          "title": "Guiding-Principles",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+          "page": 8,
+          "page_start": 8,
+          "page_end": 8,
+          "section": "PDF page 8",
+          "source_file": "Guiding-Principles.pdf",
+          "source_type": "pdf",
+          "source_version": "40a7da28c688",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.013828662083553676
+        }
+      ],
+      "paths": [],
+      "retrieval": {
+        "backend": "Neo4j vector + fulltext + graph",
+        "embedding_model": "TF-IDF + LSA (frozen 128d)",
+        "dimensions": 128,
+        "total_vectors": 515,
+        "pdf_chunks": 398,
+        "kb_version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+        "chunking": {
+          "words": 380,
+          "overlap_words": 60,
+          "scope": "page/paragraph/HTML heading"
+        }
+      },
+      "query_analysis": [
+        {
+          "entities": [],
+          "query": "diabetes screening tests for adults 30 years old ",
+          "requested_sources": [],
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ],
+          "version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+          "reranker": "RRF + lexical tie-break"
+        },
+        {
+          "entities": [],
+          "query": "when to start diabetes screening ",
+          "requested_sources": [],
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ],
+          "version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+          "reranker": "RRF + lexical tie-break"
+        }
+      ],
+      "answer": "",
+      "status": "supported",
+      "summary": "Truy xuất 8 bằng chứng từ 2 truy vấn"
+    },
+    "validation_errors": [],
+    "safety_flags": [],
+    "messages": [
+      {
+        "sequence": 1,
+        "sender": "CoordinatorAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "REQUEST",
+        "content": {
+          "question": "Tôi 30 tuổi, không có triệu chứng, chưa từng xét nghiệm hoặc được chẩn đoán, chỉ muốn tìm hiểu sàng lọc lần đầu.",
+          "conversation": [
+            {
+              "role": "user",
+              "content": "Tôi đi xét nghiệm gì bây giờ?"
+            },
+            {
+              "role": "assistant",
+              "content": "Bạn đã xét nghiệm hoặc được chẩn đoán chưa? Có triệu chứng gì và bao nhiêu tuổi?"
+            }
+          ],
+          "available_profile_fields": [],
+          "additional_context": {}
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 2,
+        "sender": "CoordinatorAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "intent": "knowledge",
+          "goal": "Provide information on appropriate diabetes screening tests for a 30‑year‑old adult with no symptoms and no prior testing.",
+          "queries": [
+            "diabetes screening tests for adults 30 years old",
+            "when to start diabetes screening"
+          ],
+          "clarification_questions": [],
+          "can_answer_general": true,
+          "requested_sources": [],
+          "llm": {
+            "cached": false,
+            "task": "coordinator_plan",
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.285120417,
+              "prompt_tokens": 848,
+              "prompt_time": 0.043089943,
+              "completion_tokens": 124,
+              "completion_time": 0.150183989,
+              "total_tokens": 972,
+              "total_time": 0.193273932,
+              "completion_tokens_details": {
+                "reasoning_tokens": 44
+              }
+            }
+          },
+          "summary": "Provide information on appropriate diabetes screening tests for a 30‑year‑old adult with no symptoms and no prior testing."
+        },
+        "duration_ms": 761.535
+      },
+      {
+        "sequence": 3,
+        "sender": "CoordinatorAgent",
+        "receiver": "RuleBasedAgent",
+        "performative": "REQUEST",
+        "content": {
+          "prediction": null
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 4,
+        "sender": "RuleBasedAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "assessment": null,
+          "review_required": false,
+          "summary": "Kiểm tra bất đồng model và quy tắc chuyển review"
+        },
+        "duration_ms": 0.002
+      },
+      {
+        "sequence": 5,
+        "sender": "CoordinatorAgent",
+        "receiver": "RetrievalAgent",
+        "performative": "REQUEST",
+        "content": {
+          "queries": [
+            "diabetes screening tests for adults 30 years old",
+            "when to start diabetes screening"
+          ]
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 6,
+        "sender": "RetrievalAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "evidence": [
+            {
+              "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+              "text": "8 PRINCIPLE 1: Identify People with Undiagnosed Diabetes and Prediabetes Why screen for diabetes and prediabetes Early in the course of type 2 diabetes, most people are without symptoms. Approximately 1 in 4 Americans with diabetes is undiagnosed, and among Asian Americans and Hispanic Americans with diabetes, approximately half are undiagnosed. Control of glucose and cardiovascular disease risk factors improves outcomes for people with diabetes. Prediabetes is asymptomatic, and the majority of people with the condition are unaware that they have it. Individuals with prediabetes can prevent or delay onset of type 2 diabetes with weight loss, increased physical activity, and/or medications such as metformin. Hence, detection of diabetes and prediabetes through targeted screening identifies individuals who can benefit from evidence-based therapies that can lower risk of adverse outcomes. Whom to screen for diabetes and prediabetes, and how often The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1. Such risk factor-based screening could be done based on a general assessment of standard risk factors or using validated tools. The USPSTF did not identify significant harms of screening.1 As is true of many screening tests, potential benefits of screening may be limited in those with shorter life expectancy or multiple comorbidities, and the decision to screen for abnormal blood glucose should include shared decision-making and consideration of competing priorities. Screening may be repeated at intervals of 1 to 3 years, with the frequency determined by the degree of risk as assessed by risk factors and results of previous screening tests. For example, people with an A1C or blood glucose concentration closer to the cut point for diabetes could be screened more frequently than those with an A1C or plasma glucose in the normal or near-normal range. Some women diagnosed with gestational diabetes (GDM) may actually have previously undiagnosed type 2 diabetes. Because of this risk, women who had GDM should be tested for persistent diabetes or prediabetes at the time of the postpartum visit (4 to 12 weeks postpartum). Either fasting glucose or a 75-gram",
+              "source": {
+                "id": "chunk_b9c6400844e4f9a353a17607",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 8,
+                "page_start": 8,
+                "page_end": 8,
+                "section": "PDF page 8",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013828662083553676
+              }
+            },
+            {
+              "evidence_id": "chunk_029f34947c13dec454a2be0c",
+              "text": "Classification and Diagnosis of Diabetes 1–23 40–70 years who are overweight or obese (219). The American Academy of Family Physicians recommends screening for diabetes only in adults who have dyslipid- emia and hypertension (220); in 2005, the Canadian Task Force on Preventive Health Care made a similar (Grade B) recommen- dation to prevent CVD and death (221). The Canadian Task Force has since revised their recommendations: the FINDRISC (222) or CANRISK (223) calculators should be administered every 3–5 years to adults, and those found to be at high risk should be screened for diabetes with a A1c cutpoint of 6.5%. Those found to be at very high risk should be screened annu- ally (224). The ADA does not recommend community screening because it may be poorly targeted and positive screenees may not have access to or seek follow-up care (40). A joint review of the screening issue by the World Health Organization and the International Diabetes Federation in 2003 concluded that “there is no direct evidence as to whether individuals will or will not benefit from the early detection of type 2 diabetes through screening” and noted that “there is an urgent need for direct RCT (randomized clinical trial) evidence” to address the question (225). They also concluded that “opportunistic screening may be justified” in health care venues with the capacity to treat those who screened positive for diabetes and to offer preventive measures to those identified to be at increased risk for diabetes. The report acknowledged that screening is going on and urged that health authorities and organizations formulate policies regarding screening, even if not to advocate it. A Health Technology Assessment (HTA) for the United Kingdom National Screening committee concluded in 2007 (226) that no direct evidence supporting type 2 diabetes screening existed as of then. If targeted screening was undertaken, the first stage should be a questionnaire to narrow the population to those at increased risk. For the second stage, any of the three glycemia tests were considered “acceptable” because each had advantages and disadvantages, but no opinion was rendered by the HTA as to which was “best.” One study that screened for diabetes has been carried out in a single practice in Ely, U.K. (227,228). In 1990–1992, 1,705 patients were randomly selected to be invited for",
+              "source": {
+                "id": "chunk_029f34947c13dec454a2be0c",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 23,
+                "page_start": 23,
+                "page_end": 23,
+                "section": "PDF page 23",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013392857142857144
+              }
+            },
+            {
+              "evidence_id": "chunk_96a1bbda520a9ccc1f19559b",
+              "text": "Classification and Diagnosis of Diabetes 1–27 Economic Analysis of Screening A complete and accurate economic analysis of screening for diabetes is not possible until the long-term benefit and costs of early detection of asymptomatic diabetes are available from actual observation. Projections of models are limited by lack of knowledge of what future costs of care for diabetes and its complications are likely to be. Estimates of the benefits and costs of improved glycemic management and its cost- effectiveness are, however, available from UKPDS (273,274,275), DPP (276,277,278), and even DCCT data extrapolated to type 2 diabetes (279). According to one model, screening costs depended on the age at which it was started and the frequency at which it was conducted (280). Costs of one quality-ad- justed life year (QALY) gained ranged from $10,500 or less to $40,778 (280). In another analysis, the cost per QALY gained if screening were targeted to individ- uals at age 55 years with hypertension was calculated at $34,375, less than one-tenth the cost of universal screening (281). An analysis of the direct medical costs of screening, from a single payer health care system perspective and the societal perspective, of various tests and their cutpoints has also been presented (282). Because of the wide variability in the results of the economic analyses and the uncertainty of their long-term applicability, they are not discussed in detail. A randomized controlled trial of screening compared to no screening would be essential as the basis for a realistic assessment of the cost-effectiveness of screening. Other Health Care Results of Screening Screening for diabetes or high risk for diabetes (prediabetes) would be bene- ficial if it was informative to positive screenees and followed by therapeutic or preventive behavior. In one longitu- dinal study comparing health behaviors over time of individuals before and after diagnosis of diabetes, an approximately 50% increase in physician visits was observed after diagnosis (283). One beneficial effect of receiving a diagnosis of diabetes is a reduction in smoking (283,284). However, neither body weight nor exercise showed beneficial changes after the diagnosis of diabetes, irrespec- tive of medication use (Figure 1.14) (283). This study did not report whether the diagnosis was based on clinical symp- toms or screening, although the latter was more likely among those not on medication.",
+              "source": {
+                "id": "chunk_96a1bbda520a9ccc1f19559b",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 27,
+                "page_start": 27,
+                "page_end": 27,
+                "section": "PDF page 27",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.01161764705882353
+              }
+            },
+            {
+              "evidence_id": "chunk_63887d8d1f6e40dd6909b9d4",
+              "text": "screening program might yield some benefit if the detected individuals received effective treatment. A definite clinical advantage to early detection of type 2 diabetes remains to be proven. Community screening as such has not been recommended by the ADA because it may be poorly targeted, individuals screening positive may not seek or have access to appropriate follow-up care, and it has not been proven to be cost-effective (262,263). Prevalence of Screening Table 1.14 presents the percentage of indi- viduals who received a fasting blood test for diabetes in the previous 3 years, based on self-reported data from the National Health Interview Survey 2006 (264). The prevalence of previous screening in this population increased with older age, female sex, BMI, and prediabetes, all characteristics that are known to increase the chance of finding diabetes. It is discouraging to see that people of races/ ethnicities at higher risk were less likely to be screened, as were people with lesser education, lacking health insurance, and having lower family incomes (Table 1.14). These characteristics define generally underserved communities that might benefit from detection, if followed by effective treatment. Screening Cutpoints For opportunistic screening in a physi- cian’s office, the cutpoints for a positive screening test are the same as the cutpoints for a diagnosis of diabetes, i.e., A1c ≥6.5%, FPG ≥126 mg/dL, and 2-hour PG ≥200 mg/dL (265). However, in the TABLE 1.13. Cardiovascular Disease Outcomes in the ADDITION Trial of Intensive Versus Routine Care of Patients With Type 2 Diabetes Detected by Screening, 2001–2006 OUTCOMES INTENSIVE TREATMENT ROUTINE CARE P-VALUE Composite CVD outcome 7.2% 8.5% 0.12 Cardiovascular death 1.5% 1.6% NS Myocardial infarction 1.7% 2.3% NS Stroke 1.3% 1.4% NS Revascularization 2.6% 3.2% NS Total mortality 6.2% 6.7% NS ADDITION, Anglo-Danish-Dutch Study of Intensive Treatment in People with Screen Detected Diabetes in Primary Care; CVD, cardiovascular disease; NS, nonsignificant. SOURCE: Reference 259 TABLE 1.14. Prevalence of Having Received a Fasting Blood Test for Diabetes in the Previous 3 Years, U.S., 2006 CHARACTERISTICS PERCENT Age (years) 20–39 21.8 40–49 30.6 50–59 36.7 60–69 42.3 ≥70 40.0 Sex Men 27.8 Women 32.7 Race/ethnicity Non-Hispanic white 32.6 Non-Hispanic black 29.3 Hispanic 22.2 Mexican American 22.6 Non-Hispanic Asian 20.9 Body mass index (kg/m2)* <25 24.9 25–<30 30.3 30–<35 39.2 35–<40 41.3 Previous prediabetes* Yes 65.7 No 28.7",
+              "source": {
+                "id": "chunk_63887d8d1f6e40dd6909b9d4",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 25,
+                "page_start": 25,
+                "page_end": 25,
+                "section": "PDF page 25",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.011739380022962112
+              }
+            },
+            {
+              "evidence_id": "chunk_edebf0a53b1a64cee3453047",
+              "text": "receiving a diagnosis of diabetes is a reduction in smoking (283,284). However, neither body weight nor exercise showed beneficial changes after the diagnosis of diabetes, irrespec- tive of medication use (Figure 1.14) (283). This study did not report whether the diagnosis was based on clinical symp- toms or screening, although the latter was more likely among those not on medication. In the ADDITION screening study, an intervention to change health behaviors was largely unsuccessful (285), and compared to changing three to four health behaviors, failure to change any health behaviors increased the risk of CVD events in the ensuing 5 years three- fold (286). In the NHANES 2005–2006 population, only 7.3% of the positive prediabetes screenees were already aware of their condition, so the screening was certainly informative for the large majority of the positives (287). Only 47.7% of those with known prediabetes had been tested for diabetes in the preceding 3 years. When known prediabetic individuals were asked about preventive behavior in the preceding 12 months, about one-half reported efforts at weight reduction or control and a similar percentage reported increasing physical activity. Only about one-third reported being given physician advice to perform these preventive behaviors (287). SCREENING FOR TYPE 1 DIABETES Screening for type 1 diabetes in the general population is not recommended by the ADA on the grounds that relatively few cases would be detected (263). Screening of offspring or siblings (or other relatives) of patients with type 1 diabetes with multiple islet cell autoantibodies, if requested by parents, may be undertaken at the discretion of physicians, or for clinical research purposes. Positive screenees should be counseled about their risk, educated as to symptoms, and monitored periodically for hyperglycemia. Some idea of the results that can be expected are provided by the TrialNet Natural History Study (288), using research assays not generally available FIGURE 1.14. Estimated Probabilities of Health Behaviors and Obesity After Diagnosis of Diabetes Years Since Diabetes Diagnosis Years Since Diabetes Diagnosis Frequent exercise (3+ times per week) Overweight or obese status 0.180 0.200 0.140 0.160 0.120 0.100 0.080 0.220 -2 4 2 60 8–14 -2 4 60 2 8–14 0.860 0.880 0.800 0.840 0.820 0.780 0.900 Diagnosed without medicationDiagnosed with medication Probability ranges from 0 to 1. For more information, see SOURCE. SOURCE: Reference",
+              "source": {
+                "id": "chunk_edebf0a53b1a64cee3453047",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 27,
+                "page_start": 27,
+                "page_end": 27,
+                "section": "PDF page 27",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012141687141687143
+              }
+            },
+            {
+              "evidence_id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+              "text": "percentile, or weight >120% of ideal for height; and (2) if any two of the following additional risk factors are present: family history of type 2 diabetes in a first- or second- degree relative, minority race/ethnicity (African American, Hispanic, Asian American, Pacific Islander, Native American), evidence of insulin resistance (e.g., acanthosis nigricans, hypertension, polycystic ovary syndrome), small for gestational age birth weight, or maternal history of diabetes or gestational diabetes during the gestation of the child. Testing should begin at age 10 years or at onset of puberty, if it occurs before age 10 years. If the initial test is negative, it should be repeated in 3 years (40). Recommendations for diagnostic cutpoints of glycemia are no different than those for adults (112), although more studies have been advocated before use of A1c for testing adolescents is widely adopted, due to the lower sensitivity of A1c (113,114). In children found to be at increased risk for type 1 diabetes by virtue of positive tests for autoantibodies to islet antigens, regular testing for diabetic glycemia levels is indicated to detect the disease before it manifests clinically, especially as diabetic ketoacidosis. The same cutpoints detailed in Table 1.3 are appropriate. CYSTIC FIBROSIS- RELATED DIABETES An estimated 40%–50% of adults with cystic fibrosis now live long enough to develop cystic fibrosis-related diabetes (CFRD) (115), and screening for CFRD is recommended to begin from age 10 years on (116). An annual OGTT is the preferred test, with 2-hour PG ≥200 mg/dL consid- ered diagnostic of diabetes. FPG and A1c are considered less satisfactory tests for CFRD (116), although one study suggested that A1c testing is a useful screening tool that effectively reduces the need to perform OGTTs to diagnose CFRD (117). DISCREPANCIES BETWEEN A1C AND PLASMA GLUCOSE TESTS In studies of various populations in the United States and around the world, different levels of sensitivity and spec- ificity of the three glycemic tests for diagnosing diabetes have been reported, depending on which test is chosen as the referent. Moreover, even in any given population, the different tests do not always identify the same individuals. A number",
+              "source": {
+                "id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 14,
+                "page_start": 14,
+                "page_end": 14,
+                "section": "PDF page 14",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.01381544156530936
+              }
+            },
+            {
+              "evidence_id": "chunk_e25d3ba5acf095dacae13163",
+              "text": "12 Table 3. Screening Test Criteria for Gestational Diabetes Two GDM screening approaches are presented below. All women should undergo GDM screening, usually between 24 and 28 weeks’ gestation, if they were not previously diagnosed with overt diabetes. Use professional judgment to select the most appropriate test for each woman. A two-step approach endorsed by the American College of Obstetricians and Gynecologists and a consensus panel convened by the National Institutes of Health11 1. Start with a 1-hour plasma glucose test after 50 g oral glucose challenge. Choose a cutoff of either ≥ 135 mg/dL or ≥ 140 mg/dL and ensure that this cutoff remains consistent. 2. For individuals who meet or exceed the screening threshold, administer a 3-hour 100 g oral glucose tolerance test. Diagnose GDM when two or more of the plasma glucose values are exceeded on the 3-hour test. Choose either of two methods: (1) National Diabetes Data Group cutoff values of Fasting ≥ 105 mg/dL, 1-hour ≥ 190 mg/dL, 2-hour ≥ 165 mg/dL, or 3-hour ≥ 145 mg/dL; or (2) Carpenter and Coustan cutoff values of Fasting ≥ 95 mg/dL, 1-hour ≥ 180 mg/dL, 2-hour ≥ 155 mg/dL, or 3-hour ≥ 140 mg/dL. A. A one-step approach endorsed by the International Association of Diabetes and Pregnancy Study Groups2, 12 Perform a 75 g oral glucose tolerance test. Diagnose GDM when one or more of the following plasma glucose values are exceeded: Fasting ≥ 92 mg/dL, 1-hour ≥ 180 mg/dL, or 2-hour ≥ 153 mg/dL. B. Resources • National Institute of Diabetes and Digestive and Kidney Diseases: º The A1C Test and Diabetes º Diabetes and Prediabetes Tests º Sickle Cell Trait and Other Hemoglobinopathies and Diabetes: for Providers • American College of Obstetricians and Gynecologists: Tool for Postpartum GDM Follow-up • American Diabetes Association: Type 2 Diabetes Risk Test • Centers for Medicare & Medicaid Services: Your Medicare Coverage: Diabetes screening tests GUIDING PRINCIPLES FOR THE CARE OF PEOPLE WITH OR AT RISK FOR DIABETES | PRINCIPLE 1",
+              "source": {
+                "id": "chunk_e25d3ba5acf095dacae13163",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 12,
+                "page_start": 12,
+                "page_end": 12,
+                "section": "PDF page 12",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012112932604735883
+              }
+            },
+            {
+              "evidence_id": "chunk_ce6668038cfe05262d6fd635",
+              "text": "1–28 DIABETES IN AMERICA, 3rd Edition for clinical use. There were 32,845 first-, second-, or third-degree relatives age 1–17 years who were screened for GAD-65, islet cell antibodies (ICA or ICA-512), and insulin autoantibodies in the course of recruitment for a type 1 diabetes prevention study. Respective cutpoints for those deemed to be autoantibody positive were defined as the threshold indices of ≥0.032, ≥0.049, and ≥0.01. Only 1,807 relatives (5.5%) initially screened positive for any of the three antibodies. Of the 31,038 antibody- negative screenees, 12,365 returned for at least one annual rescreening over 5.8 years of follow-up. Figure 1.15 shows the cumulative incidence of conversion to autoantibody positivity. The rate of conversion was much higher in children age <10 years than in those age ≥10 years. The annual incidence of type 1 diabetes was highest in children age 0–4 years (5.4%) and fell in children age 10–14 years (2.9%). The cumulative incidence of conversion to autoantibody positivity appeared to nearly plateau after three to four screenings, suggesting that further testing after 3–4 years may detect few additional at-risk individuals. Two-thirds of all positive screenees were detected on the initial test. A cost/benefit analysis of screening this targeted population for type 1 diabetes, with benefit defined as prevention of diabetic ketoacidosis, remains to be performed. The addition of ZnT8 autoantibodies to the now-traditional other biochemical autoantibodies (i.e., GAD, insulin, IA-2) and ICA improves screening for preclinical type 1 diabetes (289). Moreover, a risk score for the development of diabetes in autoantibody-positive relatives of type 1 diabetic individuals has been constructed from components of age, log BMI, log fasting C-peptide, and the respective sums of glucose and C-peptide levels at 30, 60, 90, and 120 minutes of an OGTT (290). Among relatives whose Diabetes Prevention Trial Risk Score exceeded 9.0, 77%–88% became diabetic within 2 years (290). This compares to 37% identified as dysglycemic (IFG and/or IGT on the base- line OGTT) who developed diabetes within 2 years. SCREENING FOR GESTATIONAL DIABETES Gestational diabetes is itself a major risk factor for type 2 diabetes, increasing the later development of diabetes sevenfold (16). Data on gestational diabetes are fully presented and discussed in Chapter 4. A short summary of screening and diagnosis of gestational diabetes is given below for purposes of comparison",
+              "source": {
+                "id": "chunk_ce6668038cfe05262d6fd635",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 28,
+                "page_start": 28,
+                "page_end": 28,
+                "section": "PDF page 28",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012637362637362638
+              }
+            }
+          ],
+          "citations": [
+            {
+              "id": "chunk_b9c6400844e4f9a353a17607",
+              "document_id": "pdf_Guiding-Principles_40a7da28c688",
+              "title": "Guiding-Principles",
+              "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+              "page": 8,
+              "page_start": 8,
+              "page_end": 8,
+              "section": "PDF page 8",
+              "source_file": "Guiding-Principles.pdf",
+              "source_type": "pdf",
+              "source_version": "40a7da28c688",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.013828662083553676
+            },
+            {
+              "id": "chunk_029f34947c13dec454a2be0c",
+              "document_id": "pdf_DIA_Ch01_78d5e1234421",
+              "title": "DIA_Ch01",
+              "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+              "page": 23,
+              "page_start": 23,
+              "page_end": 23,
+              "section": "PDF page 23",
+              "source_file": "DIA_Ch01.pdf",
+              "source_type": "pdf",
+              "source_version": "78d5e1234421",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.013392857142857144
+            },
+            {
+              "id": "chunk_96a1bbda520a9ccc1f19559b",
+              "document_id": "pdf_DIA_Ch01_78d5e1234421",
+              "title": "DIA_Ch01",
+              "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+              "page": 27,
+              "page_start": 27,
+              "page_end": 27,
+              "section": "PDF page 27",
+              "source_file": "DIA_Ch01.pdf",
+              "source_type": "pdf",
+              "source_version": "78d5e1234421",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.01161764705882353
+            },
+            {
+              "id": "chunk_63887d8d1f6e40dd6909b9d4",
+              "document_id": "pdf_DIA_Ch01_78d5e1234421",
+              "title": "DIA_Ch01",
+              "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+              "page": 25,
+              "page_start": 25,
+              "page_end": 25,
+              "section": "PDF page 25",
+              "source_file": "DIA_Ch01.pdf",
+              "source_type": "pdf",
+              "source_version": "78d5e1234421",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.011739380022962112
+            },
+            {
+              "id": "chunk_edebf0a53b1a64cee3453047",
+              "document_id": "pdf_DIA_Ch01_78d5e1234421",
+              "title": "DIA_Ch01",
+              "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+              "page": 27,
+              "page_start": 27,
+              "page_end": 27,
+              "section": "PDF page 27",
+              "source_file": "DIA_Ch01.pdf",
+              "source_type": "pdf",
+              "source_version": "78d5e1234421",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.012141687141687143
+            },
+            {
+              "id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+              "document_id": "pdf_DIA_Ch01_78d5e1234421",
+              "title": "DIA_Ch01",
+              "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+              "page": 14,
+              "page_start": 14,
+              "page_end": 14,
+              "section": "PDF page 14",
+              "source_file": "DIA_Ch01.pdf",
+              "source_type": "pdf",
+              "source_version": "78d5e1234421",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.01381544156530936
+            },
+            {
+              "id": "chunk_e25d3ba5acf095dacae13163",
+              "document_id": "pdf_Guiding-Principles_40a7da28c688",
+              "title": "Guiding-Principles",
+              "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+              "page": 12,
+              "page_start": 12,
+              "page_end": 12,
+              "section": "PDF page 12",
+              "source_file": "Guiding-Principles.pdf",
+              "source_type": "pdf",
+              "source_version": "40a7da28c688",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.012112932604735883
+            },
+            {
+              "id": "chunk_ce6668038cfe05262d6fd635",
+              "document_id": "pdf_DIA_Ch01_78d5e1234421",
+              "title": "DIA_Ch01",
+              "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+              "page": 28,
+              "page_start": 28,
+              "page_end": 28,
+              "section": "PDF page 28",
+              "source_file": "DIA_Ch01.pdf",
+              "source_type": "pdf",
+              "source_version": "78d5e1234421",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.012637362637362638
+            }
+          ],
+          "paths": [],
+          "retrieval": {
+            "backend": "Neo4j vector + fulltext + graph",
+            "embedding_model": "TF-IDF + LSA (frozen 128d)",
+            "dimensions": 128,
+            "total_vectors": 515,
+            "pdf_chunks": 398,
+            "kb_version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+            "chunking": {
+              "words": 380,
+              "overlap_words": 60,
+              "scope": "page/paragraph/HTML heading"
+            }
+          },
+          "query_analysis": [
+            {
+              "entities": [],
+              "query": "diabetes screening tests for adults 30 years old ",
+              "requested_sources": [],
+              "methods": [
+                "vector",
+                "fulltext",
+                "graph"
+              ],
+              "version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+              "reranker": "RRF + lexical tie-break"
+            },
+            {
+              "entities": [],
+              "query": "when to start diabetes screening ",
+              "requested_sources": [],
+              "methods": [
+                "vector",
+                "fulltext",
+                "graph"
+              ],
+              "version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+              "reranker": "RRF + lexical tie-break"
+            }
+          ],
+          "answer": "",
+          "status": "supported",
+          "summary": "Truy xuất 8 bằng chứng từ 2 truy vấn"
+        },
+        "duration_ms": 521.84
+      },
+      {
+        "sequence": 7,
+        "sender": "CoordinatorAgent",
+        "receiver": "EvidenceReaderAgent",
+        "performative": "REQUEST",
+        "content": {
+          "evidence": [
+            {
+              "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+              "text": "8 PRINCIPLE 1: Identify People with Undiagnosed Diabetes and Prediabetes Why screen for diabetes and prediabetes Early in the course of type 2 diabetes, most people are without symptoms. Approximately 1 in 4 Americans with diabetes is undiagnosed, and among Asian Americans and Hispanic Americans with diabetes, approximately half are undiagnosed. Control of glucose and cardiovascular disease risk factors improves outcomes for people with diabetes. Prediabetes is asymptomatic, and the majority of people with the condition are unaware that they have it. Individuals with prediabetes can prevent or delay onset of type 2 diabetes with weight loss, increased physical activity, and/or medications such as metformin. Hence, detection of diabetes and prediabetes through targeted screening identifies individuals who can benefit from evidence-based therapies that can lower risk of adverse outcomes. Whom to screen for diabetes and prediabetes, and how often The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1. Such risk factor-based screening could be done based on a general assessment of standard risk factors or using validated tools. The USPSTF did not identify significant harms of screening.1 As is true of many screening tests, potential benefits of screening may be limited in those with shorter life expectancy or multiple comorbidities, and the decision to screen for abnormal blood glucose should include shared decision-making and consideration of competing priorities. Screening may be repeated at intervals of 1 to 3 years, with the frequency determined by the degree of risk as assessed by risk factors and results of previous screening tests. For example, people with an A1C or blood glucose concentration closer to the cut point for diabetes could be screened more frequently than those with an A1C or plasma glucose in the normal or near-normal range. Some women diagnosed with gestational diabetes (GDM) may actually have previously undiagnosed type 2 diabetes. Because of this risk, women who had GDM should be tested for persistent diabetes or prediabetes at the time of the postpartum visit (4 to 12 weeks postpartum). Either fasting glucose or a 75-gram",
+              "source": {
+                "id": "chunk_b9c6400844e4f9a353a17607",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 8,
+                "page_start": 8,
+                "page_end": 8,
+                "section": "PDF page 8",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013828662083553676
+              }
+            },
+            {
+              "evidence_id": "chunk_029f34947c13dec454a2be0c",
+              "text": "Classification and Diagnosis of Diabetes 1–23 40–70 years who are overweight or obese (219). The American Academy of Family Physicians recommends screening for diabetes only in adults who have dyslipid- emia and hypertension (220); in 2005, the Canadian Task Force on Preventive Health Care made a similar (Grade B) recommen- dation to prevent CVD and death (221). The Canadian Task Force has since revised their recommendations: the FINDRISC (222) or CANRISK (223) calculators should be administered every 3–5 years to adults, and those found to be at high risk should be screened for diabetes with a A1c cutpoint of 6.5%. Those found to be at very high risk should be screened annu- ally (224). The ADA does not recommend community screening because it may be poorly targeted and positive screenees may not have access to or seek follow-up care (40). A joint review of the screening issue by the World Health Organization and the International Diabetes Federation in 2003 concluded that “there is no direct evidence as to whether individuals will or will not benefit from the early detection of type 2 diabetes through screening” and noted that “there is an urgent need for direct RCT (randomized clinical trial) evidence” to address the question (225). They also concluded that “opportunistic screening may be justified” in health care venues with the capacity to treat those who screened positive for diabetes and to offer preventive measures to those identified to be at increased risk for diabetes. The report acknowledged that screening is going on and urged that health authorities and organizations formulate policies regarding screening, even if not to advocate it. A Health Technology Assessment (HTA) for the United Kingdom National Screening committee concluded in 2007 (226) that no direct evidence supporting type 2 diabetes screening existed as of then. If targeted screening was undertaken, the first stage should be a questionnaire to narrow the population to those at increased risk. For the second stage, any of the three glycemia tests were considered “acceptable” because each had advantages and disadvantages, but no opinion was rendered by the HTA as to which was “best.” One study that screened for diabetes has been carried out in a single practice in Ely, U.K. (227,228). In 1990–1992, 1,705 patients were randomly selected to be invited for",
+              "source": {
+                "id": "chunk_029f34947c13dec454a2be0c",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 23,
+                "page_start": 23,
+                "page_end": 23,
+                "section": "PDF page 23",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013392857142857144
+              }
+            },
+            {
+              "evidence_id": "chunk_96a1bbda520a9ccc1f19559b",
+              "text": "Classification and Diagnosis of Diabetes 1–27 Economic Analysis of Screening A complete and accurate economic analysis of screening for diabetes is not possible until the long-term benefit and costs of early detection of asymptomatic diabetes are available from actual observation. Projections of models are limited by lack of knowledge of what future costs of care for diabetes and its complications are likely to be. Estimates of the benefits and costs of improved glycemic management and its cost- effectiveness are, however, available from UKPDS (273,274,275), DPP (276,277,278), and even DCCT data extrapolated to type 2 diabetes (279). According to one model, screening costs depended on the age at which it was started and the frequency at which it was conducted (280). Costs of one quality-ad- justed life year (QALY) gained ranged from $10,500 or less to $40,778 (280). In another analysis, the cost per QALY gained if screening were targeted to individ- uals at age 55 years with hypertension was calculated at $34,375, less than one-tenth the cost of universal screening (281). An analysis of the direct medical costs of screening, from a single payer health care system perspective and the societal perspective, of various tests and their cutpoints has also been presented (282). Because of the wide variability in the results of the economic analyses and the uncertainty of their long-term applicability, they are not discussed in detail. A randomized controlled trial of screening compared to no screening would be essential as the basis for a realistic assessment of the cost-effectiveness of screening. Other Health Care Results of Screening Screening for diabetes or high risk for diabetes (prediabetes) would be bene- ficial if it was informative to positive screenees and followed by therapeutic or preventive behavior. In one longitu- dinal study comparing health behaviors over time of individuals before and after diagnosis of diabetes, an approximately 50% increase in physician visits was observed after diagnosis (283). One beneficial effect of receiving a diagnosis of diabetes is a reduction in smoking (283,284). However, neither body weight nor exercise showed beneficial changes after the diagnosis of diabetes, irrespec- tive of medication use (Figure 1.14) (283). This study did not report whether the diagnosis was based on clinical symp- toms or screening, although the latter was more likely among those not on medication.",
+              "source": {
+                "id": "chunk_96a1bbda520a9ccc1f19559b",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 27,
+                "page_start": 27,
+                "page_end": 27,
+                "section": "PDF page 27",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.01161764705882353
+              }
+            },
+            {
+              "evidence_id": "chunk_63887d8d1f6e40dd6909b9d4",
+              "text": "screening program might yield some benefit if the detected individuals received effective treatment. A definite clinical advantage to early detection of type 2 diabetes remains to be proven. Community screening as such has not been recommended by the ADA because it may be poorly targeted, individuals screening positive may not seek or have access to appropriate follow-up care, and it has not been proven to be cost-effective (262,263). Prevalence of Screening Table 1.14 presents the percentage of indi- viduals who received a fasting blood test for diabetes in the previous 3 years, based on self-reported data from the National Health Interview Survey 2006 (264). The prevalence of previous screening in this population increased with older age, female sex, BMI, and prediabetes, all characteristics that are known to increase the chance of finding diabetes. It is discouraging to see that people of races/ ethnicities at higher risk were less likely to be screened, as were people with lesser education, lacking health insurance, and having lower family incomes (Table 1.14). These characteristics define generally underserved communities that might benefit from detection, if followed by effective treatment. Screening Cutpoints For opportunistic screening in a physi- cian’s office, the cutpoints for a positive screening test are the same as the cutpoints for a diagnosis of diabetes, i.e., A1c ≥6.5%, FPG ≥126 mg/dL, and 2-hour PG ≥200 mg/dL (265). However, in the TABLE 1.13. Cardiovascular Disease Outcomes in the ADDITION Trial of Intensive Versus Routine Care of Patients With Type 2 Diabetes Detected by Screening, 2001–2006 OUTCOMES INTENSIVE TREATMENT ROUTINE CARE P-VALUE Composite CVD outcome 7.2% 8.5% 0.12 Cardiovascular death 1.5% 1.6% NS Myocardial infarction 1.7% 2.3% NS Stroke 1.3% 1.4% NS Revascularization 2.6% 3.2% NS Total mortality 6.2% 6.7% NS ADDITION, Anglo-Danish-Dutch Study of Intensive Treatment in People with Screen Detected Diabetes in Primary Care; CVD, cardiovascular disease; NS, nonsignificant. SOURCE: Reference 259 TABLE 1.14. Prevalence of Having Received a Fasting Blood Test for Diabetes in the Previous 3 Years, U.S., 2006 CHARACTERISTICS PERCENT Age (years) 20–39 21.8 40–49 30.6 50–59 36.7 60–69 42.3 ≥70 40.0 Sex Men 27.8 Women 32.7 Race/ethnicity Non-Hispanic white 32.6 Non-Hispanic black 29.3 Hispanic 22.2 Mexican American 22.6 Non-Hispanic Asian 20.9 Body mass index (kg/m2)* <25 24.9 25–<30 30.3 30–<35 39.2 35–<40 41.3 Previous prediabetes* Yes 65.7 No 28.7",
+              "source": {
+                "id": "chunk_63887d8d1f6e40dd6909b9d4",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 25,
+                "page_start": 25,
+                "page_end": 25,
+                "section": "PDF page 25",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.011739380022962112
+              }
+            },
+            {
+              "evidence_id": "chunk_edebf0a53b1a64cee3453047",
+              "text": "receiving a diagnosis of diabetes is a reduction in smoking (283,284). However, neither body weight nor exercise showed beneficial changes after the diagnosis of diabetes, irrespec- tive of medication use (Figure 1.14) (283). This study did not report whether the diagnosis was based on clinical symp- toms or screening, although the latter was more likely among those not on medication. In the ADDITION screening study, an intervention to change health behaviors was largely unsuccessful (285), and compared to changing three to four health behaviors, failure to change any health behaviors increased the risk of CVD events in the ensuing 5 years three- fold (286). In the NHANES 2005–2006 population, only 7.3% of the positive prediabetes screenees were already aware of their condition, so the screening was certainly informative for the large majority of the positives (287). Only 47.7% of those with known prediabetes had been tested for diabetes in the preceding 3 years. When known prediabetic individuals were asked about preventive behavior in the preceding 12 months, about one-half reported efforts at weight reduction or control and a similar percentage reported increasing physical activity. Only about one-third reported being given physician advice to perform these preventive behaviors (287). SCREENING FOR TYPE 1 DIABETES Screening for type 1 diabetes in the general population is not recommended by the ADA on the grounds that relatively few cases would be detected (263). Screening of offspring or siblings (or other relatives) of patients with type 1 diabetes with multiple islet cell autoantibodies, if requested by parents, may be undertaken at the discretion of physicians, or for clinical research purposes. Positive screenees should be counseled about their risk, educated as to symptoms, and monitored periodically for hyperglycemia. Some idea of the results that can be expected are provided by the TrialNet Natural History Study (288), using research assays not generally available FIGURE 1.14. Estimated Probabilities of Health Behaviors and Obesity After Diagnosis of Diabetes Years Since Diabetes Diagnosis Years Since Diabetes Diagnosis Frequent exercise (3+ times per week) Overweight or obese status 0.180 0.200 0.140 0.160 0.120 0.100 0.080 0.220 -2 4 2 60 8–14 -2 4 60 2 8–14 0.860 0.880 0.800 0.840 0.820 0.780 0.900 Diagnosed without medicationDiagnosed with medication Probability ranges from 0 to 1. For more information, see SOURCE. SOURCE: Reference",
+              "source": {
+                "id": "chunk_edebf0a53b1a64cee3453047",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 27,
+                "page_start": 27,
+                "page_end": 27,
+                "section": "PDF page 27",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012141687141687143
+              }
+            },
+            {
+              "evidence_id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+              "text": "percentile, or weight >120% of ideal for height; and (2) if any two of the following additional risk factors are present: family history of type 2 diabetes in a first- or second- degree relative, minority race/ethnicity (African American, Hispanic, Asian American, Pacific Islander, Native American), evidence of insulin resistance (e.g., acanthosis nigricans, hypertension, polycystic ovary syndrome), small for gestational age birth weight, or maternal history of diabetes or gestational diabetes during the gestation of the child. Testing should begin at age 10 years or at onset of puberty, if it occurs before age 10 years. If the initial test is negative, it should be repeated in 3 years (40). Recommendations for diagnostic cutpoints of glycemia are no different than those for adults (112), although more studies have been advocated before use of A1c for testing adolescents is widely adopted, due to the lower sensitivity of A1c (113,114). In children found to be at increased risk for type 1 diabetes by virtue of positive tests for autoantibodies to islet antigens, regular testing for diabetic glycemia levels is indicated to detect the disease before it manifests clinically, especially as diabetic ketoacidosis. The same cutpoints detailed in Table 1.3 are appropriate. CYSTIC FIBROSIS- RELATED DIABETES An estimated 40%–50% of adults with cystic fibrosis now live long enough to develop cystic fibrosis-related diabetes (CFRD) (115), and screening for CFRD is recommended to begin from age 10 years on (116). An annual OGTT is the preferred test, with 2-hour PG ≥200 mg/dL consid- ered diagnostic of diabetes. FPG and A1c are considered less satisfactory tests for CFRD (116), although one study suggested that A1c testing is a useful screening tool that effectively reduces the need to perform OGTTs to diagnose CFRD (117). DISCREPANCIES BETWEEN A1C AND PLASMA GLUCOSE TESTS In studies of various populations in the United States and around the world, different levels of sensitivity and spec- ificity of the three glycemic tests for diagnosing diabetes have been reported, depending on which test is chosen as the referent. Moreover, even in any given population, the different tests do not always identify the same individuals. A number",
+              "source": {
+                "id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 14,
+                "page_start": 14,
+                "page_end": 14,
+                "section": "PDF page 14",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.01381544156530936
+              }
+            },
+            {
+              "evidence_id": "chunk_e25d3ba5acf095dacae13163",
+              "text": "12 Table 3. Screening Test Criteria for Gestational Diabetes Two GDM screening approaches are presented below. All women should undergo GDM screening, usually between 24 and 28 weeks’ gestation, if they were not previously diagnosed with overt diabetes. Use professional judgment to select the most appropriate test for each woman. A two-step approach endorsed by the American College of Obstetricians and Gynecologists and a consensus panel convened by the National Institutes of Health11 1. Start with a 1-hour plasma glucose test after 50 g oral glucose challenge. Choose a cutoff of either ≥ 135 mg/dL or ≥ 140 mg/dL and ensure that this cutoff remains consistent. 2. For individuals who meet or exceed the screening threshold, administer a 3-hour 100 g oral glucose tolerance test. Diagnose GDM when two or more of the plasma glucose values are exceeded on the 3-hour test. Choose either of two methods: (1) National Diabetes Data Group cutoff values of Fasting ≥ 105 mg/dL, 1-hour ≥ 190 mg/dL, 2-hour ≥ 165 mg/dL, or 3-hour ≥ 145 mg/dL; or (2) Carpenter and Coustan cutoff values of Fasting ≥ 95 mg/dL, 1-hour ≥ 180 mg/dL, 2-hour ≥ 155 mg/dL, or 3-hour ≥ 140 mg/dL. A. A one-step approach endorsed by the International Association of Diabetes and Pregnancy Study Groups2, 12 Perform a 75 g oral glucose tolerance test. Diagnose GDM when one or more of the following plasma glucose values are exceeded: Fasting ≥ 92 mg/dL, 1-hour ≥ 180 mg/dL, or 2-hour ≥ 153 mg/dL. B. Resources • National Institute of Diabetes and Digestive and Kidney Diseases: º The A1C Test and Diabetes º Diabetes and Prediabetes Tests º Sickle Cell Trait and Other Hemoglobinopathies and Diabetes: for Providers • American College of Obstetricians and Gynecologists: Tool for Postpartum GDM Follow-up • American Diabetes Association: Type 2 Diabetes Risk Test • Centers for Medicare & Medicaid Services: Your Medicare Coverage: Diabetes screening tests GUIDING PRINCIPLES FOR THE CARE OF PEOPLE WITH OR AT RISK FOR DIABETES | PRINCIPLE 1",
+              "source": {
+                "id": "chunk_e25d3ba5acf095dacae13163",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 12,
+                "page_start": 12,
+                "page_end": 12,
+                "section": "PDF page 12",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012112932604735883
+              }
+            },
+            {
+              "evidence_id": "chunk_ce6668038cfe05262d6fd635",
+              "text": "1–28 DIABETES IN AMERICA, 3rd Edition for clinical use. There were 32,845 first-, second-, or third-degree relatives age 1–17 years who were screened for GAD-65, islet cell antibodies (ICA or ICA-512), and insulin autoantibodies in the course of recruitment for a type 1 diabetes prevention study. Respective cutpoints for those deemed to be autoantibody positive were defined as the threshold indices of ≥0.032, ≥0.049, and ≥0.01. Only 1,807 relatives (5.5%) initially screened positive for any of the three antibodies. Of the 31,038 antibody- negative screenees, 12,365 returned for at least one annual rescreening over 5.8 years of follow-up. Figure 1.15 shows the cumulative incidence of conversion to autoantibody positivity. The rate of conversion was much higher in children age <10 years than in those age ≥10 years. The annual incidence of type 1 diabetes was highest in children age 0–4 years (5.4%) and fell in children age 10–14 years (2.9%). The cumulative incidence of conversion to autoantibody positivity appeared to nearly plateau after three to four screenings, suggesting that further testing after 3–4 years may detect few additional at-risk individuals. Two-thirds of all positive screenees were detected on the initial test. A cost/benefit analysis of screening this targeted population for type 1 diabetes, with benefit defined as prevention of diabetic ketoacidosis, remains to be performed. The addition of ZnT8 autoantibodies to the now-traditional other biochemical autoantibodies (i.e., GAD, insulin, IA-2) and ICA improves screening for preclinical type 1 diabetes (289). Moreover, a risk score for the development of diabetes in autoantibody-positive relatives of type 1 diabetic individuals has been constructed from components of age, log BMI, log fasting C-peptide, and the respective sums of glucose and C-peptide levels at 30, 60, 90, and 120 minutes of an OGTT (290). Among relatives whose Diabetes Prevention Trial Risk Score exceeded 9.0, 77%–88% became diabetic within 2 years (290). This compares to 37% identified as dysglycemic (IFG and/or IGT on the base- line OGTT) who developed diabetes within 2 years. SCREENING FOR GESTATIONAL DIABETES Gestational diabetes is itself a major risk factor for type 2 diabetes, increasing the later development of diabetes sevenfold (16). Data on gestational diabetes are fully presented and discussed in Chapter 4. A short summary of screening and diagnosis of gestational diabetes is given below for purposes of comparison",
+              "source": {
+                "id": "chunk_ce6668038cfe05262d6fd635",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 28,
+                "page_start": 28,
+                "page_end": 28,
+                "section": "PDF page 28",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012637362637362638
+              }
+            }
+          ]
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 8,
+        "sender": "EvidenceReaderAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "evidence": [
+            {
+              "evidence_id": "chunk_e25d3ba5acf095dacae13163",
+              "text": "12 Table 3. Screening Test Criteria for Gestational Diabetes Two GDM screening approaches are presented below. All women should undergo GDM screening, usually between 24 and 28 weeks’ gestation, if they were not previously diagnosed with overt diabetes. Use professional judgment to select the most appropriate test for each woman. A two-step approach endorsed by the American College of Obstetricians and Gynecologists and a consensus panel convened by the National Institutes of Health11 1. Start with a 1-hour plasma glucose test after 50 g oral glucose challenge. Choose a cutoff of either ≥ 135 mg/dL or ≥ 140 mg/dL and ensure that this cutoff remains consistent. 2. For individuals who meet or exceed the screening threshold, administer a 3-hour 100 g oral glucose tolerance test. Diagnose GDM when two or more of the plasma glucose values are exceeded on the 3-hour test. Choose either of two methods: (1) National Diabetes Data Group cutoff values of Fasting ≥ 105 mg/dL, 1-hour ≥ 190 mg/dL, 2-hour ≥ 165 mg/dL, or 3-hour ≥ 145 mg/dL; or (2) Carpenter and Coustan cutoff values of Fasting ≥ 95 mg/dL, 1-hour ≥ 180 mg/dL, 2-hour ≥ 155 mg/dL, or 3-hour ≥ 140 mg/dL. A. A one-step approach endor",
+              "source": {
+                "id": "chunk_e25d3ba5acf095dacae13163",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 12,
+                "page_start": 12,
+                "page_end": 12,
+                "section": "PDF page 12",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012112932604735883
+              },
+              "reader_relevance": 10.102
+            },
+            {
+              "evidence_id": "chunk_edebf0a53b1a64cee3453047",
+              "text": "receiving a diagnosis of diabetes is a reduction in smoking (283,284). However, neither body weight nor exercise showed beneficial changes after the diagnosis of diabetes, irrespec- tive of medication use (Figure 1.14) (283). This study did not report whether the diagnosis was based on clinical symp- toms or screening, although the latter was more likely among those not on medication. In the ADDITION screening study, an intervention to change health behaviors was largely unsuccessful (285), and compared to changing three to four health behaviors, failure to change any health behaviors increased the risk of CVD events in the ensuing 5 years three- fold (286). In the NHANES 2005–2006 population, only 7.3% of the positive prediabetes screenees were already aware of their condition, so the screening was certainly informative for the large majority of the positives (287). Only 47.7% of those with known prediabetes had been tested for diabetes in the preceding 3 years. When known prediabetic individuals were asked about preventive behavior in the preceding 12 months, about one-half reported efforts at weight reduction or control and a similar percentage reported increasing physical activ",
+              "source": {
+                "id": "chunk_edebf0a53b1a64cee3453047",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 27,
+                "page_start": 27,
+                "page_end": 27,
+                "section": "PDF page 27",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012141687141687143
+              },
+              "reader_relevance": 7.2272
+            },
+            {
+              "evidence_id": "chunk_ce6668038cfe05262d6fd635",
+              "text": "The rate of conversion was much higher in children age <10 years than in those age ≥10 years. The annual incidence of type 1 diabetes was highest in children age 0–4 years (5.4%) and fell in children age 10–14 years (2.9%). The cumulative incidence of conversion to autoantibody positivity appeared to nearly plateau after three to four screenings, suggesting that further testing after 3–4 years may detect few additional at-risk individuals. Two-thirds of all positive screenees were detected on the initial test. A cost/benefit analysis of screening this targeted population for type 1 diabetes, with benefit defined as prevention of diabetic ketoacidosis, remains to be performed. The addition of ZnT8 autoantibodies to the now-traditional other biochemical autoantibodies (i.e., GAD, insulin, IA-2) and ICA improves screening for preclinical type 1 diabetes (289). Moreover, a risk score for the development of diabetes in autoantibody-positive relatives of type 1 diabetic individuals has been constructed from components of age, log BMI, log fasting C-peptide, and the respective sums of glucose and C-peptide levels at 30, 60, 90, and 120 minutes of an OGTT (290). Among relatives whose Diabe",
+              "source": {
+                "id": "chunk_ce6668038cfe05262d6fd635",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 28,
+                "page_start": 28,
+                "page_end": 28,
+                "section": "PDF page 28",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012637362637362638
+              },
+              "reader_relevance": 7.0913
+            },
+            {
+              "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+              "text": "Hence, detection of diabetes and prediabetes through targeted screening identifies individuals who can benefit from evidence-based therapies that can lower risk of adverse outcomes. Whom to screen for diabetes and prediabetes, and how often The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1. Such risk factor-based screening could be done based on a general assessment of standard risk factors or using validated tools. The USPSTF did not identify significant harms of screening.1 As is true of many screening tests, potential benefits of screening may be limited in those with shorter life expectancy or multiple comorbidities, and the decision to screen for abnormal blood glucose should include shared decision-making and consideration of competing priorities. Screening may be repeated at intervals of 1 to 3 years, with the frequency determined by the degree of risk as assessed by risk factors and results of",
+              "source": {
+                "id": "chunk_b9c6400844e4f9a353a17607",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 8,
+                "page_start": 8,
+                "page_end": 8,
+                "section": "PDF page 8",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013828662083553676
+              },
+              "reader_relevance": 6.8766
+            }
+          ],
+          "summary": "Xếp hạng theo độ phủ thuật ngữ và IDF, đọc 4 đoạn, giữ nguồn và trang"
+        },
+        "duration_ms": 31.519
+      },
+      {
+        "sequence": 9,
+        "sender": "CoordinatorAgent",
+        "receiver": "ExplanationAgent",
+        "performative": "REQUEST",
+        "content": {
+          "question": "Tôi 30 tuổi, không có triệu chứng, chưa từng xét nghiệm hoặc được chẩn đoán, chỉ muốn tìm hiểu sàng lọc lần đầu.",
+          "goal": "Provide information on appropriate diabetes screening tests for a 30‑year‑old adult with no symptoms and no prior testing.",
+          "intent": "knowledge",
+          "conversation": [
+            {
+              "role": "user",
+              "content": "Tôi đi xét nghiệm gì bây giờ?"
+            },
+            {
+              "role": "assistant",
+              "content": "Bạn đã xét nghiệm hoặc được chẩn đoán chưa? Có triệu chứng gì và bao nhiêu tuổi?"
+            }
+          ],
+          "clarification_questions": [],
+          "revision_round": 0,
+          "evidence": [
+            {
+              "evidence_id": "chunk_e25d3ba5acf095dacae13163",
+              "text": "12 Table 3. Screening Test Criteria for Gestational Diabetes Two GDM screening approaches are presented below. All women should undergo GDM screening, usually between 24 and 28 weeks’ gestation, if they were not previously diagnosed with overt diabetes. Use professional judgment to select the most appropriate test for each woman. A two-step approach endorsed by the American College of Obstetricians and Gynecologists and a consensus panel convened by the National Institutes of Health11 1. Start with a 1-hour plasma glucose test after 50 g oral glucose challenge. Choose a cutoff of either ≥ 135 mg/dL or ≥ 140 mg/dL and ensure that this cutoff remains consistent. 2. For individuals who meet or exceed the screening threshold, administer a 3-hour 100 g oral glucose tolerance test. Diagnose GDM when two or more of the plasma glucose values are exceeded on the 3-hour test. Choose either of two methods: (1) National Diabetes Data Group cutoff values of Fasting ≥ 105 mg/dL, 1-hour ≥ 190 mg/dL, 2-hour ≥ 165 mg/dL, or 3-hour ≥ 145 mg/dL; or (2) Carpenter and Coustan cutoff values of Fasting ≥ 95 mg/dL, 1-hour ≥ 180 mg/dL, 2-hour ≥ 155 mg/dL, or 3-hour ≥ 140 mg/dL. A. A one-step approach endor",
+              "source": {
+                "id": "chunk_e25d3ba5acf095dacae13163",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 12,
+                "page_start": 12,
+                "page_end": 12,
+                "section": "PDF page 12",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012112932604735883
+              },
+              "reader_relevance": 10.102
+            },
+            {
+              "evidence_id": "chunk_edebf0a53b1a64cee3453047",
+              "text": "receiving a diagnosis of diabetes is a reduction in smoking (283,284). However, neither body weight nor exercise showed beneficial changes after the diagnosis of diabetes, irrespec- tive of medication use (Figure 1.14) (283). This study did not report whether the diagnosis was based on clinical symp- toms or screening, although the latter was more likely among those not on medication. In the ADDITION screening study, an intervention to change health behaviors was largely unsuccessful (285), and compared to changing three to four health behaviors, failure to change any health behaviors increased the risk of CVD events in the ensuing 5 years three- fold (286). In the NHANES 2005–2006 population, only 7.3% of the positive prediabetes screenees were already aware of their condition, so the screening was certainly informative for the large majority of the positives (287). Only 47.7% of those with known prediabetes had been tested for diabetes in the preceding 3 years. When known prediabetic individuals were asked about preventive behavior in the preceding 12 months, about one-half reported efforts at weight reduction or control and a similar percentage reported increasing physical activ",
+              "source": {
+                "id": "chunk_edebf0a53b1a64cee3453047",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 27,
+                "page_start": 27,
+                "page_end": 27,
+                "section": "PDF page 27",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012141687141687143
+              },
+              "reader_relevance": 7.2272
+            },
+            {
+              "evidence_id": "chunk_ce6668038cfe05262d6fd635",
+              "text": "The rate of conversion was much higher in children age <10 years than in those age ≥10 years. The annual incidence of type 1 diabetes was highest in children age 0–4 years (5.4%) and fell in children age 10–14 years (2.9%). The cumulative incidence of conversion to autoantibody positivity appeared to nearly plateau after three to four screenings, suggesting that further testing after 3–4 years may detect few additional at-risk individuals. Two-thirds of all positive screenees were detected on the initial test. A cost/benefit analysis of screening this targeted population for type 1 diabetes, with benefit defined as prevention of diabetic ketoacidosis, remains to be performed. The addition of ZnT8 autoantibodies to the now-traditional other biochemical autoantibodies (i.e., GAD, insulin, IA-2) and ICA improves screening for preclinical type 1 diabetes (289). Moreover, a risk score for the development of diabetes in autoantibody-positive relatives of type 1 diabetic individuals has been constructed from components of age, log BMI, log fasting C-peptide, and the respective sums of glucose and C-peptide levels at 30, 60, 90, and 120 minutes of an OGTT (290). Among relatives whose Diabe",
+              "source": {
+                "id": "chunk_ce6668038cfe05262d6fd635",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 28,
+                "page_start": 28,
+                "page_end": 28,
+                "section": "PDF page 28",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012637362637362638
+              },
+              "reader_relevance": 7.0913
+            },
+            {
+              "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+              "text": "Hence, detection of diabetes and prediabetes through targeted screening identifies individuals who can benefit from evidence-based therapies that can lower risk of adverse outcomes. Whom to screen for diabetes and prediabetes, and how often The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1. Such risk factor-based screening could be done based on a general assessment of standard risk factors or using validated tools. The USPSTF did not identify significant harms of screening.1 As is true of many screening tests, potential benefits of screening may be limited in those with shorter life expectancy or multiple comorbidities, and the decision to screen for abnormal blood glucose should include shared decision-making and consideration of competing priorities. Screening may be repeated at intervals of 1 to 3 years, with the frequency determined by the degree of risk as assessed by risk factors and results of",
+              "source": {
+                "id": "chunk_b9c6400844e4f9a353a17607",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 8,
+                "page_start": 8,
+                "page_end": 8,
+                "section": "PDF page 8",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013828662083553676
+              },
+              "reader_relevance": 6.8766
+            }
+          ],
+          "challenge": null
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 10,
+        "sender": "ExplanationAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "claims": [
+            {
+              "text": "Đối với người 30 tuổi không có triệu chứng, USPSTF khuyến nghị xét nghiệm đường huyết khi người đó thừa cân hoặc béo phì và có ít nhất một yếu tố nguy cơ khác (ví dụ: tiền sử gia đình, huyết áp cao, cholesterol cao).",
+              "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+              "quote": "The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1."
+            }
+          ],
+          "followup_questions": [],
+          "evidence_sufficient": true,
+          "missing_information": "",
+          "llm": {
+            "cached": false,
+            "task": "grounded_draft",
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.325244981,
+              "prompt_tokens": 3008,
+              "prompt_time": 0.214420667,
+              "completion_tokens": 232,
+              "completion_time": 0.26373313,
+              "total_tokens": 3240,
+              "total_time": 0.478153797,
+              "completion_tokens_details": {
+                "reasoning_tokens": 39
+              }
+            }
+          },
+          "summary": "Soạn 1 phát biểu có nguồn"
+        },
+        "duration_ms": 1036.082
+      },
+      {
+        "sequence": 11,
+        "sender": "CoordinatorAgent",
+        "receiver": "CriticAgent",
+        "performative": "REQUEST",
+        "content": {
+          "question": "Tôi 30 tuổi, không có triệu chứng, chưa từng xét nghiệm hoặc được chẩn đoán, chỉ muốn tìm hiểu sàng lọc lần đầu.",
+          "goal": "Provide information on appropriate diabetes screening tests for a 30‑year‑old adult with no symptoms and no prior testing.",
+          "conversation": [
+            {
+              "role": "user",
+              "content": "Tôi đi xét nghiệm gì bây giờ?"
+            },
+            {
+              "role": "assistant",
+              "content": "Bạn đã xét nghiệm hoặc được chẩn đoán chưa? Có triệu chứng gì và bao nhiêu tuổi?"
+            }
+          ],
+          "draft": {
+            "claims": [
+              {
+                "text": "Đối với người 30 tuổi không có triệu chứng, USPSTF khuyến nghị xét nghiệm đường huyết khi người đó thừa cân hoặc béo phì và có ít nhất một yếu tố nguy cơ khác (ví dụ: tiền sử gia đình, huyết áp cao, cholesterol cao).",
+                "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+                "quote": "The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1."
+              }
+            ],
+            "followup_questions": [],
+            "evidence_sufficient": true,
+            "missing_information": ""
+          },
+          "evidence": [
+            {
+              "evidence_id": "chunk_e25d3ba5acf095dacae13163",
+              "text": "12 Table 3. Screening Test Criteria for Gestational Diabetes Two GDM screening approaches are presented below. All women should undergo GDM screening, usually between 24 and 28 weeks’ gestation, if they were not previously diagnosed with overt diabetes. Use professional judgment to select the most appropriate test for each woman. A two-step approach endorsed by the American College of Obstetricians and Gynecologists and a consensus panel convened by the National Institutes of Health11 1. Start with a 1-hour plasma glucose test after 50 g oral glucose challenge. Choose a cutoff of either ≥ 135 mg/dL or ≥ 140 mg/dL and ensure that this cutoff remains consistent. 2. For individuals who meet or exceed the screening threshold, administer a 3-hour 100 g oral glucose tolerance test. Diagnose GDM when two or more of the plasma glucose values are exceeded on the 3-hour test. Choose either of two methods: (1) National Diabetes Data Group cutoff values of Fasting ≥ 105 mg/dL, 1-hour ≥ 190 mg/dL, 2-hour ≥ 165 mg/dL, or 3-hour ≥ 145 mg/dL; or (2) Carpenter and Coustan cutoff values of Fasting ≥ 95 mg/dL, 1-hour ≥ 180 mg/dL, 2-hour ≥ 155 mg/dL, or 3-hour ≥ 140 mg/dL. A. A one-step approach endor",
+              "source": {
+                "id": "chunk_e25d3ba5acf095dacae13163",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 12,
+                "page_start": 12,
+                "page_end": 12,
+                "section": "PDF page 12",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012112932604735883
+              },
+              "reader_relevance": 10.102
+            },
+            {
+              "evidence_id": "chunk_edebf0a53b1a64cee3453047",
+              "text": "receiving a diagnosis of diabetes is a reduction in smoking (283,284). However, neither body weight nor exercise showed beneficial changes after the diagnosis of diabetes, irrespec- tive of medication use (Figure 1.14) (283). This study did not report whether the diagnosis was based on clinical symp- toms or screening, although the latter was more likely among those not on medication. In the ADDITION screening study, an intervention to change health behaviors was largely unsuccessful (285), and compared to changing three to four health behaviors, failure to change any health behaviors increased the risk of CVD events in the ensuing 5 years three- fold (286). In the NHANES 2005–2006 population, only 7.3% of the positive prediabetes screenees were already aware of their condition, so the screening was certainly informative for the large majority of the positives (287). Only 47.7% of those with known prediabetes had been tested for diabetes in the preceding 3 years. When known prediabetic individuals were asked about preventive behavior in the preceding 12 months, about one-half reported efforts at weight reduction or control and a similar percentage reported increasing physical activ",
+              "source": {
+                "id": "chunk_edebf0a53b1a64cee3453047",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 27,
+                "page_start": 27,
+                "page_end": 27,
+                "section": "PDF page 27",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012141687141687143
+              },
+              "reader_relevance": 7.2272
+            },
+            {
+              "evidence_id": "chunk_ce6668038cfe05262d6fd635",
+              "text": "The rate of conversion was much higher in children age <10 years than in those age ≥10 years. The annual incidence of type 1 diabetes was highest in children age 0–4 years (5.4%) and fell in children age 10–14 years (2.9%). The cumulative incidence of conversion to autoantibody positivity appeared to nearly plateau after three to four screenings, suggesting that further testing after 3–4 years may detect few additional at-risk individuals. Two-thirds of all positive screenees were detected on the initial test. A cost/benefit analysis of screening this targeted population for type 1 diabetes, with benefit defined as prevention of diabetic ketoacidosis, remains to be performed. The addition of ZnT8 autoantibodies to the now-traditional other biochemical autoantibodies (i.e., GAD, insulin, IA-2) and ICA improves screening for preclinical type 1 diabetes (289). Moreover, a risk score for the development of diabetes in autoantibody-positive relatives of type 1 diabetic individuals has been constructed from components of age, log BMI, log fasting C-peptide, and the respective sums of glucose and C-peptide levels at 30, 60, 90, and 120 minutes of an OGTT (290). Among relatives whose Diabe",
+              "source": {
+                "id": "chunk_ce6668038cfe05262d6fd635",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 28,
+                "page_start": 28,
+                "page_end": 28,
+                "section": "PDF page 28",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012637362637362638
+              },
+              "reader_relevance": 7.0913
+            },
+            {
+              "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+              "text": "Hence, detection of diabetes and prediabetes through targeted screening identifies individuals who can benefit from evidence-based therapies that can lower risk of adverse outcomes. Whom to screen for diabetes and prediabetes, and how often The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1. Such risk factor-based screening could be done based on a general assessment of standard risk factors or using validated tools. The USPSTF did not identify significant harms of screening.1 As is true of many screening tests, potential benefits of screening may be limited in those with shorter life expectancy or multiple comorbidities, and the decision to screen for abnormal blood glucose should include shared decision-making and consideration of competing priorities. Screening may be repeated at intervals of 1 to 3 years, with the frequency determined by the degree of risk as assessed by risk factors and results of",
+              "source": {
+                "id": "chunk_b9c6400844e4f9a353a17607",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 8,
+                "page_start": 8,
+                "page_end": 8,
+                "section": "PDF page 8",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013828662083553676
+              },
+              "reader_relevance": 6.8766
+            }
+          ]
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 12,
+        "sender": "CriticAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "action": "accept",
+          "answers_question": true,
+          "all_claims_supported": true,
+          "reasons": [],
+          "revised_query": "",
+          "followup_questions": [],
+          "structural": {
+            "passed": true,
+            "issues": [],
+            "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof",
+            "user_context_numbers": [
+              "30"
+            ]
+          },
+          "llm": {
+            "cached": false,
+            "task": "response_critic",
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.317500316,
+              "prompt_tokens": 2982,
+              "prompt_time": 0.165755439,
+              "completion_tokens": 106,
+              "completion_time": 0.145132871,
+              "total_tokens": 3088,
+              "total_time": 0.31088831,
+              "completion_tokens_details": {
+                "reasoning_tokens": 62
+              }
+            }
+          },
+          "summary": "Critic: accept"
+        },
+        "duration_ms": 1457.055
+      },
+      {
+        "sequence": 13,
+        "sender": "CoordinatorAgent",
+        "receiver": "VerifierSafetyAgent",
+        "performative": "REQUEST",
+        "content": {
+          "status": "supported",
+          "answer": "Đối với người 30 tuổi không có triệu chứng, USPSTF khuyến nghị xét nghiệm đường huyết khi người đó thừa cân hoặc béo phì và có ít nhất một yếu tố nguy cơ khác (ví dụ: tiền sử gia đình, huyết áp cao, cholesterol cao). [chunk_b9c6400844e4f9a353a17607]",
+          "draft": {
+            "claims": [
+              {
+                "text": "Đối với người 30 tuổi không có triệu chứng, USPSTF khuyến nghị xét nghiệm đường huyết khi người đó thừa cân hoặc béo phì và có ít nhất một yếu tố nguy cơ khác (ví dụ: tiền sử gia đình, huyết áp cao, cholesterol cao).",
+                "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+                "quote": "The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1."
+              }
+            ],
+            "followup_questions": [],
+            "evidence_sufficient": true,
+            "missing_information": "",
+            "llm": {
+              "cached": false,
+              "task": "grounded_draft",
+              "model": "openai/gpt-oss-20b",
+              "usage": {
+                "queue_time": 0.325244981,
+                "prompt_tokens": 3008,
+                "prompt_time": 0.214420667,
+                "completion_tokens": 232,
+                "completion_time": 0.26373313,
+                "total_tokens": 3240,
+                "total_time": 0.478153797,
+                "completion_tokens_details": {
+                  "reasoning_tokens": 39
+                }
+              }
+            },
+            "summary": "Soạn 1 phát biểu có nguồn"
+          },
+          "review": {
+            "action": "accept",
+            "answers_question": true,
+            "all_claims_supported": true,
+            "reasons": [],
+            "revised_query": "",
+            "followup_questions": [],
+            "structural": {
+              "passed": true,
+              "issues": [],
+              "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof",
+              "user_context_numbers": [
+                "30"
+              ]
+            },
+            "llm": {
+              "cached": false,
+              "task": "response_critic",
+              "model": "openai/gpt-oss-20b",
+              "usage": {
+                "queue_time": 0.317500316,
+                "prompt_tokens": 2982,
+                "prompt_time": 0.165755439,
+                "completion_tokens": 106,
+                "completion_time": 0.145132871,
+                "total_tokens": 3088,
+                "total_time": 0.31088831,
+                "completion_tokens_details": {
+                  "reasoning_tokens": 62
+                }
+              }
+            },
+            "summary": "Critic: accept"
+          },
+          "evidence": [
+            {
+              "evidence_id": "chunk_e25d3ba5acf095dacae13163",
+              "text": "12 Table 3. Screening Test Criteria for Gestational Diabetes Two GDM screening approaches are presented below. All women should undergo GDM screening, usually between 24 and 28 weeks’ gestation, if they were not previously diagnosed with overt diabetes. Use professional judgment to select the most appropriate test for each woman. A two-step approach endorsed by the American College of Obstetricians and Gynecologists and a consensus panel convened by the National Institutes of Health11 1. Start with a 1-hour plasma glucose test after 50 g oral glucose challenge. Choose a cutoff of either ≥ 135 mg/dL or ≥ 140 mg/dL and ensure that this cutoff remains consistent. 2. For individuals who meet or exceed the screening threshold, administer a 3-hour 100 g oral glucose tolerance test. Diagnose GDM when two or more of the plasma glucose values are exceeded on the 3-hour test. Choose either of two methods: (1) National Diabetes Data Group cutoff values of Fasting ≥ 105 mg/dL, 1-hour ≥ 190 mg/dL, 2-hour ≥ 165 mg/dL, or 3-hour ≥ 145 mg/dL; or (2) Carpenter and Coustan cutoff values of Fasting ≥ 95 mg/dL, 1-hour ≥ 180 mg/dL, 2-hour ≥ 155 mg/dL, or 3-hour ≥ 140 mg/dL. A. A one-step approach endor",
+              "source": {
+                "id": "chunk_e25d3ba5acf095dacae13163",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 12,
+                "page_start": 12,
+                "page_end": 12,
+                "section": "PDF page 12",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012112932604735883
+              },
+              "reader_relevance": 10.102
+            },
+            {
+              "evidence_id": "chunk_edebf0a53b1a64cee3453047",
+              "text": "receiving a diagnosis of diabetes is a reduction in smoking (283,284). However, neither body weight nor exercise showed beneficial changes after the diagnosis of diabetes, irrespec- tive of medication use (Figure 1.14) (283). This study did not report whether the diagnosis was based on clinical symp- toms or screening, although the latter was more likely among those not on medication. In the ADDITION screening study, an intervention to change health behaviors was largely unsuccessful (285), and compared to changing three to four health behaviors, failure to change any health behaviors increased the risk of CVD events in the ensuing 5 years three- fold (286). In the NHANES 2005–2006 population, only 7.3% of the positive prediabetes screenees were already aware of their condition, so the screening was certainly informative for the large majority of the positives (287). Only 47.7% of those with known prediabetes had been tested for diabetes in the preceding 3 years. When known prediabetic individuals were asked about preventive behavior in the preceding 12 months, about one-half reported efforts at weight reduction or control and a similar percentage reported increasing physical activ",
+              "source": {
+                "id": "chunk_edebf0a53b1a64cee3453047",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 27,
+                "page_start": 27,
+                "page_end": 27,
+                "section": "PDF page 27",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012141687141687143
+              },
+              "reader_relevance": 7.2272
+            },
+            {
+              "evidence_id": "chunk_ce6668038cfe05262d6fd635",
+              "text": "The rate of conversion was much higher in children age <10 years than in those age ≥10 years. The annual incidence of type 1 diabetes was highest in children age 0–4 years (5.4%) and fell in children age 10–14 years (2.9%). The cumulative incidence of conversion to autoantibody positivity appeared to nearly plateau after three to four screenings, suggesting that further testing after 3–4 years may detect few additional at-risk individuals. Two-thirds of all positive screenees were detected on the initial test. A cost/benefit analysis of screening this targeted population for type 1 diabetes, with benefit defined as prevention of diabetic ketoacidosis, remains to be performed. The addition of ZnT8 autoantibodies to the now-traditional other biochemical autoantibodies (i.e., GAD, insulin, IA-2) and ICA improves screening for preclinical type 1 diabetes (289). Moreover, a risk score for the development of diabetes in autoantibody-positive relatives of type 1 diabetic individuals has been constructed from components of age, log BMI, log fasting C-peptide, and the respective sums of glucose and C-peptide levels at 30, 60, 90, and 120 minutes of an OGTT (290). Among relatives whose Diabe",
+              "source": {
+                "id": "chunk_ce6668038cfe05262d6fd635",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 28,
+                "page_start": 28,
+                "page_end": 28,
+                "section": "PDF page 28",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012637362637362638
+              },
+              "reader_relevance": 7.0913
+            },
+            {
+              "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+              "text": "Hence, detection of diabetes and prediabetes through targeted screening identifies individuals who can benefit from evidence-based therapies that can lower risk of adverse outcomes. Whom to screen for diabetes and prediabetes, and how often The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1. Such risk factor-based screening could be done based on a general assessment of standard risk factors or using validated tools. The USPSTF did not identify significant harms of screening.1 As is true of many screening tests, potential benefits of screening may be limited in those with shorter life expectancy or multiple comorbidities, and the decision to screen for abnormal blood glucose should include shared decision-making and consideration of competing priorities. Screening may be repeated at intervals of 1 to 3 years, with the frequency determined by the degree of risk as assessed by risk factors and results of",
+              "source": {
+                "id": "chunk_b9c6400844e4f9a353a17607",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 8,
+                "page_start": 8,
+                "page_end": 8,
+                "section": "PDF page 8",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013828662083553676
+              },
+              "reader_relevance": 6.8766
+            }
+          ],
+          "prediction": null
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 14,
+        "sender": "VerifierSafetyAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "passed": true,
+          "issues": [],
+          "scope": "Grounded claims + question coverage + immutable model score",
+          "summary": "Verifier đạt"
+        },
+        "duration_ms": 0.265
+      },
+      {
+        "sequence": 15,
+        "sender": "CoordinatorAgent",
+        "receiver": "MonitoringAgent",
+        "performative": "REQUEST",
+        "content": {
+          "status": "supported"
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 16,
+        "sender": "MonitoringAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "status": "supported",
+          "steps": 7,
+          "summary": "Ghi metadata và thời gian xử lý, không lưu nội dung hồ sơ"
+        },
+        "duration_ms": 0.002
+      }
+    ],
+    "review": null,
+    "workflow": null,
+    "revisions": [],
+    "knowledge_backend": "neo4j",
+    "evidence_review": null,
+    "decision": {
+      "status": "supported",
+      "final_label": null,
+      "review_required": false,
+      "reason_codes": [],
+      "assessment": null
+    },
+    "verification": {
+      "passed": true,
+      "issues": [],
+      "scope": "Grounded claims + question coverage + immutable model score",
+      "summary": "Verifier đạt"
+    },
+    "clarification": null,
+    "explanation": {
+      "answer": "Đối với người 30 tuổi không có triệu chứng, USPSTF khuyến nghị xét nghiệm đường huyết khi người đó thừa cân hoặc béo phì và có ít nhất một yếu tố nguy cơ khác (ví dụ: tiền sử gia đình, huyết áp cao, cholesterol cao). [chunk_b9c6400844e4f9a353a17607]",
+      "sections": [
+        {
+          "id": "medical_evidence",
+          "title": "Trả lời từ bằng chứng",
+          "text": "Đối với người 30 tuổi không có triệu chứng, USPSTF khuyến nghị xét nghiệm đường huyết khi người đó thừa cân hoặc béo phì và có ít nhất một yếu tố nguy cơ khác (ví dụ: tiền sử gia đình, huyết áp cao, cholesterol cao). [chunk_b9c6400844e4f9a353a17607]",
+          "citation_ids": [
+            "chunk_b9c6400844e4f9a353a17607"
+          ]
+        }
+      ],
+      "model_factors": [],
+      "followup_questions": [],
+      "generation": {
+        "status": "generated",
+        "claims": [
+          {
+            "text": "Đối với người 30 tuổi không có triệu chứng, USPSTF khuyến nghị xét nghiệm đường huyết khi người đó thừa cân hoặc béo phì và có ít nhất một yếu tố nguy cơ khác (ví dụ: tiền sử gia đình, huyết áp cao, cholesterol cao).",
+            "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+            "quote": "The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1."
+          }
+        ],
+        "model": "openai/gpt-oss-20b",
+        "critic": {
+          "action": "accept",
+          "answers_question": true,
+          "all_claims_supported": true,
+          "reasons": [],
+          "revised_query": "",
+          "followup_questions": [],
+          "structural": {
+            "passed": true,
+            "issues": [],
+            "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof",
+            "user_context_numbers": [
+              "30"
+            ]
+          },
+          "llm": {
+            "cached": false,
+            "task": "response_critic",
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.317500316,
+              "prompt_tokens": 2982,
+              "prompt_time": 0.165755439,
+              "completion_tokens": 106,
+              "completion_time": 0.145132871,
+              "total_tokens": 3088,
+              "total_time": 0.31088831,
+              "completion_tokens_details": {
+                "reasoning_tokens": 62
+              }
+            }
+          },
+          "summary": "Critic: accept"
+        }
+      },
+      "method": "conversation_rag_v3"
+    },
+    "workflow_history": [],
+    "testing_context": null,
+    "traces": [
+      {
+        "agent": "CoordinatorAgent",
+        "status": "success",
+        "duration_ms": 761.66,
+        "summary": "Provide information on appropriate diabetes screening tests for a 30‑year‑old adult with no symptoms and no prior testing.",
+        "tool": "CoordinatorAgent"
+      },
+      {
+        "agent": "RuleBasedAgent",
+        "status": "success",
+        "duration_ms": 0.02,
+        "summary": "Kiểm tra bất đồng model và quy tắc chuyển review",
+        "tool": "RuleBasedAgent"
+      },
+      {
+        "agent": "RetrievalAgent",
+        "status": "success",
+        "duration_ms": 522.04,
+        "summary": "Truy xuất 8 bằng chứng từ 2 truy vấn",
+        "tool": "RetrievalAgent"
+      },
+      {
+        "agent": "EvidenceReaderAgent",
+        "status": "success",
+        "duration_ms": 31.67,
+        "summary": "Xếp hạng theo độ phủ thuật ngữ và IDF, đọc 4 đoạn, giữ nguồn và trang",
+        "tool": "EvidenceReaderAgent"
+      },
+      {
+        "agent": "ExplanationAgent",
+        "status": "success",
+        "duration_ms": 1036.18,
+        "summary": "Soạn 1 phát biểu có nguồn",
+        "tool": "ExplanationAgent"
+      },
+      {
+        "agent": "CriticAgent",
+        "status": "success",
+        "duration_ms": 1457.18,
+        "summary": "Critic: accept",
+        "tool": "CriticAgent"
+      },
+      {
+        "agent": "VerifierSafetyAgent",
+        "status": "success",
+        "duration_ms": 0.48,
+        "summary": "Verifier đạt",
+        "tool": "VerifierSafetyAgent"
+      },
+      {
+        "agent": "MonitoringAgent",
+        "status": "success",
+        "duration_ms": 0.02,
+        "summary": "Ghi metadata và thời gian xử lý, không lưu nội dung hồ sơ",
+        "tool": "MonitoringAgent"
+      }
+    ],
+    "total_duration_ms": 3809.81,
+    "plan": {
+      "intent": "knowledge",
+      "goal": "Provide information on appropriate diabetes screening tests for a 30‑year‑old adult with no symptoms and no prior testing.",
+      "queries": [
+        "diabetes screening tests for adults 30 years old",
+        "when to start diabetes screening"
+      ],
+      "clarification_questions": [],
+      "can_answer_general": true,
+      "requested_sources": [],
+      "llm": {
+        "cached": false,
+        "task": "coordinator_plan",
+        "model": "openai/gpt-oss-20b",
+        "usage": {
+          "queue_time": 0.285120417,
+          "prompt_tokens": 848,
+          "prompt_time": 0.043089943,
+          "completion_tokens": 124,
+          "completion_time": 0.150183989,
+          "total_tokens": 972,
+          "total_time": 0.193273932,
+          "completion_tokens_details": {
+            "reasoning_tokens": 44
+          }
+        }
+      },
+      "summary": "Provide information on appropriate diabetes screening tests for a 30‑year‑old adult with no symptoms and no prior testing."
+    },
+    "response_review": {
+      "action": "accept",
+      "answers_question": true,
+      "all_claims_supported": true,
+      "reasons": [],
+      "revised_query": "",
+      "followup_questions": [],
+      "structural": {
+        "passed": true,
+        "issues": [],
+        "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof",
+        "user_context_numbers": [
+          "30"
+        ]
+      },
+      "llm": {
+        "cached": false,
+        "task": "response_critic",
+        "model": "openai/gpt-oss-20b",
+        "usage": {
+          "queue_time": 0.317500316,
+          "prompt_tokens": 2982,
+          "prompt_time": 0.165755439,
+          "completion_tokens": 106,
+          "completion_time": 0.145132871,
+          "total_tokens": 3088,
+          "total_time": 0.31088831,
+          "completion_tokens_details": {
+            "reasoning_tokens": 62
+          }
+        }
+      },
+      "summary": "Critic: accept"
+    },
+    "rules": {
+      "assessment": null,
+      "review_required": false,
+      "summary": "Kiểm tra bất đồng model và quy tắc chuyển review"
+    },
+    "architecture_version": "conversation_v3"
+  }
+}

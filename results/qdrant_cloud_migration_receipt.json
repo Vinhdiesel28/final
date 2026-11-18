@@ -1,0 +1,11 @@
+{
+  "status": "verified",
+  "activated": false,
+  "kb_version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+  "created_at": "2026-11-10T08:52:45.365187+00:00",
+  "hybrid_collection": "diaguard_hybrid_e54cf6d7abd9fdbca691",
+  "hybrid_vectors": 515,
+  "legacy_collection": "diaguard_legacy_dc422de73a3098eccc72",
+  "legacy_vectors": 862,
+  "source_preserved": true
+}

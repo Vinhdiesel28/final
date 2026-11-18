@@ -1,0 +1,24 @@
+{
+  "status": "verified",
+  "activated": true,
+  "created_at": "2026-11-10T11:17:56.604306+00:00",
+  "hosts": {
+    "NEO4J_URI": "7888a2a8.databases.neo4j.io",
+    "QDRANT_URL": "ecfd2ad6-a345-4973-8aea-74dab164122b.us-east-2-0.aws.cloud.qdrant.io"
+  },
+  "kb_version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+  "neo4j": {
+    "documents": 49,
+    "chunks": 515,
+    "entities": 153,
+    "facts": 158,
+    "mentions": 846
+  },
+  "qdrant": {
+    "hybrid_collection": "diaguard_hybrid_e54cf6d7abd9fdbca691",
+    "hybrid_vectors": 515,
+    "legacy_collection": "diaguard_legacy_dc422de73a3098eccc72",
+    "legacy_vectors": 862
+  },
+  "source_preserved": true
+}

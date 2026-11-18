@@ -1,0 +1,1883 @@
+{
+  "scope": "Live integration, no ground-truth medical evaluation",
+  "question": "Tôi đi xét nghiệm gì bây giờ?",
+  "elapsed_seconds": 4.68,
+  "source_checks": [],
+  "response": {
+    "request_id": "REQ-D6470E48",
+    "mode": "multi",
+    "intent": "knowledge",
+    "status": "needs_clarification",
+    "answer": "Bạn có bất kỳ triệu chứng nào liên quan đến đường huyết (ví dụ: khát nước, tiểu nhiều, mệt mỏi) không? Bạn có tiền sử gia đình mắc bệnh tiểu đường hoặc đang có cân nặng thừa/ béo phì không? Bạn đang ở độ tuổi nào?",
+    "prediction": null,
+    "statistics": null,
+    "knowledge": {
+      "evidence": [
+        {
+          "evidence_id": "chunk_8210978f828541e5d2c4bd6a",
+          "text": "11 Table 2. Screening Test Criteria for Prediabetes and Type 2 Diabetes Prediabetes Diabetes Screening for gestational diabetes Women at high risk for type 2 diabetes should be tested prior to conception or at the first prenatal visit for pre-existing diabetes. Two approaches to GDM screening are outlined in Table 3. All women who are not already diagnosed with overt diabetes should undergo GDM screening, usually between 24 and 28 weeks’ gestation. Use of the one-step screening approach results in a higher proportion of women receiving a diagnosis of GDM. 1. 2. 3. A1C 5.7 percent to 6.4 percent or Fasting plasma glucose (FPG) 100 to 125 mg/dL [impaired fasting glucose (IFG)] or Two hours after 75 g oral glucose challenge, plasma glucose 140 to 199 mg/dL [impaired glucose tolerance (IGT)] 1. 2. 3. 4. A1C ≥ 6.5 percent or FPG ≥ 126 mg/dL or Two-hour plasma glucose ≥ 200 mg/dL after 75 g oral glucose challenge or Random plasma glucose ≥ 200 mg/dL with symptoms (such as polyuria, polydipsia, and unexplained weight loss) GUIDING PRINCIPLES FOR THE CARE OF PEOPLE WITH OR AT RISK FOR DIABETES | PRINCIPLE 1 For the three tests, the risk of diabetes is continuous, extending below the lower limit of the range and becoming disproportionately greater at the higher end of the range. For criteria 1–3: Repeat test to confirm unless symptoms are present. Repeating the same test for confirmation is preferable. If two different tests are used (e.g., FPG and A1C) and both indicate diabetes, consider the diagnosis confirmed. If the two different tests are discordant, repeat the test above the diagnostic cut point. 2",
+          "source": {
+            "id": "chunk_8210978f828541e5d2c4bd6a",
+            "document_id": "pdf_Guiding-Principles_40a7da28c688",
+            "title": "Guiding-Principles",
+            "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+            "page": 11,
+            "page_start": 11,
+            "page_end": 11,
+            "section": "PDF page 11",
+            "source_file": "Guiding-Principles.pdf",
+            "source_type": "pdf",
+            "source_version": "40a7da28c688",
+            "retrieval_methods": [
+              "vector",
+              "fulltext"
+            ],
+            "score": 0.013273794959628089
+          }
+        },
+        {
+          "evidence_id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+          "text": "percentile, or weight >120% of ideal for height; and (2) if any two of the following additional risk factors are present: family history of type 2 diabetes in a first- or second- degree relative, minority race/ethnicity (African American, Hispanic, Asian American, Pacific Islander, Native American), evidence of insulin resistance (e.g., acanthosis nigricans, hypertension, polycystic ovary syndrome), small for gestational age birth weight, or maternal history of diabetes or gestational diabetes during the gestation of the child. Testing should begin at age 10 years or at onset of puberty, if it occurs before age 10 years. If the initial test is negative, it should be repeated in 3 years (40). Recommendations for diagnostic cutpoints of glycemia are no different than those for adults (112), although more studies have been advocated before use of A1c for testing adolescents is widely adopted, due to the lower sensitivity of A1c (113,114). In children found to be at increased risk for type 1 diabetes by virtue of positive tests for autoantibodies to islet antigens, regular testing for diabetic glycemia levels is indicated to detect the disease before it manifests clinically, especially as diabetic ketoacidosis. The same cutpoints detailed in Table 1.3 are appropriate. CYSTIC FIBROSIS- RELATED DIABETES An estimated 40%–50% of adults with cystic fibrosis now live long enough to develop cystic fibrosis-related diabetes (CFRD) (115), and screening for CFRD is recommended to begin from age 10 years on (116). An annual OGTT is the preferred test, with 2-hour PG ≥200 mg/dL consid- ered diagnostic of diabetes. FPG and A1c are considered less satisfactory tests for CFRD (116), although one study suggested that A1c testing is a useful screening tool that effectively reduces the need to perform OGTTs to diagnose CFRD (117). DISCREPANCIES BETWEEN A1C AND PLASMA GLUCOSE TESTS In studies of various populations in the United States and around the world, different levels of sensitivity and spec- ificity of the three glycemic tests for diagnosing diabetes have been reported, depending on which test is chosen as the referent. Moreover, even in any given population, the different tests do not always identify the same individuals. A number",
+          "source": {
+            "id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+            "document_id": "pdf_DIA_Ch01_78d5e1234421",
+            "title": "DIA_Ch01",
+            "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+            "page": 14,
+            "page_start": 14,
+            "page_end": 14,
+            "section": "PDF page 14",
+            "source_file": "DIA_Ch01.pdf",
+            "source_type": "pdf",
+            "source_version": "78d5e1234421",
+            "retrieval_methods": [
+              "vector",
+              "fulltext"
+            ],
+            "score": 0.011510989010989011
+          }
+        },
+        {
+          "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+          "text": "8 PRINCIPLE 1: Identify People with Undiagnosed Diabetes and Prediabetes Why screen for diabetes and prediabetes Early in the course of type 2 diabetes, most people are without symptoms. Approximately 1 in 4 Americans with diabetes is undiagnosed, and among Asian Americans and Hispanic Americans with diabetes, approximately half are undiagnosed. Control of glucose and cardiovascular disease risk factors improves outcomes for people with diabetes. Prediabetes is asymptomatic, and the majority of people with the condition are unaware that they have it. Individuals with prediabetes can prevent or delay onset of type 2 diabetes with weight loss, increased physical activity, and/or medications such as metformin. Hence, detection of diabetes and prediabetes through targeted screening identifies individuals who can benefit from evidence-based therapies that can lower risk of adverse outcomes. Whom to screen for diabetes and prediabetes, and how often The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1. Such risk factor-based screening could be done based on a general assessment of standard risk factors or using validated tools. The USPSTF did not identify significant harms of screening.1 As is true of many screening tests, potential benefits of screening may be limited in those with shorter life expectancy or multiple comorbidities, and the decision to screen for abnormal blood glucose should include shared decision-making and consideration of competing priorities. Screening may be repeated at intervals of 1 to 3 years, with the frequency determined by the degree of risk as assessed by risk factors and results of previous screening tests. For example, people with an A1C or blood glucose concentration closer to the cut point for diabetes could be screened more frequently than those with an A1C or plasma glucose in the normal or near-normal range. Some women diagnosed with gestational diabetes (GDM) may actually have previously undiagnosed type 2 diabetes. Because of this risk, women who had GDM should be tested for persistent diabetes or prediabetes at the time of the postpartum visit (4 to 12 weeks postpartum). Either fasting glucose or a 75-gram",
+          "source": {
+            "id": "chunk_b9c6400844e4f9a353a17607",
+            "document_id": "pdf_Guiding-Principles_40a7da28c688",
+            "title": "Guiding-Principles",
+            "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+            "page": 8,
+            "page_start": 8,
+            "page_end": 8,
+            "section": "PDF page 8",
+            "source_file": "Guiding-Principles.pdf",
+            "source_type": "pdf",
+            "source_version": "40a7da28c688",
+            "retrieval_methods": [
+              "vector",
+              "fulltext"
+            ],
+            "score": 0.013492063492063493
+          }
+        },
+        {
+          "evidence_id": "chunk_d2804b0e167a6a72d265b2fb",
+          "text": "Can other blood glucose tests be used to diagnose type 2 diabetes and prediabetes?",
+          "source": {
+            "id": "chunk_d2804b0e167a6a72d265b2fb",
+            "document_id": "niddk_a1c_web_95827989eacf",
+            "title": "The A1C Test & Diabetes",
+            "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+            "page": null,
+            "page_start": null,
+            "page_end": null,
+            "section": "The A1C Test & Diabetes",
+            "source_file": null,
+            "source_type": "web",
+            "source_version": "95827989eacf",
+            "retrieval_methods": [
+              "vector",
+              "fulltext"
+            ],
+            "score": 0.012857142857142857
+          }
+        },
+        {
+          "evidence_id": "chunk_cff76bc8aefb3a3e008cfc4b",
+          "text": "10 Screening tests for diabetes and prediabetes A1C and fasting glucose testing are less burdensome than the oral glucose tolerance test. A1C does not require fasting but is costlier than fasting blood glucose, may be unreliable in certain conditions,6 and is not covered by the Centers for Medicare & Medicaid Services for screening. If a screening test is above the diagnostic threshold, the diagnosis of diabetes should be confirmed by repeat testing, with a different test on the same or a subsequent day, or the same test on a subsequent day. Requiring two positive tests for diagnosis of diabetes helps reduce the chance of a false positive diagnosis. People in the early stages of diabetes or with prediabetes may have elevated test results that are not confirmed at a second point in time or by a different test on the same day. Therefore, close monitoring and follow-up in these individuals may be warranted. The threshold for the diagnosis of diabetes is based on levels of glycemia at which the risk of microvascular disease increases. There is some variation among guidelines on the cut point for identifying persons with prediabetes and the preferred test. All agree, however, that the risk of diabetes in those with risk factors is continuous. Lifetime risk of diabetes is not absent below the lower limit of the prediabetes glycemia ranges, and neither is risk equally high among all those with prediabetes. Those with glucose or A1C levels at the higher end of the prediabetes ranges are at significantly higher risk than those at the lower end. If health care professionals choose A1C testing for diagnostic purposes, a laboratory using a method that is NGSP-certified should perform the test. Point-of-care A1C tests and finger-stick blood glucose testing should not be used for diagnosis. The A1C test may not be accurate in people with some anemias, kidney failure, or liver disease and should not be used for diagnosis of GDM or cystic fibrosis-related diabetes. The glucose test may not be accurate in persons with recent illness or physical activity, and is subject to diurnal variation. Importantly, steps must be taken to reduce pre-analytic variability in glucose testing and prevent glycolysis.6 Some hemoglobin variants can interfere with the measurement of A1C, although most assays in use in the United",
+          "source": {
+            "id": "chunk_cff76bc8aefb3a3e008cfc4b",
+            "document_id": "pdf_Guiding-Principles_40a7da28c688",
+            "title": "Guiding-Principles",
+            "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+            "page": 10,
+            "page_start": 10,
+            "page_end": 10,
+            "section": "PDF page 10",
+            "source_file": "Guiding-Principles.pdf",
+            "source_type": "pdf",
+            "source_version": "40a7da28c688",
+            "retrieval_methods": [
+              "vector",
+              "fulltext"
+            ],
+            "score": 0.012771739130434783
+          }
+        },
+        {
+          "evidence_id": "chunk_7f7b9388a2044c0ee477b4bf",
+          "text": "An Y, Gong Q, Gregg EW, Yang W, Zhang B, Shuai Y, Hong J, Engelgau MM, Li H, Roglic G, Hu Y, Bennett PH: Cardiovascular mortality, all-cause mortality, and diabetes inci- dence after lifestyle intervention for people with impaired glucose tolerance in the Da Qing Diabetes Prevention Study: a 23-year follow-up study. Lancet Diabetes Endocrinol 2:474–480, 2014 262 . American Diabetes Association: Screening for type 2 diabetes. Diabetes Care 27(Suppl 1):S11–S14, 2004 263 . American Diabetes Association: Standards of medical care in diabetes—2014. Diabetes Care 37 (Suppl 1):S14–S80, 2014 264 . Casagrande SS, Cowie CC, Genuth SM: Self-reported prevalence of diabetes screening in the U.S., 2005–2010. Am J Prev Med 47:780–787, 2014 265 . Rolka DB, Narayan KM, Thompson TJ, Goldman D, Lindenmayer J, Alich K, Bacall D, Benjamin EM, Lamb B, Stuart DO, Engelgau MM: Performance of recommended screening tests for undiagnosed diabetes and dysglycemia. Diabetes Care 24:1899–1903, 2001 266 . Saudek CD, Herman WH, Sacks DB, Bergenstal RM, Edelman D, Davidson MB: A new look at screening and diagnosing diabetes mellitus. J Clin Endocrinol Metab 93:2447–2453, 2008 267 . Wang W, Lee ET, Fabsitz R, Welty TK, Howard BV: Using HbA(1c) to improve efficacy of the American Diabetes Association fasting plasma glucose crite- rion in screening for new type 2 diabetes in American Indians: the Strong Heart Study. Diabetes Care 25:1365–1370, 2002 268 . Ko GT, Chan JC, Yeung VT, Chow CC, Tsang LW, Li JK, So WY, Wai HP, Cockram CS: Combined use of a fasting plasma glucose concentration and HbA1c or fruc- tosamine predicts the likelihood of having diabetes in high-risk subjects. Diabetes Care 21:1221–1225, 1998 269 . Hajat C, Harrison O, Al Siksek Z: Diagnostic testing for diabetes using HbA(1c) in the Abu Dhabi population: Weqaya: the Abu Dhabi cardiovascular screening program. Diabetes Care 34:2400–2402, 2011 270 . Rohlfing CL, Little RR, Wiedmeyer HM, England JD, Madsen R, Harris MI, Flegal KM, Eberhardt MS, Goldstein DE: Use of GHb (HbA1c) in screening for undiag- nosed diabetes in the U.S. population. Diabetes Care 23:187–191, 2000 271 . Bennett CM, Guo M, Dharmage SC: HbA(1c) as a screening tool for detection of type 2 diabetes: a systematic review. Diabet Med 24:333–343, 2007 272 . Bianchi C, Miccoli R, Bonadonna RC, Giorgino F, Frontoni S, Faloia E, Marchesini",
+          "source": {
+            "id": "chunk_7f7b9388a2044c0ee477b4bf",
+            "document_id": "pdf_DIA_Ch01_78d5e1234421",
+            "title": "DIA_Ch01",
+            "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+            "page": 38,
+            "page_start": 38,
+            "page_end": 38,
+            "section": "PDF page 38",
+            "source_file": "DIA_Ch01.pdf",
+            "source_type": "pdf",
+            "source_version": "78d5e1234421",
+            "retrieval_methods": [
+              "vector",
+              "fulltext"
+            ],
+            "score": 0.01266346992153444
+          }
+        },
+        {
+          "evidence_id": "chunk_619d1014407afe3ade772948",
+          "text": "Your health care professional can diagnose type 2 diabetes based on blood tests. Learn more about blood tests for diabetes and what the results mean.",
+          "source": {
+            "id": "chunk_619d1014407afe3ade772948",
+            "document_id": "niddk_type2_web_c1dc967de5fd",
+            "title": "Type 2 Diabetes",
+            "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-2-diabetes",
+            "page": null,
+            "page_start": null,
+            "page_end": null,
+            "section": "How do health care professionals diagnose type 2 diabetes?",
+            "source_file": null,
+            "source_type": "web",
+            "source_version": "c1dc967de5fd",
+            "retrieval_methods": [
+              "vector",
+              "fulltext"
+            ],
+            "score": 0.012686567164179104
+          }
+        },
+        {
+          "evidence_id": "chunk_e25d3ba5acf095dacae13163",
+          "text": "12 Table 3. Screening Test Criteria for Gestational Diabetes Two GDM screening approaches are presented below. All women should undergo GDM screening, usually between 24 and 28 weeks’ gestation, if they were not previously diagnosed with overt diabetes. Use professional judgment to select the most appropriate test for each woman. A two-step approach endorsed by the American College of Obstetricians and Gynecologists and a consensus panel convened by the National Institutes of Health11 1. Start with a 1-hour plasma glucose test after 50 g oral glucose challenge. Choose a cutoff of either ≥ 135 mg/dL or ≥ 140 mg/dL and ensure that this cutoff remains consistent. 2. For individuals who meet or exceed the screening threshold, administer a 3-hour 100 g oral glucose tolerance test. Diagnose GDM when two or more of the plasma glucose values are exceeded on the 3-hour test. Choose either of two methods: (1) National Diabetes Data Group cutoff values of Fasting ≥ 105 mg/dL, 1-hour ≥ 190 mg/dL, 2-hour ≥ 165 mg/dL, or 3-hour ≥ 145 mg/dL; or (2) Carpenter and Coustan cutoff values of Fasting ≥ 95 mg/dL, 1-hour ≥ 180 mg/dL, 2-hour ≥ 155 mg/dL, or 3-hour ≥ 140 mg/dL. A. A one-step approach endorsed by the International Association of Diabetes and Pregnancy Study Groups2, 12 Perform a 75 g oral glucose tolerance test. Diagnose GDM when one or more of the following plasma glucose values are exceeded: Fasting ≥ 92 mg/dL, 1-hour ≥ 180 mg/dL, or 2-hour ≥ 153 mg/dL. B. Resources • National Institute of Diabetes and Digestive and Kidney Diseases: º The A1C Test and Diabetes º Diabetes and Prediabetes Tests º Sickle Cell Trait and Other Hemoglobinopathies and Diabetes: for Providers • American College of Obstetricians and Gynecologists: Tool for Postpartum GDM Follow-up • American Diabetes Association: Type 2 Diabetes Risk Test • Centers for Medicare & Medicaid Services: Your Medicare Coverage: Diabetes screening tests GUIDING PRINCIPLES FOR THE CARE OF PEOPLE WITH OR AT RISK FOR DIABETES | PRINCIPLE 1",
+          "source": {
+            "id": "chunk_e25d3ba5acf095dacae13163",
+            "document_id": "pdf_Guiding-Principles_40a7da28c688",
+            "title": "Guiding-Principles",
+            "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+            "page": 12,
+            "page_start": 12,
+            "page_end": 12,
+            "section": "PDF page 12",
+            "source_file": "Guiding-Principles.pdf",
+            "source_type": "pdf",
+            "source_version": "40a7da28c688",
+            "retrieval_methods": [
+              "vector",
+              "fulltext"
+            ],
+            "score": 0.012588028169014085
+          }
+        }
+      ],
+      "citations": [
+        {
+          "id": "chunk_8210978f828541e5d2c4bd6a",
+          "document_id": "pdf_Guiding-Principles_40a7da28c688",
+          "title": "Guiding-Principles",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+          "page": 11,
+          "page_start": 11,
+          "page_end": 11,
+          "section": "PDF page 11",
+          "source_file": "Guiding-Principles.pdf",
+          "source_type": "pdf",
+          "source_version": "40a7da28c688",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.013273794959628089
+        },
+        {
+          "id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+          "document_id": "pdf_DIA_Ch01_78d5e1234421",
+          "title": "DIA_Ch01",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+          "page": 14,
+          "page_start": 14,
+          "page_end": 14,
+          "section": "PDF page 14",
+          "source_file": "DIA_Ch01.pdf",
+          "source_type": "pdf",
+          "source_version": "78d5e1234421",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.011510989010989011
+        },
+        {
+          "id": "chunk_b9c6400844e4f9a353a17607",
+          "document_id": "pdf_Guiding-Principles_40a7da28c688",
+          "title": "Guiding-Principles",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+          "page": 8,
+          "page_start": 8,
+          "page_end": 8,
+          "section": "PDF page 8",
+          "source_file": "Guiding-Principles.pdf",
+          "source_type": "pdf",
+          "source_version": "40a7da28c688",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.013492063492063493
+        },
+        {
+          "id": "chunk_d2804b0e167a6a72d265b2fb",
+          "document_id": "niddk_a1c_web_95827989eacf",
+          "title": "The A1C Test & Diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "The A1C Test & Diabetes",
+          "source_file": null,
+          "source_type": "web",
+          "source_version": "95827989eacf",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.012857142857142857
+        },
+        {
+          "id": "chunk_cff76bc8aefb3a3e008cfc4b",
+          "document_id": "pdf_Guiding-Principles_40a7da28c688",
+          "title": "Guiding-Principles",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+          "page": 10,
+          "page_start": 10,
+          "page_end": 10,
+          "section": "PDF page 10",
+          "source_file": "Guiding-Principles.pdf",
+          "source_type": "pdf",
+          "source_version": "40a7da28c688",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.012771739130434783
+        },
+        {
+          "id": "chunk_7f7b9388a2044c0ee477b4bf",
+          "document_id": "pdf_DIA_Ch01_78d5e1234421",
+          "title": "DIA_Ch01",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+          "page": 38,
+          "page_start": 38,
+          "page_end": 38,
+          "section": "PDF page 38",
+          "source_file": "DIA_Ch01.pdf",
+          "source_type": "pdf",
+          "source_version": "78d5e1234421",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.01266346992153444
+        },
+        {
+          "id": "chunk_619d1014407afe3ade772948",
+          "document_id": "niddk_type2_web_c1dc967de5fd",
+          "title": "Type 2 Diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-2-diabetes",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "How do health care professionals diagnose type 2 diabetes?",
+          "source_file": null,
+          "source_type": "web",
+          "source_version": "c1dc967de5fd",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.012686567164179104
+        },
+        {
+          "id": "chunk_e25d3ba5acf095dacae13163",
+          "document_id": "pdf_Guiding-Principles_40a7da28c688",
+          "title": "Guiding-Principles",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+          "page": 12,
+          "page_start": 12,
+          "page_end": 12,
+          "section": "PDF page 12",
+          "source_file": "Guiding-Principles.pdf",
+          "source_type": "pdf",
+          "source_version": "40a7da28c688",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.012588028169014085
+        }
+      ],
+      "paths": [],
+      "retrieval": {
+        "backend": "Neo4j vector + fulltext + graph",
+        "embedding_model": "TF-IDF + LSA (frozen 128d)",
+        "dimensions": 128,
+        "total_vectors": 515,
+        "pdf_chunks": 398,
+        "kb_version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+        "chunking": {
+          "words": 380,
+          "overlap_words": 60,
+          "scope": "page/paragraph/HTML heading"
+        }
+      },
+      "query_analysis": [
+        {
+          "entities": [],
+          "query": "diabetes screening tests ",
+          "requested_sources": [],
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ],
+          "version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+          "reranker": "RRF + lexical tie-break"
+        },
+        {
+          "entities": [],
+          "query": "diabetes diagnostic tests ",
+          "requested_sources": [],
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ],
+          "version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+          "reranker": "RRF + lexical tie-break"
+        }
+      ],
+      "answer": "",
+      "status": "supported",
+      "summary": "Truy xuất 8 bằng chứng từ 2 truy vấn"
+    },
+    "validation_errors": [],
+    "safety_flags": [],
+    "messages": [
+      {
+        "sequence": 1,
+        "sender": "CoordinatorAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "REQUEST",
+        "content": {
+          "question": "Tôi đi xét nghiệm gì bây giờ?",
+          "conversation": [],
+          "available_profile_fields": [],
+          "additional_context": {}
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 2,
+        "sender": "CoordinatorAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "intent": "knowledge",
+          "goal": "Determine appropriate diabetes-related tests to recommend based on current context",
+          "queries": [
+            "diabetes screening tests",
+            "diabetes diagnostic tests"
+          ],
+          "clarification_questions": [
+            "Bạn đang gặp triệu chứng gì hiện tại?",
+            "Bạn đã từng được chẩn đoán bệnh tiểu đường chưa?"
+          ],
+          "can_answer_general": true,
+          "requested_sources": [],
+          "llm": {
+            "cached": false,
+            "task": "coordinator_plan",
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 1.4234542239999999,
+              "prompt_tokens": 772,
+              "prompt_time": 0.046079972,
+              "completion_tokens": 121,
+              "completion_time": 0.130897511,
+              "total_tokens": 893,
+              "total_time": 0.176977483,
+              "completion_tokens_details": {
+                "reasoning_tokens": 36
+              }
+            }
+          },
+          "summary": "Determine appropriate diabetes-related tests to recommend based on current context"
+        },
+        "duration_ms": 1804.572
+      },
+      {
+        "sequence": 3,
+        "sender": "CoordinatorAgent",
+        "receiver": "RuleBasedAgent",
+        "performative": "REQUEST",
+        "content": {
+          "prediction": null
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 4,
+        "sender": "RuleBasedAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "assessment": null,
+          "review_required": false,
+          "summary": "Kiểm tra bất đồng model và quy tắc chuyển review"
+        },
+        "duration_ms": 0.003
+      },
+      {
+        "sequence": 5,
+        "sender": "CoordinatorAgent",
+        "receiver": "RetrievalAgent",
+        "performative": "REQUEST",
+        "content": {
+          "queries": [
+            "diabetes screening tests",
+            "diabetes diagnostic tests"
+          ]
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 6,
+        "sender": "RetrievalAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "evidence": [
+            {
+              "evidence_id": "chunk_8210978f828541e5d2c4bd6a",
+              "text": "11 Table 2. Screening Test Criteria for Prediabetes and Type 2 Diabetes Prediabetes Diabetes Screening for gestational diabetes Women at high risk for type 2 diabetes should be tested prior to conception or at the first prenatal visit for pre-existing diabetes. Two approaches to GDM screening are outlined in Table 3. All women who are not already diagnosed with overt diabetes should undergo GDM screening, usually between 24 and 28 weeks’ gestation. Use of the one-step screening approach results in a higher proportion of women receiving a diagnosis of GDM. 1. 2. 3. A1C 5.7 percent to 6.4 percent or Fasting plasma glucose (FPG) 100 to 125 mg/dL [impaired fasting glucose (IFG)] or Two hours after 75 g oral glucose challenge, plasma glucose 140 to 199 mg/dL [impaired glucose tolerance (IGT)] 1. 2. 3. 4. A1C ≥ 6.5 percent or FPG ≥ 126 mg/dL or Two-hour plasma glucose ≥ 200 mg/dL after 75 g oral glucose challenge or Random plasma glucose ≥ 200 mg/dL with symptoms (such as polyuria, polydipsia, and unexplained weight loss) GUIDING PRINCIPLES FOR THE CARE OF PEOPLE WITH OR AT RISK FOR DIABETES | PRINCIPLE 1 For the three tests, the risk of diabetes is continuous, extending below the lower limit of the range and becoming disproportionately greater at the higher end of the range. For criteria 1–3: Repeat test to confirm unless symptoms are present. Repeating the same test for confirmation is preferable. If two different tests are used (e.g., FPG and A1C) and both indicate diabetes, consider the diagnosis confirmed. If the two different tests are discordant, repeat the test above the diagnostic cut point. 2",
+              "source": {
+                "id": "chunk_8210978f828541e5d2c4bd6a",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 11,
+                "page_start": 11,
+                "page_end": 11,
+                "section": "PDF page 11",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013273794959628089
+              }
+            },
+            {
+              "evidence_id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+              "text": "percentile, or weight >120% of ideal for height; and (2) if any two of the following additional risk factors are present: family history of type 2 diabetes in a first- or second- degree relative, minority race/ethnicity (African American, Hispanic, Asian American, Pacific Islander, Native American), evidence of insulin resistance (e.g., acanthosis nigricans, hypertension, polycystic ovary syndrome), small for gestational age birth weight, or maternal history of diabetes or gestational diabetes during the gestation of the child. Testing should begin at age 10 years or at onset of puberty, if it occurs before age 10 years. If the initial test is negative, it should be repeated in 3 years (40). Recommendations for diagnostic cutpoints of glycemia are no different than those for adults (112), although more studies have been advocated before use of A1c for testing adolescents is widely adopted, due to the lower sensitivity of A1c (113,114). In children found to be at increased risk for type 1 diabetes by virtue of positive tests for autoantibodies to islet antigens, regular testing for diabetic glycemia levels is indicated to detect the disease before it manifests clinically, especially as diabetic ketoacidosis. The same cutpoints detailed in Table 1.3 are appropriate. CYSTIC FIBROSIS- RELATED DIABETES An estimated 40%–50% of adults with cystic fibrosis now live long enough to develop cystic fibrosis-related diabetes (CFRD) (115), and screening for CFRD is recommended to begin from age 10 years on (116). An annual OGTT is the preferred test, with 2-hour PG ≥200 mg/dL consid- ered diagnostic of diabetes. FPG and A1c are considered less satisfactory tests for CFRD (116), although one study suggested that A1c testing is a useful screening tool that effectively reduces the need to perform OGTTs to diagnose CFRD (117). DISCREPANCIES BETWEEN A1C AND PLASMA GLUCOSE TESTS In studies of various populations in the United States and around the world, different levels of sensitivity and spec- ificity of the three glycemic tests for diagnosing diabetes have been reported, depending on which test is chosen as the referent. Moreover, even in any given population, the different tests do not always identify the same individuals. A number",
+              "source": {
+                "id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 14,
+                "page_start": 14,
+                "page_end": 14,
+                "section": "PDF page 14",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.011510989010989011
+              }
+            },
+            {
+              "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+              "text": "8 PRINCIPLE 1: Identify People with Undiagnosed Diabetes and Prediabetes Why screen for diabetes and prediabetes Early in the course of type 2 diabetes, most people are without symptoms. Approximately 1 in 4 Americans with diabetes is undiagnosed, and among Asian Americans and Hispanic Americans with diabetes, approximately half are undiagnosed. Control of glucose and cardiovascular disease risk factors improves outcomes for people with diabetes. Prediabetes is asymptomatic, and the majority of people with the condition are unaware that they have it. Individuals with prediabetes can prevent or delay onset of type 2 diabetes with weight loss, increased physical activity, and/or medications such as metformin. Hence, detection of diabetes and prediabetes through targeted screening identifies individuals who can benefit from evidence-based therapies that can lower risk of adverse outcomes. Whom to screen for diabetes and prediabetes, and how often The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1. Such risk factor-based screening could be done based on a general assessment of standard risk factors or using validated tools. The USPSTF did not identify significant harms of screening.1 As is true of many screening tests, potential benefits of screening may be limited in those with shorter life expectancy or multiple comorbidities, and the decision to screen for abnormal blood glucose should include shared decision-making and consideration of competing priorities. Screening may be repeated at intervals of 1 to 3 years, with the frequency determined by the degree of risk as assessed by risk factors and results of previous screening tests. For example, people with an A1C or blood glucose concentration closer to the cut point for diabetes could be screened more frequently than those with an A1C or plasma glucose in the normal or near-normal range. Some women diagnosed with gestational diabetes (GDM) may actually have previously undiagnosed type 2 diabetes. Because of this risk, women who had GDM should be tested for persistent diabetes or prediabetes at the time of the postpartum visit (4 to 12 weeks postpartum). Either fasting glucose or a 75-gram",
+              "source": {
+                "id": "chunk_b9c6400844e4f9a353a17607",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 8,
+                "page_start": 8,
+                "page_end": 8,
+                "section": "PDF page 8",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013492063492063493
+              }
+            },
+            {
+              "evidence_id": "chunk_d2804b0e167a6a72d265b2fb",
+              "text": "Can other blood glucose tests be used to diagnose type 2 diabetes and prediabetes?",
+              "source": {
+                "id": "chunk_d2804b0e167a6a72d265b2fb",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "The A1C Test & Diabetes",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012857142857142857
+              }
+            },
+            {
+              "evidence_id": "chunk_cff76bc8aefb3a3e008cfc4b",
+              "text": "10 Screening tests for diabetes and prediabetes A1C and fasting glucose testing are less burdensome than the oral glucose tolerance test. A1C does not require fasting but is costlier than fasting blood glucose, may be unreliable in certain conditions,6 and is not covered by the Centers for Medicare & Medicaid Services for screening. If a screening test is above the diagnostic threshold, the diagnosis of diabetes should be confirmed by repeat testing, with a different test on the same or a subsequent day, or the same test on a subsequent day. Requiring two positive tests for diagnosis of diabetes helps reduce the chance of a false positive diagnosis. People in the early stages of diabetes or with prediabetes may have elevated test results that are not confirmed at a second point in time or by a different test on the same day. Therefore, close monitoring and follow-up in these individuals may be warranted. The threshold for the diagnosis of diabetes is based on levels of glycemia at which the risk of microvascular disease increases. There is some variation among guidelines on the cut point for identifying persons with prediabetes and the preferred test. All agree, however, that the risk of diabetes in those with risk factors is continuous. Lifetime risk of diabetes is not absent below the lower limit of the prediabetes glycemia ranges, and neither is risk equally high among all those with prediabetes. Those with glucose or A1C levels at the higher end of the prediabetes ranges are at significantly higher risk than those at the lower end. If health care professionals choose A1C testing for diagnostic purposes, a laboratory using a method that is NGSP-certified should perform the test. Point-of-care A1C tests and finger-stick blood glucose testing should not be used for diagnosis. The A1C test may not be accurate in people with some anemias, kidney failure, or liver disease and should not be used for diagnosis of GDM or cystic fibrosis-related diabetes. The glucose test may not be accurate in persons with recent illness or physical activity, and is subject to diurnal variation. Importantly, steps must be taken to reduce pre-analytic variability in glucose testing and prevent glycolysis.6 Some hemoglobin variants can interfere with the measurement of A1C, although most assays in use in the United",
+              "source": {
+                "id": "chunk_cff76bc8aefb3a3e008cfc4b",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 10,
+                "page_start": 10,
+                "page_end": 10,
+                "section": "PDF page 10",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012771739130434783
+              }
+            },
+            {
+              "evidence_id": "chunk_7f7b9388a2044c0ee477b4bf",
+              "text": "An Y, Gong Q, Gregg EW, Yang W, Zhang B, Shuai Y, Hong J, Engelgau MM, Li H, Roglic G, Hu Y, Bennett PH: Cardiovascular mortality, all-cause mortality, and diabetes inci- dence after lifestyle intervention for people with impaired glucose tolerance in the Da Qing Diabetes Prevention Study: a 23-year follow-up study. Lancet Diabetes Endocrinol 2:474–480, 2014 262 . American Diabetes Association: Screening for type 2 diabetes. Diabetes Care 27(Suppl 1):S11–S14, 2004 263 . American Diabetes Association: Standards of medical care in diabetes—2014. Diabetes Care 37 (Suppl 1):S14–S80, 2014 264 . Casagrande SS, Cowie CC, Genuth SM: Self-reported prevalence of diabetes screening in the U.S., 2005–2010. Am J Prev Med 47:780–787, 2014 265 . Rolka DB, Narayan KM, Thompson TJ, Goldman D, Lindenmayer J, Alich K, Bacall D, Benjamin EM, Lamb B, Stuart DO, Engelgau MM: Performance of recommended screening tests for undiagnosed diabetes and dysglycemia. Diabetes Care 24:1899–1903, 2001 266 . Saudek CD, Herman WH, Sacks DB, Bergenstal RM, Edelman D, Davidson MB: A new look at screening and diagnosing diabetes mellitus. J Clin Endocrinol Metab 93:2447–2453, 2008 267 . Wang W, Lee ET, Fabsitz R, Welty TK, Howard BV: Using HbA(1c) to improve efficacy of the American Diabetes Association fasting plasma glucose crite- rion in screening for new type 2 diabetes in American Indians: the Strong Heart Study. Diabetes Care 25:1365–1370, 2002 268 . Ko GT, Chan JC, Yeung VT, Chow CC, Tsang LW, Li JK, So WY, Wai HP, Cockram CS: Combined use of a fasting plasma glucose concentration and HbA1c or fruc- tosamine predicts the likelihood of having diabetes in high-risk subjects. Diabetes Care 21:1221–1225, 1998 269 . Hajat C, Harrison O, Al Siksek Z: Diagnostic testing for diabetes using HbA(1c) in the Abu Dhabi population: Weqaya: the Abu Dhabi cardiovascular screening program. Diabetes Care 34:2400–2402, 2011 270 . Rohlfing CL, Little RR, Wiedmeyer HM, England JD, Madsen R, Harris MI, Flegal KM, Eberhardt MS, Goldstein DE: Use of GHb (HbA1c) in screening for undiag- nosed diabetes in the U.S. population. Diabetes Care 23:187–191, 2000 271 . Bennett CM, Guo M, Dharmage SC: HbA(1c) as a screening tool for detection of type 2 diabetes: a systematic review. Diabet Med 24:333–343, 2007 272 . Bianchi C, Miccoli R, Bonadonna RC, Giorgino F, Frontoni S, Faloia E, Marchesini",
+              "source": {
+                "id": "chunk_7f7b9388a2044c0ee477b4bf",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 38,
+                "page_start": 38,
+                "page_end": 38,
+                "section": "PDF page 38",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.01266346992153444
+              }
+            },
+            {
+              "evidence_id": "chunk_619d1014407afe3ade772948",
+              "text": "Your health care professional can diagnose type 2 diabetes based on blood tests. Learn more about blood tests for diabetes and what the results mean.",
+              "source": {
+                "id": "chunk_619d1014407afe3ade772948",
+                "document_id": "niddk_type2_web_c1dc967de5fd",
+                "title": "Type 2 Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-2-diabetes",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "How do health care professionals diagnose type 2 diabetes?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "c1dc967de5fd",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012686567164179104
+              }
+            },
+            {
+              "evidence_id": "chunk_e25d3ba5acf095dacae13163",
+              "text": "12 Table 3. Screening Test Criteria for Gestational Diabetes Two GDM screening approaches are presented below. All women should undergo GDM screening, usually between 24 and 28 weeks’ gestation, if they were not previously diagnosed with overt diabetes. Use professional judgment to select the most appropriate test for each woman. A two-step approach endorsed by the American College of Obstetricians and Gynecologists and a consensus panel convened by the National Institutes of Health11 1. Start with a 1-hour plasma glucose test after 50 g oral glucose challenge. Choose a cutoff of either ≥ 135 mg/dL or ≥ 140 mg/dL and ensure that this cutoff remains consistent. 2. For individuals who meet or exceed the screening threshold, administer a 3-hour 100 g oral glucose tolerance test. Diagnose GDM when two or more of the plasma glucose values are exceeded on the 3-hour test. Choose either of two methods: (1) National Diabetes Data Group cutoff values of Fasting ≥ 105 mg/dL, 1-hour ≥ 190 mg/dL, 2-hour ≥ 165 mg/dL, or 3-hour ≥ 145 mg/dL; or (2) Carpenter and Coustan cutoff values of Fasting ≥ 95 mg/dL, 1-hour ≥ 180 mg/dL, 2-hour ≥ 155 mg/dL, or 3-hour ≥ 140 mg/dL. A. A one-step approach endorsed by the International Association of Diabetes and Pregnancy Study Groups2, 12 Perform a 75 g oral glucose tolerance test. Diagnose GDM when one or more of the following plasma glucose values are exceeded: Fasting ≥ 92 mg/dL, 1-hour ≥ 180 mg/dL, or 2-hour ≥ 153 mg/dL. B. Resources • National Institute of Diabetes and Digestive and Kidney Diseases: º The A1C Test and Diabetes º Diabetes and Prediabetes Tests º Sickle Cell Trait and Other Hemoglobinopathies and Diabetes: for Providers • American College of Obstetricians and Gynecologists: Tool for Postpartum GDM Follow-up • American Diabetes Association: Type 2 Diabetes Risk Test • Centers for Medicare & Medicaid Services: Your Medicare Coverage: Diabetes screening tests GUIDING PRINCIPLES FOR THE CARE OF PEOPLE WITH OR AT RISK FOR DIABETES | PRINCIPLE 1",
+              "source": {
+                "id": "chunk_e25d3ba5acf095dacae13163",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 12,
+                "page_start": 12,
+                "page_end": 12,
+                "section": "PDF page 12",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012588028169014085
+              }
+            }
+          ],
+          "citations": [
+            {
+              "id": "chunk_8210978f828541e5d2c4bd6a",
+              "document_id": "pdf_Guiding-Principles_40a7da28c688",
+              "title": "Guiding-Principles",
+              "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+              "page": 11,
+              "page_start": 11,
+              "page_end": 11,
+              "section": "PDF page 11",
+              "source_file": "Guiding-Principles.pdf",
+              "source_type": "pdf",
+              "source_version": "40a7da28c688",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.013273794959628089
+            },
+            {
+              "id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+              "document_id": "pdf_DIA_Ch01_78d5e1234421",
+              "title": "DIA_Ch01",
+              "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+              "page": 14,
+              "page_start": 14,
+              "page_end": 14,
+              "section": "PDF page 14",
+              "source_file": "DIA_Ch01.pdf",
+              "source_type": "pdf",
+              "source_version": "78d5e1234421",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.011510989010989011
+            },
+            {
+              "id": "chunk_b9c6400844e4f9a353a17607",
+              "document_id": "pdf_Guiding-Principles_40a7da28c688",
+              "title": "Guiding-Principles",
+              "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+              "page": 8,
+              "page_start": 8,
+              "page_end": 8,
+              "section": "PDF page 8",
+              "source_file": "Guiding-Principles.pdf",
+              "source_type": "pdf",
+              "source_version": "40a7da28c688",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.013492063492063493
+            },
+            {
+              "id": "chunk_d2804b0e167a6a72d265b2fb",
+              "document_id": "niddk_a1c_web_95827989eacf",
+              "title": "The A1C Test & Diabetes",
+              "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+              "page": null,
+              "page_start": null,
+              "page_end": null,
+              "section": "The A1C Test & Diabetes",
+              "source_file": null,
+              "source_type": "web",
+              "source_version": "95827989eacf",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.012857142857142857
+            },
+            {
+              "id": "chunk_cff76bc8aefb3a3e008cfc4b",
+              "document_id": "pdf_Guiding-Principles_40a7da28c688",
+              "title": "Guiding-Principles",
+              "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+              "page": 10,
+              "page_start": 10,
+              "page_end": 10,
+              "section": "PDF page 10",
+              "source_file": "Guiding-Principles.pdf",
+              "source_type": "pdf",
+              "source_version": "40a7da28c688",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.012771739130434783
+            },
+            {
+              "id": "chunk_7f7b9388a2044c0ee477b4bf",
+              "document_id": "pdf_DIA_Ch01_78d5e1234421",
+              "title": "DIA_Ch01",
+              "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+              "page": 38,
+              "page_start": 38,
+              "page_end": 38,
+              "section": "PDF page 38",
+              "source_file": "DIA_Ch01.pdf",
+              "source_type": "pdf",
+              "source_version": "78d5e1234421",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.01266346992153444
+            },
+            {
+              "id": "chunk_619d1014407afe3ade772948",
+              "document_id": "niddk_type2_web_c1dc967de5fd",
+              "title": "Type 2 Diabetes",
+              "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-2-diabetes",
+              "page": null,
+              "page_start": null,
+              "page_end": null,
+              "section": "How do health care professionals diagnose type 2 diabetes?",
+              "source_file": null,
+              "source_type": "web",
+              "source_version": "c1dc967de5fd",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.012686567164179104
+            },
+            {
+              "id": "chunk_e25d3ba5acf095dacae13163",
+              "document_id": "pdf_Guiding-Principles_40a7da28c688",
+              "title": "Guiding-Principles",
+              "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+              "page": 12,
+              "page_start": 12,
+              "page_end": 12,
+              "section": "PDF page 12",
+              "source_file": "Guiding-Principles.pdf",
+              "source_type": "pdf",
+              "source_version": "40a7da28c688",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.012588028169014085
+            }
+          ],
+          "paths": [],
+          "retrieval": {
+            "backend": "Neo4j vector + fulltext + graph",
+            "embedding_model": "TF-IDF + LSA (frozen 128d)",
+            "dimensions": 128,
+            "total_vectors": 515,
+            "pdf_chunks": 398,
+            "kb_version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+            "chunking": {
+              "words": 380,
+              "overlap_words": 60,
+              "scope": "page/paragraph/HTML heading"
+            }
+          },
+          "query_analysis": [
+            {
+              "entities": [],
+              "query": "diabetes screening tests ",
+              "requested_sources": [],
+              "methods": [
+                "vector",
+                "fulltext",
+                "graph"
+              ],
+              "version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+              "reranker": "RRF + lexical tie-break"
+            },
+            {
+              "entities": [],
+              "query": "diabetes diagnostic tests ",
+              "requested_sources": [],
+              "methods": [
+                "vector",
+                "fulltext",
+                "graph"
+              ],
+              "version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+              "reranker": "RRF + lexical tie-break"
+            }
+          ],
+          "answer": "",
+          "status": "supported",
+          "summary": "Truy xuất 8 bằng chứng từ 2 truy vấn"
+        },
+        "duration_ms": 295.995
+      },
+      {
+        "sequence": 7,
+        "sender": "CoordinatorAgent",
+        "receiver": "EvidenceReaderAgent",
+        "performative": "REQUEST",
+        "content": {
+          "evidence": [
+            {
+              "evidence_id": "chunk_8210978f828541e5d2c4bd6a",
+              "text": "11 Table 2. Screening Test Criteria for Prediabetes and Type 2 Diabetes Prediabetes Diabetes Screening for gestational diabetes Women at high risk for type 2 diabetes should be tested prior to conception or at the first prenatal visit for pre-existing diabetes. Two approaches to GDM screening are outlined in Table 3. All women who are not already diagnosed with overt diabetes should undergo GDM screening, usually between 24 and 28 weeks’ gestation. Use of the one-step screening approach results in a higher proportion of women receiving a diagnosis of GDM. 1. 2. 3. A1C 5.7 percent to 6.4 percent or Fasting plasma glucose (FPG) 100 to 125 mg/dL [impaired fasting glucose (IFG)] or Two hours after 75 g oral glucose challenge, plasma glucose 140 to 199 mg/dL [impaired glucose tolerance (IGT)] 1. 2. 3. 4. A1C ≥ 6.5 percent or FPG ≥ 126 mg/dL or Two-hour plasma glucose ≥ 200 mg/dL after 75 g oral glucose challenge or Random plasma glucose ≥ 200 mg/dL with symptoms (such as polyuria, polydipsia, and unexplained weight loss) GUIDING PRINCIPLES FOR THE CARE OF PEOPLE WITH OR AT RISK FOR DIABETES | PRINCIPLE 1 For the three tests, the risk of diabetes is continuous, extending below the lower limit of the range and becoming disproportionately greater at the higher end of the range. For criteria 1–3: Repeat test to confirm unless symptoms are present. Repeating the same test for confirmation is preferable. If two different tests are used (e.g., FPG and A1C) and both indicate diabetes, consider the diagnosis confirmed. If the two different tests are discordant, repeat the test above the diagnostic cut point. 2",
+              "source": {
+                "id": "chunk_8210978f828541e5d2c4bd6a",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 11,
+                "page_start": 11,
+                "page_end": 11,
+                "section": "PDF page 11",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013273794959628089
+              }
+            },
+            {
+              "evidence_id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+              "text": "percentile, or weight >120% of ideal for height; and (2) if any two of the following additional risk factors are present: family history of type 2 diabetes in a first- or second- degree relative, minority race/ethnicity (African American, Hispanic, Asian American, Pacific Islander, Native American), evidence of insulin resistance (e.g., acanthosis nigricans, hypertension, polycystic ovary syndrome), small for gestational age birth weight, or maternal history of diabetes or gestational diabetes during the gestation of the child. Testing should begin at age 10 years or at onset of puberty, if it occurs before age 10 years. If the initial test is negative, it should be repeated in 3 years (40). Recommendations for diagnostic cutpoints of glycemia are no different than those for adults (112), although more studies have been advocated before use of A1c for testing adolescents is widely adopted, due to the lower sensitivity of A1c (113,114). In children found to be at increased risk for type 1 diabetes by virtue of positive tests for autoantibodies to islet antigens, regular testing for diabetic glycemia levels is indicated to detect the disease before it manifests clinically, especially as diabetic ketoacidosis. The same cutpoints detailed in Table 1.3 are appropriate. CYSTIC FIBROSIS- RELATED DIABETES An estimated 40%–50% of adults with cystic fibrosis now live long enough to develop cystic fibrosis-related diabetes (CFRD) (115), and screening for CFRD is recommended to begin from age 10 years on (116). An annual OGTT is the preferred test, with 2-hour PG ≥200 mg/dL consid- ered diagnostic of diabetes. FPG and A1c are considered less satisfactory tests for CFRD (116), although one study suggested that A1c testing is a useful screening tool that effectively reduces the need to perform OGTTs to diagnose CFRD (117). DISCREPANCIES BETWEEN A1C AND PLASMA GLUCOSE TESTS In studies of various populations in the United States and around the world, different levels of sensitivity and spec- ificity of the three glycemic tests for diagnosing diabetes have been reported, depending on which test is chosen as the referent. Moreover, even in any given population, the different tests do not always identify the same individuals. A number",
+              "source": {
+                "id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 14,
+                "page_start": 14,
+                "page_end": 14,
+                "section": "PDF page 14",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.011510989010989011
+              }
+            },
+            {
+              "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+              "text": "8 PRINCIPLE 1: Identify People with Undiagnosed Diabetes and Prediabetes Why screen for diabetes and prediabetes Early in the course of type 2 diabetes, most people are without symptoms. Approximately 1 in 4 Americans with diabetes is undiagnosed, and among Asian Americans and Hispanic Americans with diabetes, approximately half are undiagnosed. Control of glucose and cardiovascular disease risk factors improves outcomes for people with diabetes. Prediabetes is asymptomatic, and the majority of people with the condition are unaware that they have it. Individuals with prediabetes can prevent or delay onset of type 2 diabetes with weight loss, increased physical activity, and/or medications such as metformin. Hence, detection of diabetes and prediabetes through targeted screening identifies individuals who can benefit from evidence-based therapies that can lower risk of adverse outcomes. Whom to screen for diabetes and prediabetes, and how often The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1. Such risk factor-based screening could be done based on a general assessment of standard risk factors or using validated tools. The USPSTF did not identify significant harms of screening.1 As is true of many screening tests, potential benefits of screening may be limited in those with shorter life expectancy or multiple comorbidities, and the decision to screen for abnormal blood glucose should include shared decision-making and consideration of competing priorities. Screening may be repeated at intervals of 1 to 3 years, with the frequency determined by the degree of risk as assessed by risk factors and results of previous screening tests. For example, people with an A1C or blood glucose concentration closer to the cut point for diabetes could be screened more frequently than those with an A1C or plasma glucose in the normal or near-normal range. Some women diagnosed with gestational diabetes (GDM) may actually have previously undiagnosed type 2 diabetes. Because of this risk, women who had GDM should be tested for persistent diabetes or prediabetes at the time of the postpartum visit (4 to 12 weeks postpartum). Either fasting glucose or a 75-gram",
+              "source": {
+                "id": "chunk_b9c6400844e4f9a353a17607",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 8,
+                "page_start": 8,
+                "page_end": 8,
+                "section": "PDF page 8",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013492063492063493
+              }
+            },
+            {
+              "evidence_id": "chunk_d2804b0e167a6a72d265b2fb",
+              "text": "Can other blood glucose tests be used to diagnose type 2 diabetes and prediabetes?",
+              "source": {
+                "id": "chunk_d2804b0e167a6a72d265b2fb",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "The A1C Test & Diabetes",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012857142857142857
+              }
+            },
+            {
+              "evidence_id": "chunk_cff76bc8aefb3a3e008cfc4b",
+              "text": "10 Screening tests for diabetes and prediabetes A1C and fasting glucose testing are less burdensome than the oral glucose tolerance test. A1C does not require fasting but is costlier than fasting blood glucose, may be unreliable in certain conditions,6 and is not covered by the Centers for Medicare & Medicaid Services for screening. If a screening test is above the diagnostic threshold, the diagnosis of diabetes should be confirmed by repeat testing, with a different test on the same or a subsequent day, or the same test on a subsequent day. Requiring two positive tests for diagnosis of diabetes helps reduce the chance of a false positive diagnosis. People in the early stages of diabetes or with prediabetes may have elevated test results that are not confirmed at a second point in time or by a different test on the same day. Therefore, close monitoring and follow-up in these individuals may be warranted. The threshold for the diagnosis of diabetes is based on levels of glycemia at which the risk of microvascular disease increases. There is some variation among guidelines on the cut point for identifying persons with prediabetes and the preferred test. All agree, however, that the risk of diabetes in those with risk factors is continuous. Lifetime risk of diabetes is not absent below the lower limit of the prediabetes glycemia ranges, and neither is risk equally high among all those with prediabetes. Those with glucose or A1C levels at the higher end of the prediabetes ranges are at significantly higher risk than those at the lower end. If health care professionals choose A1C testing for diagnostic purposes, a laboratory using a method that is NGSP-certified should perform the test. Point-of-care A1C tests and finger-stick blood glucose testing should not be used for diagnosis. The A1C test may not be accurate in people with some anemias, kidney failure, or liver disease and should not be used for diagnosis of GDM or cystic fibrosis-related diabetes. The glucose test may not be accurate in persons with recent illness or physical activity, and is subject to diurnal variation. Importantly, steps must be taken to reduce pre-analytic variability in glucose testing and prevent glycolysis.6 Some hemoglobin variants can interfere with the measurement of A1C, although most assays in use in the United",
+              "source": {
+                "id": "chunk_cff76bc8aefb3a3e008cfc4b",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 10,
+                "page_start": 10,
+                "page_end": 10,
+                "section": "PDF page 10",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012771739130434783
+              }
+            },
+            {
+              "evidence_id": "chunk_7f7b9388a2044c0ee477b4bf",
+              "text": "An Y, Gong Q, Gregg EW, Yang W, Zhang B, Shuai Y, Hong J, Engelgau MM, Li H, Roglic G, Hu Y, Bennett PH: Cardiovascular mortality, all-cause mortality, and diabetes inci- dence after lifestyle intervention for people with impaired glucose tolerance in the Da Qing Diabetes Prevention Study: a 23-year follow-up study. Lancet Diabetes Endocrinol 2:474–480, 2014 262 . American Diabetes Association: Screening for type 2 diabetes. Diabetes Care 27(Suppl 1):S11–S14, 2004 263 . American Diabetes Association: Standards of medical care in diabetes—2014. Diabetes Care 37 (Suppl 1):S14–S80, 2014 264 . Casagrande SS, Cowie CC, Genuth SM: Self-reported prevalence of diabetes screening in the U.S., 2005–2010. Am J Prev Med 47:780–787, 2014 265 . Rolka DB, Narayan KM, Thompson TJ, Goldman D, Lindenmayer J, Alich K, Bacall D, Benjamin EM, Lamb B, Stuart DO, Engelgau MM: Performance of recommended screening tests for undiagnosed diabetes and dysglycemia. Diabetes Care 24:1899–1903, 2001 266 . Saudek CD, Herman WH, Sacks DB, Bergenstal RM, Edelman D, Davidson MB: A new look at screening and diagnosing diabetes mellitus. J Clin Endocrinol Metab 93:2447–2453, 2008 267 . Wang W, Lee ET, Fabsitz R, Welty TK, Howard BV: Using HbA(1c) to improve efficacy of the American Diabetes Association fasting plasma glucose crite- rion in screening for new type 2 diabetes in American Indians: the Strong Heart Study. Diabetes Care 25:1365–1370, 2002 268 . Ko GT, Chan JC, Yeung VT, Chow CC, Tsang LW, Li JK, So WY, Wai HP, Cockram CS: Combined use of a fasting plasma glucose concentration and HbA1c or fruc- tosamine predicts the likelihood of having diabetes in high-risk subjects. Diabetes Care 21:1221–1225, 1998 269 . Hajat C, Harrison O, Al Siksek Z: Diagnostic testing for diabetes using HbA(1c) in the Abu Dhabi population: Weqaya: the Abu Dhabi cardiovascular screening program. Diabetes Care 34:2400–2402, 2011 270 . Rohlfing CL, Little RR, Wiedmeyer HM, England JD, Madsen R, Harris MI, Flegal KM, Eberhardt MS, Goldstein DE: Use of GHb (HbA1c) in screening for undiag- nosed diabetes in the U.S. population. Diabetes Care 23:187–191, 2000 271 . Bennett CM, Guo M, Dharmage SC: HbA(1c) as a screening tool for detection of type 2 diabetes: a systematic review. Diabet Med 24:333–343, 2007 272 . Bianchi C, Miccoli R, Bonadonna RC, Giorgino F, Frontoni S, Faloia E, Marchesini",
+              "source": {
+                "id": "chunk_7f7b9388a2044c0ee477b4bf",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 38,
+                "page_start": 38,
+                "page_end": 38,
+                "section": "PDF page 38",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.01266346992153444
+              }
+            },
+            {
+              "evidence_id": "chunk_619d1014407afe3ade772948",
+              "text": "Your health care professional can diagnose type 2 diabetes based on blood tests. Learn more about blood tests for diabetes and what the results mean.",
+              "source": {
+                "id": "chunk_619d1014407afe3ade772948",
+                "document_id": "niddk_type2_web_c1dc967de5fd",
+                "title": "Type 2 Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-2-diabetes",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "How do health care professionals diagnose type 2 diabetes?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "c1dc967de5fd",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012686567164179104
+              }
+            },
+            {
+              "evidence_id": "chunk_e25d3ba5acf095dacae13163",
+              "text": "12 Table 3. Screening Test Criteria for Gestational Diabetes Two GDM screening approaches are presented below. All women should undergo GDM screening, usually between 24 and 28 weeks’ gestation, if they were not previously diagnosed with overt diabetes. Use professional judgment to select the most appropriate test for each woman. A two-step approach endorsed by the American College of Obstetricians and Gynecologists and a consensus panel convened by the National Institutes of Health11 1. Start with a 1-hour plasma glucose test after 50 g oral glucose challenge. Choose a cutoff of either ≥ 135 mg/dL or ≥ 140 mg/dL and ensure that this cutoff remains consistent. 2. For individuals who meet or exceed the screening threshold, administer a 3-hour 100 g oral glucose tolerance test. Diagnose GDM when two or more of the plasma glucose values are exceeded on the 3-hour test. Choose either of two methods: (1) National Diabetes Data Group cutoff values of Fasting ≥ 105 mg/dL, 1-hour ≥ 190 mg/dL, 2-hour ≥ 165 mg/dL, or 3-hour ≥ 145 mg/dL; or (2) Carpenter and Coustan cutoff values of Fasting ≥ 95 mg/dL, 1-hour ≥ 180 mg/dL, 2-hour ≥ 155 mg/dL, or 3-hour ≥ 140 mg/dL. A. A one-step approach endorsed by the International Association of Diabetes and Pregnancy Study Groups2, 12 Perform a 75 g oral glucose tolerance test. Diagnose GDM when one or more of the following plasma glucose values are exceeded: Fasting ≥ 92 mg/dL, 1-hour ≥ 180 mg/dL, or 2-hour ≥ 153 mg/dL. B. Resources • National Institute of Diabetes and Digestive and Kidney Diseases: º The A1C Test and Diabetes º Diabetes and Prediabetes Tests º Sickle Cell Trait and Other Hemoglobinopathies and Diabetes: for Providers • American College of Obstetricians and Gynecologists: Tool for Postpartum GDM Follow-up • American Diabetes Association: Type 2 Diabetes Risk Test • Centers for Medicare & Medicaid Services: Your Medicare Coverage: Diabetes screening tests GUIDING PRINCIPLES FOR THE CARE OF PEOPLE WITH OR AT RISK FOR DIABETES | PRINCIPLE 1",
+              "source": {
+                "id": "chunk_e25d3ba5acf095dacae13163",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 12,
+                "page_start": 12,
+                "page_end": 12,
+                "section": "PDF page 12",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012588028169014085
+              }
+            }
+          ]
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 8,
+        "sender": "EvidenceReaderAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "evidence": [
+            {
+              "evidence_id": "chunk_8210978f828541e5d2c4bd6a",
+              "text": "For criteria 1–3: Repeat test to confirm unless symptoms are present. Repeating the same test for confirmation is preferable. If two different tests are used (e.g., FPG and A1C) and both indicate diabetes, consider the diagnosis confirmed. If the two different tests are discordant, repeat the test above the diagnostic cut point.",
+              "source": {
+                "id": "chunk_8210978f828541e5d2c4bd6a",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 11,
+                "page_start": 11,
+                "page_end": 11,
+                "section": "PDF page 11",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013273794959628089
+              }
+            },
+            {
+              "evidence_id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+              "text": "Recommendations for diagnostic cutpoints of glycemia are no different than those for adults (112), although more studies have been advocated before use of A1c for testing adolescents is widely adopted, due to the lower sensitivity of A1c (113,114). In children found to be at increased risk for type 1 diabetes by virtue of positive tests for autoantibodies to islet antigens, regular testing for diabetic glycemia levels is indicated to detect the disease before it manifests clinically, especially as diabetic ketoacidosis. The same cutpoints detailed in Table 1.3 are appropriate. CYSTIC FIBROSIS- RELATED DIABETES An estimated 40%–50% of adults with cystic fibrosis now live long enough to develop cystic fibrosis-related diabetes (CFRD) (115), and screening for CFRD is recommended to begin from age 10 years on (116).",
+              "source": {
+                "id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 14,
+                "page_start": 14,
+                "page_end": 14,
+                "section": "PDF page 14",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.011510989010989011
+              }
+            },
+            {
+              "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+              "text": "Whom to screen for diabetes and prediabetes, and how often The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1. Such risk factor-based screening could be done based on a general assessment of standard risk factors or using validated tools. The USPSTF did not identify significant harms of screening.1 As is true of many screening tests, potential benefits of screening may be limited in those with shorter life expectancy or multiple comorbidities, and the decision to screen for abnormal blood glucose should include shared decision-making and consideration of competing priorities.",
+              "source": {
+                "id": "chunk_b9c6400844e4f9a353a17607",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 8,
+                "page_start": 8,
+                "page_end": 8,
+                "section": "PDF page 8",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013492063492063493
+              }
+            },
+            {
+              "evidence_id": "chunk_d2804b0e167a6a72d265b2fb",
+              "text": "Can other blood glucose tests be used to diagnose type 2 diabetes and prediabetes?",
+              "source": {
+                "id": "chunk_d2804b0e167a6a72d265b2fb",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "The A1C Test & Diabetes",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012857142857142857
+              }
+            }
+          ],
+          "summary": "Đọc 4 đoạn, giữ nguồn và trang"
+        },
+        "duration_ms": 10.854
+      },
+      {
+        "sequence": 9,
+        "sender": "CoordinatorAgent",
+        "receiver": "ExplanationAgent",
+        "performative": "REQUEST",
+        "content": {
+          "question": "Tôi đi xét nghiệm gì bây giờ?",
+          "goal": "Determine appropriate diabetes-related tests to recommend based on current context",
+          "intent": "knowledge",
+          "conversation": [],
+          "clarification_questions": [
+            "Bạn đang gặp triệu chứng gì hiện tại?",
+            "Bạn đã từng được chẩn đoán bệnh tiểu đường chưa?"
+          ],
+          "evidence": [
+            {
+              "evidence_id": "chunk_8210978f828541e5d2c4bd6a",
+              "text": "For criteria 1–3: Repeat test to confirm unless symptoms are present. Repeating the same test for confirmation is preferable. If two different tests are used (e.g., FPG and A1C) and both indicate diabetes, consider the diagnosis confirmed. If the two different tests are discordant, repeat the test above the diagnostic cut point.",
+              "source": {
+                "id": "chunk_8210978f828541e5d2c4bd6a",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 11,
+                "page_start": 11,
+                "page_end": 11,
+                "section": "PDF page 11",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013273794959628089
+              }
+            },
+            {
+              "evidence_id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+              "text": "Recommendations for diagnostic cutpoints of glycemia are no different than those for adults (112), although more studies have been advocated before use of A1c for testing adolescents is widely adopted, due to the lower sensitivity of A1c (113,114). In children found to be at increased risk for type 1 diabetes by virtue of positive tests for autoantibodies to islet antigens, regular testing for diabetic glycemia levels is indicated to detect the disease before it manifests clinically, especially as diabetic ketoacidosis. The same cutpoints detailed in Table 1.3 are appropriate. CYSTIC FIBROSIS- RELATED DIABETES An estimated 40%–50% of adults with cystic fibrosis now live long enough to develop cystic fibrosis-related diabetes (CFRD) (115), and screening for CFRD is recommended to begin from age 10 years on (116).",
+              "source": {
+                "id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 14,
+                "page_start": 14,
+                "page_end": 14,
+                "section": "PDF page 14",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.011510989010989011
+              }
+            },
+            {
+              "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+              "text": "Whom to screen for diabetes and prediabetes, and how often The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1. Such risk factor-based screening could be done based on a general assessment of standard risk factors or using validated tools. The USPSTF did not identify significant harms of screening.1 As is true of many screening tests, potential benefits of screening may be limited in those with shorter life expectancy or multiple comorbidities, and the decision to screen for abnormal blood glucose should include shared decision-making and consideration of competing priorities.",
+              "source": {
+                "id": "chunk_b9c6400844e4f9a353a17607",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 8,
+                "page_start": 8,
+                "page_end": 8,
+                "section": "PDF page 8",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013492063492063493
+              }
+            },
+            {
+              "evidence_id": "chunk_d2804b0e167a6a72d265b2fb",
+              "text": "Can other blood glucose tests be used to diagnose type 2 diabetes and prediabetes?",
+              "source": {
+                "id": "chunk_d2804b0e167a6a72d265b2fb",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "The A1C Test & Diabetes",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012857142857142857
+              }
+            }
+          ],
+          "challenge": null
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 10,
+        "sender": "ExplanationAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "claims": [
+            {
+              "text": "Bạn nên thực hiện xét nghiệm huyết thanh đường huyết (FPG) hoặc HbA1c để đánh giá mức đường huyết hiện tại.",
+              "evidence_id": "chunk_8210978f828541e5d2c4bd6a",
+              "quote": "For criteria 1–3: Repeat test to confirm unless symptoms are present. Repeating the same test for confirmation is preferable."
+            }
+          ],
+          "followup_questions": [],
+          "evidence_sufficient": true,
+          "missing_information": "",
+          "llm": {
+            "cached": false,
+            "task": "grounded_draft",
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.262581468,
+              "prompt_tokens": 2293,
+              "prompt_time": 0.124627543,
+              "completion_tokens": 126,
+              "completion_time": 0.14571936,
+              "total_tokens": 2419,
+              "total_time": 0.270346903,
+              "completion_tokens_details": {
+                "reasoning_tokens": 5
+              }
+            }
+          },
+          "summary": "Soạn 1 phát biểu có nguồn"
+        },
+        "duration_ms": 848.852
+      },
+      {
+        "sequence": 11,
+        "sender": "CoordinatorAgent",
+        "receiver": "CriticAgent",
+        "performative": "REQUEST",
+        "content": {
+          "question": "Tôi đi xét nghiệm gì bây giờ?",
+          "goal": "Determine appropriate diabetes-related tests to recommend based on current context",
+          "conversation": [],
+          "draft": {
+            "claims": [
+              {
+                "text": "Bạn nên thực hiện xét nghiệm huyết thanh đường huyết (FPG) hoặc HbA1c để đánh giá mức đường huyết hiện tại.",
+                "evidence_id": "chunk_8210978f828541e5d2c4bd6a",
+                "quote": "For criteria 1–3: Repeat test to confirm unless symptoms are present. Repeating the same test for confirmation is preferable."
+              }
+            ],
+            "followup_questions": [],
+            "evidence_sufficient": true,
+            "missing_information": ""
+          },
+          "evidence": [
+            {
+              "evidence_id": "chunk_8210978f828541e5d2c4bd6a",
+              "text": "For criteria 1–3: Repeat test to confirm unless symptoms are present. Repeating the same test for confirmation is preferable. If two different tests are used (e.g., FPG and A1C) and both indicate diabetes, consider the diagnosis confirmed. If the two different tests are discordant, repeat the test above the diagnostic cut point.",
+              "source": {
+                "id": "chunk_8210978f828541e5d2c4bd6a",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 11,
+                "page_start": 11,
+                "page_end": 11,
+                "section": "PDF page 11",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013273794959628089
+              }
+            },
+            {
+              "evidence_id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+              "text": "Recommendations for diagnostic cutpoints of glycemia are no different than those for adults (112), although more studies have been advocated before use of A1c for testing adolescents is widely adopted, due to the lower sensitivity of A1c (113,114). In children found to be at increased risk for type 1 diabetes by virtue of positive tests for autoantibodies to islet antigens, regular testing for diabetic glycemia levels is indicated to detect the disease before it manifests clinically, especially as diabetic ketoacidosis. The same cutpoints detailed in Table 1.3 are appropriate. CYSTIC FIBROSIS- RELATED DIABETES An estimated 40%–50% of adults with cystic fibrosis now live long enough to develop cystic fibrosis-related diabetes (CFRD) (115), and screening for CFRD is recommended to begin from age 10 years on (116).",
+              "source": {
+                "id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 14,
+                "page_start": 14,
+                "page_end": 14,
+                "section": "PDF page 14",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.011510989010989011
+              }
+            },
+            {
+              "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+              "text": "Whom to screen for diabetes and prediabetes, and how often The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1. Such risk factor-based screening could be done based on a general assessment of standard risk factors or using validated tools. The USPSTF did not identify significant harms of screening.1 As is true of many screening tests, potential benefits of screening may be limited in those with shorter life expectancy or multiple comorbidities, and the decision to screen for abnormal blood glucose should include shared decision-making and consideration of competing priorities.",
+              "source": {
+                "id": "chunk_b9c6400844e4f9a353a17607",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 8,
+                "page_start": 8,
+                "page_end": 8,
+                "section": "PDF page 8",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013492063492063493
+              }
+            },
+            {
+              "evidence_id": "chunk_d2804b0e167a6a72d265b2fb",
+              "text": "Can other blood glucose tests be used to diagnose type 2 diabetes and prediabetes?",
+              "source": {
+                "id": "chunk_d2804b0e167a6a72d265b2fb",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "The A1C Test & Diabetes",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012857142857142857
+              }
+            }
+          ]
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 12,
+        "sender": "CriticAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "action": "clarify",
+          "answers_question": false,
+          "all_claims_supported": false,
+          "reasons": [
+            "Không có thông tin về tuổi, cân nặng, tiền sử bệnh, hay các yếu tố rủi ro khác của người dùng, nên không thể xác định xét nghiệm phù hợp nhất. Đề xuất FPG hoặc HbA1c cần được xác nhận bằng các tiêu chuẩn chẩn đoán cụ thể."
+          ],
+          "revised_query": "",
+          "followup_questions": [
+            "Bạn có bất kỳ triệu chứng nào liên quan đến đường huyết (ví dụ: khát nước, tiểu nhiều, mệt mỏi) không?",
+            "Bạn có tiền sử gia đình mắc bệnh tiểu đường hoặc đang có cân nặng thừa/ béo phì không?",
+            "Bạn đang ở độ tuổi nào?"
+          ],
+          "structural": {
+            "passed": true,
+            "issues": [],
+            "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof"
+          },
+          "llm": {
+            "cached": false,
+            "task": "response_critic",
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.977407429,
+              "prompt_tokens": 2176,
+              "prompt_time": 0.111455498,
+              "completion_tokens": 268,
+              "completion_time": 0.358847652,
+              "total_tokens": 2444,
+              "total_time": 0.47030315,
+              "completion_tokens_details": {
+                "reasoning_tokens": 90
+              }
+            }
+          },
+          "summary": "Critic: clarify"
+        },
+        "duration_ms": 1677.387
+      },
+      {
+        "sequence": 13,
+        "sender": "CoordinatorAgent",
+        "receiver": "ClarificationAgent",
+        "performative": "REQUEST",
+        "content": {
+          "questions": [
+            "Bạn có bất kỳ triệu chứng nào liên quan đến đường huyết (ví dụ: khát nước, tiểu nhiều, mệt mỏi) không?",
+            "Bạn có tiền sử gia đình mắc bệnh tiểu đường hoặc đang có cân nặng thừa/ béo phì không?",
+            "Bạn đang ở độ tuổi nào?"
+          ]
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 14,
+        "sender": "ClarificationAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "status": "needs_clarification",
+          "task": "conversation",
+          "questions": [
+            {
+              "field": "context_0",
+              "text": "Bạn có bất kỳ triệu chứng nào liên quan đến đường huyết (ví dụ: khát nước, tiểu nhiều, mệt mỏi) không?"
+            },
+            {
+              "field": "context_1",
+              "text": "Bạn có tiền sử gia đình mắc bệnh tiểu đường hoặc đang có cân nặng thừa/ béo phì không?"
+            },
+            {
+              "field": "context_2",
+              "text": "Bạn đang ở độ tuổi nào?"
+            }
+          ],
+          "requested_fields": [
+            "additional_information"
+          ],
+          "answer": "Bạn có bất kỳ triệu chứng nào liên quan đến đường huyết (ví dụ: khát nước, tiểu nhiều, mệt mỏi) không? Bạn có tiền sử gia đình mắc bệnh tiểu đường hoặc đang có cân nặng thừa/ béo phì không? Bạn đang ở độ tuổi nào?",
+          "summary": "Yêu cầu bổ sung thông tin thiết yếu"
+        },
+        "duration_ms": 0.008
+      },
+      {
+        "sequence": 15,
+        "sender": "CoordinatorAgent",
+        "receiver": "VerifierSafetyAgent",
+        "performative": "REQUEST",
+        "content": {
+          "status": "needs_clarification",
+          "answer": "Bạn có bất kỳ triệu chứng nào liên quan đến đường huyết (ví dụ: khát nước, tiểu nhiều, mệt mỏi) không? Bạn có tiền sử gia đình mắc bệnh tiểu đường hoặc đang có cân nặng thừa/ béo phì không? Bạn đang ở độ tuổi nào?",
+          "draft": {
+            "claims": [
+              {
+                "text": "Bạn nên thực hiện xét nghiệm huyết thanh đường huyết (FPG) hoặc HbA1c để đánh giá mức đường huyết hiện tại.",
+                "evidence_id": "chunk_8210978f828541e5d2c4bd6a",
+                "quote": "For criteria 1–3: Repeat test to confirm unless symptoms are present. Repeating the same test for confirmation is preferable."
+              }
+            ],
+            "followup_questions": [],
+            "evidence_sufficient": true,
+            "missing_information": "",
+            "llm": {
+              "cached": false,
+              "task": "grounded_draft",
+              "model": "openai/gpt-oss-20b",
+              "usage": {
+                "queue_time": 0.262581468,
+                "prompt_tokens": 2293,
+                "prompt_time": 0.124627543,
+                "completion_tokens": 126,
+                "completion_time": 0.14571936,
+                "total_tokens": 2419,
+                "total_time": 0.270346903,
+                "completion_tokens_details": {
+                  "reasoning_tokens": 5
+                }
+              }
+            },
+            "summary": "Soạn 1 phát biểu có nguồn"
+          },
+          "review": {
+            "action": "clarify",
+            "answers_question": false,
+            "all_claims_supported": false,
+            "reasons": [
+              "Không có thông tin về tuổi, cân nặng, tiền sử bệnh, hay các yếu tố rủi ro khác của người dùng, nên không thể xác định xét nghiệm phù hợp nhất. Đề xuất FPG hoặc HbA1c cần được xác nhận bằng các tiêu chuẩn chẩn đoán cụ thể."
+            ],
+            "revised_query": "",
+            "followup_questions": [
+              "Bạn có bất kỳ triệu chứng nào liên quan đến đường huyết (ví dụ: khát nước, tiểu nhiều, mệt mỏi) không?",
+              "Bạn có tiền sử gia đình mắc bệnh tiểu đường hoặc đang có cân nặng thừa/ béo phì không?",
+              "Bạn đang ở độ tuổi nào?"
+            ],
+            "structural": {
+              "passed": true,
+              "issues": [],
+              "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof"
+            },
+            "llm": {
+              "cached": false,
+              "task": "response_critic",
+              "model": "openai/gpt-oss-20b",
+              "usage": {
+                "queue_time": 0.977407429,
+                "prompt_tokens": 2176,
+                "prompt_time": 0.111455498,
+                "completion_tokens": 268,
+                "completion_time": 0.358847652,
+                "total_tokens": 2444,
+                "total_time": 0.47030315,
+                "completion_tokens_details": {
+                  "reasoning_tokens": 90
+                }
+              }
+            },
+            "summary": "Critic: clarify"
+          },
+          "evidence": [
+            {
+              "evidence_id": "chunk_8210978f828541e5d2c4bd6a",
+              "text": "For criteria 1–3: Repeat test to confirm unless symptoms are present. Repeating the same test for confirmation is preferable. If two different tests are used (e.g., FPG and A1C) and both indicate diabetes, consider the diagnosis confirmed. If the two different tests are discordant, repeat the test above the diagnostic cut point.",
+              "source": {
+                "id": "chunk_8210978f828541e5d2c4bd6a",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 11,
+                "page_start": 11,
+                "page_end": 11,
+                "section": "PDF page 11",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013273794959628089
+              }
+            },
+            {
+              "evidence_id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+              "text": "Recommendations for diagnostic cutpoints of glycemia are no different than those for adults (112), although more studies have been advocated before use of A1c for testing adolescents is widely adopted, due to the lower sensitivity of A1c (113,114). In children found to be at increased risk for type 1 diabetes by virtue of positive tests for autoantibodies to islet antigens, regular testing for diabetic glycemia levels is indicated to detect the disease before it manifests clinically, especially as diabetic ketoacidosis. The same cutpoints detailed in Table 1.3 are appropriate. CYSTIC FIBROSIS- RELATED DIABETES An estimated 40%–50% of adults with cystic fibrosis now live long enough to develop cystic fibrosis-related diabetes (CFRD) (115), and screening for CFRD is recommended to begin from age 10 years on (116).",
+              "source": {
+                "id": "chunk_ed1a1c9b0eebf1a2d04c24f6",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 14,
+                "page_start": 14,
+                "page_end": 14,
+                "section": "PDF page 14",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.011510989010989011
+              }
+            },
+            {
+              "evidence_id": "chunk_b9c6400844e4f9a353a17607",
+              "text": "Whom to screen for diabetes and prediabetes, and how often The U.S. Preventive Services Task Force (USPSTF) recommends screening for abnormal blood glucose as part of cardiovascular risk assessment in adults ages 40 to 70 who are overweight or obese.1 Screening might be considered in younger adults who are overweight or obese and who have one or more additional risk factors listed in Table 1. Such risk factor-based screening could be done based on a general assessment of standard risk factors or using validated tools. The USPSTF did not identify significant harms of screening.1 As is true of many screening tests, potential benefits of screening may be limited in those with shorter life expectancy or multiple comorbidities, and the decision to screen for abnormal blood glucose should include shared decision-making and consideration of competing priorities.",
+              "source": {
+                "id": "chunk_b9c6400844e4f9a353a17607",
+                "document_id": "pdf_Guiding-Principles_40a7da28c688",
+                "title": "Guiding-Principles",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+                "page": 8,
+                "page_start": 8,
+                "page_end": 8,
+                "section": "PDF page 8",
+                "source_file": "Guiding-Principles.pdf",
+                "source_type": "pdf",
+                "source_version": "40a7da28c688",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013492063492063493
+              }
+            },
+            {
+              "evidence_id": "chunk_d2804b0e167a6a72d265b2fb",
+              "text": "Can other blood glucose tests be used to diagnose type 2 diabetes and prediabetes?",
+              "source": {
+                "id": "chunk_d2804b0e167a6a72d265b2fb",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "The A1C Test & Diabetes",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012857142857142857
+              }
+            }
+          ],
+          "prediction": null
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 16,
+        "sender": "VerifierSafetyAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "passed": true,
+          "issues": [],
+          "scope": "Grounded claims + question coverage + immutable model score",
+          "summary": "Verifier đạt"
+        },
+        "duration_ms": 0.002
+      },
+      {
+        "sequence": 17,
+        "sender": "CoordinatorAgent",
+        "receiver": "MonitoringAgent",
+        "performative": "REQUEST",
+        "content": {
+          "status": "needs_clarification"
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 18,
+        "sender": "MonitoringAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "status": "needs_clarification",
+          "steps": 8,
+          "summary": "Ghi metadata và thời gian xử lý, không lưu nội dung hồ sơ"
+        },
+        "duration_ms": 0.002
+      }
+    ],
+    "review": null,
+    "workflow": null,
+    "revisions": [],
+    "knowledge_backend": "neo4j",
+    "evidence_review": null,
+    "decision": {
+      "status": "needs_clarification",
+      "final_label": null,
+      "review_required": false,
+      "reason_codes": []
+    },
+    "verification": {
+      "passed": true,
+      "issues": [],
+      "scope": "Grounded claims + question coverage + immutable model score",
+      "summary": "Verifier đạt"
+    },
+    "clarification": {
+      "status": "needs_clarification",
+      "task": "conversation",
+      "questions": [
+        {
+          "field": "context_0",
+          "text": "Bạn có bất kỳ triệu chứng nào liên quan đến đường huyết (ví dụ: khát nước, tiểu nhiều, mệt mỏi) không?"
+        },
+        {
+          "field": "context_1",
+          "text": "Bạn có tiền sử gia đình mắc bệnh tiểu đường hoặc đang có cân nặng thừa/ béo phì không?"
+        },
+        {
+          "field": "context_2",
+          "text": "Bạn đang ở độ tuổi nào?"
+        }
+      ],
+      "requested_fields": [
+        "additional_information"
+      ],
+      "answer": "Bạn có bất kỳ triệu chứng nào liên quan đến đường huyết (ví dụ: khát nước, tiểu nhiều, mệt mỏi) không? Bạn có tiền sử gia đình mắc bệnh tiểu đường hoặc đang có cân nặng thừa/ béo phì không? Bạn đang ở độ tuổi nào?",
+      "summary": "Yêu cầu bổ sung thông tin thiết yếu"
+    },
+    "explanation": {
+      "answer": "Bạn có bất kỳ triệu chứng nào liên quan đến đường huyết (ví dụ: khát nước, tiểu nhiều, mệt mỏi) không? Bạn có tiền sử gia đình mắc bệnh tiểu đường hoặc đang có cân nặng thừa/ béo phì không? Bạn đang ở độ tuổi nào?",
+      "sections": [
+        {
+          "id": "clarification",
+          "title": "Thông tin cần làm rõ",
+          "text": "Bạn có bất kỳ triệu chứng nào liên quan đến đường huyết (ví dụ: khát nước, tiểu nhiều, mệt mỏi) không? Bạn có tiền sử gia đình mắc bệnh tiểu đường hoặc đang có cân nặng thừa/ béo phì không? Bạn đang ở độ tuổi nào?"
+        }
+      ],
+      "model_factors": []
+    },
+    "workflow_history": [],
+    "testing_context": null,
+    "traces": [
+      {
+        "agent": "CoordinatorAgent",
+        "status": "success",
+        "duration_ms": 1804.65,
+        "summary": "Determine appropriate diabetes-related tests to recommend based on current context",
+        "tool": "CoordinatorAgent"
+      },
+      {
+        "agent": "RuleBasedAgent",
+        "status": "success",
+        "duration_ms": 0.02,
+        "summary": "Kiểm tra bất đồng model và quy tắc chuyển review",
+        "tool": "RuleBasedAgent"
+      },
+      {
+        "agent": "RetrievalAgent",
+        "status": "success",
+        "duration_ms": 296.17,
+        "summary": "Truy xuất 8 bằng chứng từ 2 truy vấn",
+        "tool": "RetrievalAgent"
+      },
+      {
+        "agent": "EvidenceReaderAgent",
+        "status": "success",
+        "duration_ms": 10.99,
+        "summary": "Đọc 4 đoạn, giữ nguồn và trang",
+        "tool": "EvidenceReaderAgent"
+      },
+      {
+        "agent": "ExplanationAgent",
+        "status": "success",
+        "duration_ms": 848.95,
+        "summary": "Soạn 1 phát biểu có nguồn",
+        "tool": "ExplanationAgent"
+      },
+      {
+        "agent": "CriticAgent",
+        "status": "success",
+        "duration_ms": 1677.68,
+        "summary": "Critic: clarify",
+        "tool": "CriticAgent"
+      },
+      {
+        "agent": "ClarificationAgent",
+        "status": "success",
+        "duration_ms": 0.03,
+        "summary": "Yêu cầu bổ sung thông tin thiết yếu",
+        "tool": "ClarificationAgent"
+      },
+      {
+        "agent": "VerifierSafetyAgent",
+        "status": "success",
+        "duration_ms": 0.09,
+        "summary": "Verifier đạt",
+        "tool": "VerifierSafetyAgent"
+      },
+      {
+        "agent": "MonitoringAgent",
+        "status": "success",
+        "duration_ms": 0.01,
+        "summary": "Ghi metadata và thời gian xử lý, không lưu nội dung hồ sơ",
+        "tool": "MonitoringAgent"
+      }
+    ],
+    "total_duration_ms": 4638.68,
+    "plan": {
+      "intent": "knowledge",
+      "goal": "Determine appropriate diabetes-related tests to recommend based on current context",
+      "queries": [
+        "diabetes screening tests",
+        "diabetes diagnostic tests"
+      ],
+      "clarification_questions": [
+        "Bạn đang gặp triệu chứng gì hiện tại?",
+        "Bạn đã từng được chẩn đoán bệnh tiểu đường chưa?"
+      ],
+      "can_answer_general": true,
+      "requested_sources": [],
+      "llm": {
+        "cached": false,
+        "task": "coordinator_plan",
+        "model": "openai/gpt-oss-20b",
+        "usage": {
+          "queue_time": 1.4234542239999999,
+          "prompt_tokens": 772,
+          "prompt_time": 0.046079972,
+          "completion_tokens": 121,
+          "completion_time": 0.130897511,
+          "total_tokens": 893,
+          "total_time": 0.176977483,
+          "completion_tokens_details": {
+            "reasoning_tokens": 36
+          }
+        }
+      },
+      "summary": "Determine appropriate diabetes-related tests to recommend based on current context"
+    },
+    "response_review": {
+      "action": "clarify",
+      "answers_question": false,
+      "all_claims_supported": false,
+      "reasons": [
+        "Không có thông tin về tuổi, cân nặng, tiền sử bệnh, hay các yếu tố rủi ro khác của người dùng, nên không thể xác định xét nghiệm phù hợp nhất. Đề xuất FPG hoặc HbA1c cần được xác nhận bằng các tiêu chuẩn chẩn đoán cụ thể."
+      ],
+      "revised_query": "",
+      "followup_questions": [
+        "Bạn có bất kỳ triệu chứng nào liên quan đến đường huyết (ví dụ: khát nước, tiểu nhiều, mệt mỏi) không?",
+        "Bạn có tiền sử gia đình mắc bệnh tiểu đường hoặc đang có cân nặng thừa/ béo phì không?",
+        "Bạn đang ở độ tuổi nào?"
+      ],
+      "structural": {
+        "passed": true,
+        "issues": [],
+        "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof"
+      },
+      "llm": {
+        "cached": false,
+        "task": "response_critic",
+        "model": "openai/gpt-oss-20b",
+        "usage": {
+          "queue_time": 0.977407429,
+          "prompt_tokens": 2176,
+          "prompt_time": 0.111455498,
+          "completion_tokens": 268,
+          "completion_time": 0.358847652,
+          "total_tokens": 2444,
+          "total_time": 0.47030315,
+          "completion_tokens_details": {
+            "reasoning_tokens": 90
+          }
+        }
+      },
+      "summary": "Critic: clarify"
+    },
+    "rules": {
+      "assessment": null,
+      "review_required": false,
+      "summary": "Kiểm tra bất đồng model và quy tắc chuyển review"
+    },
+    "architecture_version": "conversation_v3"
+  }
+}

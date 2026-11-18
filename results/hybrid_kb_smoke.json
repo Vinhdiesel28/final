@@ -1,0 +1,442 @@
+{
+  "scope": "Live integration smoke checks; no gold accuracy claim",
+  "qa": {
+    "chunks": 515,
+    "chunks_with_document": 515
+  },
+  "nodes_before": 1092,
+  "checks": {
+    "all_active_chunks_have_document": true,
+    "pdf_chunks_have_page": true,
+    "web_chunks_available": true,
+    "all_response_verifiers_pass": true
+  },
+  "runs": [
+    {
+      "question": "A1C phản ánh điều gì?",
+      "status": "supported",
+      "answer": "Kết quả HbA1c, còn được viết là A1C, không chỉ chịu ảnh hưởng của glucose huyết mà còn có thể thay đổi bởi đặc điểm hồng cầu và phương pháp xét nghiệm. Một số biến thể hemoglobin, thiếu máu thiếu sắt, thay đổi thời gian sống của hồng cầu hoặc suy thận có thể làm kết quả cao hay thấp không phản ánh đúng mức glucose thực tế.",
+      "verification": {
+        "passed": true,
+        "issues": [],
+        "scope": "Deterministic consistency and disclosure checks"
+      },
+      "citations": [
+        {
+          "id": "chunk_059373c4daefd5ff1d39c737",
+          "document_id": "niddk_a1c_web_95827989eacf",
+          "title": "The A1C Test & Diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "What is the A1C test?",
+          "source_file": null,
+          "source_type": "web",
+          "source_version": "95827989eacf",
+          "retrieval_methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ],
+          "score": 0.014568739622249896
+        },
+        {
+          "id": "chunk_1029277b1ae9a9ee4cc723c6",
+          "document_id": "summary_ndep_a1c_method_001_d7c35d0cf7dc",
+          "title": "Guiding Principles - Điều kiện và giới hạn khi dùng A1C - Trang 10",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "Guiding Principles - Điều kiện và giới hạn khi dùng A1C - Trang 10",
+          "source_file": null,
+          "source_type": "curated_summary",
+          "source_version": "d7c35d0cf7dc",
+          "retrieval_methods": [
+            "vector",
+            "graph"
+          ],
+          "score": 0.009489725236665896
+        },
+        {
+          "id": "chunk_072cd0a0818211b386685207",
+          "document_id": "niddk_a1c_web_95827989eacf",
+          "title": "The A1C Test & Diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "What is the A1C test?",
+          "source_file": null,
+          "source_type": "web",
+          "source_version": "95827989eacf",
+          "retrieval_methods": [
+            "vector",
+            "graph"
+          ],
+          "score": 0.007294985745430154
+        },
+        {
+          "id": "chunk_06c3590b0e8719722e558cf8",
+          "document_id": "niddk_a1c_web_95827989eacf",
+          "title": "The A1C Test & Diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "What are clinical trials and are they right for you?",
+          "source_file": null,
+          "source_type": "web",
+          "source_version": "95827989eacf",
+          "retrieval_methods": [
+            "fulltext",
+            "graph"
+          ],
+          "score": 0.007272727272727273
+        },
+        {
+          "id": "chunk_94726e2082075f1b55c272d4",
+          "document_id": "summary_ndep_a1c_ranges_001_04da6cfea94e",
+          "title": "Guiding Principles - Ngưỡng A1C theo tiêu chí sàng lọc 2018 - Trang 11",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "Guiding Principles - Ngưỡng A1C theo tiêu chí sàng lọc 2018 - Trang 11",
+          "source_file": null,
+          "source_type": "curated_summary",
+          "source_version": "04da6cfea94e",
+          "retrieval_methods": [
+            "vector"
+          ],
+          "score": 0.007258064516129033
+        },
+        {
+          "id": "chunk_4ca39ab768448c829bfcc4f2",
+          "document_id": "summary_dia_a1c_limitations_001_ded57533b8af",
+          "title": "Diabetes in America, Chương 1 - Yếu tố gây sai lệch A1C - Trang 1-11–1-12",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "Diabetes in America, Chương 1 - Yếu tố gây sai lệch A1C - Trang 1-11–1-12",
+          "source_file": null,
+          "source_type": "curated_summary",
+          "source_version": "ded57533b8af",
+          "retrieval_methods": [
+            "vector"
+          ],
+          "score": 0.007142857142857143
+        }
+      ],
+      "retrieval": {
+        "backend": "Neo4j vector + fulltext + graph",
+        "embedding_model": "TF-IDF + LSA (frozen 128d)",
+        "dimensions": 128,
+        "total_vectors": 515,
+        "pdf_chunks": 398,
+        "kb_version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+        "chunking": {
+          "words": 380,
+          "overlap_words": 60,
+          "scope": "page/paragraph/HTML heading"
+        }
+      },
+      "generation": {
+        "status": "disabled"
+      },
+      "latency_ms": 476.78
+    },
+    {
+      "question": "What is the A1C test?",
+      "status": "supported",
+      "answer": "The A1C test is sometimes called the hemoglobin A1C, HbA1c, glycated hemoglobin, or glycohemoglobin test. Glucose attaches to or binds with hemoglobin in your blood cells, and the A1C test is based on this attachment of glucose to hemoglobin.",
+      "verification": {
+        "passed": true,
+        "issues": [],
+        "scope": "Deterministic consistency and disclosure checks"
+      },
+      "citations": [
+        {
+          "id": "chunk_059373c4daefd5ff1d39c737",
+          "document_id": "niddk_a1c_web_95827989eacf",
+          "title": "The A1C Test & Diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "What is the A1C test?",
+          "source_file": null,
+          "source_type": "web",
+          "source_version": "95827989eacf",
+          "retrieval_methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ],
+          "score": 0.014716415534804754
+        },
+        {
+          "id": "chunk_15da007bc8e6bd2043889fbb",
+          "document_id": "niddk_a1c_web_95827989eacf",
+          "title": "The A1C Test & Diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "A1C results and what the numbers mean",
+          "source_file": null,
+          "source_type": "web",
+          "source_version": "95827989eacf",
+          "retrieval_methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ],
+          "score": 0.013824211318960052
+        },
+        {
+          "id": "chunk_48470347ded8d1e1dc04f226",
+          "document_id": "niddk_a1c_web_95827989eacf",
+          "title": "The A1C Test & Diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "What is the A1C test?",
+          "source_file": null,
+          "source_type": "web",
+          "source_version": "95827989eacf",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.013700234192037471
+        },
+        {
+          "id": "chunk_b3d26568db2cd0555656fe3c",
+          "document_id": "niddk_a1c_web_95827989eacf",
+          "title": "The A1C Test & Diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "The A1C Test & Diabetes",
+          "source_file": null,
+          "source_type": "web",
+          "source_version": "95827989eacf",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.012582345191040845
+        },
+        {
+          "id": "chunk_901f97c6b002fc9a4e1ff3f0",
+          "document_id": "niddk_a1c_web_95827989eacf",
+          "title": "The A1C Test & Diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "How is the A1C test used to diagnose type 2 diabetes and prediabetes?",
+          "source_file": null,
+          "source_type": "web",
+          "source_version": "95827989eacf",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.012451984635083228
+        },
+        {
+          "id": "chunk_534173169e2a6d5988b4c47b",
+          "document_id": "niddk_a1c_web_95827989eacf",
+          "title": "The A1C Test & Diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "The A1C Test & Diabetes",
+          "source_file": null,
+          "source_type": "web",
+          "source_version": "95827989eacf",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.012258064516129033
+        }
+      ],
+      "retrieval": {
+        "backend": "Neo4j vector + fulltext + graph",
+        "embedding_model": "TF-IDF + LSA (frozen 128d)",
+        "dimensions": 128,
+        "total_vectors": 515,
+        "pdf_chunks": 398,
+        "kb_version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+        "chunking": {
+          "words": 380,
+          "overlap_words": 60,
+          "scope": "page/paragraph/HTML heading"
+        }
+      },
+      "generation": {
+        "status": "disabled"
+      },
+      "latency_ms": 362.54
+    },
+    {
+      "question": "How does physical activity help diabetes?",
+      "status": "human_review",
+      "answer": "Các nguồn đang mâu thuẫn: chunk_1d3df8b90d44624f8e4f5379, chunk_8aeb31d2828dd918ad8861d7. Chưa đủ cơ sở để chọn một kết luận; cần kiểm tra lại nguồn. Cần xem xét thêm; chưa kết luận có/không tiểu đường.",
+      "verification": {
+        "passed": true,
+        "issues": [],
+        "scope": "Deterministic consistency and disclosure checks"
+      },
+      "citations": [
+        {
+          "id": "chunk_1d3df8b90d44624f8e4f5379",
+          "document_id": "pdf_Guiding-Principles_40a7da28c688",
+          "title": "Guiding-Principles",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+          "page": 35,
+          "page_start": 35,
+          "page_end": 35,
+          "section": "PDF page 35",
+          "source_file": "Guiding-Principles.pdf",
+          "source_type": "pdf",
+          "source_version": "40a7da28c688",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.013709677419354839
+        },
+        {
+          "id": "chunk_6f83cc4bfb50db6b8f36811f",
+          "document_id": "pdf_Guiding-Principles_40a7da28c688",
+          "title": "Guiding-Principles",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+          "page": 33,
+          "page_start": 33,
+          "page_end": 33,
+          "section": "PDF page 33",
+          "source_file": "Guiding-Principles.pdf",
+          "source_type": "pdf",
+          "source_version": "40a7da28c688",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.013492063492063493
+        },
+        {
+          "id": "chunk_f8a49771b1f4250a09c6c416",
+          "document_id": "niddk_type2_web_c1dc967de5fd",
+          "title": "Type 2 Diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-2-diabetes",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "How can I lower my chances of developing type 2 diabetes?",
+          "source_file": null,
+          "source_type": "web",
+          "source_version": "c1dc967de5fd",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.013437655240933929
+        },
+        {
+          "id": "chunk_8aeb31d2828dd918ad8861d7",
+          "document_id": "pdf_Guiding-Principles_40a7da28c688",
+          "title": "Guiding-Principles",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+          "page": 40,
+          "page_start": 40,
+          "page_end": 40,
+          "section": "PDF page 40",
+          "source_file": "Guiding-Principles.pdf",
+          "source_type": "pdf",
+          "source_version": "40a7da28c688",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.013273794959628089
+        },
+        {
+          "id": "chunk_842a395d706131391dbf1c04",
+          "document_id": "pdf_Guiding-Principles_40a7da28c688",
+          "title": "Guiding-Principles",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+          "page": 16,
+          "page_start": 16,
+          "page_end": 16,
+          "section": "PDF page 16",
+          "source_file": "Guiding-Principles.pdf",
+          "source_type": "pdf",
+          "source_version": "40a7da28c688",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.012788331071913163
+        },
+        {
+          "id": "chunk_f0f1a2785f0c4f367a60843e",
+          "document_id": "pdf_Guiding-Principles_40a7da28c688",
+          "title": "Guiding-Principles",
+          "url": "https://www.niddk.nih.gov/-/media/Files/Health-Information/Health-Professionals/Diabetes/health-care-professionals/Guiding-Principles.pdf",
+          "page": 34,
+          "page_start": 34,
+          "page_end": 34,
+          "section": "PDF page 34",
+          "source_file": "Guiding-Principles.pdf",
+          "source_type": "pdf",
+          "source_version": "40a7da28c688",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.012637362637362638
+        }
+      ],
+      "retrieval": {
+        "backend": "Neo4j vector + fulltext + graph",
+        "embedding_model": "TF-IDF + LSA (frozen 128d)",
+        "dimensions": 128,
+        "total_vectors": 515,
+        "pdf_chunks": 398,
+        "kb_version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+        "chunking": {
+          "words": 380,
+          "overlap_words": 60,
+          "scope": "page/paragraph/HTML heading"
+        }
+      },
+      "generation": {},
+      "latency_ms": 147.1
+    },
+    {
+      "question": "Thử nghiệm ZXQ9992026 chưa công bố có kết quả chính xác là gì?",
+      "status": "insufficient_evidence",
+      "answer": "Kho tri thức không có đủ bằng chứng để trả lời câu hỏi này. Cần xem xét thêm; chưa kết luận có/không tiểu đường.",
+      "verification": {
+        "passed": true,
+        "issues": [],
+        "scope": "Deterministic consistency and disclosure checks"
+      },
+      "citations": [],
+      "retrieval": {},
+      "generation": {
+        "status": "disabled"
+      },
+      "latency_ms": 308.31
+    }
+  ]
+}

@@ -7,7 +7,7 @@
   const count=x=>Number(x).toLocaleString('vi-VN');
   try{
     const response=await fetch('/api/benchmark/diabetes');
-    if(!response.ok)throw new Error('Chưa có kết quả. Chạy tools/benchmark_diabetes_agents.py rồi tải lại trang.');
+    if(!response.ok)throw new Error('Chưa có kết quả. Chạy tools/benchmarks/benchmark_diabetes_agents.py rồi tải lại trang.');
     const d=await response.json(), p=d.protocol, systems=d.systems;
     root.innerHTML=`<div class="prediction-meta"><b>${count(p.split.test)} mẫu test · ${esc(p.model)} · Ngưỡng ${pct(p.threshold)}</b><p>${esc(p.dataset)} · Train ${count(p.split.train)} / Validation ${count(p.split.validation)} / Test ${count(p.split.test)} · Không chọn lại ngưỡng trên test.</p></div>
       <div class="benchmark-note"><b>Kết quả thực tế</b><p>${d.paired.different_labels===0&&d.paired.different_probabilities===0?'Hai hệ có cùng nhãn dự đoán và cùng điểm xác suất. Multi không làm model dự đoán chính xác hơn; khác biệt là xử lý bằng chứng và chuyển ca cần xem xét.':`Khác nhãn: ${count(d.paired.different_labels)} ca; khác điểm: ${count(d.paired.different_probabilities)} ca.`} Có ${count(d.paired.different_statuses)} ca khác trạng thái xử lý.</p></div>

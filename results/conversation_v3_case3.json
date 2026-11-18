@@ -1,0 +1,1655 @@
+{
+  "scope": "Live integration, no ground-truth medical evaluation",
+  "question": "Theo IDF, mục tiêu HbA1c có cần cá nhân hóa theo nguy cơ hạ đường huyết không?",
+  "elapsed_seconds": 4.9,
+  "source_checks": [
+    {
+      "chunk_id": "chunk_9e21c4ed7b7ba293db3d197f",
+      "quote_in_chunk": true,
+      "quote_in_pdf_page": true
+    }
+  ],
+  "response": {
+    "request_id": "REQ-601BCE54",
+    "mode": "multi",
+    "intent": "knowledge",
+    "status": "supported",
+    "answer": "IDF khuyến nghị cá nhân hóa mục tiêu HbA1c dựa trên nguy cơ hạ đường huyết. [chunk_9e21c4ed7b7ba293db3d197f]",
+    "prediction": null,
+    "statistics": null,
+    "knowledge": {
+      "evidence": [
+        {
+          "evidence_id": "chunk_9e21c4ed7b7ba293db3d197f",
+          "text": "compared with mean HbA1c <5.7% (39 mmol/mol) during the first year after diagnosis, CVD risk increased progressively to 56% for individuals with HbA1c >8.0% (>64 mmol/mol). 10 Interventional RCTs examining the effect of intensive glycaemic control have achieved HbA1c targets ranging from of 6.5%–7.1% (48–54 mmol/mol).4-8 These data are the basis for the general target of HbA1c <7.0% (<53 mmol/mol) in people with T2DM recommended by most guidelines for minimising risk of diabetes complications and hypoglycaemia. This target is proposed as a guide, which is appropriate for many people, but it is important to consider personalising targets, based on a range of factors relevant to the individual with T2DM. These factors include the presence of comorbidities, age, duration of diabetes, risk of hypoglycaemia, life expectancy, individual preferences, and available resources.14,15 Increasing age and declining functional and cognitive capacity are particularly relevant when setting less stringent goals, as treatment burden and risk of harm outweigh potential benefits.42 It is also important to adjust targets as required if circumstances change. Setting glycaemic targets should consider not ",
+          "source": {
+            "id": "chunk_9e21c4ed7b7ba293db3d197f",
+            "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+            "title": "IDF_Rec_2025",
+            "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+            "page": 39,
+            "page_start": 39,
+            "page_end": 39,
+            "section": "PDF page 39",
+            "source_file": "IDF_Rec_2025.pdf",
+            "source_type": "pdf",
+            "source_version": "767fc7e54bc2",
+            "retrieval_methods": [
+              "vector",
+              "fulltext"
+            ],
+            "score": 0.013934426229508197
+          },
+          "reader_relevance": 8.1904
+        }
+      ],
+      "citations": [
+        {
+          "id": "chunk_9e21c4ed7b7ba293db3d197f",
+          "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+          "title": "IDF_Rec_2025",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": 39,
+          "page_start": 39,
+          "page_end": 39,
+          "section": "PDF page 39",
+          "source_file": "IDF_Rec_2025.pdf",
+          "source_type": "pdf",
+          "source_version": "767fc7e54bc2",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.013934426229508197
+        }
+      ],
+      "paths": [],
+      "retrieval": {
+        "backend": "Neo4j vector + fulltext + graph",
+        "embedding_model": "TF-IDF + LSA (frozen 128d)",
+        "dimensions": 128,
+        "total_vectors": 515,
+        "pdf_chunks": 398,
+        "kb_version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+        "chunking": {
+          "words": 380,
+          "overlap_words": 60,
+          "scope": "page/paragraph/HTML heading"
+        }
+      },
+      "query_analysis": [
+        {
+          "entities": [],
+          "query": "IDF guidelines HbA1c target personalization hypoglycemia risk IDF",
+          "requested_sources": [
+            "idf",
+            "idf"
+          ],
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ],
+          "version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+          "reranker": "RRF + lexical tie-break"
+        },
+        {
+          "entities": [],
+          "query": "IDF recommendations individualized HbA1c goals IDF",
+          "requested_sources": [
+            "idf",
+            "idf"
+          ],
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ],
+          "version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+          "reranker": "RRF + lexical tie-break"
+        }
+      ],
+      "answer": "",
+      "status": "supported",
+      "summary": "Truy xuất 8 bằng chứng từ 2 truy vấn"
+    },
+    "validation_errors": [],
+    "safety_flags": [],
+    "messages": [
+      {
+        "sequence": 1,
+        "sender": "CoordinatorAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "REQUEST",
+        "content": {
+          "question": "Theo IDF, mục tiêu HbA1c có cần cá nhân hóa theo nguy cơ hạ đường huyết không?",
+          "conversation": [],
+          "available_profile_fields": [],
+          "additional_context": {}
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 2,
+        "sender": "CoordinatorAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "intent": "knowledge",
+          "goal": "Answer whether IDF recommends personalizing HbA1c targets based on hypoglycemia risk",
+          "queries": [
+            "IDF guidelines HbA1c target personalization hypoglycemia risk",
+            "IDF recommendations individualized HbA1c goals"
+          ],
+          "clarification_questions": [],
+          "can_answer_general": true,
+          "requested_sources": [
+            "IDF"
+          ],
+          "llm": {
+            "cached": false,
+            "task": "coordinator_plan",
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.153926672,
+              "prompt_tokens": 787,
+              "prompt_time": 0.057314141,
+              "completion_tokens": 121,
+              "completion_time": 0.134287828,
+              "total_tokens": 908,
+              "total_time": 0.191601969,
+              "completion_tokens_details": {
+                "reasoning_tokens": 39
+              }
+            }
+          },
+          "summary": "Answer whether IDF recommends personalizing HbA1c targets based on hypoglycemia risk"
+        },
+        "duration_ms": 650.038
+      },
+      {
+        "sequence": 3,
+        "sender": "CoordinatorAgent",
+        "receiver": "RuleBasedAgent",
+        "performative": "REQUEST",
+        "content": {
+          "prediction": null
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 4,
+        "sender": "RuleBasedAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "assessment": null,
+          "review_required": false,
+          "summary": "Kiểm tra bất đồng model và quy tắc chuyển review"
+        },
+        "duration_ms": 0.003
+      },
+      {
+        "sequence": 5,
+        "sender": "CoordinatorAgent",
+        "receiver": "RetrievalAgent",
+        "performative": "REQUEST",
+        "content": {
+          "queries": [
+            "IDF guidelines HbA1c target personalization hypoglycemia risk",
+            "IDF recommendations individualized HbA1c goals"
+          ]
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 6,
+        "sender": "RetrievalAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "evidence": [
+            {
+              "evidence_id": "chunk_b3cffc85402a9e55ada5435c",
+              "text": "IDF 2025 mô tả HbA1c dưới 7,0% (dưới 53 mmol/mol) là mục tiêu kiểm soát glucose chung thường được cân nhắc ở nhiều người đã mắc đái tháo đường type 2, không phải tiêu chí dùng để chẩn đoán mắc bệnh. Mục tiêu theo dõi phải được cá thể hóa theo tuổi, bệnh đồng mắc, thời gian mắc bệnh, nguy cơ hạ glucose huyết, kỳ vọng sống, khả năng tiếp cận chăm sóc và mong muốn của người bệnh. Mức HbA1c rất thấp không hợp cho mọi trường hợp, vì lợi ích giảm biến chứng phải cân đối với nguy cơ hạ glucose huyết và gánh nặng can thiệp. Đây là nội dung dành cho đánh giá chuyên môn.",
+              "source": {
+                "id": "chunk_b3cffc85402a9e55ada5435c",
+                "document_id": "summary_idf2025_a1c_target_001_fa34bafd0749",
+                "title": "IDF 2025 - Phân biệt mục tiêu theo dõi HbA1c và ngưỡng chẩn đoán - Trang 36, 39",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "IDF 2025 - Phân biệt mục tiêu theo dõi HbA1c và ngưỡng chẩn đoán - Trang 36, 39",
+                "source_file": null,
+                "source_type": "curated_summary",
+                "source_version": "fa34bafd0749",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.01270053475935829
+              }
+            },
+            {
+              "evidence_id": "chunk_ff7f40bf774f843cd5d3af68",
+              "text": "17Introduction 3. IDF Clinical Guidelines Task Force. Global guideline for type 2 diabetese. Brussels: International Diabetes Federation, 2005. IDF Clinical Guidelines Task Force. Global guideline for type 2 diabetes: Recommendations for standard, comprehensive, and minimal care. Diabet Med. 2006;23(6):579-93. 4. IDF Clinical Guidelines Task Force. Global guideline for type 2 diabetes: Recommendations for standard, comprehensive, and minimal care. Diabet Med. 2006;23(6):579-93. 5. IDF Working Group. IDF clinical practice recommendations for managing type 2 diabetes in primary care. Available from: https://idf.org/media/uploads/2023/05/ attachments-63.pdf [Accessed May 2024]. 6. World Health Organization. Tracking universal health coverage: 2023 global monitory report. Available from: https://www.who.int/ publications/i/item/9789240080379 [Accessed February 2025].",
+              "source": {
+                "id": "chunk_ff7f40bf774f843cd5d3af68",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 17,
+                "page_start": 17,
+                "page_end": 17,
+                "section": "PDF page 17",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013055165965404396
+              }
+            },
+            {
+              "evidence_id": "chunk_a5d25ab6e932772c60542850",
+              "text": "IDF 2025 phân biệt xét nghiệm HbA1c để theo dõi kiểm soát glucose lâu dài với những phép đo phản ánh giai đoạn ngắn hơn. HbA1c tổng hợp thông tin đường huyết của khoảng hai đến ba tháng nhưng có thể bị sai lệch khi người bệnh có bất thường hemoglobin, một số loại thiếu máu hoặc tình trạng làm thay đổi vòng đời hồng cầu. Khi khó đo hoặc diễn giải HbA1c chính xác, fructosamine và albumin glycat hóa có thể hỗ trợ theo dõi. Các chỉ dấu protein huyết thanh này phản ánh glucose trong khoảng hai đến bốn tuần trước đó. Chúng không nên được coi là tương đương hoàn toàn với HbA1c trong chẩn đoán bệnh.",
+              "source": {
+                "id": "chunk_a5d25ab6e932772c60542850",
+                "document_id": "summary_idf2025_a1c_alternatives_001_4fdbbf3fd784",
+                "title": "IDF 2025 - Phương pháp theo dõi khi HbA1c không đáng tin cậy - Trang 38",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "IDF 2025 - Phương pháp theo dõi khi HbA1c không đáng tin cậy - Trang 38",
+                "source_file": null,
+                "source_type": "curated_summary",
+                "source_version": "4fdbbf3fd784",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013173076923076923
+              }
+            },
+            {
+              "evidence_id": "chunk_2c28eabd0f39ce86c117cbaa",
+              "text": "IDF Global Clinical Practice Recommendations for Managing Type 2 Diabetes – 2025 16 The intended users of these guidelines are all healthcare professionals involved in the management of people with T2DM (and those at risk of developing T2DM) and policy makers who are responsible for healthcare services to improve individual and population health. The focus on policy makers is particularly important to ensure that healthcare and health system reform is implemented to provide universal optimal care. Methodology This guidance focuses on recent advances in diabetes care and prevention. An IDF expert panel was appointed to guide the development of these recommendations, which were formulated using an evidence-based consensus approach. The process included proposing pertinent questions deemed most relevant for the effective management of individuals with, or at risk of, T2DM. These questions were systematically categorised into various topics. Experts in their respective field compiled evidence summaries for each section. The entire group convened to discuss the synthesised evidence on the various topics and draft recommendations. A preliminary document was shared with external reviewers for broader input. Feedback received was carefully reviewed, and revisions made to address duplications and consolidate the evidence and recommendations. The International Centre for Professional Development in Health and Medicine (ICPDHM.com), a not-for-profit physician organisation based in Canada, provided medical writing, editorial, and logistical support throughout the development. Acknowledgements The IDF Global Clinical Practice Recommendations for Managing Type 2 Diabetes - 2025 was supported by educational grants from Sanofi and Servier . These companies did not take part in any aspect of the development of these clinical practice recommendations. Medical writing support was provided by, Bhavadharini Balaji, PhD and Alanna Grant, PhD of the International Centre for Professional Development in Health and Medicine (ICPDHM), Quebec, Canada. REFERENCES 1. International Diabetes Federation (IDF). IDF Diabetes Atlas, 11th edition. Brussels, Belgium: International Diabetes Federation, 2025. Available from: http://www.diabetesatlas.org. 2. World Health Organization. First-ever global coverage targets for diabetes adopted at the 75th World Health Assembly. Available from: https://www.who.int/news-room/ feature-stories/detail/first-ever-global- coverage-targets-for-diabetes-adopted-at- the-75-th-world-health-assembly [Accessed February 2025]. Optimal Care Basic Care Definition Evidence-based care and prevention provided in well-resourced settings Evidence-based care and prevention adapted for resource-constrained settings. Serves as a starting point towards Optimal Care Target audience Healthcare professionals and policy makers in well-resourced settings Healthcare professionals and policy makers in",
+              "source": {
+                "id": "chunk_2c28eabd0f39ce86c117cbaa",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 16,
+                "page_start": 16,
+                "page_end": 16,
+                "section": "PDF page 16",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.01206060606060606
+              }
+            },
+            {
+              "evidence_id": "chunk_9e21c4ed7b7ba293db3d197f",
+              "text": "compared with mean HbA1c <5.7% (39 mmol/mol) during the first year after diagnosis, CVD risk increased progressively to 56% for individuals with HbA1c >8.0% (>64 mmol/mol). 10 Interventional RCTs examining the effect of intensive glycaemic control have achieved HbA1c targets ranging from of 6.5%–7.1% (48–54 mmol/mol).4-8 These data are the basis for the general target of HbA1c <7.0% (<53 mmol/mol) in people with T2DM recommended by most guidelines for minimising risk of diabetes complications and hypoglycaemia. This target is proposed as a guide, which is appropriate for many people, but it is important to consider personalising targets, based on a range of factors relevant to the individual with T2DM. These factors include the presence of comorbidities, age, duration of diabetes, risk of hypoglycaemia, life expectancy, individual preferences, and available resources.14,15 Increasing age and declining functional and cognitive capacity are particularly relevant when setting less stringent goals, as treatment burden and risk of harm outweigh potential benefits.42 It is also important to adjust targets as required if circumstances change. Setting glycaemic targets should consider not only the impact on the individual but also the broader population-level effects. Considering the high global levels of poor glycaemic control,11,12 the greatest population impact on complications will be achieved by reducing HbA1c from high to moderate glycaemic levels. Although further lowering of HbA1c is associated with an additional reduction in the risk of complications, the absolute risk reductions become much smaller , and number needed to treat to achieve a benefit for an individual increases.14 For example, if the annual incidence of a diabetes complication is 5% at an HbA1c of 9.0% (75 mmol/mol) and lowering HbA1c by 1.0% (11 mmol/mol) is associated with a 50% reduction in the annual incidence of that complication, 40 people would need to have their HbA1c lowered from 9.0% (75 mmol/mol) to 8.0% (64 mmol/mol) to benefit one individual. The equivalent numbers for lowering HbA1c from 8.0% (64 mmol/mol) to 7.0% (53 mmol/mol) is 80 individuals and from 7.0% (53 mmol/mol) to 6.5% (48 mmol/mol) is 270 individuals. Therefore, setting low HbA1c population targets has implications for the impact on health services in different resource settings.",
+              "source": {
+                "id": "chunk_9e21c4ed7b7ba293db3d197f",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 39,
+                "page_start": 39,
+                "page_end": 39,
+                "section": "PDF page 39",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013934426229508197
+              }
+            },
+            {
+              "evidence_id": "chunk_777ade16acb387d85acd7b87",
+              "text": "43 Chapter 2 Methods for self-assessment of glycaemia Two approaches are available for self-assessment of glycaemia. Self-monitoring of blood glucose (SMBG) Self-monitoring of capillary (finger-stick) blood glucose (SMBG) is a common component of diabetes care and is commonly recommended in people treated with a multiple-daily insulin regimen or insulin pump, including those with T2DM.64 Recommendations for SMBG use in less intensively insulin-treated people with T2DM (e.g., on basal insulin) varies, although self- measurement of fasting glucose appears helpful in adjusting basal insulin dose and improving glycaemic control.65 SMBG is generally not routinely recommended in people with non-insulin-treated T2DM. A 2012 Cochrane review concluded that when diabetes duration is more than one year , the overall effect of SMBG on glycaemic control in people with T2DM not using insulin is small up to six months after initiation and subsides after 12 months while acknowledging that more research is needed to explore the impact of SMBG on hypoglycaemia and diabetes complications.66 An IDF Guideline on SMBG use in non-insulin- treated T2DM suggested that in RCTs, SMBG data are only likely to be an effective self- management tool when results are reviewed and acted on by healthcare providers and/or people with T2DM to actively modify behaviour and/or adjust treatment. The principal IDF recommendation was that SMBG should be used only when individuals with diabetes, their caregivers, and/or their healthcare providers have the knowledge, skills, and willingness to incorporate SMBG monitoring and therapy adjustment into their diabetes care plan in order to attain agreed treatment goals and that its use should be individualised and structured.67 RCTs have examined the effects of structured SMBG in people with non-insulin-treated T2DM. In a 12-month RCT, 483 poorly controlled (HbA1c ≥7.5% [58 mmol/mol]) insulin-naïve people with T2DM were randomised to a control enhanced usual care group or enhanced usual care group with structured SMBG. After 12-months, structured SMBG significantly improved glycaemic control (HbA1c reduction 0.3% [3 mmol/mol]) and facilitated more timely and aggressive treatment changes.68 Another 12-month RCT randomised 1,024 people with non-insulin-treated T2DM (median baseline HbA1c 7.3% [56 mmol/mol]) to intensive structured SMBG and an active control group. A small but significantly greater reduction in HbA1c (0.12% [1.3 mmol/mol]) was observed over 12 months in the structured SMBG group and more participants achieved clinically meaningful reductions in",
+              "source": {
+                "id": "chunk_777ade16acb387d85acd7b87",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 43,
+                "page_start": 43,
+                "page_end": 43,
+                "section": "PDF page 43",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012973352033660589
+              }
+            },
+            {
+              "evidence_id": "chunk_5a76d14217b9f0cfa18c4075",
+              "text": "IDF Global Clinical Practice Recommendations for Managing Type 2 Diabetes – 2025 36 GLYCAEMIC TARGETS o Glycaemic control reduces the risk of both micro- and macrovascular complications in type 2 diabetes mellitus (T2DM). o Assessing and monitoring glycaemia is an essential component of guiding treatment decisions to achieve and maintain target glycaemic control. o Setting glycaemic targets is based on established associations with adverse outcomes. o HbA1c is the established gold standard for assessing glycaemic control in T2DM. o The general HbA1c target of <7.0% (<53 mmol/mol) should be personalised, balancing reducing complications, minimising hypoglycaemia and an individual’s characteristics. o HbA1c measurement may be affected by a variety of factors – in these situations, fructosamine and glycated albumin are alternatives for monitoring glycaemic control. o Improving HbA1c improves diabetes outcomes in the short- and longer-term. o HbA1c variability may be important but has not been definitively confirmed as an independent risk factor for diabetes complications. o The contribution of fasting plasma glucose (FPG) and postprandial glucose (PPG) to overall glycaemia varies according to HbA1c levels, being greater for PPG at lower HbA1c levels and greater for FPG at higher HbA1c levels. o In select individuals with T2DM, HbA1c measurement may be complemented with self- monitoring of blood glucose (SMBG) or continuous glucose monitoring (CGM). o SMBG and CGM may provide additional useful clinical information on glycaemic metrics relevant to diabetes management, including periods of hyperglycaemia and hypoglycaemia. o SMBG is recommended in insulin-treated T2DM but may be useful in other situations. o SMBG use (intensity and frequency) should be structured and individualised. o The proposed SMBG targets are adapted to align with CGM metrics. o CGM is currently used mainly in people with type 1 diabetes mellitus (T1DM) but use is increasing in insulin-treated T2DM in high-resource health settings. Data supporting its use in non-insulin treated people with T2DM are limited. o Key CGM metrics include glycaemic variability and time in defined glucose ranges. o Target CGM metrics are based on international consensus. o Most of the global diabetes population lives in low-income and middle-income countries (LMICs) where access and affordability to HbA1c testing, SMBG, and CGM are limited. KEY POINTS",
+              "source": {
+                "id": "chunk_5a76d14217b9f0cfa18c4075",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 36,
+                "page_start": 36,
+                "page_end": 36,
+                "section": "PDF page 36",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013482862903225807
+              }
+            },
+            {
+              "evidence_id": "chunk_75ee0b535b74004a306768d2",
+              "text": "IDF Global Clinical Practice Recommendations for Managing Type 2 Diabetes – 2025 10 On behalf of the International Diabetes Federation (IDF), it is my great pleasure to present this 2025 edition of the IDF Global Clinical Practice Recommendations for Managing Type 2 Diabetes. These recommendations reflect our ongoing commitment to improving the lives of people living with diabetes worldwide by equipping healthcare providers with the tools to help them deliver high-quality, evidence-based care. Diabetes remains a serious and fast-growing public health challenge. The IDF Diabetes Atlas estimated that 589 million adults aged 20–79 years were living with diabetes in 2024 and that this number is projected to reach 853 million by 2050. Type 2 diabetes mellitus (T2DM), which accounts for between 90% and 95% of all diabetes cases, places a substantial burden on individuals, families, and healthcare systems. Around half of all T2DM cases remain undiagnosed. If not managed, T2DM can lead to severe complications, including cardiovascular disease, chronic kidney disease, retinopathy, neuropathy, and liver disease. With an early diagnosis and access to appropriate treatment and support, T2DM can be controlled and its associated complications prevented or delayed. Furthermore, there is increasing evidence that remission of T2DM may be possible in the early stages of the condition. Therefore, early detection, effective management, and preventive strategies are imperative to address the burden T2DM places on individuals and their families. The 2025 IDF global clinical practice recommendations have been updated to incorporate the latest evidence and advancements in diabetes care. These recommendations provide a structured yet adaptable framework for healthcare professionals, ensuring they are equipped with practical guidance tailored to diverse clinical settings. A key feature of these recommendations is their unique approach to distinguishing between optimal and basic care strategies, allowing for context-specific adaptation while maintaining high standards of diabetes management. This edition covers a broad range of critical topics, including epidemiology, glycaemic targets, blood glucose management (both non-insulin and insulin therapies), weight control, cardio-renal health, and the impact FOREWORD",
+              "source": {
+                "id": "chunk_75ee0b535b74004a306768d2",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 10,
+                "page_start": 10,
+                "page_end": 10,
+                "section": "PDF page 10",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012857142857142857
+              }
+            }
+          ],
+          "citations": [
+            {
+              "id": "chunk_b3cffc85402a9e55ada5435c",
+              "document_id": "summary_idf2025_a1c_target_001_fa34bafd0749",
+              "title": "IDF 2025 - Phân biệt mục tiêu theo dõi HbA1c và ngưỡng chẩn đoán - Trang 36, 39",
+              "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+              "page": null,
+              "page_start": null,
+              "page_end": null,
+              "section": "IDF 2025 - Phân biệt mục tiêu theo dõi HbA1c và ngưỡng chẩn đoán - Trang 36, 39",
+              "source_file": null,
+              "source_type": "curated_summary",
+              "source_version": "fa34bafd0749",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.01270053475935829
+            },
+            {
+              "id": "chunk_ff7f40bf774f843cd5d3af68",
+              "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+              "title": "IDF_Rec_2025",
+              "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+              "page": 17,
+              "page_start": 17,
+              "page_end": 17,
+              "section": "PDF page 17",
+              "source_file": "IDF_Rec_2025.pdf",
+              "source_type": "pdf",
+              "source_version": "767fc7e54bc2",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.013055165965404396
+            },
+            {
+              "id": "chunk_a5d25ab6e932772c60542850",
+              "document_id": "summary_idf2025_a1c_alternatives_001_4fdbbf3fd784",
+              "title": "IDF 2025 - Phương pháp theo dõi khi HbA1c không đáng tin cậy - Trang 38",
+              "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+              "page": null,
+              "page_start": null,
+              "page_end": null,
+              "section": "IDF 2025 - Phương pháp theo dõi khi HbA1c không đáng tin cậy - Trang 38",
+              "source_file": null,
+              "source_type": "curated_summary",
+              "source_version": "4fdbbf3fd784",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.013173076923076923
+            },
+            {
+              "id": "chunk_2c28eabd0f39ce86c117cbaa",
+              "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+              "title": "IDF_Rec_2025",
+              "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+              "page": 16,
+              "page_start": 16,
+              "page_end": 16,
+              "section": "PDF page 16",
+              "source_file": "IDF_Rec_2025.pdf",
+              "source_type": "pdf",
+              "source_version": "767fc7e54bc2",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.01206060606060606
+            },
+            {
+              "id": "chunk_9e21c4ed7b7ba293db3d197f",
+              "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+              "title": "IDF_Rec_2025",
+              "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+              "page": 39,
+              "page_start": 39,
+              "page_end": 39,
+              "section": "PDF page 39",
+              "source_file": "IDF_Rec_2025.pdf",
+              "source_type": "pdf",
+              "source_version": "767fc7e54bc2",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.013934426229508197
+            },
+            {
+              "id": "chunk_777ade16acb387d85acd7b87",
+              "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+              "title": "IDF_Rec_2025",
+              "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+              "page": 43,
+              "page_start": 43,
+              "page_end": 43,
+              "section": "PDF page 43",
+              "source_file": "IDF_Rec_2025.pdf",
+              "source_type": "pdf",
+              "source_version": "767fc7e54bc2",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.012973352033660589
+            },
+            {
+              "id": "chunk_5a76d14217b9f0cfa18c4075",
+              "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+              "title": "IDF_Rec_2025",
+              "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+              "page": 36,
+              "page_start": 36,
+              "page_end": 36,
+              "section": "PDF page 36",
+              "source_file": "IDF_Rec_2025.pdf",
+              "source_type": "pdf",
+              "source_version": "767fc7e54bc2",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.013482862903225807
+            },
+            {
+              "id": "chunk_75ee0b535b74004a306768d2",
+              "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+              "title": "IDF_Rec_2025",
+              "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+              "page": 10,
+              "page_start": 10,
+              "page_end": 10,
+              "section": "PDF page 10",
+              "source_file": "IDF_Rec_2025.pdf",
+              "source_type": "pdf",
+              "source_version": "767fc7e54bc2",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.012857142857142857
+            }
+          ],
+          "paths": [],
+          "retrieval": {
+            "backend": "Neo4j vector + fulltext + graph",
+            "embedding_model": "TF-IDF + LSA (frozen 128d)",
+            "dimensions": 128,
+            "total_vectors": 515,
+            "pdf_chunks": 398,
+            "kb_version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+            "chunking": {
+              "words": 380,
+              "overlap_words": 60,
+              "scope": "page/paragraph/HTML heading"
+            }
+          },
+          "query_analysis": [
+            {
+              "entities": [],
+              "query": "IDF guidelines HbA1c target personalization hypoglycemia risk IDF",
+              "requested_sources": [
+                "idf",
+                "idf"
+              ],
+              "methods": [
+                "vector",
+                "fulltext",
+                "graph"
+              ],
+              "version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+              "reranker": "RRF + lexical tie-break"
+            },
+            {
+              "entities": [],
+              "query": "IDF recommendations individualized HbA1c goals IDF",
+              "requested_sources": [
+                "idf",
+                "idf"
+              ],
+              "methods": [
+                "vector",
+                "fulltext",
+                "graph"
+              ],
+              "version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+              "reranker": "RRF + lexical tie-break"
+            }
+          ],
+          "answer": "",
+          "status": "supported",
+          "summary": "Truy xuất 8 bằng chứng từ 2 truy vấn"
+        },
+        "duration_ms": 443.11
+      },
+      {
+        "sequence": 7,
+        "sender": "CoordinatorAgent",
+        "receiver": "EvidenceReaderAgent",
+        "performative": "REQUEST",
+        "content": {
+          "evidence": [
+            {
+              "evidence_id": "chunk_b3cffc85402a9e55ada5435c",
+              "text": "IDF 2025 mô tả HbA1c dưới 7,0% (dưới 53 mmol/mol) là mục tiêu kiểm soát glucose chung thường được cân nhắc ở nhiều người đã mắc đái tháo đường type 2, không phải tiêu chí dùng để chẩn đoán mắc bệnh. Mục tiêu theo dõi phải được cá thể hóa theo tuổi, bệnh đồng mắc, thời gian mắc bệnh, nguy cơ hạ glucose huyết, kỳ vọng sống, khả năng tiếp cận chăm sóc và mong muốn của người bệnh. Mức HbA1c rất thấp không hợp cho mọi trường hợp, vì lợi ích giảm biến chứng phải cân đối với nguy cơ hạ glucose huyết và gánh nặng can thiệp. Đây là nội dung dành cho đánh giá chuyên môn.",
+              "source": {
+                "id": "chunk_b3cffc85402a9e55ada5435c",
+                "document_id": "summary_idf2025_a1c_target_001_fa34bafd0749",
+                "title": "IDF 2025 - Phân biệt mục tiêu theo dõi HbA1c và ngưỡng chẩn đoán - Trang 36, 39",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "IDF 2025 - Phân biệt mục tiêu theo dõi HbA1c và ngưỡng chẩn đoán - Trang 36, 39",
+                "source_file": null,
+                "source_type": "curated_summary",
+                "source_version": "fa34bafd0749",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.01270053475935829
+              }
+            },
+            {
+              "evidence_id": "chunk_ff7f40bf774f843cd5d3af68",
+              "text": "17Introduction 3. IDF Clinical Guidelines Task Force. Global guideline for type 2 diabetese. Brussels: International Diabetes Federation, 2005. IDF Clinical Guidelines Task Force. Global guideline for type 2 diabetes: Recommendations for standard, comprehensive, and minimal care. Diabet Med. 2006;23(6):579-93. 4. IDF Clinical Guidelines Task Force. Global guideline for type 2 diabetes: Recommendations for standard, comprehensive, and minimal care. Diabet Med. 2006;23(6):579-93. 5. IDF Working Group. IDF clinical practice recommendations for managing type 2 diabetes in primary care. Available from: https://idf.org/media/uploads/2023/05/ attachments-63.pdf [Accessed May 2024]. 6. World Health Organization. Tracking universal health coverage: 2023 global monitory report. Available from: https://www.who.int/ publications/i/item/9789240080379 [Accessed February 2025].",
+              "source": {
+                "id": "chunk_ff7f40bf774f843cd5d3af68",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 17,
+                "page_start": 17,
+                "page_end": 17,
+                "section": "PDF page 17",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013055165965404396
+              }
+            },
+            {
+              "evidence_id": "chunk_a5d25ab6e932772c60542850",
+              "text": "IDF 2025 phân biệt xét nghiệm HbA1c để theo dõi kiểm soát glucose lâu dài với những phép đo phản ánh giai đoạn ngắn hơn. HbA1c tổng hợp thông tin đường huyết của khoảng hai đến ba tháng nhưng có thể bị sai lệch khi người bệnh có bất thường hemoglobin, một số loại thiếu máu hoặc tình trạng làm thay đổi vòng đời hồng cầu. Khi khó đo hoặc diễn giải HbA1c chính xác, fructosamine và albumin glycat hóa có thể hỗ trợ theo dõi. Các chỉ dấu protein huyết thanh này phản ánh glucose trong khoảng hai đến bốn tuần trước đó. Chúng không nên được coi là tương đương hoàn toàn với HbA1c trong chẩn đoán bệnh.",
+              "source": {
+                "id": "chunk_a5d25ab6e932772c60542850",
+                "document_id": "summary_idf2025_a1c_alternatives_001_4fdbbf3fd784",
+                "title": "IDF 2025 - Phương pháp theo dõi khi HbA1c không đáng tin cậy - Trang 38",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "IDF 2025 - Phương pháp theo dõi khi HbA1c không đáng tin cậy - Trang 38",
+                "source_file": null,
+                "source_type": "curated_summary",
+                "source_version": "4fdbbf3fd784",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013173076923076923
+              }
+            },
+            {
+              "evidence_id": "chunk_2c28eabd0f39ce86c117cbaa",
+              "text": "IDF Global Clinical Practice Recommendations for Managing Type 2 Diabetes – 2025 16 The intended users of these guidelines are all healthcare professionals involved in the management of people with T2DM (and those at risk of developing T2DM) and policy makers who are responsible for healthcare services to improve individual and population health. The focus on policy makers is particularly important to ensure that healthcare and health system reform is implemented to provide universal optimal care. Methodology This guidance focuses on recent advances in diabetes care and prevention. An IDF expert panel was appointed to guide the development of these recommendations, which were formulated using an evidence-based consensus approach. The process included proposing pertinent questions deemed most relevant for the effective management of individuals with, or at risk of, T2DM. These questions were systematically categorised into various topics. Experts in their respective field compiled evidence summaries for each section. The entire group convened to discuss the synthesised evidence on the various topics and draft recommendations. A preliminary document was shared with external reviewers for broader input. Feedback received was carefully reviewed, and revisions made to address duplications and consolidate the evidence and recommendations. The International Centre for Professional Development in Health and Medicine (ICPDHM.com), a not-for-profit physician organisation based in Canada, provided medical writing, editorial, and logistical support throughout the development. Acknowledgements The IDF Global Clinical Practice Recommendations for Managing Type 2 Diabetes - 2025 was supported by educational grants from Sanofi and Servier . These companies did not take part in any aspect of the development of these clinical practice recommendations. Medical writing support was provided by, Bhavadharini Balaji, PhD and Alanna Grant, PhD of the International Centre for Professional Development in Health and Medicine (ICPDHM), Quebec, Canada. REFERENCES 1. International Diabetes Federation (IDF). IDF Diabetes Atlas, 11th edition. Brussels, Belgium: International Diabetes Federation, 2025. Available from: http://www.diabetesatlas.org. 2. World Health Organization. First-ever global coverage targets for diabetes adopted at the 75th World Health Assembly. Available from: https://www.who.int/news-room/ feature-stories/detail/first-ever-global- coverage-targets-for-diabetes-adopted-at- the-75-th-world-health-assembly [Accessed February 2025]. Optimal Care Basic Care Definition Evidence-based care and prevention provided in well-resourced settings Evidence-based care and prevention adapted for resource-constrained settings. Serves as a starting point towards Optimal Care Target audience Healthcare professionals and policy makers in well-resourced settings Healthcare professionals and policy makers in",
+              "source": {
+                "id": "chunk_2c28eabd0f39ce86c117cbaa",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 16,
+                "page_start": 16,
+                "page_end": 16,
+                "section": "PDF page 16",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.01206060606060606
+              }
+            },
+            {
+              "evidence_id": "chunk_9e21c4ed7b7ba293db3d197f",
+              "text": "compared with mean HbA1c <5.7% (39 mmol/mol) during the first year after diagnosis, CVD risk increased progressively to 56% for individuals with HbA1c >8.0% (>64 mmol/mol). 10 Interventional RCTs examining the effect of intensive glycaemic control have achieved HbA1c targets ranging from of 6.5%–7.1% (48–54 mmol/mol).4-8 These data are the basis for the general target of HbA1c <7.0% (<53 mmol/mol) in people with T2DM recommended by most guidelines for minimising risk of diabetes complications and hypoglycaemia. This target is proposed as a guide, which is appropriate for many people, but it is important to consider personalising targets, based on a range of factors relevant to the individual with T2DM. These factors include the presence of comorbidities, age, duration of diabetes, risk of hypoglycaemia, life expectancy, individual preferences, and available resources.14,15 Increasing age and declining functional and cognitive capacity are particularly relevant when setting less stringent goals, as treatment burden and risk of harm outweigh potential benefits.42 It is also important to adjust targets as required if circumstances change. Setting glycaemic targets should consider not only the impact on the individual but also the broader population-level effects. Considering the high global levels of poor glycaemic control,11,12 the greatest population impact on complications will be achieved by reducing HbA1c from high to moderate glycaemic levels. Although further lowering of HbA1c is associated with an additional reduction in the risk of complications, the absolute risk reductions become much smaller , and number needed to treat to achieve a benefit for an individual increases.14 For example, if the annual incidence of a diabetes complication is 5% at an HbA1c of 9.0% (75 mmol/mol) and lowering HbA1c by 1.0% (11 mmol/mol) is associated with a 50% reduction in the annual incidence of that complication, 40 people would need to have their HbA1c lowered from 9.0% (75 mmol/mol) to 8.0% (64 mmol/mol) to benefit one individual. The equivalent numbers for lowering HbA1c from 8.0% (64 mmol/mol) to 7.0% (53 mmol/mol) is 80 individuals and from 7.0% (53 mmol/mol) to 6.5% (48 mmol/mol) is 270 individuals. Therefore, setting low HbA1c population targets has implications for the impact on health services in different resource settings.",
+              "source": {
+                "id": "chunk_9e21c4ed7b7ba293db3d197f",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 39,
+                "page_start": 39,
+                "page_end": 39,
+                "section": "PDF page 39",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013934426229508197
+              }
+            },
+            {
+              "evidence_id": "chunk_777ade16acb387d85acd7b87",
+              "text": "43 Chapter 2 Methods for self-assessment of glycaemia Two approaches are available for self-assessment of glycaemia. Self-monitoring of blood glucose (SMBG) Self-monitoring of capillary (finger-stick) blood glucose (SMBG) is a common component of diabetes care and is commonly recommended in people treated with a multiple-daily insulin regimen or insulin pump, including those with T2DM.64 Recommendations for SMBG use in less intensively insulin-treated people with T2DM (e.g., on basal insulin) varies, although self- measurement of fasting glucose appears helpful in adjusting basal insulin dose and improving glycaemic control.65 SMBG is generally not routinely recommended in people with non-insulin-treated T2DM. A 2012 Cochrane review concluded that when diabetes duration is more than one year , the overall effect of SMBG on glycaemic control in people with T2DM not using insulin is small up to six months after initiation and subsides after 12 months while acknowledging that more research is needed to explore the impact of SMBG on hypoglycaemia and diabetes complications.66 An IDF Guideline on SMBG use in non-insulin- treated T2DM suggested that in RCTs, SMBG data are only likely to be an effective self- management tool when results are reviewed and acted on by healthcare providers and/or people with T2DM to actively modify behaviour and/or adjust treatment. The principal IDF recommendation was that SMBG should be used only when individuals with diabetes, their caregivers, and/or their healthcare providers have the knowledge, skills, and willingness to incorporate SMBG monitoring and therapy adjustment into their diabetes care plan in order to attain agreed treatment goals and that its use should be individualised and structured.67 RCTs have examined the effects of structured SMBG in people with non-insulin-treated T2DM. In a 12-month RCT, 483 poorly controlled (HbA1c ≥7.5% [58 mmol/mol]) insulin-naïve people with T2DM were randomised to a control enhanced usual care group or enhanced usual care group with structured SMBG. After 12-months, structured SMBG significantly improved glycaemic control (HbA1c reduction 0.3% [3 mmol/mol]) and facilitated more timely and aggressive treatment changes.68 Another 12-month RCT randomised 1,024 people with non-insulin-treated T2DM (median baseline HbA1c 7.3% [56 mmol/mol]) to intensive structured SMBG and an active control group. A small but significantly greater reduction in HbA1c (0.12% [1.3 mmol/mol]) was observed over 12 months in the structured SMBG group and more participants achieved clinically meaningful reductions in",
+              "source": {
+                "id": "chunk_777ade16acb387d85acd7b87",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 43,
+                "page_start": 43,
+                "page_end": 43,
+                "section": "PDF page 43",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012973352033660589
+              }
+            },
+            {
+              "evidence_id": "chunk_5a76d14217b9f0cfa18c4075",
+              "text": "IDF Global Clinical Practice Recommendations for Managing Type 2 Diabetes – 2025 36 GLYCAEMIC TARGETS o Glycaemic control reduces the risk of both micro- and macrovascular complications in type 2 diabetes mellitus (T2DM). o Assessing and monitoring glycaemia is an essential component of guiding treatment decisions to achieve and maintain target glycaemic control. o Setting glycaemic targets is based on established associations with adverse outcomes. o HbA1c is the established gold standard for assessing glycaemic control in T2DM. o The general HbA1c target of <7.0% (<53 mmol/mol) should be personalised, balancing reducing complications, minimising hypoglycaemia and an individual’s characteristics. o HbA1c measurement may be affected by a variety of factors – in these situations, fructosamine and glycated albumin are alternatives for monitoring glycaemic control. o Improving HbA1c improves diabetes outcomes in the short- and longer-term. o HbA1c variability may be important but has not been definitively confirmed as an independent risk factor for diabetes complications. o The contribution of fasting plasma glucose (FPG) and postprandial glucose (PPG) to overall glycaemia varies according to HbA1c levels, being greater for PPG at lower HbA1c levels and greater for FPG at higher HbA1c levels. o In select individuals with T2DM, HbA1c measurement may be complemented with self- monitoring of blood glucose (SMBG) or continuous glucose monitoring (CGM). o SMBG and CGM may provide additional useful clinical information on glycaemic metrics relevant to diabetes management, including periods of hyperglycaemia and hypoglycaemia. o SMBG is recommended in insulin-treated T2DM but may be useful in other situations. o SMBG use (intensity and frequency) should be structured and individualised. o The proposed SMBG targets are adapted to align with CGM metrics. o CGM is currently used mainly in people with type 1 diabetes mellitus (T1DM) but use is increasing in insulin-treated T2DM in high-resource health settings. Data supporting its use in non-insulin treated people with T2DM are limited. o Key CGM metrics include glycaemic variability and time in defined glucose ranges. o Target CGM metrics are based on international consensus. o Most of the global diabetes population lives in low-income and middle-income countries (LMICs) where access and affordability to HbA1c testing, SMBG, and CGM are limited. KEY POINTS",
+              "source": {
+                "id": "chunk_5a76d14217b9f0cfa18c4075",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 36,
+                "page_start": 36,
+                "page_end": 36,
+                "section": "PDF page 36",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013482862903225807
+              }
+            },
+            {
+              "evidence_id": "chunk_75ee0b535b74004a306768d2",
+              "text": "IDF Global Clinical Practice Recommendations for Managing Type 2 Diabetes – 2025 10 On behalf of the International Diabetes Federation (IDF), it is my great pleasure to present this 2025 edition of the IDF Global Clinical Practice Recommendations for Managing Type 2 Diabetes. These recommendations reflect our ongoing commitment to improving the lives of people living with diabetes worldwide by equipping healthcare providers with the tools to help them deliver high-quality, evidence-based care. Diabetes remains a serious and fast-growing public health challenge. The IDF Diabetes Atlas estimated that 589 million adults aged 20–79 years were living with diabetes in 2024 and that this number is projected to reach 853 million by 2050. Type 2 diabetes mellitus (T2DM), which accounts for between 90% and 95% of all diabetes cases, places a substantial burden on individuals, families, and healthcare systems. Around half of all T2DM cases remain undiagnosed. If not managed, T2DM can lead to severe complications, including cardiovascular disease, chronic kidney disease, retinopathy, neuropathy, and liver disease. With an early diagnosis and access to appropriate treatment and support, T2DM can be controlled and its associated complications prevented or delayed. Furthermore, there is increasing evidence that remission of T2DM may be possible in the early stages of the condition. Therefore, early detection, effective management, and preventive strategies are imperative to address the burden T2DM places on individuals and their families. The 2025 IDF global clinical practice recommendations have been updated to incorporate the latest evidence and advancements in diabetes care. These recommendations provide a structured yet adaptable framework for healthcare professionals, ensuring they are equipped with practical guidance tailored to diverse clinical settings. A key feature of these recommendations is their unique approach to distinguishing between optimal and basic care strategies, allowing for context-specific adaptation while maintaining high standards of diabetes management. This edition covers a broad range of critical topics, including epidemiology, glycaemic targets, blood glucose management (both non-insulin and insulin therapies), weight control, cardio-renal health, and the impact FOREWORD",
+              "source": {
+                "id": "chunk_75ee0b535b74004a306768d2",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 10,
+                "page_start": 10,
+                "page_end": 10,
+                "section": "PDF page 10",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012857142857142857
+              }
+            }
+          ]
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 8,
+        "sender": "EvidenceReaderAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "evidence": [
+            {
+              "evidence_id": "chunk_9e21c4ed7b7ba293db3d197f",
+              "text": "compared with mean HbA1c <5.7% (39 mmol/mol) during the first year after diagnosis, CVD risk increased progressively to 56% for individuals with HbA1c >8.0% (>64 mmol/mol). 10 Interventional RCTs examining the effect of intensive glycaemic control have achieved HbA1c targets ranging from of 6.5%–7.1% (48–54 mmol/mol).4-8 These data are the basis for the general target of HbA1c <7.0% (<53 mmol/mol) in people with T2DM recommended by most guidelines for minimising risk of diabetes complications and hypoglycaemia. This target is proposed as a guide, which is appropriate for many people, but it is important to consider personalising targets, based on a range of factors relevant to the individual with T2DM. These factors include the presence of comorbidities, age, duration of diabetes, risk of hypoglycaemia, life expectancy, individual preferences, and available resources.14,15 Increasing age and declining functional and cognitive capacity are particularly relevant when setting less stringent goals, as treatment burden and risk of harm outweigh potential benefits.42 It is also important to adjust targets as required if circumstances change. Setting glycaemic targets should consider not ",
+              "source": {
+                "id": "chunk_9e21c4ed7b7ba293db3d197f",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 39,
+                "page_start": 39,
+                "page_end": 39,
+                "section": "PDF page 39",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013934426229508197
+              },
+              "reader_relevance": 8.1904
+            },
+            {
+              "evidence_id": "chunk_5a76d14217b9f0cfa18c4075",
+              "text": "IDF Global Clinical Practice Recommendations for Managing Type 2 Diabetes – 2025 36 GLYCAEMIC TARGETS o Glycaemic control reduces the risk of both micro- and macrovascular complications in type 2 diabetes mellitus (T2DM). o Assessing and monitoring glycaemia is an essential component of guiding treatment decisions to achieve and maintain target glycaemic control. o Setting glycaemic targets is based on established associations with adverse outcomes. o HbA1c is the established gold standard for assessing glycaemic control in T2DM. o The general HbA1c target of <7.0% (<53 mmol/mol) should be personalised, balancing reducing complications, minimising hypoglycaemia and an individual’s characteristics. o HbA1c measurement may be affected by a variety of factors – in these situations, fructosamine and glycated albumin are alternatives for monitoring glycaemic control. o Improving HbA1c improves diabetes outcomes in the short- and longer-term. o HbA1c variability may be important but has not been definitively confirmed as an independent risk factor for diabetes complications. o The contribution of fasting plasma glucose (FPG) and postprandial glucose (PPG) to overall glycaemia varies acco",
+              "source": {
+                "id": "chunk_5a76d14217b9f0cfa18c4075",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 36,
+                "page_start": 36,
+                "page_end": 36,
+                "section": "PDF page 36",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013482862903225807
+              },
+              "reader_relevance": 7.39
+            },
+            {
+              "evidence_id": "chunk_777ade16acb387d85acd7b87",
+              "text": "A 2012 Cochrane review concluded that when diabetes duration is more than one year , the overall effect of SMBG on glycaemic control in people with T2DM not using insulin is small up to six months after initiation and subsides after 12 months while acknowledging that more research is needed to explore the impact of SMBG on hypoglycaemia and diabetes complications.66 An IDF Guideline on SMBG use in non-insulin- treated T2DM suggested that in RCTs, SMBG data are only likely to be an effective self- management tool when results are reviewed and acted on by healthcare providers and/or people with T2DM to actively modify behaviour and/or adjust treatment. The principal IDF recommendation was that SMBG should be used only when individuals with diabetes, their caregivers, and/or their healthcare providers have the knowledge, skills, and willingness to incorporate SMBG monitoring and therapy adjustment into their diabetes care plan in order to attain agreed treatment goals and that its use should be individualised and structured.67 RCTs have examined the effects of structured SMBG in people with non-insulin-treated T2DM. In a 12-month RCT, 483 poorly controlled (HbA1c ≥7.5% [58 mmol/mol]) ",
+              "source": {
+                "id": "chunk_777ade16acb387d85acd7b87",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 43,
+                "page_start": 43,
+                "page_end": 43,
+                "section": "PDF page 43",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012973352033660589
+              },
+              "reader_relevance": 6.4818
+            },
+            {
+              "evidence_id": "chunk_2c28eabd0f39ce86c117cbaa",
+              "text": "These companies did not take part in any aspect of the development of these clinical practice recommendations. Medical writing support was provided by, Bhavadharini Balaji, PhD and Alanna Grant, PhD of the International Centre for Professional Development in Health and Medicine (ICPDHM), Quebec, Canada. REFERENCES 1. International Diabetes Federation (IDF). IDF Diabetes Atlas, 11th edition. Brussels, Belgium: International Diabetes Federation, 2025. Available from: http://www.diabetesatlas.org. 2. World Health Organization. First-ever global coverage targets for diabetes adopted at the 75th World Health Assembly. Available from: https://www.who.int/news-room/ feature-stories/detail/first-ever-global- coverage-targets-for-diabetes-adopted-at- the-75-th-world-health-assembly [Accessed February 2025]. Optimal Care Basic Care Definition Evidence-based care and prevention provided in well-resourced settings Evidence-based care and prevention adapted for resource-constrained settings. Serves as a starting point towards Optimal Care Target audience Healthcare professionals and policy makers in well-resourced settings Healthcare professionals and policy makers in",
+              "source": {
+                "id": "chunk_2c28eabd0f39ce86c117cbaa",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 16,
+                "page_start": 16,
+                "page_end": 16,
+                "section": "PDF page 16",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.01206060606060606
+              },
+              "reader_relevance": 4.6114
+            }
+          ],
+          "summary": "Xếp hạng theo độ phủ thuật ngữ và IDF, đọc 4 đoạn, giữ nguồn và trang"
+        },
+        "duration_ms": 17.119
+      },
+      {
+        "sequence": 9,
+        "sender": "CoordinatorAgent",
+        "receiver": "WorkflowRLAgent",
+        "performative": "REQUEST",
+        "content": {
+          "evidence": true,
+          "retrieval_remaining": true
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 10,
+        "sender": "WorkflowRLAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "state": 2,
+          "action": "explain_score",
+          "allowed_actions": [
+            "show_sources",
+            "explain_score"
+          ],
+          "q_value": 1.9999999999999996,
+          "controller": "masked_q_policy",
+          "scope": "Synthetic-trained workflow policy with mandatory safety constraints"
+        },
+        "duration_ms": 0.016
+      },
+      {
+        "sequence": 11,
+        "sender": "CoordinatorAgent",
+        "receiver": "ExplanationAgent",
+        "performative": "REQUEST",
+        "content": {
+          "question": "Theo IDF, mục tiêu HbA1c có cần cá nhân hóa theo nguy cơ hạ đường huyết không?",
+          "goal": "Answer whether IDF recommends personalizing HbA1c targets based on hypoglycemia risk",
+          "intent": "knowledge",
+          "conversation": [],
+          "clarification_questions": [],
+          "revision_round": 0,
+          "evidence": [
+            {
+              "evidence_id": "chunk_9e21c4ed7b7ba293db3d197f",
+              "text": "compared with mean HbA1c <5.7% (39 mmol/mol) during the first year after diagnosis, CVD risk increased progressively to 56% for individuals with HbA1c >8.0% (>64 mmol/mol). 10 Interventional RCTs examining the effect of intensive glycaemic control have achieved HbA1c targets ranging from of 6.5%–7.1% (48–54 mmol/mol).4-8 These data are the basis for the general target of HbA1c <7.0% (<53 mmol/mol) in people with T2DM recommended by most guidelines for minimising risk of diabetes complications and hypoglycaemia. This target is proposed as a guide, which is appropriate for many people, but it is important to consider personalising targets, based on a range of factors relevant to the individual with T2DM. These factors include the presence of comorbidities, age, duration of diabetes, risk of hypoglycaemia, life expectancy, individual preferences, and available resources.14,15 Increasing age and declining functional and cognitive capacity are particularly relevant when setting less stringent goals, as treatment burden and risk of harm outweigh potential benefits.42 It is also important to adjust targets as required if circumstances change. Setting glycaemic targets should consider not ",
+              "source": {
+                "id": "chunk_9e21c4ed7b7ba293db3d197f",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 39,
+                "page_start": 39,
+                "page_end": 39,
+                "section": "PDF page 39",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013934426229508197
+              },
+              "reader_relevance": 8.1904
+            },
+            {
+              "evidence_id": "chunk_5a76d14217b9f0cfa18c4075",
+              "text": "IDF Global Clinical Practice Recommendations for Managing Type 2 Diabetes – 2025 36 GLYCAEMIC TARGETS o Glycaemic control reduces the risk of both micro- and macrovascular complications in type 2 diabetes mellitus (T2DM). o Assessing and monitoring glycaemia is an essential component of guiding treatment decisions to achieve and maintain target glycaemic control. o Setting glycaemic targets is based on established associations with adverse outcomes. o HbA1c is the established gold standard for assessing glycaemic control in T2DM. o The general HbA1c target of <7.0% (<53 mmol/mol) should be personalised, balancing reducing complications, minimising hypoglycaemia and an individual’s characteristics. o HbA1c measurement may be affected by a variety of factors – in these situations, fructosamine and glycated albumin are alternatives for monitoring glycaemic control. o Improving HbA1c improves diabetes outcomes in the short- and longer-term. o HbA1c variability may be important but has not been definitively confirmed as an independent risk factor for diabetes complications. o The contribution of fasting plasma glucose (FPG) and postprandial glucose (PPG) to overall glycaemia varies acco",
+              "source": {
+                "id": "chunk_5a76d14217b9f0cfa18c4075",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 36,
+                "page_start": 36,
+                "page_end": 36,
+                "section": "PDF page 36",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013482862903225807
+              },
+              "reader_relevance": 7.39
+            },
+            {
+              "evidence_id": "chunk_777ade16acb387d85acd7b87",
+              "text": "A 2012 Cochrane review concluded that when diabetes duration is more than one year , the overall effect of SMBG on glycaemic control in people with T2DM not using insulin is small up to six months after initiation and subsides after 12 months while acknowledging that more research is needed to explore the impact of SMBG on hypoglycaemia and diabetes complications.66 An IDF Guideline on SMBG use in non-insulin- treated T2DM suggested that in RCTs, SMBG data are only likely to be an effective self- management tool when results are reviewed and acted on by healthcare providers and/or people with T2DM to actively modify behaviour and/or adjust treatment. The principal IDF recommendation was that SMBG should be used only when individuals with diabetes, their caregivers, and/or their healthcare providers have the knowledge, skills, and willingness to incorporate SMBG monitoring and therapy adjustment into their diabetes care plan in order to attain agreed treatment goals and that its use should be individualised and structured.67 RCTs have examined the effects of structured SMBG in people with non-insulin-treated T2DM. In a 12-month RCT, 483 poorly controlled (HbA1c ≥7.5% [58 mmol/mol]) ",
+              "source": {
+                "id": "chunk_777ade16acb387d85acd7b87",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 43,
+                "page_start": 43,
+                "page_end": 43,
+                "section": "PDF page 43",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012973352033660589
+              },
+              "reader_relevance": 6.4818
+            },
+            {
+              "evidence_id": "chunk_2c28eabd0f39ce86c117cbaa",
+              "text": "These companies did not take part in any aspect of the development of these clinical practice recommendations. Medical writing support was provided by, Bhavadharini Balaji, PhD and Alanna Grant, PhD of the International Centre for Professional Development in Health and Medicine (ICPDHM), Quebec, Canada. REFERENCES 1. International Diabetes Federation (IDF). IDF Diabetes Atlas, 11th edition. Brussels, Belgium: International Diabetes Federation, 2025. Available from: http://www.diabetesatlas.org. 2. World Health Organization. First-ever global coverage targets for diabetes adopted at the 75th World Health Assembly. Available from: https://www.who.int/news-room/ feature-stories/detail/first-ever-global- coverage-targets-for-diabetes-adopted-at- the-75-th-world-health-assembly [Accessed February 2025]. Optimal Care Basic Care Definition Evidence-based care and prevention provided in well-resourced settings Evidence-based care and prevention adapted for resource-constrained settings. Serves as a starting point towards Optimal Care Target audience Healthcare professionals and policy makers in well-resourced settings Healthcare professionals and policy makers in",
+              "source": {
+                "id": "chunk_2c28eabd0f39ce86c117cbaa",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 16,
+                "page_start": 16,
+                "page_end": 16,
+                "section": "PDF page 16",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.01206060606060606
+              },
+              "reader_relevance": 4.6114
+            }
+          ],
+          "challenge": null
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 12,
+        "sender": "ExplanationAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "claims": [
+            {
+              "text": "IDF khuyến nghị cá nhân hóa mục tiêu HbA1c dựa trên nguy cơ hạ đường huyết.",
+              "evidence_id": "chunk_9e21c4ed7b7ba293db3d197f",
+              "quote": "These factors include the presence of comorbidities, age, duration of diabetes, risk of hypoglycaemia, life expectancy, individual preferences, and available resources.14,15"
+            }
+          ],
+          "followup_questions": [],
+          "evidence_sufficient": true,
+          "missing_information": "",
+          "llm": {
+            "cached": false,
+            "task": "grounded_draft",
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.317790754,
+              "prompt_tokens": 2900,
+              "prompt_time": 0.197518975,
+              "completion_tokens": 224,
+              "completion_time": 0.280372228,
+              "total_tokens": 3124,
+              "total_time": 0.477891203,
+              "completion_tokens_details": {
+                "reasoning_tokens": 97
+              }
+            }
+          },
+          "summary": "Soạn 1 phát biểu có nguồn"
+        },
+        "duration_ms": 1035.996
+      },
+      {
+        "sequence": 13,
+        "sender": "CoordinatorAgent",
+        "receiver": "CriticAgent",
+        "performative": "REQUEST",
+        "content": {
+          "question": "Theo IDF, mục tiêu HbA1c có cần cá nhân hóa theo nguy cơ hạ đường huyết không?",
+          "goal": "Answer whether IDF recommends personalizing HbA1c targets based on hypoglycemia risk",
+          "conversation": [],
+          "draft": {
+            "claims": [
+              {
+                "text": "IDF khuyến nghị cá nhân hóa mục tiêu HbA1c dựa trên nguy cơ hạ đường huyết.",
+                "evidence_id": "chunk_9e21c4ed7b7ba293db3d197f",
+                "quote": "These factors include the presence of comorbidities, age, duration of diabetes, risk of hypoglycaemia, life expectancy, individual preferences, and available resources.14,15"
+              }
+            ],
+            "followup_questions": [],
+            "evidence_sufficient": true,
+            "missing_information": ""
+          },
+          "evidence": [
+            {
+              "evidence_id": "chunk_9e21c4ed7b7ba293db3d197f",
+              "text": "compared with mean HbA1c <5.7% (39 mmol/mol) during the first year after diagnosis, CVD risk increased progressively to 56% for individuals with HbA1c >8.0% (>64 mmol/mol). 10 Interventional RCTs examining the effect of intensive glycaemic control have achieved HbA1c targets ranging from of 6.5%–7.1% (48–54 mmol/mol).4-8 These data are the basis for the general target of HbA1c <7.0% (<53 mmol/mol) in people with T2DM recommended by most guidelines for minimising risk of diabetes complications and hypoglycaemia. This target is proposed as a guide, which is appropriate for many people, but it is important to consider personalising targets, based on a range of factors relevant to the individual with T2DM. These factors include the presence of comorbidities, age, duration of diabetes, risk of hypoglycaemia, life expectancy, individual preferences, and available resources.14,15 Increasing age and declining functional and cognitive capacity are particularly relevant when setting less stringent goals, as treatment burden and risk of harm outweigh potential benefits.42 It is also important to adjust targets as required if circumstances change. Setting glycaemic targets should consider not ",
+              "source": {
+                "id": "chunk_9e21c4ed7b7ba293db3d197f",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 39,
+                "page_start": 39,
+                "page_end": 39,
+                "section": "PDF page 39",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013934426229508197
+              },
+              "reader_relevance": 8.1904
+            },
+            {
+              "evidence_id": "chunk_5a76d14217b9f0cfa18c4075",
+              "text": "IDF Global Clinical Practice Recommendations for Managing Type 2 Diabetes – 2025 36 GLYCAEMIC TARGETS o Glycaemic control reduces the risk of both micro- and macrovascular complications in type 2 diabetes mellitus (T2DM). o Assessing and monitoring glycaemia is an essential component of guiding treatment decisions to achieve and maintain target glycaemic control. o Setting glycaemic targets is based on established associations with adverse outcomes. o HbA1c is the established gold standard for assessing glycaemic control in T2DM. o The general HbA1c target of <7.0% (<53 mmol/mol) should be personalised, balancing reducing complications, minimising hypoglycaemia and an individual’s characteristics. o HbA1c measurement may be affected by a variety of factors – in these situations, fructosamine and glycated albumin are alternatives for monitoring glycaemic control. o Improving HbA1c improves diabetes outcomes in the short- and longer-term. o HbA1c variability may be important but has not been definitively confirmed as an independent risk factor for diabetes complications. o The contribution of fasting plasma glucose (FPG) and postprandial glucose (PPG) to overall glycaemia varies acco",
+              "source": {
+                "id": "chunk_5a76d14217b9f0cfa18c4075",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 36,
+                "page_start": 36,
+                "page_end": 36,
+                "section": "PDF page 36",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013482862903225807
+              },
+              "reader_relevance": 7.39
+            },
+            {
+              "evidence_id": "chunk_777ade16acb387d85acd7b87",
+              "text": "A 2012 Cochrane review concluded that when diabetes duration is more than one year , the overall effect of SMBG on glycaemic control in people with T2DM not using insulin is small up to six months after initiation and subsides after 12 months while acknowledging that more research is needed to explore the impact of SMBG on hypoglycaemia and diabetes complications.66 An IDF Guideline on SMBG use in non-insulin- treated T2DM suggested that in RCTs, SMBG data are only likely to be an effective self- management tool when results are reviewed and acted on by healthcare providers and/or people with T2DM to actively modify behaviour and/or adjust treatment. The principal IDF recommendation was that SMBG should be used only when individuals with diabetes, their caregivers, and/or their healthcare providers have the knowledge, skills, and willingness to incorporate SMBG monitoring and therapy adjustment into their diabetes care plan in order to attain agreed treatment goals and that its use should be individualised and structured.67 RCTs have examined the effects of structured SMBG in people with non-insulin-treated T2DM. In a 12-month RCT, 483 poorly controlled (HbA1c ≥7.5% [58 mmol/mol]) ",
+              "source": {
+                "id": "chunk_777ade16acb387d85acd7b87",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 43,
+                "page_start": 43,
+                "page_end": 43,
+                "section": "PDF page 43",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012973352033660589
+              },
+              "reader_relevance": 6.4818
+            },
+            {
+              "evidence_id": "chunk_2c28eabd0f39ce86c117cbaa",
+              "text": "These companies did not take part in any aspect of the development of these clinical practice recommendations. Medical writing support was provided by, Bhavadharini Balaji, PhD and Alanna Grant, PhD of the International Centre for Professional Development in Health and Medicine (ICPDHM), Quebec, Canada. REFERENCES 1. International Diabetes Federation (IDF). IDF Diabetes Atlas, 11th edition. Brussels, Belgium: International Diabetes Federation, 2025. Available from: http://www.diabetesatlas.org. 2. World Health Organization. First-ever global coverage targets for diabetes adopted at the 75th World Health Assembly. Available from: https://www.who.int/news-room/ feature-stories/detail/first-ever-global- coverage-targets-for-diabetes-adopted-at- the-75-th-world-health-assembly [Accessed February 2025]. Optimal Care Basic Care Definition Evidence-based care and prevention provided in well-resourced settings Evidence-based care and prevention adapted for resource-constrained settings. Serves as a starting point towards Optimal Care Target audience Healthcare professionals and policy makers in well-resourced settings Healthcare professionals and policy makers in",
+              "source": {
+                "id": "chunk_2c28eabd0f39ce86c117cbaa",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 16,
+                "page_start": 16,
+                "page_end": 16,
+                "section": "PDF page 16",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.01206060606060606
+              },
+              "reader_relevance": 4.6114
+            }
+          ]
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 14,
+        "sender": "CriticAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "action": "accept",
+          "answers_question": true,
+          "all_claims_supported": true,
+          "reasons": [],
+          "revised_query": "",
+          "followup_questions": [],
+          "structural": {
+            "passed": true,
+            "issues": [],
+            "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof",
+            "user_context_numbers": []
+          },
+          "llm": {
+            "cached": false,
+            "task": "response_critic",
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.449846037,
+              "prompt_tokens": 2809,
+              "prompt_time": 0.196475278,
+              "completion_tokens": 77,
+              "completion_time": 0.09183455,
+              "total_tokens": 2886,
+              "total_time": 0.288309828,
+              "completion_tokens_details": {
+                "reasoning_tokens": 33
+              }
+            }
+          },
+          "summary": "Critic: accept"
+        },
+        "duration_ms": 965.318
+      },
+      {
+        "sequence": 15,
+        "sender": "CoordinatorAgent",
+        "receiver": "VerifierSafetyAgent",
+        "performative": "REQUEST",
+        "content": {
+          "status": "supported",
+          "answer": "IDF khuyến nghị cá nhân hóa mục tiêu HbA1c dựa trên nguy cơ hạ đường huyết. [chunk_9e21c4ed7b7ba293db3d197f]",
+          "draft": {
+            "claims": [
+              {
+                "text": "IDF khuyến nghị cá nhân hóa mục tiêu HbA1c dựa trên nguy cơ hạ đường huyết.",
+                "evidence_id": "chunk_9e21c4ed7b7ba293db3d197f",
+                "quote": "These factors include the presence of comorbidities, age, duration of diabetes, risk of hypoglycaemia, life expectancy, individual preferences, and available resources.14,15"
+              }
+            ],
+            "followup_questions": [],
+            "evidence_sufficient": true,
+            "missing_information": "",
+            "llm": {
+              "cached": false,
+              "task": "grounded_draft",
+              "model": "openai/gpt-oss-20b",
+              "usage": {
+                "queue_time": 0.317790754,
+                "prompt_tokens": 2900,
+                "prompt_time": 0.197518975,
+                "completion_tokens": 224,
+                "completion_time": 0.280372228,
+                "total_tokens": 3124,
+                "total_time": 0.477891203,
+                "completion_tokens_details": {
+                  "reasoning_tokens": 97
+                }
+              }
+            },
+            "summary": "Soạn 1 phát biểu có nguồn"
+          },
+          "review": {
+            "action": "accept",
+            "answers_question": true,
+            "all_claims_supported": true,
+            "reasons": [],
+            "revised_query": "",
+            "followup_questions": [],
+            "structural": {
+              "passed": true,
+              "issues": [],
+              "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof",
+              "user_context_numbers": []
+            },
+            "llm": {
+              "cached": false,
+              "task": "response_critic",
+              "model": "openai/gpt-oss-20b",
+              "usage": {
+                "queue_time": 0.449846037,
+                "prompt_tokens": 2809,
+                "prompt_time": 0.196475278,
+                "completion_tokens": 77,
+                "completion_time": 0.09183455,
+                "total_tokens": 2886,
+                "total_time": 0.288309828,
+                "completion_tokens_details": {
+                  "reasoning_tokens": 33
+                }
+              }
+            },
+            "summary": "Critic: accept"
+          },
+          "evidence": [
+            {
+              "evidence_id": "chunk_9e21c4ed7b7ba293db3d197f",
+              "text": "compared with mean HbA1c <5.7% (39 mmol/mol) during the first year after diagnosis, CVD risk increased progressively to 56% for individuals with HbA1c >8.0% (>64 mmol/mol). 10 Interventional RCTs examining the effect of intensive glycaemic control have achieved HbA1c targets ranging from of 6.5%–7.1% (48–54 mmol/mol).4-8 These data are the basis for the general target of HbA1c <7.0% (<53 mmol/mol) in people with T2DM recommended by most guidelines for minimising risk of diabetes complications and hypoglycaemia. This target is proposed as a guide, which is appropriate for many people, but it is important to consider personalising targets, based on a range of factors relevant to the individual with T2DM. These factors include the presence of comorbidities, age, duration of diabetes, risk of hypoglycaemia, life expectancy, individual preferences, and available resources.14,15 Increasing age and declining functional and cognitive capacity are particularly relevant when setting less stringent goals, as treatment burden and risk of harm outweigh potential benefits.42 It is also important to adjust targets as required if circumstances change. Setting glycaemic targets should consider not ",
+              "source": {
+                "id": "chunk_9e21c4ed7b7ba293db3d197f",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 39,
+                "page_start": 39,
+                "page_end": 39,
+                "section": "PDF page 39",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013934426229508197
+              },
+              "reader_relevance": 8.1904
+            },
+            {
+              "evidence_id": "chunk_5a76d14217b9f0cfa18c4075",
+              "text": "IDF Global Clinical Practice Recommendations for Managing Type 2 Diabetes – 2025 36 GLYCAEMIC TARGETS o Glycaemic control reduces the risk of both micro- and macrovascular complications in type 2 diabetes mellitus (T2DM). o Assessing and monitoring glycaemia is an essential component of guiding treatment decisions to achieve and maintain target glycaemic control. o Setting glycaemic targets is based on established associations with adverse outcomes. o HbA1c is the established gold standard for assessing glycaemic control in T2DM. o The general HbA1c target of <7.0% (<53 mmol/mol) should be personalised, balancing reducing complications, minimising hypoglycaemia and an individual’s characteristics. o HbA1c measurement may be affected by a variety of factors – in these situations, fructosamine and glycated albumin are alternatives for monitoring glycaemic control. o Improving HbA1c improves diabetes outcomes in the short- and longer-term. o HbA1c variability may be important but has not been definitively confirmed as an independent risk factor for diabetes complications. o The contribution of fasting plasma glucose (FPG) and postprandial glucose (PPG) to overall glycaemia varies acco",
+              "source": {
+                "id": "chunk_5a76d14217b9f0cfa18c4075",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 36,
+                "page_start": 36,
+                "page_end": 36,
+                "section": "PDF page 36",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013482862903225807
+              },
+              "reader_relevance": 7.39
+            },
+            {
+              "evidence_id": "chunk_777ade16acb387d85acd7b87",
+              "text": "A 2012 Cochrane review concluded that when diabetes duration is more than one year , the overall effect of SMBG on glycaemic control in people with T2DM not using insulin is small up to six months after initiation and subsides after 12 months while acknowledging that more research is needed to explore the impact of SMBG on hypoglycaemia and diabetes complications.66 An IDF Guideline on SMBG use in non-insulin- treated T2DM suggested that in RCTs, SMBG data are only likely to be an effective self- management tool when results are reviewed and acted on by healthcare providers and/or people with T2DM to actively modify behaviour and/or adjust treatment. The principal IDF recommendation was that SMBG should be used only when individuals with diabetes, their caregivers, and/or their healthcare providers have the knowledge, skills, and willingness to incorporate SMBG monitoring and therapy adjustment into their diabetes care plan in order to attain agreed treatment goals and that its use should be individualised and structured.67 RCTs have examined the effects of structured SMBG in people with non-insulin-treated T2DM. In a 12-month RCT, 483 poorly controlled (HbA1c ≥7.5% [58 mmol/mol]) ",
+              "source": {
+                "id": "chunk_777ade16acb387d85acd7b87",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 43,
+                "page_start": 43,
+                "page_end": 43,
+                "section": "PDF page 43",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012973352033660589
+              },
+              "reader_relevance": 6.4818
+            },
+            {
+              "evidence_id": "chunk_2c28eabd0f39ce86c117cbaa",
+              "text": "These companies did not take part in any aspect of the development of these clinical practice recommendations. Medical writing support was provided by, Bhavadharini Balaji, PhD and Alanna Grant, PhD of the International Centre for Professional Development in Health and Medicine (ICPDHM), Quebec, Canada. REFERENCES 1. International Diabetes Federation (IDF). IDF Diabetes Atlas, 11th edition. Brussels, Belgium: International Diabetes Federation, 2025. Available from: http://www.diabetesatlas.org. 2. World Health Organization. First-ever global coverage targets for diabetes adopted at the 75th World Health Assembly. Available from: https://www.who.int/news-room/ feature-stories/detail/first-ever-global- coverage-targets-for-diabetes-adopted-at- the-75-th-world-health-assembly [Accessed February 2025]. Optimal Care Basic Care Definition Evidence-based care and prevention provided in well-resourced settings Evidence-based care and prevention adapted for resource-constrained settings. Serves as a starting point towards Optimal Care Target audience Healthcare professionals and policy makers in well-resourced settings Healthcare professionals and policy makers in",
+              "source": {
+                "id": "chunk_2c28eabd0f39ce86c117cbaa",
+                "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+                "title": "IDF_Rec_2025",
+                "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+                "page": 16,
+                "page_start": 16,
+                "page_end": 16,
+                "section": "PDF page 16",
+                "source_file": "IDF_Rec_2025.pdf",
+                "source_type": "pdf",
+                "source_version": "767fc7e54bc2",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.01206060606060606
+              },
+              "reader_relevance": 4.6114
+            }
+          ],
+          "prediction": null
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 16,
+        "sender": "VerifierSafetyAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "passed": true,
+          "issues": [],
+          "scope": "Grounded claims + question coverage + immutable model score",
+          "summary": "Verifier đạt"
+        },
+        "duration_ms": 0.141
+      },
+      {
+        "sequence": 17,
+        "sender": "CoordinatorAgent",
+        "receiver": "MonitoringAgent",
+        "performative": "REQUEST",
+        "content": {
+          "status": "supported"
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 18,
+        "sender": "MonitoringAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "status": "supported",
+          "steps": 8,
+          "summary": "Ghi metadata và thời gian xử lý, không lưu nội dung hồ sơ"
+        },
+        "duration_ms": 0.001
+      }
+    ],
+    "review": null,
+    "workflow": {
+      "state": 2,
+      "action": "explain_score",
+      "allowed_actions": [
+        "show_sources",
+        "explain_score"
+      ],
+      "q_value": 1.9999999999999996,
+      "controller": "masked_q_policy",
+      "scope": "Synthetic-trained workflow policy with mandatory safety constraints",
+      "executed_handler": "ExplanationAgent"
+    },
+    "revisions": [],
+    "knowledge_backend": "neo4j",
+    "evidence_review": null,
+    "decision": {
+      "status": "supported",
+      "final_label": null,
+      "review_required": false,
+      "reason_codes": [],
+      "assessment": null
+    },
+    "verification": {
+      "passed": true,
+      "issues": [],
+      "scope": "Grounded claims + question coverage + immutable model score",
+      "summary": "Verifier đạt"
+    },
+    "clarification": null,
+    "explanation": {
+      "answer": "IDF khuyến nghị cá nhân hóa mục tiêu HbA1c dựa trên nguy cơ hạ đường huyết. [chunk_9e21c4ed7b7ba293db3d197f]",
+      "sections": [
+        {
+          "id": "medical_evidence",
+          "title": "Trả lời từ bằng chứng",
+          "text": "IDF khuyến nghị cá nhân hóa mục tiêu HbA1c dựa trên nguy cơ hạ đường huyết. [chunk_9e21c4ed7b7ba293db3d197f]",
+          "citation_ids": [
+            "chunk_9e21c4ed7b7ba293db3d197f"
+          ]
+        }
+      ],
+      "model_factors": [],
+      "followup_questions": [],
+      "generation": {
+        "status": "generated",
+        "claims": [
+          {
+            "text": "IDF khuyến nghị cá nhân hóa mục tiêu HbA1c dựa trên nguy cơ hạ đường huyết.",
+            "evidence_id": "chunk_9e21c4ed7b7ba293db3d197f",
+            "quote": "These factors include the presence of comorbidities, age, duration of diabetes, risk of hypoglycaemia, life expectancy, individual preferences, and available resources.14,15"
+          }
+        ],
+        "model": "openai/gpt-oss-20b",
+        "critic": {
+          "action": "accept",
+          "answers_question": true,
+          "all_claims_supported": true,
+          "reasons": [],
+          "revised_query": "",
+          "followup_questions": [],
+          "structural": {
+            "passed": true,
+            "issues": [],
+            "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof",
+            "user_context_numbers": []
+          },
+          "llm": {
+            "cached": false,
+            "task": "response_critic",
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.449846037,
+              "prompt_tokens": 2809,
+              "prompt_time": 0.196475278,
+              "completion_tokens": 77,
+              "completion_time": 0.09183455,
+              "total_tokens": 2886,
+              "total_time": 0.288309828,
+              "completion_tokens_details": {
+                "reasoning_tokens": 33
+              }
+            }
+          },
+          "summary": "Critic: accept"
+        }
+      },
+      "method": "conversation_rag_v3"
+    },
+    "workflow_history": [
+      {
+        "state": 2,
+        "action": "explain_score",
+        "allowed_actions": [
+          "show_sources",
+          "explain_score"
+        ],
+        "q_value": 1.9999999999999996,
+        "controller": "masked_q_policy",
+        "scope": "Synthetic-trained workflow policy with mandatory safety constraints",
+        "executed_handler": "ExplanationAgent"
+      }
+    ],
+    "testing_context": null,
+    "traces": [
+      {
+        "agent": "CoordinatorAgent",
+        "status": "success",
+        "duration_ms": 650.14,
+        "summary": "Answer whether IDF recommends personalizing HbA1c targets based on hypoglycemia risk",
+        "tool": "CoordinatorAgent"
+      },
+      {
+        "agent": "RuleBasedAgent",
+        "status": "success",
+        "duration_ms": 0.02,
+        "summary": "Kiểm tra bất đồng model và quy tắc chuyển review",
+        "tool": "RuleBasedAgent"
+      },
+      {
+        "agent": "RetrievalAgent",
+        "status": "success",
+        "duration_ms": 443.3,
+        "summary": "Truy xuất 8 bằng chứng từ 2 truy vấn",
+        "tool": "RetrievalAgent"
+      },
+      {
+        "agent": "EvidenceReaderAgent",
+        "status": "success",
+        "duration_ms": 17.28,
+        "summary": "Xếp hạng theo độ phủ thuật ngữ và IDF, đọc 4 đoạn, giữ nguồn và trang",
+        "tool": "EvidenceReaderAgent"
+      },
+      {
+        "agent": "WorkflowRLAgent",
+        "status": "success",
+        "duration_ms": 0.04,
+        "summary": "executed",
+        "tool": "WorkflowRLAgent"
+      },
+      {
+        "agent": "ExplanationAgent",
+        "status": "success",
+        "duration_ms": 1036.09,
+        "summary": "Soạn 1 phát biểu có nguồn",
+        "tool": "ExplanationAgent"
+      },
+      {
+        "agent": "CriticAgent",
+        "status": "success",
+        "duration_ms": 965.54,
+        "summary": "Critic: accept",
+        "tool": "CriticAgent"
+      },
+      {
+        "agent": "VerifierSafetyAgent",
+        "status": "success",
+        "duration_ms": 0.23,
+        "summary": "Verifier đạt",
+        "tool": "VerifierSafetyAgent"
+      },
+      {
+        "agent": "MonitoringAgent",
+        "status": "success",
+        "duration_ms": 0.01,
+        "summary": "Ghi metadata và thời gian xử lý, không lưu nội dung hồ sơ",
+        "tool": "MonitoringAgent"
+      }
+    ],
+    "total_duration_ms": 3113.17,
+    "plan": {
+      "intent": "knowledge",
+      "goal": "Answer whether IDF recommends personalizing HbA1c targets based on hypoglycemia risk",
+      "queries": [
+        "IDF guidelines HbA1c target personalization hypoglycemia risk",
+        "IDF recommendations individualized HbA1c goals"
+      ],
+      "clarification_questions": [],
+      "can_answer_general": true,
+      "requested_sources": [
+        "IDF"
+      ],
+      "llm": {
+        "cached": false,
+        "task": "coordinator_plan",
+        "model": "openai/gpt-oss-20b",
+        "usage": {
+          "queue_time": 0.153926672,
+          "prompt_tokens": 787,
+          "prompt_time": 0.057314141,
+          "completion_tokens": 121,
+          "completion_time": 0.134287828,
+          "total_tokens": 908,
+          "total_time": 0.191601969,
+          "completion_tokens_details": {
+            "reasoning_tokens": 39
+          }
+        }
+      },
+      "summary": "Answer whether IDF recommends personalizing HbA1c targets based on hypoglycemia risk"
+    },
+    "response_review": {
+      "action": "accept",
+      "answers_question": true,
+      "all_claims_supported": true,
+      "reasons": [],
+      "revised_query": "",
+      "followup_questions": [],
+      "structural": {
+        "passed": true,
+        "issues": [],
+        "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof",
+        "user_context_numbers": []
+      },
+      "llm": {
+        "cached": false,
+        "task": "response_critic",
+        "model": "openai/gpt-oss-20b",
+        "usage": {
+          "queue_time": 0.449846037,
+          "prompt_tokens": 2809,
+          "prompt_time": 0.196475278,
+          "completion_tokens": 77,
+          "completion_time": 0.09183455,
+          "total_tokens": 2886,
+          "total_time": 0.288309828,
+          "completion_tokens_details": {
+            "reasoning_tokens": 33
+          }
+        }
+      },
+      "summary": "Critic: accept"
+    },
+    "rules": {
+      "assessment": null,
+      "review_required": false,
+      "summary": "Kiểm tra bất đồng model và quy tắc chuyển review"
+    },
+    "architecture_version": "conversation_v3"
+  }
+}

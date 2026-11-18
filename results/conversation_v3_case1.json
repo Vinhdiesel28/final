@@ -1,0 +1,1781 @@
+{
+  "scope": "Live integration, no ground-truth medical evaluation",
+  "question": "A1C phản ánh điều gì?",
+  "elapsed_seconds": 16.91,
+  "source_checks": [
+    {
+      "chunk_id": "chunk_072cd0a0818211b386685207",
+      "quote_in_chunk": true
+    }
+  ],
+  "response": {
+    "request_id": "REQ-4A9C3E06",
+    "mode": "multi",
+    "intent": "knowledge",
+    "status": "supported",
+    "answer": "A1C phản ánh mức đường huyết trung bình trong 3 tháng qua. [chunk_072cd0a0818211b386685207]",
+    "prediction": null,
+    "statistics": null,
+    "knowledge": {
+      "evidence": [
+        {
+          "evidence_id": "chunk_072cd0a0818211b386685207",
+          "text": "The higher the glucose level in your bloodstream, the more glucose will attach to the hemoglobin. The A1C test measures the amount of hemoglobin with attached glucose and reflects your average blood glucose levels over the past 3 months.",
+          "source": {
+            "id": "chunk_072cd0a0818211b386685207",
+            "document_id": "niddk_a1c_web_95827989eacf",
+            "title": "The A1C Test & Diabetes",
+            "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+            "page": null,
+            "page_start": null,
+            "page_end": null,
+            "section": "What is the A1C test?",
+            "source_file": null,
+            "source_type": "web",
+            "source_version": "95827989eacf",
+            "retrieval_methods": [
+              "vector",
+              "fulltext",
+              "graph"
+            ],
+            "score": 0.013111821843165127
+          }
+        }
+      ],
+      "citations": [
+        {
+          "id": "chunk_072cd0a0818211b386685207",
+          "document_id": "niddk_a1c_web_95827989eacf",
+          "title": "The A1C Test & Diabetes",
+          "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+          "page": null,
+          "page_start": null,
+          "page_end": null,
+          "section": "What is the A1C test?",
+          "source_file": null,
+          "source_type": "web",
+          "source_version": "95827989eacf",
+          "retrieval_methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ],
+          "score": 0.013111821843165127
+        }
+      ],
+      "paths": [
+        {
+          "subject": "A1C",
+          "relation": "có dữ liệu hạn chế về can thiệp lối sống ở",
+          "object": "hiệu quả can thiệp lối sống",
+          "evidence": "idf2025_prevention_phenotype_001"
+        },
+        {
+          "subject": "A1C",
+          "relation": "có khoảng nhận diện tiền đái tháo đường",
+          "object": "5,7–6,4% (theo NDEP 2018)",
+          "evidence": "ndep_a1c_ranges_001"
+        },
+        {
+          "subject": "A1C",
+          "relation": "có ngưỡng xét nghiệm đái tháo đường",
+          "object": "≥ 6,5% (theo NDEP 2018; cần xác nhận khi không có triệu chứng rõ)",
+          "evidence": "ndep_a1c_ranges_001"
+        },
+        {
+          "subject": "A1C",
+          "relation": "có thể bị ảnh hưởng bởi",
+          "object": "biến thể hemoglobin",
+          "evidence": "dia_a1c_limitations_001"
+        },
+        {
+          "subject": "A1C",
+          "relation": "có thể bị ảnh hưởng bởi",
+          "object": "suy thận",
+          "evidence": "dia_a1c_limitations_001"
+        },
+        {
+          "subject": "A1C",
+          "relation": "có thể bị ảnh hưởng bởi",
+          "object": "thiếu máu thiếu sắt",
+          "evidence": "dia_a1c_limitations_001"
+        },
+        {
+          "subject": "A1C",
+          "relation": "có thể không thống nhất với",
+          "object": "glucose huyết tương lúc đói",
+          "evidence": "idf2025_test_disagreement_001"
+        },
+        {
+          "subject": "A1C",
+          "relation": "có thể không thống nhất với",
+          "object": "glucose sau 2 giờ OGTT",
+          "evidence": "idf2025_test_disagreement_001"
+        },
+        {
+          "subject": "A1C",
+          "relation": "có thể phân loại khác với",
+          "object": "nghiệm pháp dung nạp glucose đường uống",
+          "evidence": "dia_test_discordance_001"
+        },
+        {
+          "subject": "A1C",
+          "relation": "có thể được bổ sung theo dõi bằng",
+          "object": "albumin glycat hóa",
+          "evidence": "idf2025_a1c_alternatives_001"
+        },
+        {
+          "subject": "A1C",
+          "relation": "có thể được bổ sung theo dõi bằng",
+          "object": "fructosamine",
+          "evidence": "idf2025_a1c_alternatives_001"
+        },
+        {
+          "subject": "A1C",
+          "relation": "khi chẩn đoán cần",
+          "object": "phương pháp được NGSP chứng nhận",
+          "evidence": "ndep_a1c_method_001"
+        },
+        {
+          "subject": "A1C",
+          "relation": "không cần",
+          "object": "nhịn ăn trước xét nghiệm",
+          "evidence": "ndep_a1c_method_001"
+        },
+        {
+          "subject": "A1C",
+          "relation": "không khuyến nghị chẩn đoán bằng",
+          "object": "A1C tại điểm chăm sóc",
+          "evidence": "ndep_a1c_method_001"
+        },
+        {
+          "subject": "albumin glycat hóa",
+          "relation": "phản ánh glucose gần đây khoảng",
+          "object": "2–4 tuần (theo dõi, không thay thế tiêu chuẩn chẩn đoán)",
+          "evidence": "idf2025_a1c_alternatives_001"
+        },
+        {
+          "subject": "fructosamine",
+          "relation": "phản ánh glucose gần đây khoảng",
+          "object": "2–4 tuần (theo dõi, không thay thế tiêu chuẩn chẩn đoán)",
+          "evidence": "idf2025_a1c_alternatives_001"
+        }
+      ],
+      "retrieval": {
+        "backend": "Neo4j vector + fulltext + graph",
+        "embedding_model": "TF-IDF + LSA (frozen 128d)",
+        "dimensions": 128,
+        "total_vectors": 515,
+        "pdf_chunks": 398,
+        "kb_version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+        "chunking": {
+          "words": 380,
+          "overlap_words": 60,
+          "scope": "page/paragraph/HTML heading"
+        }
+      },
+      "query_analysis": [
+        {
+          "entities": [
+            "entity_578616e5b1dc03496a7c"
+          ],
+          "query": "A1C meaning in diabetes ",
+          "requested_sources": [],
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ],
+          "version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+          "reranker": "RRF + lexical tie-break"
+        },
+        {
+          "entities": [
+            "entity_578616e5b1dc03496a7c"
+          ],
+          "query": "what does A1C test measure ",
+          "requested_sources": [],
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ],
+          "version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+          "reranker": "RRF + lexical tie-break"
+        }
+      ],
+      "answer": "",
+      "status": "supported",
+      "summary": "Truy xuất 8 bằng chứng từ 2 truy vấn"
+    },
+    "validation_errors": [],
+    "safety_flags": [],
+    "messages": [
+      {
+        "sequence": 1,
+        "sender": "CoordinatorAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "REQUEST",
+        "content": {
+          "question": "A1C phản ánh điều gì?",
+          "conversation": [],
+          "available_profile_fields": [],
+          "additional_context": {}
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 2,
+        "sender": "CoordinatorAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "intent": "knowledge",
+          "goal": "Explain what A1C reflects in diabetes management",
+          "queries": [
+            "A1C meaning in diabetes",
+            "what does A1C test measure"
+          ],
+          "clarification_questions": [],
+          "can_answer_general": true,
+          "requested_sources": [],
+          "llm": {
+            "cached": false,
+            "task": "coordinator_plan",
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.052401985,
+              "prompt_tokens": 770,
+              "prompt_time": 0.051235074,
+              "completion_tokens": 93,
+              "completion_time": 0.115954608,
+              "total_tokens": 863,
+              "total_time": 0.167189682,
+              "completion_tokens_details": {
+                "reasoning_tokens": 29
+              }
+            }
+          },
+          "summary": "Explain what A1C reflects in diabetes management"
+        },
+        "duration_ms": 581.381
+      },
+      {
+        "sequence": 3,
+        "sender": "CoordinatorAgent",
+        "receiver": "RuleBasedAgent",
+        "performative": "REQUEST",
+        "content": {
+          "prediction": null
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 4,
+        "sender": "RuleBasedAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "assessment": null,
+          "review_required": false,
+          "summary": "Kiểm tra bất đồng model và quy tắc chuyển review"
+        },
+        "duration_ms": 0.004
+      },
+      {
+        "sequence": 5,
+        "sender": "CoordinatorAgent",
+        "receiver": "RetrievalAgent",
+        "performative": "REQUEST",
+        "content": {
+          "queries": [
+            "A1C meaning in diabetes",
+            "what does A1C test measure"
+          ]
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 6,
+        "sender": "RetrievalAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "evidence": [
+            {
+              "evidence_id": "chunk_059373c4daefd5ff1d39c737",
+              "text": "The A1C test is sometimes called the hemoglobin A1C, HbA1c, glycated hemoglobin, or glycohemoglobin test. Hemoglobin is the part of a red blood cell that carries oxygen to the cells. Glucose attaches to or binds with hemoglobin in your blood cells, and the A1C test is based on this attachment of glucose to hemoglobin.",
+              "source": {
+                "id": "chunk_059373c4daefd5ff1d39c737",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "What is the A1C test?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.01464138387297634
+              }
+            },
+            {
+              "evidence_id": "chunk_072cd0a0818211b386685207",
+              "text": "The higher the glucose level in your bloodstream, the more glucose will attach to the hemoglobin. The A1C test measures the amount of hemoglobin with attached glucose and reflects your average blood glucose levels over the past 3 months.",
+              "source": {
+                "id": "chunk_072cd0a0818211b386685207",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "What is the A1C test?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.013111821843165127
+              }
+            },
+            {
+              "evidence_id": "chunk_15da007bc8e6bd2043889fbb",
+              "text": "When using the A1C test for diagnosis, your doctor will send your blood sample taken from a vein to a lab that uses an NGSP-certified method. The NGSP , formerly called the National Glycohemoglobin Standardization Program, certifies that makers of A1C tests provide results that are consistent and comparable with those used in the Diabetes Control and Complications Trial .",
+              "source": {
+                "id": "chunk_15da007bc8e6bd2043889fbb",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "A1C results and what the numbers mean",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.01529235478726141
+              }
+            },
+            {
+              "evidence_id": "chunk_a9b47f7b2e68150b5d8ada15",
+              "text": "Health care professionals can use the A1C test alone or in combination with other diabetes tests to diagnose type 2 diabetes and prediabetes. You don’t have to fast before having your blood drawn for an A1C test, which means that blood can be drawn for the test at any time of the day.",
+              "source": {
+                "id": "chunk_a9b47f7b2e68150b5d8ada15",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "How is the A1C test used to diagnose type 2 diabetes and prediabetes?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013492063492063493
+              }
+            },
+            {
+              "evidence_id": "chunk_48470347ded8d1e1dc04f226",
+              "text": "The A1C test is a blood test that provides information about your average levels of blood glucose, also called blood sugar, over the past 3 months. The A1C test can be used to diagnose type 2 diabetes and prediabetes . 1 The A1C test is also the primary test used for diabetes management .",
+              "source": {
+                "id": "chunk_48470347ded8d1e1dc04f226",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "What is the A1C test?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012932604735883424
+              }
+            },
+            {
+              "evidence_id": "chunk_8fddd0eec6c408e190dd14d7",
+              "text": "Not all A1C tests are unreliable for people with a hemoglobin variant. People with false results from one type of A1C test may need a different type of A1C test to measure their average blood glucose level. The NGSP provides information for health care professionals about which A1C tests are appropriate to use for specific hemoglobin variants .",
+              "source": {
+                "id": "chunk_8fddd0eec6c408e190dd14d7",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "A1C tests can be affected by changes in red blood cells or hemoglobin",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.01203125
+              }
+            },
+            {
+              "evidence_id": "chunk_6314caf8e641dd748f2f70f2",
+              "text": "When repeated, the A1C test result can be slightly higher or lower than the first measurement. This means, for example, an A1C reported as 6.8 percent on one test could be reported in a range from 6.4 to 7.2 percent on a repeat test from the same blood sample. 3 In the past, this range was larger but new, stricter quality-control standards mean more precise A1C test results.",
+              "source": {
+                "id": "chunk_6314caf8e641dd748f2f70f2",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "How precise is the A1C test?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013185096153846155
+              }
+            },
+            {
+              "evidence_id": "chunk_871b1f59ddb5dc751d0bb0e3",
+              "text": "to glycate more or less at a given MPG, does not appear to predict the risk of complications (91,92). The prevalence of diabetes in the popula- tion-based NHANES 2003–2006 (93,94) is shown in Table 1.6. In this study, of the population age ≥20 years, 12.9% had diabetes, and 39.8% were unaware of it (93). The prevalence of diabetes in those unaware was lowest by the A1c test (1.8%) (94) and highest by the 2-hour PG level from the OGTT (4.9%) (93). Part of this difference in the NHANES report may reflect the fact that A1c and glucose data were not collected in the same years. However, similar differences have been shown in other U.S. studies. The preva- lence of diabetes was greatest in those age ≥65 years and greater in non-Hispanic blacks and Mexican Americans than in non-Hispanic whites by A1c, as well as FPG and 2-hour PG (93,94). Drawbacks of A1c As a test for diabetes, A1c has been considered unsatisfactory by some inves- tigators, mainly because of low sensitivity, as seen in Table 1.6, when compared with plasma glucose measurements. For example, in one report, the data were combined from NHANES III, NHANES 2005–2006, and a hospital employee and community population in the Atlanta, Georgia, area (95). All 4,706 subjects had OGTT and A1c measured. With IEC cutpoints of ≥6.5% for diabetes and <6.0% for normal glucose, A1c was 97% specific but only 30% sensitive compared to the OGTT result. These types of analyses assume that one measure of glycemia represents the gold standard, which is far from clear. In particular, whether a single OGTT with its relatively low reproducibility should be considered a gold standard for the presence of the disease, against which to compare A1c, is debatable. In fact, as noted above, A1c, perhaps because it represents chronic ambient glycemia, rather than the result of an acute and poorly reproducible stress test, appears to capture risk for long-term complications similar to or better than plasma glucose- based measures. DETECT-2 data (Figures 1.3 and 1.4) do not support the superiority",
+              "source": {
+                "id": "chunk_871b1f59ddb5dc751d0bb0e3",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 12,
+                "page_start": 12,
+                "page_end": 12,
+                "section": "PDF page 12",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012966853408029878
+              }
+            }
+          ],
+          "citations": [
+            {
+              "id": "chunk_059373c4daefd5ff1d39c737",
+              "document_id": "niddk_a1c_web_95827989eacf",
+              "title": "The A1C Test & Diabetes",
+              "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+              "page": null,
+              "page_start": null,
+              "page_end": null,
+              "section": "What is the A1C test?",
+              "source_file": null,
+              "source_type": "web",
+              "source_version": "95827989eacf",
+              "retrieval_methods": [
+                "vector",
+                "fulltext",
+                "graph"
+              ],
+              "score": 0.01464138387297634
+            },
+            {
+              "id": "chunk_072cd0a0818211b386685207",
+              "document_id": "niddk_a1c_web_95827989eacf",
+              "title": "The A1C Test & Diabetes",
+              "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+              "page": null,
+              "page_start": null,
+              "page_end": null,
+              "section": "What is the A1C test?",
+              "source_file": null,
+              "source_type": "web",
+              "source_version": "95827989eacf",
+              "retrieval_methods": [
+                "vector",
+                "fulltext",
+                "graph"
+              ],
+              "score": 0.013111821843165127
+            },
+            {
+              "id": "chunk_15da007bc8e6bd2043889fbb",
+              "document_id": "niddk_a1c_web_95827989eacf",
+              "title": "The A1C Test & Diabetes",
+              "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+              "page": null,
+              "page_start": null,
+              "page_end": null,
+              "section": "A1C results and what the numbers mean",
+              "source_file": null,
+              "source_type": "web",
+              "source_version": "95827989eacf",
+              "retrieval_methods": [
+                "vector",
+                "fulltext",
+                "graph"
+              ],
+              "score": 0.01529235478726141
+            },
+            {
+              "id": "chunk_a9b47f7b2e68150b5d8ada15",
+              "document_id": "niddk_a1c_web_95827989eacf",
+              "title": "The A1C Test & Diabetes",
+              "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+              "page": null,
+              "page_start": null,
+              "page_end": null,
+              "section": "How is the A1C test used to diagnose type 2 diabetes and prediabetes?",
+              "source_file": null,
+              "source_type": "web",
+              "source_version": "95827989eacf",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.013492063492063493
+            },
+            {
+              "id": "chunk_48470347ded8d1e1dc04f226",
+              "document_id": "niddk_a1c_web_95827989eacf",
+              "title": "The A1C Test & Diabetes",
+              "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+              "page": null,
+              "page_start": null,
+              "page_end": null,
+              "section": "What is the A1C test?",
+              "source_file": null,
+              "source_type": "web",
+              "source_version": "95827989eacf",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.012932604735883424
+            },
+            {
+              "id": "chunk_8fddd0eec6c408e190dd14d7",
+              "document_id": "niddk_a1c_web_95827989eacf",
+              "title": "The A1C Test & Diabetes",
+              "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+              "page": null,
+              "page_start": null,
+              "page_end": null,
+              "section": "A1C tests can be affected by changes in red blood cells or hemoglobin",
+              "source_file": null,
+              "source_type": "web",
+              "source_version": "95827989eacf",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.01203125
+            },
+            {
+              "id": "chunk_6314caf8e641dd748f2f70f2",
+              "document_id": "niddk_a1c_web_95827989eacf",
+              "title": "The A1C Test & Diabetes",
+              "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+              "page": null,
+              "page_start": null,
+              "page_end": null,
+              "section": "How precise is the A1C test?",
+              "source_file": null,
+              "source_type": "web",
+              "source_version": "95827989eacf",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.013185096153846155
+            },
+            {
+              "id": "chunk_871b1f59ddb5dc751d0bb0e3",
+              "document_id": "pdf_DIA_Ch01_78d5e1234421",
+              "title": "DIA_Ch01",
+              "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+              "page": 12,
+              "page_start": 12,
+              "page_end": 12,
+              "section": "PDF page 12",
+              "source_file": "DIA_Ch01.pdf",
+              "source_type": "pdf",
+              "source_version": "78d5e1234421",
+              "retrieval_methods": [
+                "vector",
+                "fulltext"
+              ],
+              "score": 0.012966853408029878
+            }
+          ],
+          "paths": [
+            {
+              "subject": "A1C",
+              "relation": "có dữ liệu hạn chế về can thiệp lối sống ở",
+              "object": "hiệu quả can thiệp lối sống",
+              "evidence": "idf2025_prevention_phenotype_001"
+            },
+            {
+              "subject": "A1C",
+              "relation": "có khoảng nhận diện tiền đái tháo đường",
+              "object": "5,7–6,4% (theo NDEP 2018)",
+              "evidence": "ndep_a1c_ranges_001"
+            },
+            {
+              "subject": "A1C",
+              "relation": "có ngưỡng xét nghiệm đái tháo đường",
+              "object": "≥ 6,5% (theo NDEP 2018; cần xác nhận khi không có triệu chứng rõ)",
+              "evidence": "ndep_a1c_ranges_001"
+            },
+            {
+              "subject": "A1C",
+              "relation": "có thể bị ảnh hưởng bởi",
+              "object": "biến thể hemoglobin",
+              "evidence": "dia_a1c_limitations_001"
+            },
+            {
+              "subject": "A1C",
+              "relation": "có thể bị ảnh hưởng bởi",
+              "object": "suy thận",
+              "evidence": "dia_a1c_limitations_001"
+            },
+            {
+              "subject": "A1C",
+              "relation": "có thể bị ảnh hưởng bởi",
+              "object": "thiếu máu thiếu sắt",
+              "evidence": "dia_a1c_limitations_001"
+            },
+            {
+              "subject": "A1C",
+              "relation": "có thể không thống nhất với",
+              "object": "glucose huyết tương lúc đói",
+              "evidence": "idf2025_test_disagreement_001"
+            },
+            {
+              "subject": "A1C",
+              "relation": "có thể không thống nhất với",
+              "object": "glucose sau 2 giờ OGTT",
+              "evidence": "idf2025_test_disagreement_001"
+            },
+            {
+              "subject": "A1C",
+              "relation": "có thể phân loại khác với",
+              "object": "nghiệm pháp dung nạp glucose đường uống",
+              "evidence": "dia_test_discordance_001"
+            },
+            {
+              "subject": "A1C",
+              "relation": "có thể được bổ sung theo dõi bằng",
+              "object": "albumin glycat hóa",
+              "evidence": "idf2025_a1c_alternatives_001"
+            },
+            {
+              "subject": "A1C",
+              "relation": "có thể được bổ sung theo dõi bằng",
+              "object": "fructosamine",
+              "evidence": "idf2025_a1c_alternatives_001"
+            },
+            {
+              "subject": "A1C",
+              "relation": "khi chẩn đoán cần",
+              "object": "phương pháp được NGSP chứng nhận",
+              "evidence": "ndep_a1c_method_001"
+            },
+            {
+              "subject": "A1C",
+              "relation": "không cần",
+              "object": "nhịn ăn trước xét nghiệm",
+              "evidence": "ndep_a1c_method_001"
+            },
+            {
+              "subject": "A1C",
+              "relation": "không khuyến nghị chẩn đoán bằng",
+              "object": "A1C tại điểm chăm sóc",
+              "evidence": "ndep_a1c_method_001"
+            },
+            {
+              "subject": "albumin glycat hóa",
+              "relation": "phản ánh glucose gần đây khoảng",
+              "object": "2–4 tuần (theo dõi, không thay thế tiêu chuẩn chẩn đoán)",
+              "evidence": "idf2025_a1c_alternatives_001"
+            },
+            {
+              "subject": "fructosamine",
+              "relation": "phản ánh glucose gần đây khoảng",
+              "object": "2–4 tuần (theo dõi, không thay thế tiêu chuẩn chẩn đoán)",
+              "evidence": "idf2025_a1c_alternatives_001"
+            }
+          ],
+          "retrieval": {
+            "backend": "Neo4j vector + fulltext + graph",
+            "embedding_model": "TF-IDF + LSA (frozen 128d)",
+            "dimensions": 128,
+            "total_vectors": 515,
+            "pdf_chunks": 398,
+            "kb_version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+            "chunking": {
+              "words": 380,
+              "overlap_words": 60,
+              "scope": "page/paragraph/HTML heading"
+            }
+          },
+          "query_analysis": [
+            {
+              "entities": [
+                "entity_578616e5b1dc03496a7c"
+              ],
+              "query": "A1C meaning in diabetes ",
+              "requested_sources": [],
+              "methods": [
+                "vector",
+                "fulltext",
+                "graph"
+              ],
+              "version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+              "reranker": "RRF + lexical tie-break"
+            },
+            {
+              "entities": [
+                "entity_578616e5b1dc03496a7c"
+              ],
+              "query": "what does A1C test measure ",
+              "requested_sources": [],
+              "methods": [
+                "vector",
+                "fulltext",
+                "graph"
+              ],
+              "version": "e54cf6d7abd9fdbca691d3a15734bd1c02d527601d947ccb9b2b9bca9313ae2e",
+              "reranker": "RRF + lexical tie-break"
+            }
+          ],
+          "answer": "",
+          "status": "supported",
+          "summary": "Truy xuất 8 bằng chứng từ 2 truy vấn"
+        },
+        "duration_ms": 938.75
+      },
+      {
+        "sequence": 7,
+        "sender": "CoordinatorAgent",
+        "receiver": "EvidenceReaderAgent",
+        "performative": "REQUEST",
+        "content": {
+          "evidence": [
+            {
+              "evidence_id": "chunk_059373c4daefd5ff1d39c737",
+              "text": "The A1C test is sometimes called the hemoglobin A1C, HbA1c, glycated hemoglobin, or glycohemoglobin test. Hemoglobin is the part of a red blood cell that carries oxygen to the cells. Glucose attaches to or binds with hemoglobin in your blood cells, and the A1C test is based on this attachment of glucose to hemoglobin.",
+              "source": {
+                "id": "chunk_059373c4daefd5ff1d39c737",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "What is the A1C test?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.01464138387297634
+              }
+            },
+            {
+              "evidence_id": "chunk_072cd0a0818211b386685207",
+              "text": "The higher the glucose level in your bloodstream, the more glucose will attach to the hemoglobin. The A1C test measures the amount of hemoglobin with attached glucose and reflects your average blood glucose levels over the past 3 months.",
+              "source": {
+                "id": "chunk_072cd0a0818211b386685207",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "What is the A1C test?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.013111821843165127
+              }
+            },
+            {
+              "evidence_id": "chunk_15da007bc8e6bd2043889fbb",
+              "text": "When using the A1C test for diagnosis, your doctor will send your blood sample taken from a vein to a lab that uses an NGSP-certified method. The NGSP , formerly called the National Glycohemoglobin Standardization Program, certifies that makers of A1C tests provide results that are consistent and comparable with those used in the Diabetes Control and Complications Trial .",
+              "source": {
+                "id": "chunk_15da007bc8e6bd2043889fbb",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "A1C results and what the numbers mean",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.01529235478726141
+              }
+            },
+            {
+              "evidence_id": "chunk_a9b47f7b2e68150b5d8ada15",
+              "text": "Health care professionals can use the A1C test alone or in combination with other diabetes tests to diagnose type 2 diabetes and prediabetes. You don’t have to fast before having your blood drawn for an A1C test, which means that blood can be drawn for the test at any time of the day.",
+              "source": {
+                "id": "chunk_a9b47f7b2e68150b5d8ada15",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "How is the A1C test used to diagnose type 2 diabetes and prediabetes?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013492063492063493
+              }
+            },
+            {
+              "evidence_id": "chunk_48470347ded8d1e1dc04f226",
+              "text": "The A1C test is a blood test that provides information about your average levels of blood glucose, also called blood sugar, over the past 3 months. The A1C test can be used to diagnose type 2 diabetes and prediabetes . 1 The A1C test is also the primary test used for diabetes management .",
+              "source": {
+                "id": "chunk_48470347ded8d1e1dc04f226",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "What is the A1C test?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012932604735883424
+              }
+            },
+            {
+              "evidence_id": "chunk_8fddd0eec6c408e190dd14d7",
+              "text": "Not all A1C tests are unreliable for people with a hemoglobin variant. People with false results from one type of A1C test may need a different type of A1C test to measure their average blood glucose level. The NGSP provides information for health care professionals about which A1C tests are appropriate to use for specific hemoglobin variants .",
+              "source": {
+                "id": "chunk_8fddd0eec6c408e190dd14d7",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "A1C tests can be affected by changes in red blood cells or hemoglobin",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.01203125
+              }
+            },
+            {
+              "evidence_id": "chunk_6314caf8e641dd748f2f70f2",
+              "text": "When repeated, the A1C test result can be slightly higher or lower than the first measurement. This means, for example, an A1C reported as 6.8 percent on one test could be reported in a range from 6.4 to 7.2 percent on a repeat test from the same blood sample. 3 In the past, this range was larger but new, stricter quality-control standards mean more precise A1C test results.",
+              "source": {
+                "id": "chunk_6314caf8e641dd748f2f70f2",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "How precise is the A1C test?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013185096153846155
+              }
+            },
+            {
+              "evidence_id": "chunk_871b1f59ddb5dc751d0bb0e3",
+              "text": "to glycate more or less at a given MPG, does not appear to predict the risk of complications (91,92). The prevalence of diabetes in the popula- tion-based NHANES 2003–2006 (93,94) is shown in Table 1.6. In this study, of the population age ≥20 years, 12.9% had diabetes, and 39.8% were unaware of it (93). The prevalence of diabetes in those unaware was lowest by the A1c test (1.8%) (94) and highest by the 2-hour PG level from the OGTT (4.9%) (93). Part of this difference in the NHANES report may reflect the fact that A1c and glucose data were not collected in the same years. However, similar differences have been shown in other U.S. studies. The preva- lence of diabetes was greatest in those age ≥65 years and greater in non-Hispanic blacks and Mexican Americans than in non-Hispanic whites by A1c, as well as FPG and 2-hour PG (93,94). Drawbacks of A1c As a test for diabetes, A1c has been considered unsatisfactory by some inves- tigators, mainly because of low sensitivity, as seen in Table 1.6, when compared with plasma glucose measurements. For example, in one report, the data were combined from NHANES III, NHANES 2005–2006, and a hospital employee and community population in the Atlanta, Georgia, area (95). All 4,706 subjects had OGTT and A1c measured. With IEC cutpoints of ≥6.5% for diabetes and <6.0% for normal glucose, A1c was 97% specific but only 30% sensitive compared to the OGTT result. These types of analyses assume that one measure of glycemia represents the gold standard, which is far from clear. In particular, whether a single OGTT with its relatively low reproducibility should be considered a gold standard for the presence of the disease, against which to compare A1c, is debatable. In fact, as noted above, A1c, perhaps because it represents chronic ambient glycemia, rather than the result of an acute and poorly reproducible stress test, appears to capture risk for long-term complications similar to or better than plasma glucose- based measures. DETECT-2 data (Figures 1.3 and 1.4) do not support the superiority",
+              "source": {
+                "id": "chunk_871b1f59ddb5dc751d0bb0e3",
+                "document_id": "pdf_DIA_Ch01_78d5e1234421",
+                "title": "DIA_Ch01",
+                "url": "https://www.niddk.nih.gov/-/media/Files/Strategic-Plans/Diabetes-in-America-3rd-Edition/DIA_Ch01.pdf",
+                "page": 12,
+                "page_start": 12,
+                "page_end": 12,
+                "section": "PDF page 12",
+                "source_file": "DIA_Ch01.pdf",
+                "source_type": "pdf",
+                "source_version": "78d5e1234421",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.012966853408029878
+              }
+            }
+          ]
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 8,
+        "sender": "EvidenceReaderAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "evidence": [
+            {
+              "evidence_id": "chunk_059373c4daefd5ff1d39c737",
+              "text": "The A1C test is sometimes called the hemoglobin A1C, HbA1c, glycated hemoglobin, or glycohemoglobin test. Hemoglobin is the part of a red blood cell that carries oxygen to the cells. Glucose attaches to or binds with hemoglobin in your blood cells, and the A1C test is based on this attachment of glucose to hemoglobin.",
+              "source": {
+                "id": "chunk_059373c4daefd5ff1d39c737",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "What is the A1C test?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.01464138387297634
+              }
+            },
+            {
+              "evidence_id": "chunk_072cd0a0818211b386685207",
+              "text": "The higher the glucose level in your bloodstream, the more glucose will attach to the hemoglobin. The A1C test measures the amount of hemoglobin with attached glucose and reflects your average blood glucose levels over the past 3 months.",
+              "source": {
+                "id": "chunk_072cd0a0818211b386685207",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "What is the A1C test?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.013111821843165127
+              }
+            },
+            {
+              "evidence_id": "chunk_15da007bc8e6bd2043889fbb",
+              "text": "When using the A1C test for diagnosis, your doctor will send your blood sample taken from a vein to a lab that uses an NGSP-certified method. The NGSP , formerly called the National Glycohemoglobin Standardization Program, certifies that makers of A1C tests provide results that are consistent and comparable with those used in the Diabetes Control and Complications Trial .",
+              "source": {
+                "id": "chunk_15da007bc8e6bd2043889fbb",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "A1C results and what the numbers mean",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.01529235478726141
+              }
+            },
+            {
+              "evidence_id": "chunk_a9b47f7b2e68150b5d8ada15",
+              "text": "Health care professionals can use the A1C test alone or in combination with other diabetes tests to diagnose type 2 diabetes and prediabetes. You don’t have to fast before having your blood drawn for an A1C test, which means that blood can be drawn for the test at any time of the day.",
+              "source": {
+                "id": "chunk_a9b47f7b2e68150b5d8ada15",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "How is the A1C test used to diagnose type 2 diabetes and prediabetes?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013492063492063493
+              }
+            }
+          ],
+          "summary": "Đọc 4 đoạn, giữ nguồn và trang"
+        },
+        "duration_ms": 1.981
+      },
+      {
+        "sequence": 9,
+        "sender": "CoordinatorAgent",
+        "receiver": "ExplanationAgent",
+        "performative": "REQUEST",
+        "content": {
+          "question": "A1C phản ánh điều gì?",
+          "goal": "Explain what A1C reflects in diabetes management",
+          "intent": "knowledge",
+          "conversation": [],
+          "clarification_questions": [],
+          "evidence": [
+            {
+              "evidence_id": "chunk_059373c4daefd5ff1d39c737",
+              "text": "The A1C test is sometimes called the hemoglobin A1C, HbA1c, glycated hemoglobin, or glycohemoglobin test. Hemoglobin is the part of a red blood cell that carries oxygen to the cells. Glucose attaches to or binds with hemoglobin in your blood cells, and the A1C test is based on this attachment of glucose to hemoglobin.",
+              "source": {
+                "id": "chunk_059373c4daefd5ff1d39c737",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "What is the A1C test?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.01464138387297634
+              }
+            },
+            {
+              "evidence_id": "chunk_072cd0a0818211b386685207",
+              "text": "The higher the glucose level in your bloodstream, the more glucose will attach to the hemoglobin. The A1C test measures the amount of hemoglobin with attached glucose and reflects your average blood glucose levels over the past 3 months.",
+              "source": {
+                "id": "chunk_072cd0a0818211b386685207",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "What is the A1C test?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.013111821843165127
+              }
+            },
+            {
+              "evidence_id": "chunk_15da007bc8e6bd2043889fbb",
+              "text": "When using the A1C test for diagnosis, your doctor will send your blood sample taken from a vein to a lab that uses an NGSP-certified method. The NGSP , formerly called the National Glycohemoglobin Standardization Program, certifies that makers of A1C tests provide results that are consistent and comparable with those used in the Diabetes Control and Complications Trial .",
+              "source": {
+                "id": "chunk_15da007bc8e6bd2043889fbb",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "A1C results and what the numbers mean",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.01529235478726141
+              }
+            },
+            {
+              "evidence_id": "chunk_a9b47f7b2e68150b5d8ada15",
+              "text": "Health care professionals can use the A1C test alone or in combination with other diabetes tests to diagnose type 2 diabetes and prediabetes. You don’t have to fast before having your blood drawn for an A1C test, which means that blood can be drawn for the test at any time of the day.",
+              "source": {
+                "id": "chunk_a9b47f7b2e68150b5d8ada15",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "How is the A1C test used to diagnose type 2 diabetes and prediabetes?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013492063492063493
+              }
+            }
+          ],
+          "challenge": null
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 10,
+        "sender": "ExplanationAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "claims": [
+            {
+              "text": "A1C phản ánh mức đường huyết trung bình trong 3 tháng qua.",
+              "evidence_id": "chunk_072cd0a0818211b386685207",
+              "quote": "The higher the glucose level in your bloodstream, the more glucose will attach to the hemoglobin. The A1C test measures the amount of hemoglobin with attached glucose and reflects your average blood glucose levels over the past 3 months."
+            }
+          ],
+          "followup_questions": [],
+          "evidence_sufficient": true,
+          "missing_information": "",
+          "llm": {
+            "cached": false,
+            "task": "grounded_draft",
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 1.048236568,
+              "prompt_tokens": 2024,
+              "prompt_time": 0.100525959,
+              "completion_tokens": 129,
+              "completion_time": 0.162734512,
+              "total_tokens": 2153,
+              "total_time": 0.263260471,
+              "completion_tokens_details": {
+                "reasoning_tokens": 5
+              }
+            }
+          },
+          "summary": "Soạn 1 phát biểu có nguồn"
+        },
+        "duration_ms": 3300.177
+      },
+      {
+        "sequence": 11,
+        "sender": "CoordinatorAgent",
+        "receiver": "CriticAgent",
+        "performative": "REQUEST",
+        "content": {
+          "question": "A1C phản ánh điều gì?",
+          "goal": "Explain what A1C reflects in diabetes management",
+          "conversation": [],
+          "draft": {
+            "claims": [
+              {
+                "text": "A1C phản ánh mức đường huyết trung bình trong 3 tháng qua.",
+                "evidence_id": "chunk_072cd0a0818211b386685207",
+                "quote": "The higher the glucose level in your bloodstream, the more glucose will attach to the hemoglobin. The A1C test measures the amount of hemoglobin with attached glucose and reflects your average blood glucose levels over the past 3 months."
+              }
+            ],
+            "followup_questions": [],
+            "evidence_sufficient": true,
+            "missing_information": ""
+          },
+          "evidence": [
+            {
+              "evidence_id": "chunk_059373c4daefd5ff1d39c737",
+              "text": "The A1C test is sometimes called the hemoglobin A1C, HbA1c, glycated hemoglobin, or glycohemoglobin test. Hemoglobin is the part of a red blood cell that carries oxygen to the cells. Glucose attaches to or binds with hemoglobin in your blood cells, and the A1C test is based on this attachment of glucose to hemoglobin.",
+              "source": {
+                "id": "chunk_059373c4daefd5ff1d39c737",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "What is the A1C test?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.01464138387297634
+              }
+            },
+            {
+              "evidence_id": "chunk_072cd0a0818211b386685207",
+              "text": "The higher the glucose level in your bloodstream, the more glucose will attach to the hemoglobin. The A1C test measures the amount of hemoglobin with attached glucose and reflects your average blood glucose levels over the past 3 months.",
+              "source": {
+                "id": "chunk_072cd0a0818211b386685207",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "What is the A1C test?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.013111821843165127
+              }
+            },
+            {
+              "evidence_id": "chunk_15da007bc8e6bd2043889fbb",
+              "text": "When using the A1C test for diagnosis, your doctor will send your blood sample taken from a vein to a lab that uses an NGSP-certified method. The NGSP , formerly called the National Glycohemoglobin Standardization Program, certifies that makers of A1C tests provide results that are consistent and comparable with those used in the Diabetes Control and Complications Trial .",
+              "source": {
+                "id": "chunk_15da007bc8e6bd2043889fbb",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "A1C results and what the numbers mean",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.01529235478726141
+              }
+            },
+            {
+              "evidence_id": "chunk_a9b47f7b2e68150b5d8ada15",
+              "text": "Health care professionals can use the A1C test alone or in combination with other diabetes tests to diagnose type 2 diabetes and prediabetes. You don’t have to fast before having your blood drawn for an A1C test, which means that blood can be drawn for the test at any time of the day.",
+              "source": {
+                "id": "chunk_a9b47f7b2e68150b5d8ada15",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "How is the A1C test used to diagnose type 2 diabetes and prediabetes?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013492063492063493
+              }
+            }
+          ]
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 12,
+        "sender": "CriticAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "action": "accept",
+          "answers_question": true,
+          "all_claims_supported": true,
+          "reasons": [],
+          "revised_query": "",
+          "followup_questions": [],
+          "structural": {
+            "passed": true,
+            "issues": [],
+            "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof"
+          },
+          "llm": {
+            "cached": false,
+            "task": "response_critic",
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.203752324,
+              "prompt_tokens": 1935,
+              "prompt_time": 0.097206412,
+              "completion_tokens": 102,
+              "completion_time": 0.138147098,
+              "total_tokens": 2037,
+              "total_time": 0.23535351,
+              "completion_tokens_details": {
+                "reasoning_tokens": 58
+              }
+            }
+          },
+          "summary": "Critic: accept"
+        },
+        "duration_ms": 723.116
+      },
+      {
+        "sequence": 13,
+        "sender": "CoordinatorAgent",
+        "receiver": "VerifierSafetyAgent",
+        "performative": "REQUEST",
+        "content": {
+          "status": "supported",
+          "answer": "A1C phản ánh mức đường huyết trung bình trong 3 tháng qua. [chunk_072cd0a0818211b386685207]",
+          "draft": {
+            "claims": [
+              {
+                "text": "A1C phản ánh mức đường huyết trung bình trong 3 tháng qua.",
+                "evidence_id": "chunk_072cd0a0818211b386685207",
+                "quote": "The higher the glucose level in your bloodstream, the more glucose will attach to the hemoglobin. The A1C test measures the amount of hemoglobin with attached glucose and reflects your average blood glucose levels over the past 3 months."
+              }
+            ],
+            "followup_questions": [],
+            "evidence_sufficient": true,
+            "missing_information": "",
+            "llm": {
+              "cached": false,
+              "task": "grounded_draft",
+              "model": "openai/gpt-oss-20b",
+              "usage": {
+                "queue_time": 1.048236568,
+                "prompt_tokens": 2024,
+                "prompt_time": 0.100525959,
+                "completion_tokens": 129,
+                "completion_time": 0.162734512,
+                "total_tokens": 2153,
+                "total_time": 0.263260471,
+                "completion_tokens_details": {
+                  "reasoning_tokens": 5
+                }
+              }
+            },
+            "summary": "Soạn 1 phát biểu có nguồn"
+          },
+          "review": {
+            "action": "accept",
+            "answers_question": true,
+            "all_claims_supported": true,
+            "reasons": [],
+            "revised_query": "",
+            "followup_questions": [],
+            "structural": {
+              "passed": true,
+              "issues": [],
+              "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof"
+            },
+            "llm": {
+              "cached": false,
+              "task": "response_critic",
+              "model": "openai/gpt-oss-20b",
+              "usage": {
+                "queue_time": 0.203752324,
+                "prompt_tokens": 1935,
+                "prompt_time": 0.097206412,
+                "completion_tokens": 102,
+                "completion_time": 0.138147098,
+                "total_tokens": 2037,
+                "total_time": 0.23535351,
+                "completion_tokens_details": {
+                  "reasoning_tokens": 58
+                }
+              }
+            },
+            "summary": "Critic: accept"
+          },
+          "evidence": [
+            {
+              "evidence_id": "chunk_059373c4daefd5ff1d39c737",
+              "text": "The A1C test is sometimes called the hemoglobin A1C, HbA1c, glycated hemoglobin, or glycohemoglobin test. Hemoglobin is the part of a red blood cell that carries oxygen to the cells. Glucose attaches to or binds with hemoglobin in your blood cells, and the A1C test is based on this attachment of glucose to hemoglobin.",
+              "source": {
+                "id": "chunk_059373c4daefd5ff1d39c737",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "What is the A1C test?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.01464138387297634
+              }
+            },
+            {
+              "evidence_id": "chunk_072cd0a0818211b386685207",
+              "text": "The higher the glucose level in your bloodstream, the more glucose will attach to the hemoglobin. The A1C test measures the amount of hemoglobin with attached glucose and reflects your average blood glucose levels over the past 3 months.",
+              "source": {
+                "id": "chunk_072cd0a0818211b386685207",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "What is the A1C test?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.013111821843165127
+              }
+            },
+            {
+              "evidence_id": "chunk_15da007bc8e6bd2043889fbb",
+              "text": "When using the A1C test for diagnosis, your doctor will send your blood sample taken from a vein to a lab that uses an NGSP-certified method. The NGSP , formerly called the National Glycohemoglobin Standardization Program, certifies that makers of A1C tests provide results that are consistent and comparable with those used in the Diabetes Control and Complications Trial .",
+              "source": {
+                "id": "chunk_15da007bc8e6bd2043889fbb",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "A1C results and what the numbers mean",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext",
+                  "graph"
+                ],
+                "score": 0.01529235478726141
+              }
+            },
+            {
+              "evidence_id": "chunk_a9b47f7b2e68150b5d8ada15",
+              "text": "Health care professionals can use the A1C test alone or in combination with other diabetes tests to diagnose type 2 diabetes and prediabetes. You don’t have to fast before having your blood drawn for an A1C test, which means that blood can be drawn for the test at any time of the day.",
+              "source": {
+                "id": "chunk_a9b47f7b2e68150b5d8ada15",
+                "document_id": "niddk_a1c_web_95827989eacf",
+                "title": "The A1C Test & Diabetes",
+                "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+                "page": null,
+                "page_start": null,
+                "page_end": null,
+                "section": "How is the A1C test used to diagnose type 2 diabetes and prediabetes?",
+                "source_file": null,
+                "source_type": "web",
+                "source_version": "95827989eacf",
+                "retrieval_methods": [
+                  "vector",
+                  "fulltext"
+                ],
+                "score": 0.013492063492063493
+              }
+            }
+          ],
+          "prediction": null
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 14,
+        "sender": "VerifierSafetyAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "passed": true,
+          "issues": [],
+          "scope": "Grounded claims + question coverage + immutable model score",
+          "summary": "Verifier đạt"
+        },
+        "duration_ms": 0.132
+      },
+      {
+        "sequence": 15,
+        "sender": "CoordinatorAgent",
+        "receiver": "MonitoringAgent",
+        "performative": "REQUEST",
+        "content": {
+          "status": "supported"
+        },
+        "duration_ms": 0.0
+      },
+      {
+        "sequence": 16,
+        "sender": "MonitoringAgent",
+        "receiver": "CoordinatorAgent",
+        "performative": "INFORM",
+        "content": {
+          "status": "supported",
+          "steps": 7,
+          "summary": "Ghi metadata và thời gian xử lý, không lưu nội dung hồ sơ"
+        },
+        "duration_ms": 0.003
+      }
+    ],
+    "review": null,
+    "workflow": null,
+    "revisions": [],
+    "knowledge_backend": "neo4j",
+    "evidence_review": null,
+    "decision": {
+      "status": "supported",
+      "final_label": null,
+      "review_required": false,
+      "reason_codes": [],
+      "assessment": null
+    },
+    "verification": {
+      "passed": true,
+      "issues": [],
+      "scope": "Grounded claims + question coverage + immutable model score",
+      "summary": "Verifier đạt"
+    },
+    "clarification": null,
+    "explanation": {
+      "answer": "A1C phản ánh mức đường huyết trung bình trong 3 tháng qua. [chunk_072cd0a0818211b386685207]",
+      "sections": [
+        {
+          "id": "medical_evidence",
+          "title": "Trả lời từ bằng chứng",
+          "text": "A1C phản ánh mức đường huyết trung bình trong 3 tháng qua. [chunk_072cd0a0818211b386685207]",
+          "citation_ids": [
+            "chunk_072cd0a0818211b386685207"
+          ]
+        }
+      ],
+      "model_factors": [],
+      "followup_questions": [],
+      "generation": {
+        "status": "generated",
+        "claims": [
+          {
+            "text": "A1C phản ánh mức đường huyết trung bình trong 3 tháng qua.",
+            "evidence_id": "chunk_072cd0a0818211b386685207",
+            "quote": "The higher the glucose level in your bloodstream, the more glucose will attach to the hemoglobin. The A1C test measures the amount of hemoglobin with attached glucose and reflects your average blood glucose levels over the past 3 months."
+          }
+        ],
+        "model": "openai/gpt-oss-20b",
+        "critic": {
+          "action": "accept",
+          "answers_question": true,
+          "all_claims_supported": true,
+          "reasons": [],
+          "revised_query": "",
+          "followup_questions": [],
+          "structural": {
+            "passed": true,
+            "issues": [],
+            "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof"
+          },
+          "llm": {
+            "cached": false,
+            "task": "response_critic",
+            "model": "openai/gpt-oss-20b",
+            "usage": {
+              "queue_time": 0.203752324,
+              "prompt_tokens": 1935,
+              "prompt_time": 0.097206412,
+              "completion_tokens": 102,
+              "completion_time": 0.138147098,
+              "total_tokens": 2037,
+              "total_time": 0.23535351,
+              "completion_tokens_details": {
+                "reasoning_tokens": 58
+              }
+            }
+          },
+          "summary": "Critic: accept"
+        }
+      },
+      "method": "conversation_rag_v3"
+    },
+    "workflow_history": [],
+    "testing_context": null,
+    "traces": [
+      {
+        "agent": "CoordinatorAgent",
+        "status": "success",
+        "duration_ms": 581.52,
+        "summary": "Explain what A1C reflects in diabetes management",
+        "tool": "CoordinatorAgent"
+      },
+      {
+        "agent": "RuleBasedAgent",
+        "status": "success",
+        "duration_ms": 0.03,
+        "summary": "Kiểm tra bất đồng model và quy tắc chuyển review",
+        "tool": "RuleBasedAgent"
+      },
+      {
+        "agent": "RetrievalAgent",
+        "status": "success",
+        "duration_ms": 939.0,
+        "summary": "Truy xuất 8 bằng chứng từ 2 truy vấn",
+        "tool": "RetrievalAgent"
+      },
+      {
+        "agent": "EvidenceReaderAgent",
+        "status": "success",
+        "duration_ms": 2.27,
+        "summary": "Đọc 4 đoạn, giữ nguồn và trang",
+        "tool": "EvidenceReaderAgent"
+      },
+      {
+        "agent": "ExplanationAgent",
+        "status": "success",
+        "duration_ms": 3300.27,
+        "summary": "Soạn 1 phát biểu có nguồn",
+        "tool": "ExplanationAgent"
+      },
+      {
+        "agent": "CriticAgent",
+        "status": "success",
+        "duration_ms": 723.22,
+        "summary": "Critic: accept",
+        "tool": "CriticAgent"
+      },
+      {
+        "agent": "VerifierSafetyAgent",
+        "status": "success",
+        "duration_ms": 0.22,
+        "summary": "Verifier đạt",
+        "tool": "VerifierSafetyAgent"
+      },
+      {
+        "agent": "MonitoringAgent",
+        "status": "success",
+        "duration_ms": 0.02,
+        "summary": "Ghi metadata và thời gian xử lý, không lưu nội dung hồ sơ",
+        "tool": "MonitoringAgent"
+      }
+    ],
+    "total_duration_ms": 5546.66,
+    "plan": {
+      "intent": "knowledge",
+      "goal": "Explain what A1C reflects in diabetes management",
+      "queries": [
+        "A1C meaning in diabetes",
+        "what does A1C test measure"
+      ],
+      "clarification_questions": [],
+      "can_answer_general": true,
+      "requested_sources": [],
+      "llm": {
+        "cached": false,
+        "task": "coordinator_plan",
+        "model": "openai/gpt-oss-20b",
+        "usage": {
+          "queue_time": 0.052401985,
+          "prompt_tokens": 770,
+          "prompt_time": 0.051235074,
+          "completion_tokens": 93,
+          "completion_time": 0.115954608,
+          "total_tokens": 863,
+          "total_time": 0.167189682,
+          "completion_tokens_details": {
+            "reasoning_tokens": 29
+          }
+        }
+      },
+      "summary": "Explain what A1C reflects in diabetes management"
+    },
+    "response_review": {
+      "action": "accept",
+      "answers_question": true,
+      "all_claims_supported": true,
+      "reasons": [],
+      "revised_query": "",
+      "followup_questions": [],
+      "structural": {
+        "passed": true,
+        "issues": [],
+        "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof"
+      },
+      "llm": {
+        "cached": false,
+        "task": "response_critic",
+        "model": "openai/gpt-oss-20b",
+        "usage": {
+          "queue_time": 0.203752324,
+          "prompt_tokens": 1935,
+          "prompt_time": 0.097206412,
+          "completion_tokens": 102,
+          "completion_time": 0.138147098,
+          "total_tokens": 2037,
+          "total_time": 0.23535351,
+          "completion_tokens_details": {
+            "reasoning_tokens": 58
+          }
+        }
+      },
+      "summary": "Critic: accept"
+    },
+    "rules": {
+      "assessment": null,
+      "review_required": false,
+      "summary": "Kiểm tra bất đồng model và quy tắc chuyển review"
+    },
+    "architecture_version": "conversation_v3"
+  }
+}

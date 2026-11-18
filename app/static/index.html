@@ -2,13 +2,14 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>DiaAgents Lab — Single vs Multi-Agent</title>
+  <title>DiaAgents Lab — Đánh giá hồ sơ & Hỏi kiến thức</title>
   <meta name="description" content="Demo hệ đa Agent hỗ trợ đánh giá nguy cơ tiểu đường có bằng chứng.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%2310251f'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-size='34' fill='%23c8f26b'%3ED%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/styles.css">
   <link rel="stylesheet" href="/static/benchmark.css">
+  <link rel="stylesheet" href="/static/benchmark-v3.css">
 </head>
 <body>
   <div class="noise"></div>
@@ -20,7 +21,7 @@
     <section class="hero">
       <div class="hero-copy"><span class="eyebrow">FINAL PROJECT · INTELLIGENT SYSTEMS</span>
         <h1>Đánh giá nguy cơ.<br><em>Giải thích bằng chứng.</em></h1>
-        <p>Single Agent và Multi-Agent chạy trên cùng model, dataset và kho tri thức — để đo khác biệt bằng kết quả thật, không bằng khẩu hiệu.</p>
+        <p>Chọn đánh giá hồ sơ bằng model đã huấn luyện hoặc hỏi kiến thức từ tài liệu có nguồn. Theo dõi từng Agent thực thi và kết quả kiểm chứng.</p>
         <div class="hero-actions"><a class="btn primary" href="#assessment">Bắt đầu đánh giá <b>→</b></a><button class="btn ghost" data-sample="knowledge">Xem Agent hoạt động</button></div>
         <div class="trust"><span>WHO</span><span>CDC</span><span>NIDDK</span><p>Nguồn tri thức chính thức</p></div>
       </div>
@@ -28,22 +29,28 @@
         <div class="orbit o1"></div><div class="orbit o2"></div>
         <div class="core"><span>Coordinator</span><strong>Agent</strong><small>handlers theo trạng thái</small></div>
         <div class="agent a1">Validation</div><div class="agent a2">Prediction</div><div class="agent a3">Retrieval</div>
-        <div class="agent a4">Graph</div><div class="agent a5">Statistics</div><div class="agent a6">Verifier</div>
+        <div class="agent a4">Evidence Reader</div><div class="agent a5">Critic</div><div class="agent a6">Verifier</div>
       </div>
     </section>
 
     <section class="metrics" id="evidence">
       <article><strong id="metricRows">100,000</strong><span>hồ sơ dự đoán</span></article>
       <article><strong id="metricF1">—</strong><span>F1 test model chọn</span></article>
-      <article><strong id="metricDocuments">—</strong><span>đoạn tri thức có nguồn</span></article>
-      <article><strong>2</strong><span>hệ được benchmark</span></article>
+      <article><strong id="metricDocuments">—</strong><span>chunk tri thức có nguồn</span></article>
+      <article><strong>2</strong><span>luồng sử dụng riêng biệt</span></article>
     </section>
 
     <section class="workspace" id="assessment">
-      <div class="section-head"><span class="eyebrow">01 · PATIENT PROFILE</span><h2>Một hồ sơ, hai cách tổ chức trí tuệ.</h2>
-        <p>Nhập thông tin minh họa hoặc dùng hồ sơ mẫu. Hệ thống trả risk score học thuật, không chẩn đoán.</p></div>
+      <div class="section-head"><span class="eyebrow">01 · CHỌN TÁC VỤ</span><h2>Đánh giá hồ sơ hoặc hỏi kiến thức.</h2>
+        <p>Hai chế độ có đầu vào và luồng Agent riêng. Kết quả phục vụ học tập, không phải chẩn đoán.</p></div>
+      <div class="task-tabs" role="tablist" aria-label="Chọn chế độ">
+        <button type="button" id="assessmentTab" role="tab" data-task="assessment" aria-selected="true" aria-controls="profileForm">Đánh giá hồ sơ</button>
+        <button type="button" id="knowledgeTab" role="tab" data-task="knowledge" aria-selected="false" aria-controls="knowledgeForm">Hỏi kiến thức</button>
+      </div>
+      <div id="activeFlow" class="flow-guide" aria-live="polite"><b>Đánh giá hồ sơ</b><span>Validation → DL → Rules → Evidence → Explanation</span><small>Sau giải thích: Critic và Verifier kiểm tra kết quả.</small></div>
+      <label class="compare-option"><input id="compareSystems" type="checkbox"> So sánh thêm với Single-Agent baseline cũ (không thuộc benchmark v3)</label>
       <div class="input-grid">
-        <form id="profileForm" class="panel form-panel">
+        <form id="profileForm" class="panel form-panel" role="tabpanel" aria-labelledby="assessmentTab">
           <div class="panel-title"><span>Hồ sơ sức khỏe</span><button type="button" id="fillSample">Điền mẫu nguy cơ cao</button></div>
           <div class="fields">
             <label>Giới tính<select name="gender"><option>Female</option><option>Male</option><option>Other</option></select></label>
@@ -56,45 +63,42 @@
             <label class="toggle-field">Bệnh tim<input name="heart_disease" type="checkbox"><i></i></label>
           </div>
           <label class="question-label">Câu hỏi đi kèm<textarea id="question" rows="2">Vì sao hồ sơ này có mức nguy cơ như vậy?</textarea></label>
-          <button class="run" type="submit"><span>Chạy so sánh Single vs Multi-Agent</span><b>↗</b></button>
+          <button class="run" type="submit"><span>Đánh giá hồ sơ</span><b>↗</b></button>
           <p class="notice">Không nhập dữ liệu nhận dạng cá nhân. Kết quả chỉ phục vụ học tập.</p>
+        </form>
+        <form id="knowledgeForm" class="panel form-panel hidden" role="tabpanel" aria-labelledby="knowledgeTab">
+          <div class="panel-title"><span>Hỏi từ kho tri thức</span></div>
+          <p class="notice">Chế độ này không gửi hồ sơ sức khỏe và không chạy model dự đoán. Agent tìm nguồn, trả lời và phản biện.</p>
+          <label class="question-label">Câu hỏi<textarea id="knowledgeQuestion" rows="5" required maxlength="800" placeholder="Ví dụ: HbA1c phản ánh điều gì? Theo IDF, mục tiêu HbA1c cần cá nhân hóa thế nào?"></textarea></label>
+          <button class="run" type="submit"><span>Hỏi kiến thức</span><b>↗</b></button>
+          <p class="notice">Có thể hỏi tiếp sau câu trả lời. Nguồn được hiển thị kèm đoạn trích và trang PDF nếu có.</p>
         </form>
         <div class="panel quick-panel"><div class="panel-title"><span>Kịch bản nhanh</span></div>
           <button class="scenario" data-sample="a1c"><i>01</i><span><b>A1C phản ánh điều gì?</b><small>RAG + Knowledge Graph</small></span><em>→</em></button>
           <button class="scenario" data-sample="stats"><i>02</i><span><b>Tỷ lệ nhãn dương ở nữ?</b><small>Phép tính chính xác từ CDC</small></span><em>→</em></button>
           <button class="scenario" data-sample="unsafe"><i>03</i><span><b>Hãy kê thuốc cho tôi</b><small>Kiểm tra Safety Agent</small></span><em>→</em></button>
           <button class="scenario" data-sample="outside"><i>04</i><span><b>Giá Bitcoin ngày mai?</b><small>Kiểm tra ngoài phạm vi</small></span><em>→</em></button>
-          <div class="architecture"><span>Luồng Multi-Agent</span><div>Coordinator <b>→</b> Specialist <b>→</b> Verifier</div></div>
+          <div class="architecture"><span>Hỏi kiến thức</span><div>Hiểu câu hỏi → Retrieval → Explanation → Critic</div></div>
         </div>
       </div>
     </section>
 
     <section class="comparison" id="compare">
-      <div class="section-head"><span class="eyebrow">02 · CONTROLLED COMPARISON</span><h2>Quan sát khác biệt trong từng bước.</h2></div>
-      <div id="emptyState" class="empty"><div class="pulse"></div><h3>Chưa có lượt chạy</h3><p>Chọn một kịch bản hoặc nhập hồ sơ để xem hai hệ cạnh nhau.</p></div>
+      <div class="section-head"><span class="eyebrow">02 · KẾT QUẢ VÀ AGENT TRACE</span><h2>Theo dõi đúng luồng vừa chọn.</h2><p id="resultTaskLabel">Kết quả sẽ ghi rõ tác vụ đã thực hiện.</p></div>
+      <div id="emptyState" class="empty"><div class="pulse"></div><h3>Chưa có lượt chạy</h3><p>Chọn Đánh giá hồ sơ hoặc Hỏi kiến thức ở phía trên.</p></div>
       <div id="results" class="results hidden">
-        <article class="result-card single"><header><span>Single Agent</span><small>Một tác tử xử lý toàn bộ</small><b id="singleTime">— ms</b></header><div id="singleBody"></div><div id="singleTrace" class="trace"></div></article>
+        <article class="result-card single" id="singleCard"><header><span>Single Agent</span><small>Baseline cũ · xem tham khảo</small><b id="singleTime">— ms</b></header><div id="singleBody"></div><div id="singleTrace" class="trace"></div></article>
         <article class="result-card multi"><header><span>Multi-Agent</span><small>Điều phối tác tử chuyên trách</small><b id="multiTime">— ms</b></header><div id="multiBody"></div><div id="multiTrace" class="trace"></div></article>
       </div>
     </section>
 
     <section class="benchmark" id="benchmark">
-      <div class="section-head"><span class="eyebrow">03 · DIABETES PREDICTION BENCHMARK</span><h2>Dự đoán có/không và điểm xác suất.</h2>
-        <p>Đối chiếu với nhãn thật trong tập test đã tách từ lúc huấn luyện. Đánh giá riêng dự đoán, độ tin cậy của điểm % và quyết định chuyển xem xét thêm.</p></div>
-      <div id="criticBenchmark" class="kind-breakdown"></div>
-      <div id="diabetesBenchmark" aria-live="polite"><p>Đang tải benchmark dự đoán…</p></div>
-      <div class="section-head"><span class="eyebrow">04 · FUNCTIONAL CHECKS — KẾT QUẢ CŨ</span><h2>Cùng công cụ. Cùng dữ liệu. Đo đúng khác biệt.</h2>
-        <p>Kết quả kiểm tra chức năng đã lưu từ trước: 58 tình huống × 2 kiến trúc. Task success chỉ kiểm tra hoàn thành tác vụ, không phải độ chính xác có/không tiểu đường. Dùng bảng 14.998 mẫu phía trên để đánh giá dự đoán hiện tại.</p></div>
-      <div class="benchmark-grid">
-        <article class="bench-card"><header><span>Single Agent</span><small>Monolithic baseline</small></header><div id="singleBench" class="bench-body"><p>Đang tải…</p></div></article>
-        <article class="bench-card featured"><header><span>Multi-Agent</span><small>Specialized pipeline</small></header><div id="multiBench" class="bench-body"><p>Đang tải…</p></div></article>
-      </div>
-      <div class="benchmark-note"><b>Kết luận kiểm soát:</b><p>Trên bộ contract hiện tại, hai hệ có thể đạt cùng task success. Multi-Agent nổi bật ở specialist audit coverage: mỗi bước định tuyến, kiểm tra, dự đoán, truy xuất và xác minh được ghi riêng để dễ kiểm tra và khoanh vùng lỗi. Đây không phải tuyên bố Multi-Agent luôn chính xác hơn.</p></div>
-      <div id="kindBreakdown" class="kind-breakdown"></div>
+      <div class="section-head"><span class="eyebrow">03 · BENCHMARK CONVERSATION V3</span><h2>Đo từng thành phần và toàn luồng đang chạy.</h2>
+        <p>Truy xuất, dự đoán, giải thích, sửa lỗi, safety và latency. Kết quả ghi rõ mẫu số, tiêu chí chấm, phiên bản và lỗi dịch vụ; không dùng số liệu workflow cũ.</p></div>
+      <div id="v3Benchmark" aria-live="polite"><p>Đang tải benchmark v3…</p></div>
     </section>
   </main>
   <footer><div><span class="brand-mark">D</span><b>DiaAgents Lab</b></div><p>Nguyễn Minh Vinh · B23DCCN934 · D23CTPM01 · Nhóm 08</p><p>Educational use only · Not medical advice</p></footer>
   <script src="/static/app.js"></script>
-  <script src="/static/diabetes-benchmark.js"></script>
-  <script src="/static/critic-benchmark.js"></script>
+  <script src="/static/benchmark-v3.js"></script>
 </body></html>

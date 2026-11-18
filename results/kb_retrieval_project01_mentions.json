@@ -1,0 +1,733 @@
+{
+  "kb": {
+    "backend": "Qdrant Cloud vector + Neo4j fulltext + graph",
+    "source_policy": "pdf_web_only",
+    "embedding_model": "intfloat/multilingual-e5-base@d128750597153bb5987e10b1c3493a34e5a4502a",
+    "dimensions": 768,
+    "total_vectors": 544,
+    "pdf_chunks": 398,
+    "kb_version": "bc33c4e8133bb10cf841b25584e727258d9d08ea133d4d193d80cc90ec7ac35b",
+    "chunking": {
+      "words": 380,
+      "overlap_words": 60,
+      "scope": "page/paragraph/HTML heading"
+    }
+  },
+  "metrics": {
+    "n": 16,
+    "hit_at_5": 0.375,
+    "mrr_at_5": 0.28125
+  },
+  "trials": [
+    {
+      "case": "R01",
+      "variant": "original",
+      "question": "Theo NIDDK, A1C phản ánh điều gì?",
+      "first_relevant_rank": null,
+      "latency_ms": 6129.3,
+      "retrieved": [
+        {
+          "id": "chunk_271c4b5b05861dc3f289531a",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_8dc41828011cd9a5379ca843",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_b3d26568db2cd0555656fe3c",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_89fbb71f8c813c40e5b2db54",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_1034ec7059045565739f0e6d",
+          "methods": [
+            "vector",
+            "graph"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R01",
+      "variant": "paraphrase",
+      "question": "Chỉ số hemoglobin glyc hóa cho biết điều gì, theo NIDDK?",
+      "first_relevant_rank": null,
+      "latency_ms": 928.4,
+      "retrieved": [
+        {
+          "id": "chunk_d8531b500d76c38b58a9b7e0",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_271c4b5b05861dc3f289531a",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_8dc41828011cd9a5379ca843",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_31f2509693d978ad93f200a8",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_e00799547e3b3ebd5fda0319",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R02",
+      "variant": "original",
+      "question": "Theo NIDDK, xét nghiệm A1C có cần nhịn ăn không?",
+      "first_relevant_rank": 1,
+      "latency_ms": 903.5,
+      "retrieved": [
+        {
+          "id": "chunk_a9b47f7b2e68150b5d8ada15",
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_534173169e2a6d5988b4c47b",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_56b431c2881caa2eccf8e972",
+          "methods": [
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_74e6a58922e161056e00aeca",
+          "methods": [
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_6314caf8e641dd748f2f70f2",
+          "methods": [
+            "fulltext",
+            "graph"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R02",
+      "variant": "paraphrase",
+      "question": "Trước khi lấy máu đo HbA1c, có được ăn sáng không? NIDDK",
+      "first_relevant_rank": null,
+      "latency_ms": 1057.8,
+      "retrieved": [
+        {
+          "id": "chunk_e59333ae70cc3afc03046e37",
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_1789706467bc8b391a6d1384",
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_642047b9b1c3086683dce004",
+          "methods": [
+            "vector",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_336c97859f4168dce89d5647",
+          "methods": [
+            "vector",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_2b98d3753efe8afacaa4e69e",
+          "methods": [
+            "fulltext",
+            "graph"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R03",
+      "variant": "original",
+      "question": "Theo NIDDK, FPG và OGTT yêu cầu nhịn ăn bao lâu?",
+      "first_relevant_rank": null,
+      "latency_ms": 846.1,
+      "retrieved": [
+        {
+          "id": "chunk_eff84dca35ef3df919497379",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_362f2beaecf9f9117bf28925",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_046b81ba39ea495dfe2b9954",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_a54dd8c184952ed8be7da54d",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_9e60eb460f0da6849bc9af50",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R03",
+      "variant": "paraphrase",
+      "question": "Chuẩn bị nhịn ăn thế nào trước xét nghiệm đường huyết lúc đói hoặc nghiệm pháp dung nạp? NIDDK",
+      "first_relevant_rank": 4,
+      "latency_ms": 889.2,
+      "retrieved": [
+        {
+          "id": "chunk_98d5e5347fa31927903675a1",
+          "methods": [
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_d6af773df53938b55cc477e6",
+          "methods": [
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_642047b9b1c3086683dce004",
+          "methods": [
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_8bda4dece938dae80ad33dd5",
+          "methods": [
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_dd643738c3a04f74af556672",
+          "methods": [
+            "vector"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R04",
+      "variant": "original",
+      "question": "Theo NIDDK, mức A1C bình thường được mô tả thế nào?",
+      "first_relevant_rank": 1,
+      "latency_ms": 889.0,
+      "retrieved": [
+        {
+          "id": "chunk_1bbee14806ffef1fa444e39b",
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_1b4337bec8518a2d75977542",
+          "methods": [
+            "vector",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_1034ec7059045565739f0e6d",
+          "methods": [
+            "vector",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_059373c4daefd5ff1d39c737",
+          "methods": [
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_05ff5c73063a095e08c18ccb",
+          "methods": [
+            "vector",
+            "graph"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R04",
+      "variant": "paraphrase",
+      "question": "Chỉ số hemoglobin glyc hóa bao nhiêu được xếp vào mức bình thường? NIDDK",
+      "first_relevant_rank": null,
+      "latency_ms": 797.5,
+      "retrieved": [
+        {
+          "id": "chunk_e00799547e3b3ebd5fda0319",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_31f2509693d978ad93f200a8",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_e59333ae70cc3afc03046e37",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_336c97859f4168dce89d5647",
+          "methods": [
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_98d5e5347fa31927903675a1",
+          "methods": [
+            "vector"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R05",
+      "variant": "original",
+      "question": "Theo NIDDK, A1C bất thường khi không có triệu chứng có cần xét nghiệm xác nhận không?",
+      "first_relevant_rank": null,
+      "latency_ms": 713.7,
+      "retrieved": [
+        {
+          "id": "chunk_534173169e2a6d5988b4c47b",
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_56b431c2881caa2eccf8e972",
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_74e6a58922e161056e00aeca",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_1789706467bc8b391a6d1384",
+          "methods": [
+            "vector",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_47ec46b6402f281843451902",
+          "methods": [
+            "vector",
+            "graph"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R05",
+      "variant": "paraphrase",
+      "question": "Một kết quả HbA1c bất thường ở người không có triệu chứng có cần kiểm tra lại? NIDDK",
+      "first_relevant_rank": null,
+      "latency_ms": 659.5,
+      "retrieved": [
+        {
+          "id": "chunk_2b98d3753efe8afacaa4e69e",
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_1789706467bc8b391a6d1384",
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_6bf8e85e8438ad566389f1e4",
+          "methods": [
+            "vector",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_849d932b0fc4ae837bad3752",
+          "methods": [
+            "vector",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_dfe9a82e7153071d5e1759a8",
+          "methods": [
+            "vector",
+            "graph"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R06",
+      "variant": "original",
+      "question": "Theo NIDDK, A1C có dùng để chẩn đoán tiểu đường type 1 không?",
+      "first_relevant_rank": 4,
+      "latency_ms": 826.3,
+      "retrieved": [
+        {
+          "id": "chunk_336c97859f4168dce89d5647",
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_d6af773df53938b55cc477e6",
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_108325920d3be7ef47b3df0a",
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_89fbb71f8c813c40e5b2db54",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_b3d26568db2cd0555656fe3c",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R06",
+      "variant": "paraphrase",
+      "question": "Xét nghiệm hemoglobin glyc hóa có phù hợp để xác định đái tháo đường típ một? NIDDK",
+      "first_relevant_rank": null,
+      "latency_ms": 976.7,
+      "retrieved": [
+        {
+          "id": "chunk_336c97859f4168dce89d5647",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_642047b9b1c3086683dce004",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_108325920d3be7ef47b3df0a",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_e00799547e3b3ebd5fda0319",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_3d98a9bf9d71b783940739a3",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R07",
+      "variant": "original",
+      "question": "Theo IDF, mục tiêu HbA1c có cần cá nhân hóa theo nguy cơ hạ đường huyết không?",
+      "first_relevant_rank": 1,
+      "latency_ms": 1449.6,
+      "retrieved": [
+        {
+          "id": "chunk_5a76d14217b9f0cfa18c4075",
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_4bb044b1d9b11b3d0a655efc",
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_7ae3a2ef09eb971bbda90e68",
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_7c0cf31f62b47aae9d17e0cf",
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ]
+        },
+        {
+          "id": "chunk_1a0fe715a6a4f9d13f07515c",
+          "methods": [
+            "vector",
+            "fulltext",
+            "graph"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R07",
+      "variant": "paraphrase",
+      "question": "IDF nói gì về việc điều chỉnh mục tiêu hemoglobin glyc hóa cho người dễ bị tụt đường?",
+      "first_relevant_rank": 1,
+      "latency_ms": 842.0,
+      "retrieved": [
+        {
+          "id": "chunk_5a76d14217b9f0cfa18c4075",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_8cd92f7d2ff2c4ccdd6c0e8a",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_9e21c4ed7b7ba293db3d197f",
+          "methods": [
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_0a7cd89ff4e8748e3436db2a",
+          "methods": [
+            "vector"
+          ]
+        },
+        {
+          "id": "chunk_aa53de8bf8057955ae259e55",
+          "methods": [
+            "vector"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R08",
+      "variant": "original",
+      "question": "Theo NIDDK, xét nghiệm nào được dùng để kiểm tra tiểu đường thai kỳ?",
+      "first_relevant_rank": null,
+      "latency_ms": 731.2,
+      "retrieved": [
+        {
+          "id": "chunk_8dc41828011cd9a5379ca843",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_271c4b5b05861dc3f289531a",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_d8531b500d76c38b58a9b7e0",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_a65c68943d9d8e01a649f2c3",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_d6af773df53938b55cc477e6",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        }
+      ]
+    },
+    {
+      "case": "R08",
+      "variant": "paraphrase",
+      "question": "NIDDK mô tả cách kiểm tra đường huyết để phát hiện đái tháo đường khi mang thai thế nào?",
+      "first_relevant_rank": null,
+      "latency_ms": 850.0,
+      "retrieved": [
+        {
+          "id": "chunk_d8531b500d76c38b58a9b7e0",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_271c4b5b05861dc3f289531a",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_8dc41828011cd9a5379ca843",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_b31640d06828fd2cdd836adc",
+          "methods": [
+            "vector",
+            "fulltext"
+          ]
+        },
+        {
+          "id": "chunk_1789706467bc8b391a6d1384",
+          "methods": [
+            "vector"
+          ]
+        }
+      ]
+    }
+  ],
+  "scope": "Eight fixed relevance judgments, two question formulations each. Questions go directly to retrieval."
+}

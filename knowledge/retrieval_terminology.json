@@ -1,0 +1,13 @@
+{
+  "purpose": "Equivalent names for retrieval only; contains no answers, thresholds or patient records.",
+  "concepts": [
+    {"canonical": "a1c", "aliases": ["HbA1c", "A1C", "glycated hemoglobin", "glycosylated hemoglobin"]},
+    {"canonical": "bmi", "aliases": ["BMI", "body mass index"]},
+    {"canonical": "fpg", "aliases": ["FPG", "fasting plasma glucose"]},
+    {"canonical": "ogtt", "aliases": ["OGTT", "oral glucose tolerance test"]},
+    {"canonical": "cgm", "aliases": ["CGM", "continuous glucose monitoring"]},
+    {"canonical": "smbg", "aliases": ["SMBG", "self-monitoring of blood glucose"]},
+    {"canonical": "t2dm", "aliases": ["T2DM", "type 2 diabetes mellitus", "type 2 diabetes"]},
+    {"canonical": "t1dm", "aliases": ["T1DM", "type 1 diabetes mellitus", "type 1 diabetes"]}
+  ]
+}

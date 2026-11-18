@@ -1,13 +1,13 @@
 """Behavioral tests: assert state/output/tool effects, not trace labels alone."""
-import copy,sys,unittest
+import copy,sys,unittest,os
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
-from agent_system import MultiAgent
-from specialist_agents import Specialists
-from workflow_policy import WorkflowPolicy
-from model_service import DiabetesModelService
+from agent_system import LegacyMultiAgent as MultiAgent
+from legacy.specialist_agents import Specialists,evidence_query
+from legacy.workflow_policy import WorkflowPolicy
+from services.model_service import DiabetesModelService
 
 PROFILE={'gender':'Female','age':48,'bmi':28.4,'hbA1c_level':5.8,'blood_glucose_level':140,'hypertension':0,'heart_disease':0,'smoking_history':'never'}
 QUESTION='Mã phân loại dữ liệu là gì?'
@@ -31,6 +31,9 @@ class Fixture:
  def run(self,profile=None): return MultiAgent(self.services).run(QUESTION,profile)
 
 class CollaborationTests(unittest.TestCase):
+ def setUp(self):
+  environment=patch.dict(os.environ,{'LLM_PROVIDER':'disabled'})
+  environment.start();self.addCleanup(environment.stop)
  def test_disagreement_changes_final_conclusion_not_probability(self):
   f=Fixture(.2,.8);r=f.run(PROFILE)
   self.assertEqual(r['status'],'human_review');self.assertIsNone(r['decision']['final_label'])
@@ -84,6 +87,28 @@ class CollaborationTests(unittest.TestCase):
   self.assertEqual(r['explanation']['method'],'deterministic_template_v2')
   self.assertEqual(r['explanation']['model_factors'][0]['impact'],f.pred['feature_impacts'][0]['impact'])
   self.assertIn('độ nhạy của model',r['answer']);self.assertIn('không chứng minh quan hệ nhân quả',r['answer'])
-  self.assertTrue(r['verification']['passed']);self.assertIn('A1C HbA1c',f.services.knowledge.last_query)
+  self.assertTrue(r['verification']['passed'])
+ def test_specific_evidence_question_is_not_overwritten_by_model_factors(self):
+  f=Fixture()
+  specific=evidence_query('A1C phản ánh điều gì?',f.pred)
+  self.assertTrue(specific.startswith('A1C phản ánh điều gì?'))
+  self.assertIn('tổng hợp thông tin đường huyết',specific)
+  self.assertNotIn('BMI',specific)
+  generic=evidence_query('Đánh giá nguy cơ của tôi',f.pred)
+  self.assertIn('A1C HbA1c',generic);self.assertIn('BMI',generic)
+ def test_llm_explanation_passes_real_agent_verifier_without_changing_score(self):
+  f=Fixture();original=f.services.knowledge.answer
+  def with_evidence(question):
+   knowledge=original(question)
+   knowledge['evidence']=[{'evidence_id':d['id'],'text':d['text']} for d in f.docs]
+   return knowledge
+  f.services.knowledge.answer=with_evidence
+  quote=f.docs[0]['text']
+  # Use a sufficiently long real source span for source validation.
+  f.docs[0]['text']='Mã phân loại dữ liệu là 1. Đây là thông tin minh họa trong bộ kiểm thử.'
+  generated={'status':'generated','claims':[{'text':'Dữ liệu minh họa được phân loại mã 1.','evidence_id':f.docs[0]['id'],'quote':f.docs[0]['text']}]}
+  with patch('services.llm_explanation.generate',return_value=generated):r=f.run(PROFILE)
+  self.assertTrue(r['verification']['passed']);self.assertEqual(r['prediction'],f.pred)
+  self.assertEqual(r['explanation']['method'],'llm_evidence_v1')
 
 if __name__=='__main__':unittest.main()

@@ -1,0 +1,176 @@
+{
+  "scope": "Four live demo checks, not a medical quality benchmark",
+  "results": [
+    {
+      "question": "What does the IDF guideline say about HbA1c targets and hypoglycaemia?",
+      "status": "supported",
+      "generation": {
+        "claims": [
+          {
+            "text": "IDF khuyến nghị mục tiêu HbA1c chung là <7.0% (<53 mmol/mol) nhưng nên cá nhân hoá, cân bằng giữa giảm biến chứng và giảm nguy cơ hypoglycaemia.",
+            "evidence_id": "chunk_5a76d14217b9f0cfa18c4075",
+            "quote": "The general HbA1c target of <7.0% (<53 mmol/mol) should be personalised, balancing reducing complications, minimising hypoglycaemia and an individual’s characteristics."
+          },
+          {
+            "text": "Mục tiêu HbA1c <7.0% được đề xuất dựa trên dữ liệu từ các thử nghiệm can thiệp, nhằm tối thiểu hoá rủi ro biến chứng và hypoglycaemia, và cần điều chỉnh tùy theo tuổi, thời gian bệnh, nguy cơ hypoglycaemia và các yếu tố cá nhân khác.",
+            "evidence_id": "chunk_9e21c4ed7b7ba293db3d197f",
+            "quote": "These data are the basis for the general target of HbA1c <7.0% (<53 mmol/mol) in people with T2DM recommended by most guidelines for minimising risk of diabetes complications and hypoglycaemia. This target is proposed as a guide, which is appropriate for many people, but it is important to consider personalising targets, based on a range of factors relevant to the individual with T2DM."
+          }
+        ],
+        "status": "generated",
+        "provider": "compatible",
+        "model": "openai/gpt-oss-20b",
+        "validation": {
+          "passed": true,
+          "issues": [],
+          "scope": "Citation IDs, exact supporting quotes, numbers and restricted advice; not semantic proof",
+          "semantic_review": {
+            "supported": true,
+            "reason": "Both claims are directly supported by the quoted passages from the IDF 2025 recommendations. The first claim cites the general HbA1c target of <7.0% (<53 mmol/mol) and the need for personalization to balance complications and hypoglycaemia. The second claim references the same target and explains it is based on intervention data, with personalization based on age, duration, hypoglycaemia risk, and other individual factors. The evidence IDs match the quoted text, confirming the claims are accurate."
+          }
+        }
+      },
+      "answer": "IDF khuyến nghị mục tiêu HbA1c chung là <7.0% (<53 mmol/mol) nhưng nên cá nhân hoá, cân bằng giữa giảm biến chứng và giảm nguy cơ hypoglycaemia. [chunk_5a76d14217b9f0cfa18c4075] Mục tiêu HbA1c <7.0% được đề xuất dựa trên dữ liệu từ các thử nghiệm can thiệp, nhằm tối thiểu hoá rủi ro biến chứng và hypoglycaemia, và cần điều chỉnh tùy theo tuổi, thời gian bệnh, nguy cơ hypoglycaemia và các yếu tố cá nhân khác. [chunk_9e21c4ed7b7ba293db3d197f]",
+      "verification": {
+        "passed": true,
+        "issues": [],
+        "scope": "Deterministic consistency and disclosure checks"
+      },
+      "citations": [
+        {
+          "id": "chunk_5a76d14217b9f0cfa18c4075",
+          "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+          "title": "IDF_Rec_2025",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": 36,
+          "page_start": 36,
+          "page_end": 36,
+          "section": "PDF page 36",
+          "source_file": "IDF_Rec_2025.pdf",
+          "source_type": "pdf",
+          "source_version": "767fc7e54bc2",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.013828662083553676
+        },
+        {
+          "id": "chunk_9e21c4ed7b7ba293db3d197f",
+          "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+          "title": "IDF_Rec_2025",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": 39,
+          "page_start": 39,
+          "page_end": 39,
+          "section": "PDF page 39",
+          "source_file": "IDF_Rec_2025.pdf",
+          "source_type": "pdf",
+          "source_version": "767fc7e54bc2",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.013508064516129032
+        },
+        {
+          "id": "chunk_1a0fe715a6a4f9d13f07515c",
+          "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+          "title": "IDF_Rec_2025",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": 37,
+          "page_start": 37,
+          "page_end": 37,
+          "section": "PDF page 37",
+          "source_file": "IDF_Rec_2025.pdf",
+          "source_type": "pdf",
+          "source_version": "767fc7e54bc2",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.013001399253731344
+        },
+        {
+          "id": "chunk_79919e5c8dca71078c31c138",
+          "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+          "title": "IDF_Rec_2025",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": 41,
+          "page_start": 41,
+          "page_end": 41,
+          "section": "PDF page 41",
+          "source_file": "IDF_Rec_2025.pdf",
+          "source_type": "pdf",
+          "source_version": "767fc7e54bc2",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.012687234518220434
+        },
+        {
+          "id": "chunk_1a9ed000322b50bae6b371d7",
+          "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+          "title": "IDF_Rec_2025",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": 57,
+          "page_start": 57,
+          "page_end": 57,
+          "section": "PDF page 57",
+          "source_file": "IDF_Rec_2025.pdf",
+          "source_type": "pdf",
+          "source_version": "767fc7e54bc2",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.012318840579710146
+        },
+        {
+          "id": "chunk_4bb044b1d9b11b3d0a655efc",
+          "document_id": "pdf_IDF_Rec_2025_767fc7e54bc2",
+          "title": "IDF_Rec_2025",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "page": 47,
+          "page_start": 47,
+          "page_end": 47,
+          "section": "PDF page 47",
+          "source_file": "IDF_Rec_2025.pdf",
+          "source_type": "pdf",
+          "source_version": "767fc7e54bc2",
+          "retrieval_methods": [
+            "vector",
+            "fulltext"
+          ],
+          "score": 0.012234927234927235
+        }
+      ],
+      "source_checks": [
+        {
+          "evidence_id": "chunk_5a76d14217b9f0cfa18c4075",
+          "valid_chunk": true,
+          "quote_in_chunk": true,
+          "source_type": "pdf",
+          "title": "IDF_Rec_2025",
+          "page": 36,
+          "section": "PDF page 36",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "quote_in_original_pdf_page": true
+        },
+        {
+          "evidence_id": "chunk_9e21c4ed7b7ba293db3d197f",
+          "valid_chunk": true,
+          "quote_in_chunk": true,
+          "source_type": "pdf",
+          "title": "IDF_Rec_2025",
+          "page": 39,
+          "section": "PDF page 39",
+          "url": "https://idf.org/media/uploads/2025/05/IDF_Rec_2025.pdf",
+          "quote_in_original_pdf_page": true
+        }
+      ],
+      "elapsed_seconds": 3.27
+    }
+  ]
+}

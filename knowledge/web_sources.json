@@ -1,0 +1,23 @@
+[
+  {
+    "id": "niddk_a1c_web",
+    "title": "The A1C Test & Diabetes",
+    "organization": "NIDDK",
+    "url": "https://www.niddk.nih.gov/health-information/diagnostic-tests/a1c-test",
+    "language": "en"
+  },
+  {
+    "id": "niddk_type2_web",
+    "title": "Type 2 Diabetes",
+    "organization": "NIDDK",
+    "url": "https://www.niddk.nih.gov/health-information/diabetes/overview/what-is-diabetes/type-2-diabetes",
+    "language": "en"
+  },
+  {
+    "id": "web_vinmec_com_f9eae66411cd",
+    "title": "co che dai thao duong type 2 vi",
+    "organization": "vinmec",
+    "url": "https://www.vinmec.com/vie/bai-viet/co-che-dai-thao-duong-type-2-vi",
+    "language": "vi"
+  }
+]
